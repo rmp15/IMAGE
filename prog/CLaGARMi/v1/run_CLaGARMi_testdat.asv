@@ -1,0 +1,33 @@
+clear
+% this is a set of  arbritrary test data extracted from eobs. the metadata
+% in the 'v' struct is all nonsense apart from 'lbound'
+load image_test_data\Rain_l15_y30.mat
+mv(1)=v;
+load image_test_data\Tmin_l15_y30.mat
+mv(2)=v;
+load image_test_data\Tmax_l15_y30.mat
+mv(3)=v;
+clear v
+sroot='Z:\CLaGARMi\out_test3\';
+validateInputData(mv);
+tic
+nyrs=300; % simulation length
+nmnths=12; % no 'months' per year
+niters=10; % no. interations on residual convariance matrix
+spl=1; %used to split very long runs into smaller chunks
+savefilename = strcat(sroot,'out_',num2str(spl,'%02d'),'_y',int2str(nyrs));
+mv=CLaGARMi(nyrs,nmnths,niters,mv,sroot);
+
+disp('Saving...');
+%save(['out_eobs_SE_tntxrr_shuf_ll_XPX'],'mv','-v7.3');
+save(savefilename,'mv','-v7.3');
+toc
+%%
+o=mv(3).o;
+s=mv(3).s;
+o=reshape(o,[],size(o,3));
+s=reshape(s,[],size(s,3));
+oc=corr(o);
+sc=corr(s);
+figure(2);
+plot(oc(:),sc(:),'k.');
