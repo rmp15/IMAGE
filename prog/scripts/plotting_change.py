@@ -24,6 +24,7 @@ def plug_in_metric(metric):
 
 
 # run function
-plug_in_metric(metrics[0])
+metric_temp = 'pr'
+plug_in_metric(metric_temp)
 
 
