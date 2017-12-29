@@ -17,5 +17,5 @@ for i in range(len(file_paths)):
 
 # calculate and plot mean values
 for i in range(len(file_paths)):
-    file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[0])
-    plot_knmi_scenarios(file_paths[0], file_output, years_past, years_future_1, years_future_2)
+    file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[i])
+    plot_knmi_scenarios(file_paths[i], file_output, years_past, years_future_1, years_future_2)
