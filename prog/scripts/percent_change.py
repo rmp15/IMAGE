@@ -46,6 +46,6 @@ print(result)
 # plot by month over the time periods
 g = ggplot(result, aes(x='time', y='value', color='month')) +\
     geom_line() +\
-    theme_bw()
+    theme_seaborn()
 
 print(g)
