@@ -7,8 +7,11 @@ from ggplot import *
 from data.objects.objects import *
 
 # create locations for the files
+from prog.functions.plotting.plotting_tools import plot_knmi_scenarios
+
 file_paths = [os.path.join(minas_knmi_climate_data, i) for i in stations_brazil]
 
+# for each file in each location, create a graph and table of how the variables are changing over the time periods
 for i in range(len(file_paths)):
     # create file paths with the desired variable
     for metric in metrics:

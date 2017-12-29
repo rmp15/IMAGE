@@ -44,10 +44,7 @@ def column_mean(data, col_start, col_end):
     return df
 
 
-def plot_knmi_scenarios(metric, input, output, years1, years2, years3):
-    """isolates years of data and finds the mean over a period of time
-    then plots it
-    """
+def data_prep_knmi_scenarios(input, years1, years2, years3):
 
     # only take the first 13 columns of the file (year and 12 months)
     # need to fix to loop over the different locations
@@ -69,21 +66,4 @@ def plot_knmi_scenarios(metric, input, output, years1, years2, years3):
     # rename columns (need to fix)
     result.columns = [years1[0], years2[0], years3[3]]
 
-    # reshape data frame for plotting purposes
-    result = result.unstack().reset_index()
-
-    # rename columns (need to fix)
-    result.columns = ['time', 'month', 'value']
-
-    # plot by month over the time periods
-    g = ggplot(result, aes(x='time', y='value', color='month')) + \
-        geom_line() + \
-        theme_bw()
-
-    # create recursive directory
-    output_path = output
-    print(output_path)
-    os.makedirs(output_path, exist_ok=1)
-
-    g.save(filename=os.path.join(output_path, metric + '_plot.pdf'))
-
+    return result
