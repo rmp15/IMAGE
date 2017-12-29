@@ -44,7 +44,10 @@ def column_mean(data, col_start, col_end):
     return df
 
 
-def data_prep_knmi_scenarios(input, years1, years2, years3):
+def data_prep_knmi_scenarios(metric, input, output, years1, years2, years3):
+    """takes the dataframes of the different periods and outputs
+    them together
+    """
 
     # only take the first 13 columns of the file (year and 12 months)
     # need to fix to loop over the different locations
@@ -64,6 +67,18 @@ def data_prep_knmi_scenarios(input, years1, years2, years3):
     result = pd.concat([df_avg_past, df_avg_future_1, df_avg_future_2], axis=1)
 
     # rename columns (need to fix)
-    result.columns = [years1[0], years2[0], years3[3]]
+    result.columns = [years1[0], years2[0], years3[0]]
 
-    return result
+    if output:
+        # create recursive directory
+        output_path = output
+        recursive_directory(output_path)
+
+        result.to_csv(os.path.join(output_path, metric + '_' + str(years1[0]) + '_' + str(years2[0]) + '_' + str(years3[0]) + '_.csv'))
+    else:
+        return result
+
+
+def recursive_directory(path):
+    os.makedirs(path, exist_ok=1)
+
