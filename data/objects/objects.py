@@ -20,4 +20,4 @@ years_future_2 = list(range(year_future_start_2, year_future_end_2+1))
 header_knmi_raw = ['Year', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 # metric under observation
-metric = 'pr'
+metrics = ['tas', 'pr']

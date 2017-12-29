@@ -40,12 +40,11 @@ def column_mean(data, col_start, col_end):
     """
 
     df = pd.DataFrame(np.mean(data.iloc[:, col_start:col_end]))
-    df.columns = [metric]
 
     return df
 
 
-def plot_knmi_scenarios(input, output, years1, years2, years3):
+def plot_knmi_scenarios(metric, input, output, years1, years2, years3):
 
     # only take the first 13 columns of the file (year and 12 months)
     # need to fix to loop over the different locations
@@ -83,6 +82,5 @@ def plot_knmi_scenarios(input, output, years1, years2, years3):
     print(output_path)
     os.makedirs(output_path, exist_ok=1)
 
-    g.save(filename=os.path.join(output_path, 'plot.pdf'))
-
+    g.save(filename=os.path.join(output_path, metric + '_plot.pdf'))
 

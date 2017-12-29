@@ -9,13 +9,16 @@ from data.objects.objects import *
 # create locations for the files
 file_paths = [os.path.join(minas_knmi_climate_data, i) for i in stations_brazil]
 
-# create file paths with the desired variable
-# need to generalise the variable instead of just pr
-for i in range(len(file_paths)):
-    for name in glob.glob(os.path.join(file_paths[i], 'tsicmip5_pr_*')):
-        file_paths[i] = name
+for metric in metrics:
 
-# calculate and plot mean values
-for i in range(len(file_paths)):
-    file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[i])
-    plot_knmi_scenarios(file_paths[i], file_output, years_past, years_future_1, years_future_2)
+    # create file paths with the desired variable
+    for i in range(len(file_paths)):
+        for name in glob.glob(os.path.join(file_paths[i], 'tsicmip5_' + metric + '_*')):
+            file_paths[i] = name
+
+    # calculate and plot mean values
+    for i in range(len(file_paths)):
+        file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[i])
+        plot_knmi_scenarios(metric, file_paths[i], file_output, years_past, years_future_1, years_future_2)
+
+
