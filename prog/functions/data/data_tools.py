@@ -74,7 +74,7 @@ def data_prep_knmi_scenarios(metric, input, output, years1, years2, years3):
         output_path = output
         recursive_directory(output_path)
 
-        result.to_csv(os.path.join(output_path, metric + '_' + str(years1[0]) + '_' + str(years2[0]) + '_' + str(years3[0]) + '_.csv'))
+        result.to_csv(os.path.join(output_path, metric + '_' + str(years1[0]) + '_' + str(years2[0]) + '_' + str(years3[0]) + '.csv'))
     else:
         return result
 

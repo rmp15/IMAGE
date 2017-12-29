@@ -24,7 +24,7 @@ def plug_in_metric(metric):
             print(current)
 
 # run function
-metric_temp = 'pr'
+metric_temp = 'tas'
 plug_in_metric(metric_temp)
 
 

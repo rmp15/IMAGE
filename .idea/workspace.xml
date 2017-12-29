@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prog/scripts/percentage_change.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/prog/scripts/calculating_percentage_change.py" afterPath="$PROJECT_DIR$/prog/scripts/data_generate.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/scripts/calculating_percentage_change.py" afterPath="$PROJECT_DIR$/prog/scripts/calculating_percentage_change.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/scripts/plotting_change.py" afterPath="$PROJECT_DIR$/prog/scripts/plotting_change.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/functions/data/data_tools.py" afterPath="$PROJECT_DIR$/prog/functions/data/data_tools.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="plotting_change.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="plotting_change.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/scripts/plotting_change.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -31,14 +32,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calculating_percentage_change.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prog/scripts/calculating_percentage_change.py">
+      <file leaf-file-name="data_generate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/prog/scripts/data_generate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="percentage_change.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/prog/scripts/percentage_change.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -47,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/prog/functions/data/data_tools.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="792">
-              <caret line="76" column="63" lean-forward="false" selection-start-line="76" selection-start-column="63" selection-end-line="76" selection-end-column="63" />
+              <caret line="76" column="128" lean-forward="false" selection-start-line="76" selection-start-column="128" selection-end-line="76" selection-end-column="128" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -127,16 +138,18 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/data/objects/objects.py" />
         <option value="$PROJECT_DIR$/prog/functions/plotting/plotting_tools.py" />
-        <option value="$PROJECT_DIR$/prog/functions/data/data_tools.py" />
         <option value="$PROJECT_DIR$/prog/scripts/calculating_percentage_change.py" />
+        <option value="$PROJECT_DIR$/prog/functions/data/data_tools.py" />
         <option value="$PROJECT_DIR$/prog/scripts/plotting_change.py" />
+        <option value="$PROJECT_DIR$/prog/scripts/data_generate.py" />
+        <option value="$PROJECT_DIR$/prog/scripts/percentage_change.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="800" />
+    <option name="x" value="-168" />
     <option name="y" value="-1411" />
-    <option name="width" value="1696" />
+    <option name="width" value="2664" />
     <option name="height" value="1317" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -254,12 +267,13 @@
       <recent name="$PROJECT_DIR$/prog/functions/data" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/prog/scripts" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/prog" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.calculating_percentage_change">
+  <component name="RunManager" selected="Python.percentage_change">
     <configuration default="false" name="load" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -306,7 +320,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="IMAGE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog/scripts/calculating_percentage_change.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog/scripts/data_generate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="percentage_change" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/prog/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="IMAGE" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog/scripts/percentage_change.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -464,16 +495,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.load" />
       <item index="1" class="java.lang.String" itemvalue="Python.percent_change" />
       <item index="2" class="java.lang.String" itemvalue="Python.calculating_percentage_change" />
+      <item index="3" class="java.lang.String" itemvalue="Python.percentage_change" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.calculating_percentage_change" />
-        <item index="1" class="java.lang.String" itemvalue="Python.percent_change" />
-        <item index="2" class="java.lang.String" itemvalue="Python.load" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.percentage_change" />
+        <item index="1" class="java.lang.String" itemvalue="Python.calculating_percentage_change" />
+        <item index="2" class="java.lang.String" itemvalue="Python.percent_change" />
+        <item index="3" class="java.lang.String" itemvalue="Python.load" />
       </list>
     </recent_temporary>
   </component>
@@ -558,11 +591,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514581412110</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="second commit">
+      <created>1514581452925</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1514581452925</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="800" y="-1411" width="1696" height="1317" extended-state="0" />
+    <frame x="-168" y="-1411" width="2664" height="1317" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -571,7 +611,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920793" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21314102" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3514151" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22372372" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -685,14 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/objects/objects.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -714,30 +746,46 @@
     <entry file="file://$PROJECT_DIR$/prog/functions/data/data_tools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
-          <caret line="76" column="63" lean-forward="false" selection-start-line="76" selection-start-column="63" selection-end-line="76" selection-end-column="63" />
+          <caret line="76" column="128" lean-forward="false" selection-start-line="76" selection-start-column="128" selection-end-line="76" selection-end-column="128" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/scripts/calculating_percentage_change.py">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/scripts/plotting_change.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/scripts/plotting_change.py">
+    <entry file="file://$PROJECT_DIR$/prog/scripts/data_generate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/scripts/percentage_change.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
