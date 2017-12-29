@@ -45,6 +45,9 @@ def column_mean(data, col_start, col_end):
 
 
 def plot_knmi_scenarios(metric, input, output, years1, years2, years3):
+    """isolates years of data and finds the mean over a period of time
+    then plots it
+    """
 
     # only take the first 13 columns of the file (year and 12 months)
     # need to fix to loop over the different locations
