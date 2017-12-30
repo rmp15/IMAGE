@@ -79,6 +79,30 @@ def data_prep_knmi_scenarios(metric, input, output, years1, years2, years3):
         return result
 
 
+def knmi_scenarios_scale_factors(metric, input, output, years1, years2, years3):
+    """takes a dataframe and calculates percentage differences of the columns
+    """
+
+    # only take the first 13 columns of the file (year and 12 months)
+    # need to fix to loop over the different locations
+    data = pd.read_csv(input)
+    data[str(years2[0]) + '_' + str(years1[0])] = data[str(years2[0])] / data[str(years1[0])]
+    data[str(years3[0]) + '_' + str(years1[0])] = data[str(years3[0])] / data[str(years1[0])]
+
+    print(data)
+
+    if output:
+        # create recursive directory
+        output_path = output
+        recursive_directory(output_path)
+
+        data.to_csv(os.path.join(output_path, metric + '_mean_scale_factors_' + str(years1[0]) + '_' + str(years2[0]) + '_' + str(years3[0]) + '.csv'))
+    else:
+        return data
+
+
+
+
 def recursive_directory(path):
     os.makedirs(path, exist_ok=1)
 
