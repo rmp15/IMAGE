@@ -101,8 +101,8 @@ def knmi_scenarios_scale_factors(metric, input, output, years1, years2, years3):
         return data
 
 
-
-
 def recursive_directory(path):
+    """creates a file directory allowing for recursive creation
+    """
     os.makedirs(path, exist_ok=1)
 
