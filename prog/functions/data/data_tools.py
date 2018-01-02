@@ -106,3 +106,36 @@ def recursive_directory(path):
     """
     os.makedirs(path, exist_ok=1)
 
+
+def knmi_scenarios_apply_scale_factors(metric, subject, operator, output, future_year):
+    """takes a dataframe and applies percentage difference of climate scenarios
+    """
+
+    subject = subject
+    operator = pd.read_csv(operator).iloc[:, 5:7]
+
+    # add month number to operator
+    operator['month'] = operator.index + 1
+
+    # merge subject and operator and re-sort
+    data_merged = pd.merge(subject, operator)
+    data_merged.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
+    data_merged = data_merged.reset_index(drop=True)
+
+    # apply scale factor to monthly values from desired scale factor
+    scale_col = [col for col in data_merged.columns if future_year in col]
+    test = data_merged.iloc[:, 4:35]# * data_merged[scale_col]
+    data_merged.mul(data_merged[scale_col], axis=0)
+    print(test)
+
+
+    if output:
+        # create recursive directory
+        output_path = output
+        recursive_directory(output_path)
+        # output to directory
+        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_scaled_to_' + future_year + '.csv'))
+    else:
+        return data_merged
+
+

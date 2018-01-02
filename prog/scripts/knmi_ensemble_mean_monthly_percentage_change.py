@@ -32,5 +32,5 @@ def plug_in_metric(metric):
             knmi_scenarios_scale_factors(metric, file_paths[i], file_output, years_past, years_future_1, years_future_2)
 
 # run function
-metric_temp = 'tas'
+metric_temp = metric
 plug_in_metric(metric_temp)
