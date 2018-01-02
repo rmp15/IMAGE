@@ -12,7 +12,8 @@ import numpy as np
 # get file paths for text files with weather data
 file_paths = [os.path.join(minas_real_climate_data, i + 'CHUVA.txt') for i in stations_brazil]
 
-j=3
+# NEED TO FIX LOOP BELOW AS WELL AS METHOD FOR DOING FOR DIFFERENT CLIMATE SCENARIO YEARS
+j=0
 
 # do for each of the files paths
 #for i in range(len(file_paths)):
