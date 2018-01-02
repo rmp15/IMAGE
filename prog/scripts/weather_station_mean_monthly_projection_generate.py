@@ -7,14 +7,16 @@ from data.objects.objects import *
 from prog.functions.plotting.plotting_tools import plot_knmi_scenarios
 import pandas as pd
 
-# this file will scale monthly values by the values found in the knmi values
+# this file will create monthly averages over a normal period (dependent on the data completeness
 
 # get file paths for text files with weather data
 file_paths = [os.path.join(minas_real_climate_data, i + 'CHUVA.txt') for i in stations_brazil]
 
 # load files and perform analysis of average rainfall
-for x in file_paths:
-    data = pd.read_csv(x, delimiter=';', skiprows=14)
-    print(data.head(5))
-    print(data.columns)
+data = pd.read_csv(file_paths[0], delimiter=';', skiprows=14)
+print(data.head(5))
+#print(data.columns)
 
+# find the
+
+# sort
