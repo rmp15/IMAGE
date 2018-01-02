@@ -25,7 +25,7 @@ metrics = ('pr')
 metric = 'pr'
 
 # threshold value for zero precipitation NEED TO FINALISE WITH RALF
-pr_threshold = 2
+pr_threshold = 1
 
 # gauges column names
 col_names_gauges = ('gauge', 'date', str('total_' + metric), str('num_days_' + metric),

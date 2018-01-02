@@ -107,7 +107,7 @@ def recursive_directory(path):
     os.makedirs(path, exist_ok=1)
 
 
-def knmi_scenarios_apply_scale_factors(metric, subject, operator, output, future_year):
+def knmi_scenarios_apply_scale_factors(metric, subject, operator, output, future_years):
     """takes a dataframe and applies percentage difference of climate scenarios
     """
 
@@ -123,19 +123,20 @@ def knmi_scenarios_apply_scale_factors(metric, subject, operator, output, future
     data_merged = data_merged.reset_index(drop=True)
 
     # apply scale factor to monthly values from desired scale factor
-    scale_col = [col for col in data_merged.columns if future_year in col]
-    data_merged.iloc[:, 4:35] = data_merged.iloc[:, 4:35].multiply(data_merged['2040_1981'], axis='index')
-    #data_merged.mul(data_merged[scale_col], axis=0)
-    print(data_merged)
+    data_merged.iloc[:, 4:35] = data_merged.iloc[:, 4:35].multiply(data_merged[future_years], axis='index')
 
+    # recalculate statistics based on new values
+    #total number of wet days
+    data_merged['total_pr_scenario'] = data_merged.iloc[:,4:35].sum(axis=1)
+    data_merged['num_days_pr_scenario'] = data_merged.iloc[:, 4:35][data_merged.iloc[:, 4:35] > pr_threshold].count(axis=1)
 
-
+    # output data
     if output:
         # create recursive directory
         output_path = output
         recursive_directory(output_path)
         # output to directory
-        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_scaled_to_' + future_year + '.csv'))
+        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_scaled_to_' + future_years + '.csv'))
     else:
         return data_merged
 
