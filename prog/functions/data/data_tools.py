@@ -124,9 +124,10 @@ def knmi_scenarios_apply_scale_factors(metric, subject, operator, output, future
 
     # apply scale factor to monthly values from desired scale factor
     scale_col = [col for col in data_merged.columns if future_year in col]
-    test = data_merged.iloc[:, 4:35]# * data_merged[scale_col]
-    data_merged.mul(data_merged[scale_col], axis=0)
-    print(test)
+    data_merged.iloc[:, 4:35] = data_merged.iloc[:, 4:35].multiply(data_merged['2040_1981'], axis='index')
+    #data_merged.mul(data_merged[scale_col], axis=0)
+    print(data_merged)
+
 
 
     if output:

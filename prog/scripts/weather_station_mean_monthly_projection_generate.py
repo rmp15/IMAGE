@@ -8,8 +8,6 @@ from prog.functions.plotting.plotting_tools import plot_knmi_scenarios
 import pandas as pd
 import numpy as np
 
-metric = 'pr'
-
 # this file will create monthly averages over a normal period (dependent on the data completeness
 
 # get file paths for text files with weather data

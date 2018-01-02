@@ -24,6 +24,9 @@ header_knmi_raw = ['Year', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug
 metrics = ('pr')
 metric = 'pr'
 
+# threshold value for zero precipitation NEED TO FINALISE WITH RALF
+pr_threshold = 2
+
 # gauges column names
 col_names_gauges = ('gauge', 'date', str('total_' + metric), str('num_days_' + metric),
              '1', '2','3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14',
