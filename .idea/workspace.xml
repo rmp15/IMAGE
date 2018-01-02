@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/scripts/weather_station_mean_monthly_projection_generate.py" afterPath="$PROJECT_DIR$/prog/scripts/weather_station_mean_monthly_projection_generate.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,7 +17,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="weather_station_mean_monthly_projection_generate.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="weather_station_mean_monthly_projection_generate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_mean_monthly_projection_generate.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -54,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="file_paths.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="file_paths.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/file_paths/file_paths.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -669,7 +668,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514916587454</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="second commit">
+      <created>1514916626198</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1514916626198</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -842,14 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/file_paths/file_paths.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/functions/data/data_tools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -877,6 +875,14 @@
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file_paths/file_paths.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
