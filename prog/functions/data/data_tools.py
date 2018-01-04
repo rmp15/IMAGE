@@ -112,6 +112,7 @@ def knmi_scenarios_apply_scale_factors(metric, subject, operator, output, future
     """
 
     subject = subject
+    subject['num_days_pr'] = subject.iloc[:, 4:35][subject.iloc[:, 4:35] > pr_threshold].count(axis=1)
     operator = pd.read_csv(operator).iloc[:, 5:7]
 
     # add month number to operator
