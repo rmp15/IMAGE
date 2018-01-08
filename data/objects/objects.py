@@ -5,7 +5,7 @@ from data.objects import *
 stations_brazil = ['1843002', '1943003', '1943025', '1943035']
 
 # elnino metrics
-elninos = ['nino12a', 'nino3a', 'nino3.4a', 'nino4a']
+elninos = ['nino12a', 'nino3a', 'nino3.4a', 'nino4a', 'soi_a']
 
 # years of analysis for brazil
 year_past_start = 1981
@@ -39,3 +39,7 @@ col_names_gauges = ('gauge', 'date', str('total_' + metric), str('num_days_' + m
 # gauges chosen columns
 col_chosen_gauges = (0, 2, 5, 7, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
               27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43)
+
+# month values
+month_numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+
