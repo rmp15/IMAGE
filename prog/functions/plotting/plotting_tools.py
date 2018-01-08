@@ -52,3 +52,12 @@ def plot_scaled_data(metric, input, output, years1, years2):
 
     g.save(filename=os.path.join(output_path, metric + '_plot.pdf'))
 
+def plot_correlation_elnino(metric, elnino, input, output,):
+    """chooses a el nino metric and plots the output of the scaled values
+    """
+
+    # load el nino metric
+    metric = pd.read_csv(ps.path.join(elnino,'tsiersst_'))
+
+    # merge el nino metric with the weather variable for each month
+

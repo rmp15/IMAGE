@@ -4,6 +4,9 @@ from data.objects import *
 # station ids for brazil
 stations_brazil = ['1843002', '1943003', '1943025', '1943035']
 
+# elnino metrics
+elninos = ['nino12a', 'nino3a', 'nino3.4a', 'nino4a']
+
 # years of analysis for brazil
 year_past_start = 1981
 year_past_end = 2010

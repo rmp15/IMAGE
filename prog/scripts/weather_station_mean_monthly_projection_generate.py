@@ -19,7 +19,7 @@ j=3
 #for i in range(len(file_paths)):
 
 # load files and perform analysis of average rainfall
-data = pd.read_csv(file_paths[j], delimiter=';', skiprows=14,decimal=",")#,columns = col_names)
+data = pd.read_csv(file_paths[j], delimiter=';', skiprows=14,decimal=",")
 
 # only take the data which is relevant
 data = data.iloc[:, col_chosen_gauges]
