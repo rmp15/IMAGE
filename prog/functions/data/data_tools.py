@@ -4,12 +4,23 @@ import numpy as np
 from ggplot import *
 import os
 
-def read_knmi_txt(data):
+def read_knmi_txt(data, skiprows, columns):
     """loads txt file and defines the separator"""
 
-    df = pd.read_csv(data, skiprows=4, delimiter='\s+')
+    # how many rows to skip
+    if skiprows:
+        skiprows = skiprows
+    else:
+        skiprows=4
+
+    df = pd.read_csv(data, skiprows=skiprows, delimiter='\s+')
     df = df.iloc[:, 0:13]
-    df.columns = header_knmi_raw
+
+    # defining the column names
+    if columns:
+        df.columns = columns
+    else:
+        df.columns = header_knmi_raw
 
     return df
 
@@ -44,7 +55,7 @@ def column_mean(data, col_start, col_end):
     return df
 
 
-def data_prep_knmi_scenarios(metric, input, output, years1, years2, years3):
+def data_prep_knmi_scenarios_monthly(metric, input, output, years1, years2, years3):
     """takes the dataframes of the different periods and outputs
     them together
     """
@@ -79,7 +90,46 @@ def data_prep_knmi_scenarios(metric, input, output, years1, years2, years3):
         return result
 
 
-def knmi_scenarios_scale_factors(metric, input, output, years1, years2, years3):
+def data_prep_knmi_scenarios_yearly(metric, input, output, years1, years2, years3):
+    """takes the dataframes of the different periods and outputs
+    them together
+    """
+
+    # only take the first 13 columns of the file (year and 12 months)
+    # need to fix to loop over the different locations
+    columns = ['year', 'value']
+    data = read_knmi_txt(input, skiprows=100, columns=columns)
+
+    # take subset of data for period in the past and periods in the future
+    data_past = isolate_years(data, 'year', years1)
+    data_future_1 = isolate_years(data, 'year', years2)
+    data_future_2 = isolate_years(data, 'year', years3)
+
+    # find mean values of parameter for each month
+    df_avg_past = column_mean(data_past, 1, 2)
+    df_avg_future_1 = column_mean(data_future_1, 1, 2)
+    df_avg_future_2 = column_mean(data_future_2, 1, 2)
+
+    # merge 3 time periods
+    result = pd.concat([df_avg_past, df_avg_future_1, df_avg_future_2], axis=1)
+
+    # rename columns (need to fix)
+    result.columns = [years1[0], years2[0], years3[0]]
+
+    print(result)
+
+    if output:
+        # create recursive directory
+        output_path = output
+        recursive_directory(output_path)
+
+        result.to_csv(os.path.join(output_path, metric + '_yearly_mean_' + str(years1[0]) + '_' + str(years2[0]) + '_' + str(years3[0]) + '.csv'))
+    else:
+        return result
+
+
+
+def knmi_scenarios_scale_factors_monthly(metric, input, output, years1, years2, years3):
     """takes a dataframe and calculates percentage differences of the columns
     """
 
@@ -101,13 +151,35 @@ def knmi_scenarios_scale_factors(metric, input, output, years1, years2, years3):
         return data
 
 
+def knmi_scenarios_scale_factors_yearly(metric, input, output, years1, years2, years3):
+    """takes a dataframe and calculates percentage differences of the columns
+    """
+
+    # only take the first 2 columns (year and value
+    data = pd.read_csv(input)
+    data[str(years2[0]) + '_' + str(years1[0])] = data[str(years2[0])] / data[str(years1[0])]
+    data[str(years3[0]) + '_' + str(years1[0])] = data[str(years3[0])] / data[str(years1[0])]
+
+    print(data)
+
+    if output:
+        # create recursive directory
+        output_path = output
+        recursive_directory(output_path)
+
+        data.to_csv(os.path.join(output_path, metric + '_yearly_mean_scale_factors_' + str(years1[0]) + '_' + str(years2[0]) +
+                                 '_' + str(years3[0]) + '.csv'))
+    else:
+        return data
+
+
 def recursive_directory(path):
     """creates a file directory allowing for recursive creation
     """
     os.makedirs(path, exist_ok=1)
 
 
-def knmi_scenarios_apply_scale_factors(metric, subject, operator, output, future_years):
+def knmi_scenarios_apply_scale_factors_monthly(metric, subject, operator, output, future_years):
     """takes a dataframe and applies percentage difference of climate scenarios
     """
 
@@ -140,5 +212,31 @@ def knmi_scenarios_apply_scale_factors(metric, subject, operator, output, future
         data_merged.to_csv(os.path.join(output_path, metric + '_real_values_scaled_to_' + future_years + '.csv'))
     else:
         return data_merged
+
+
+def knmi_scenarios_apply_scale_factors_yearly(metric, subject, operator, output):
+    """takes a dataframe and applies percentage difference of climate scenarios
+    """
+
+    subject = subject
+    subject.columns = ['num_days_pr']
+
+    operator = pd.read_csv(operator)
+
+    print(operator)
+
+    # fix this to automate names!
+    subject['num_days_pr_2030'] = subject['num_days_pr'] * pd.to_numeric(operator.iloc[0, 5])
+    subject['num_days_pr_2040'] = subject['num_days_pr'] * pd.to_numeric(operator.iloc[0, 6])
+
+    # output data
+    if output:
+        # create recursive directory
+        output_path = output
+        recursive_directory(output_path)
+        # output to directory
+        subject.to_csv(os.path.join(output_path, metric + '_real_values_yearly_scaled_to_2030_2040.csv'))
+    else:
+        return subject
 
 

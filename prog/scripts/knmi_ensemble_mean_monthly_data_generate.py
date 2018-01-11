@@ -4,7 +4,7 @@ from ggplot import *
 from prog.functions.data.data_tools import *
 from data.file_paths.file_paths import *
 from data.objects.objects import *
-from prog.functions.plotting.plotting_tools import plot_knmi_scenarios
+from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly
 
 # create locations for the files
 file_paths = [os.path.join(minas_knmi_climate_data, i) for i in stations_brazil]
@@ -20,7 +20,7 @@ def plug_in_metric(metric):
 
             # calculate and plot mean values
             file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[i])
-            current = data_prep_knmi_scenarios(metric, file_paths[i], file_output, years_past, years_future_1, years_future_2)
+            current = data_prep_knmi_scenarios_monthly(metric, file_paths[i], file_output, years_past, years_future_1, years_future_2)
             print(current)
 
 # run function

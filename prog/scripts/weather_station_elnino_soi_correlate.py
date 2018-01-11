@@ -4,9 +4,10 @@ from ggplot import *
 from prog.functions.data.data_tools import *
 from data.file_paths.file_paths import *
 from data.objects.objects import *
-from prog.functions.plotting.plotting_tools import plot_knmi_scenarios
+from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly
 import pandas as pd
 import numpy as np
+from scipy.stats import pearsonr
 
 # this file will correlate monthly averages for each weather station
 # with El Nino and SOI variables
@@ -59,6 +60,8 @@ for i in elninos:
         for k in month_numbers:
             temp_df = dat_merged[dat_merged.month == k]
             r_value = temp_df['value'].corr(temp_df['total_pr'],)
+            r_value_2 = pearsonr(temp_df['value'],temp_df['total_pr'])
+            print(i,j,k,r_value_2)
             df_append = pd.DataFrame([[j, i, k, r_value]], columns=r_names)
             df = df.append(df_append)
 
@@ -79,4 +82,12 @@ output_string = os.path.join(minas_knmi_climate_output,'minas_brazil', 'elnino_r
 df_master.sort_values(['r_value'], ascending=[True], inplace=True)
 df_master.to_csv(output_string)
 
+# plot the correlation coefficients by for each station by month
+g = ggplot(df_master, aes(x='month', y='r_value', color='station')) + \
+    geom_point() + \
+    facet_wrap('elnino_metric')
+    #geom_abline(a=0,b=0, type='dashed')
 
+g.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', 'values_r_by_station_nino_metric_plot.pdf'))
+
+pearsonr
