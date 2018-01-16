@@ -4,7 +4,7 @@ from ggplot import *
 from prog.functions.data.data_tools import *
 from data.file_paths.file_paths import *
 from data.objects.objects import *
-from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly
+from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly_over_time
 
 # this file
 # loads the monthly scaled values of precipitation and the scaled values of number of days above 1mm of rainfall

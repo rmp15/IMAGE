@@ -4,11 +4,15 @@ from ggplot import *
 from prog.functions.data.data_tools import *
 from data.file_paths.file_paths import *
 from data.objects.objects import *
-from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly
+from prog.functions.plotting.plotting_tools import *
+
+# this script
+# gets a particular scale factor dataframe
+# plots the
+# outputs as a dataframe
 
 # create locations for the files
 file_paths = [os.path.join(minas_knmi_climate_data, i) for i in stations_brazil]
-
 
 # for each file in each location, create a graph and table of how the variables are changing over the time periods
 def plug_in_metric(metric):
@@ -20,11 +24,11 @@ def plug_in_metric(metric):
 
             # calculate and plot mean values
             file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[i])
-            plot_knmi_scenarios_monthly(metric, file_paths[i], file_output, years_past, years_future_1, years_future_2)
+            plot_knmi_scenarios_abs_change(metric, file_paths[i], file_output, years_past, years_future_1, years_future_2)
 
 
 # run function
-metric_temp = metric
+metric_temp = 'tas'
 plug_in_metric(metric_temp)
 
 

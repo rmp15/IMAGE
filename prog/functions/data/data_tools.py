@@ -136,7 +136,6 @@ def data_prep_knmi_scenarios_yearly(metric, input, output, years1, years2, years
         return result
 
 
-
 def knmi_scenarios_scale_factors_monthly(metric, input, output, years1, years2, years3):
     """takes a dataframe and calculates percentage differences of the columns
     """
@@ -190,6 +189,35 @@ def knmi_scenarios_scale_factors_yearly(metric, input, output, years1, years2, y
                                             str(years1[0]) + str(years1[-1]) + '_' +
                                             str(years2[0]) + str(years2[-1]) + '_' +
                                             str(years3[0]) + str(years3[-1]) + '.csv'))
+    else:
+        return data
+
+
+def knmi_scenarios_absolute_change_monthly(metric, input, output, years1, years2, years3):
+    """takes a dataframe and calculates percentage differences of the columns
+    """
+
+    # only take the first 13 columns of the file (year and 12 months)
+    # need to fix to loop over the different locations
+    data = pd.read_csv(input)
+    # ratio differences
+    data[str(years2[0]) + str(years2[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_diff'] = \
+        data[str(years2[0]) + '_' + str(years2[-1])] - data[str(years1[0]) + '_' + str(years1[-1])]
+    data[str(years3[0]) + str(years3[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_diff'] = \
+        data[str(years3[0]) + '_' + str(years3[-1])] - data[str(years1[0]) + '_' + str(years1[-1])]
+    # percentage differences
+
+    print(data)
+
+    if output:
+        # create recursive directory
+        output_path = output
+        recursive_directory(output_path)
+
+        data.to_csv(os.path.join(output_path, metric + '_mean_abs_diff_' +
+                                 str(years1[0]) + str(years1[-1]) + '_' +
+                                 str(years2[0]) + str(years2[-1]) + '_' +
+                                 str(years3[0]) + str(years3[-1]) + '.csv'))
     else:
         return data
 

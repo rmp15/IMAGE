@@ -4,7 +4,7 @@ from ggplot import *
 from prog.functions.data.data_tools import *
 from data.file_paths.file_paths import *
 from data.objects.objects import *
-from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly
+from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly_over_time
 import pandas as pd
 import numpy as np
 

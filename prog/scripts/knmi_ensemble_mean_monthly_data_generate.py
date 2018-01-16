@@ -4,7 +4,7 @@ from ggplot import *
 from prog.functions.data.data_tools import *
 from data.file_paths.file_paths import *
 from data.objects.objects import *
-from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly
+from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly_over_time
 
 # create locations for the files
 file_paths = [os.path.join(minas_knmi_climate_data, i) for i in stations_brazil]
@@ -24,5 +24,5 @@ def plug_in_metric(metric):
             print(current)
 
 # run function
-metric_temp = metric
+metric_temp = 'tas'
 plug_in_metric(metric_temp)
