@@ -77,8 +77,10 @@ def data_prep_knmi_scenarios_monthly(metric, input, output, years1, years2, year
     # merge 3 time periods
     result = pd.concat([df_avg_past, df_avg_future_1, df_avg_future_2], axis=1)
 
-    # rename columns (need to fix)
-    result.columns = [years1[0], years2[0], years3[0]]
+    # rename columns
+    result.columns = [str(years1[0]) + '_' + str(years1[-1]),
+                      str(years2[0]) + '_' + str(years2[-1]),
+                      str(years3[0]) + '_' + str(years3[-1])]
 
     if output:
         # create recursive directory
@@ -142,8 +144,16 @@ def knmi_scenarios_scale_factors_monthly(metric, input, output, years1, years2, 
     # only take the first 13 columns of the file (year and 12 months)
     # need to fix to loop over the different locations
     data = pd.read_csv(input)
-    data[str(years2[0]) + '_' + str(years1[0])] = data[str(years2[0])] / data[str(years1[0])]
-    data[str(years3[0]) + '_' + str(years1[0])] = data[str(years3[0])] / data[str(years1[0])]
+    # ratio differences
+    data[str(years2[0]) + str(years2[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_ratio'] = \
+        data[str(years2[0]) + '_' + str(years2[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]
+    data[str(years3[0]) + str(years3[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_ratio'] = \
+        data[str(years3[0]) + '_' + str(years3[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]
+    # percentage differences
+    data[str(years2[0]) + str(years2[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_percdelta'] = \
+        round(100*(data[str(years2[0]) + '_' + str(years2[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100, 1)
+    data[str(years3[0]) + str(years3[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_percdelta'] = \
+        round(100*(data[str(years3[0]) + '_' + str(years3[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100, 1)
 
     print(data)
 
