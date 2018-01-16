@@ -62,7 +62,7 @@ def data_prep_knmi_scenarios_monthly(metric, input, output, years1, years2, year
 
     # only take the first 13 columns of the file (year and 12 months)
     # need to fix to loop over the different locations
-    data = read_knmi_txt(input)
+    data = read_knmi_txt(input, skiprows=4, columns=header_knmi_raw)
 
     # take subset of data for period in the past and periods in the future
     data_past = isolate_years(data, 'Year', years1)
@@ -85,7 +85,10 @@ def data_prep_knmi_scenarios_monthly(metric, input, output, years1, years2, year
         output_path = output
         recursive_directory(output_path)
 
-        result.to_csv(os.path.join(output_path, metric + '_mean_' + str(years1[0]) + '_' + str(years2[0]) + '_' + str(years3[0]) + '.csv'))
+        result.to_csv(os.path.join(output_path, metric + '_mean_' +
+                                   str(years1[0]) + str(years1[-1]) + '_' +
+                                   str(years2[0]) + str(years2[-1]) + '_' +
+                                   str(years3[0]) + str(years3[-1]) + '.csv'))
     else:
         return result
 
@@ -123,7 +126,10 @@ def data_prep_knmi_scenarios_yearly(metric, input, output, years1, years2, years
         output_path = output
         recursive_directory(output_path)
 
-        result.to_csv(os.path.join(output_path, metric + '_yearly_mean_' + str(years1[0]) + '_' + str(years2[0]) + '_' + str(years3[0]) + '.csv'))
+        result.to_csv(os.path.join(output_path, metric + '_yearly_mean_' +
+                                   str(years1[0]) + str(years1[-1]) + '_' +
+                                   str(years2[0]) + str(years2[-1]) + '_' +
+                                   str(years3[0]) + str(years3[-1]) + '.csv'))
     else:
         return result
 
@@ -146,7 +152,10 @@ def knmi_scenarios_scale_factors_monthly(metric, input, output, years1, years2, 
         output_path = output
         recursive_directory(output_path)
 
-        data.to_csv(os.path.join(output_path, metric + '_mean_scale_factors_' + str(years1[0]) + '_' + str(years2[0]) + '_' + str(years3[0]) + '.csv'))
+        data.to_csv(os.path.join(output_path, metric + '_mean_scale_factors_' +
+                                 str(years1[0]) + str(years1[-1]) + '_' +
+                                 str(years2[0]) + str(years2[-1]) + '_' +
+                                 str(years3[0]) + str(years3[-1]) + '.csv'))
     else:
         return data
 
@@ -167,8 +176,10 @@ def knmi_scenarios_scale_factors_yearly(metric, input, output, years1, years2, y
         output_path = output
         recursive_directory(output_path)
 
-        data.to_csv(os.path.join(output_path, metric + '_yearly_mean_scale_factors_' + str(years1[0]) + '_' + str(years2[0]) +
-                                 '_' + str(years3[0]) + '.csv'))
+        data.to_csv(os.path.join(output_path, metric + '_yearly_mean_scale_factors_' +
+                                            str(years1[0]) + str(years1[-1]) + '_' +
+                                            str(years2[0]) + str(years2[-1]) + '_' +
+                                            str(years3[0]) + str(years3[-1]) + '.csv'))
     else:
         return data
 

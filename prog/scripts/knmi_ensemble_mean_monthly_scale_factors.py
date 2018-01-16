@@ -6,13 +6,13 @@ from data.file_paths.file_paths import *
 from data.objects.objects import *
 from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly
 
-# create locations for the files
-file_paths = [os.path.join(minas_knmi_climate_data, i) for i in stations_brazil]
-
 # this script
 # gets a particular dataframe for a particular metric for the time periods
 # calculates percentage increase from base period (assumes the first period)
 # outputs as a dataframe
+
+# create locations for the files
+file_paths = [os.path.join(minas_knmi_climate_data, i) for i in stations_brazil]
 
 # create locations for the files
 file_paths = [os.path.join(minas_knmi_climate_output,'minas_brazil', i) for i in stations_brazil]
@@ -32,5 +32,5 @@ def plug_in_metric(metric):
             knmi_scenarios_scale_factors_monthly(metric, file_paths[i], file_output, years_past, years_future_1, years_future_2)
 
 # run function
-metric_temp = metric
+metric_temp = 'pr'
 plug_in_metric(metric_temp)

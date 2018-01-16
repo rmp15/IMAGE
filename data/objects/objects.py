@@ -8,8 +8,8 @@ stations_brazil = ['1843002', '1943003', '1943025', '1943035']
 elninos = ['nino12a', 'nino3a', 'nino3.4a', 'nino4a', 'soi_a']
 
 # years of analysis for brazil
-year_past_start = 1981
-year_past_end = 2010
+year_past_start = 1980
+year_past_end = 2000
 year_future_start_1 = 2030
 year_future_end_1 = 2050
 year_future_start_2 = 2040
