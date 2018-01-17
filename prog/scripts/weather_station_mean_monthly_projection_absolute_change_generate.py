@@ -17,7 +17,7 @@ file_paths = [os.path.join(minas_real_climate_data, 'InmetData_' + i + '_DailyDa
 metric = 'tas'
 
 # NEED TO FIX LOOP BELOW AS WELL AS METHOD FOR DOING FOR DIFFERENT CLIMATE SCENARIO YEARS
-j = 0
+j = 1
 
 # do for each of the files paths
 # for i in range(len(file_paths)):
@@ -48,8 +48,6 @@ file_path = os.path.join(file_paths[0], metric + '_mean_abs_diff_' +
         str(years_future_2[0]) + str(years_future_2[-1]) +
         '.csv')
 
-print(file_path)
-
 # load and apply percentage increase
 file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', weather_stations_brazil[j])
 
@@ -62,7 +60,5 @@ year_strings = [year_string_1, year_string_2]
 
 # apply scale factors to data's monthly values
 for string in year_strings:
-    knmi_scenarios_apply_absolute_change_yearly(metric, data, file_paths[j], file_output, string)
-
-
+    knmi_scenarios_apply_absolute_change_yearly(metric, data, file_path, file_output, string)
 

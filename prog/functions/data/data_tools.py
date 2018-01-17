@@ -304,8 +304,6 @@ def knmi_scenarios_apply_absolute_change_monthly(metric, subject, operator, outp
 
     data_merged['num_days_pr_scenario'] = data_merged.iloc[:, 4:35][data_merged.iloc[:, 4:35] > pr_threshold].count(axis=1)
 
-    print(data_merged.head())
-
     # output data
     if output:
         # create recursive directory
@@ -320,31 +318,29 @@ def knmi_scenarios_apply_absolute_change_monthly(metric, subject, operator, outp
 def knmi_scenarios_apply_absolute_change_yearly(metric, subject, operator, output, future_years):
     """takes a dataframe and applies percentage difference of climate scenarios
     """
-
+    # load subject
     subject = subject
-    subject['num_days_pr'] = subject.iloc[:, 4:35][subject.iloc[:, 4:35] > pr_threshold].count(axis=1)
-    operator = pd.read_csv(operator).iloc[:, 6:8]
+
+    # load operator
+    operator = pd.read_csv(operator).iloc[:, (6, 7)]
 
     # add month number to operator
     operator['month'] = operator.index + 1
 
     # merge subject and operator and re-sort
     data_merged = pd.merge(subject, operator)
+
     data_merged.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
     data_merged = data_merged.reset_index(drop=True)
 
-    # apply scale factor to monthly values from desired scale factor
-    data_merged.iloc[:, 4:35] = data_merged.iloc[:, 4:35].multiply(data_merged[future_years], axis='index')
+    for column in range(4, 5+1):
 
-    # recalculate statistics based on new values
-    # total number of wet days
-    data_merged['total_pr_scenario'] = data_merged.iloc[:, 4:35].sum(axis=1)
+        # make sure columns are numeric
+        data_merged.iloc[:, column] = pd.to_numeric(data_merged.iloc[:, column])
 
-    print(data_merged.head())
-
-    data_merged['num_days_pr_scenario'] = data_merged.iloc[:, 4:35][data_merged.iloc[:, 4:35] > pr_threshold].count(axis=1)
-
-    print(data_merged.head())
+        # apply absolute difference to monthly values from desired scale factor
+        data_merged[data_merged.columns.values[column] + future_years] = \
+            data_merged.iloc[:, column] + data_merged[future_years]
 
     # output data
     if output:
@@ -352,11 +348,9 @@ def knmi_scenarios_apply_absolute_change_yearly(metric, subject, operator, outpu
         output_path = output
         recursive_directory(output_path)
         # output to directory
-        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_scaled_' + future_years + '.csv'))
+        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_abs_diff_' + future_years + '.csv'))
     else:
         return data_merged
-
-
 
 
 def knmi_scenarios_apply_scale_factors_yearly(metric, subject, operator, output):
