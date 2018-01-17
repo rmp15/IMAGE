@@ -13,7 +13,7 @@ from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly_o
 # create locations for the files
 file_paths = [os.path.join(minas_knmi_climate_output, 'minas_brazil', i) for i in stations_brazil]
 
-j = 3
+j = 0
 metric = 'r1mm'
 
 # load monthly values FOR 2040

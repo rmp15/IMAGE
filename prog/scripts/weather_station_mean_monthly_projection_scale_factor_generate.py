@@ -12,8 +12,11 @@ import numpy as np
 # get file paths for text files with weather data
 file_paths = [os.path.join(minas_real_climate_data, i + 'CHUVA.txt') for i in stations_brazil]
 
+# which metric
+metric = 'pr'
+
 # NEED TO FIX LOOP BELOW AS WELL AS METHOD FOR DOING FOR DIFFERENT CLIMATE SCENARIO YEARS
-j=3
+j = 3
 
 # do for each of the files paths
 #for i in range(len(file_paths)):
@@ -38,13 +41,28 @@ data.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
 file_paths = [os.path.join(minas_knmi_climate_output, 'minas_brazil', i) for i in stations_brazil]
 
 # for each file in each location, apply the percentage increase of each column value from the
-#value in the first column
+# value in the first column
 # create file paths with the desired variable
-for name in glob.glob(os.path.join(file_paths[j], metric + '_mean_scale_factors_' + str(year_past_start) + '_' +
-        str(year_future_start_1) + '_' + str(year_future_start_2) + '*')):
+for name in glob.glob(os.path.join(file_paths[j], metric + '_mean_scale_factors_' +
+        str(years_past[0]) + str(years_past[-1]) + '_' +
+        str(years_future_1[0]) + str(years_future_1[-1]) + '_' +
+        str(years_future_2[0]) + str(years_future_2[-1]) +
+        '*')):
     file_paths[j] = name
+
     # load and apply percentage increase
     file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[j])
-    year_string = str(str(years_future_2[0]) +'_' + str(years_past[0]))
-    knmi_scenarios_apply_scale_factors_monthly(metric, data, file_paths[j], file_output, year_string)
+
+    # create strings to find the column names
+    year_string_1 = str(years_future_1[0]) + str(years_future_1[-1]) + '_to_' + \
+                    str(years_past[0]) + str(years_past[-1]) + '_ratio'
+    year_string_2 = str(years_future_2[0]) + str(years_future_2[-1]) + '_to_' + \
+                    str(years_past[0]) + str(years_past[-1]) + '_ratio'
+    year_strings = [year_string_1,year_string_2]
+
+    # apply scale factors to data's monthly values
+    for string in year_strings:
+        knmi_scenarios_apply_scale_factors_monthly(metric, data, file_paths[j], file_output, string)
+
+
 

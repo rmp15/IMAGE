@@ -27,7 +27,8 @@ def plug_in_metric(metric):
             file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[i])
             knmi_scenarios_scale_factors_yearly(metric, file_paths[i], file_output, years_past, years_future_1, years_future_2)
 
+
 # run function
-metric_temp = 'r1mm'
+metric_temp = 'altcdd'
 plug_in_metric(metric_temp)
 

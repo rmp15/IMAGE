@@ -119,8 +119,9 @@ def data_prep_knmi_scenarios_yearly(metric, input, output, years1, years2, years
     result = pd.concat([df_avg_past, df_avg_future_1, df_avg_future_2], axis=1)
 
     # rename columns (need to fix)
-    result.columns = [years1[0], years2[0], years3[0]]
-
+    result.columns = [str(years1[0]) + '_' + str(years1[-1]),
+                      str(years2[0]) + '_' + str(years2[-1]),
+                      str(years3[0]) + '_' + str(years3[-1])]
     print(result)
 
     if output:
@@ -175,8 +176,16 @@ def knmi_scenarios_scale_factors_yearly(metric, input, output, years1, years2, y
 
     # only take the first 2 columns (year and value
     data = pd.read_csv(input)
-    data[str(years2[0]) + '_' + str(years1[0])] = data[str(years2[0])] / data[str(years1[0])]
-    data[str(years3[0]) + '_' + str(years1[0])] = data[str(years3[0])] / data[str(years1[0])]
+    # ratio differences
+    data[str(years2[0]) + str(years2[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_ratio'] = \
+        data[str(years2[0]) + '_' + str(years2[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]
+    data[str(years3[0]) + str(years3[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_ratio'] = \
+        data[str(years3[0]) + '_' + str(years3[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]
+    # percentage differences
+    data[str(years2[0]) + str(years2[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_percdelta'] = \
+        round(100*(data[str(years2[0]) + '_' + str(years2[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100, 1)
+    data[str(years3[0]) + str(years3[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_percdelta'] = \
+        round(100*(data[str(years3[0]) + '_' + str(years3[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100, 1)
 
     print(data)
 
@@ -194,7 +203,7 @@ def knmi_scenarios_scale_factors_yearly(metric, input, output, years1, years2, y
 
 
 def knmi_scenarios_absolute_change_monthly(metric, input, output, years1, years2, years3):
-    """takes a dataframe and calculates percentage differences of the columns
+    """takes a dataframe and calculates absolute change of the columns
     """
 
     # only take the first 13 columns of the file (year and 12 months)
@@ -234,7 +243,7 @@ def knmi_scenarios_apply_scale_factors_monthly(metric, subject, operator, output
 
     subject = subject
     subject['num_days_pr'] = subject.iloc[:, 4:35][subject.iloc[:, 4:35] > pr_threshold].count(axis=1)
-    operator = pd.read_csv(operator).iloc[:, 5:7]
+    operator = pd.read_csv(operator).iloc[:, 6:8]
 
     # add month number to operator
     operator['month'] = operator.index + 1
@@ -248,9 +257,14 @@ def knmi_scenarios_apply_scale_factors_monthly(metric, subject, operator, output
     data_merged.iloc[:, 4:35] = data_merged.iloc[:, 4:35].multiply(data_merged[future_years], axis='index')
 
     # recalculate statistics based on new values
-    #total number of wet days
-    data_merged['total_pr_scenario'] = data_merged.iloc[:,4:35].sum(axis=1)
+    # total number of wet days
+    data_merged['total_pr_scenario'] = data_merged.iloc[:, 4:35].sum(axis=1)
+
+    print(data_merged.head())
+
     data_merged['num_days_pr_scenario'] = data_merged.iloc[:, 4:35][data_merged.iloc[:, 4:35] > pr_threshold].count(axis=1)
+
+    print(data_merged.head())
 
     # output data
     if output:
@@ -258,9 +272,91 @@ def knmi_scenarios_apply_scale_factors_monthly(metric, subject, operator, output
         output_path = output
         recursive_directory(output_path)
         # output to directory
-        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_scaled_to_' + future_years + '.csv'))
+        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_scaled_' + future_years + '.csv'))
     else:
         return data_merged
+
+
+def knmi_scenarios_apply_absolute_change_monthly(metric, subject, operator, output, future_years):
+    """takes a dataframe and applies percentage difference of climate scenarios
+    """
+
+    subject = subject
+    subject['num_days_pr'] = subject.iloc[:, 4:35][subject.iloc[:, 4:35] > pr_threshold].count(axis=1)
+    operator = pd.read_csv(operator).iloc[:, 6:8]
+
+    # add month number to operator
+    operator['month'] = operator.index + 1
+
+    # merge subject and operator and re-sort
+    data_merged = pd.merge(subject, operator)
+    data_merged.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
+    data_merged = data_merged.reset_index(drop=True)
+
+    # apply scale factor to monthly values from desired scale factor
+    data_merged.iloc[:, 4:35] = data_merged.iloc[:, 4:35].multiply(data_merged[future_years], axis='index')
+
+    # recalculate statistics based on new values
+    # total number of wet days
+    data_merged['total_pr_scenario'] = data_merged.iloc[:, 4:35].sum(axis=1)
+
+    print(data_merged.head())
+
+    data_merged['num_days_pr_scenario'] = data_merged.iloc[:, 4:35][data_merged.iloc[:, 4:35] > pr_threshold].count(axis=1)
+
+    print(data_merged.head())
+
+    # output data
+    if output:
+        # create recursive directory
+        output_path = output
+        recursive_directory(output_path)
+        # output to directory
+        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_scaled_' + future_years + '.csv'))
+    else:
+        return data_merged
+
+
+def knmi_scenarios_apply_absolute_change_yearly(metric, subject, operator, output, future_years):
+    """takes a dataframe and applies percentage difference of climate scenarios
+    """
+
+    subject = subject
+    subject['num_days_pr'] = subject.iloc[:, 4:35][subject.iloc[:, 4:35] > pr_threshold].count(axis=1)
+    operator = pd.read_csv(operator).iloc[:, 6:8]
+
+    # add month number to operator
+    operator['month'] = operator.index + 1
+
+    # merge subject and operator and re-sort
+    data_merged = pd.merge(subject, operator)
+    data_merged.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
+    data_merged = data_merged.reset_index(drop=True)
+
+    # apply scale factor to monthly values from desired scale factor
+    data_merged.iloc[:, 4:35] = data_merged.iloc[:, 4:35].multiply(data_merged[future_years], axis='index')
+
+    # recalculate statistics based on new values
+    # total number of wet days
+    data_merged['total_pr_scenario'] = data_merged.iloc[:, 4:35].sum(axis=1)
+
+    print(data_merged.head())
+
+    data_merged['num_days_pr_scenario'] = data_merged.iloc[:, 4:35][data_merged.iloc[:, 4:35] > pr_threshold].count(axis=1)
+
+    print(data_merged.head())
+
+    # output data
+    if output:
+        # create recursive directory
+        output_path = output
+        recursive_directory(output_path)
+        # output to directory
+        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_scaled_' + future_years + '.csv'))
+    else:
+        return data_merged
+
+
 
 
 def knmi_scenarios_apply_scale_factors_yearly(metric, subject, operator, output):

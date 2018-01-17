@@ -6,6 +6,10 @@ from data.file_paths.file_paths import *
 from data.objects.objects import *
 from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly_over_time
 
+# this script
+# generates statistics for three different time periods for monthly data
+# output as a csv file the average monthly values
+
 # create locations for the files
 file_paths = [os.path.join(minas_knmi_climate_data, i) for i in stations_brazil]
 
