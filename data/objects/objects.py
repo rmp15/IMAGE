@@ -52,3 +52,7 @@ r_names = ['station', 'elnino_metric', 'month', 'n', 'r_value', 'p_value']
 # treshold for number of days to drop to leave out a month
 threshold_drop_days = 5
 
+# relative lengths of months
+day_months_long = [1, 3, 5, 7, 8, 10, 12]
+day_months_medium = [4, 6, 8, 11]
+day_months_short = [2]
