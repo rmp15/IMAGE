@@ -16,7 +16,7 @@ file_paths = [os.path.join(minas_real_climate_data, i + 'CHUVA.txt') for i in st
 metric = 'pr'
 
 # NEED TO FIX LOOP BELOW AS WELL AS METHOD FOR DOING FOR DIFFERENT CLIMATE SCENARIO YEARS
-j = 3
+j = 0
 
 # do for each of the files paths
 #for i in range(len(file_paths)):
@@ -33,6 +33,9 @@ data.columns = col_names_gauges
 # split the data column into months and years
 data['month'] = pd.to_numeric(data['date'].str.split('/').str[1])
 data['year'] = pd.to_numeric(data['date'].str.split('/').str[2])
+
+# remove duplicates
+data = data.drop_duplicates(subset=['month', 'year'], keep='first')
 
 # sort by month and year column
 data.sort_values(['year', 'month'], ascending=[True, True], inplace=True)

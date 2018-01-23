@@ -18,7 +18,7 @@ metric = 'pr'
 
 # NEED TO FIX LOOP BELOW AS WELL AS METHOD FOR DOING FOR DIFFERENT CLIMATE SCENARIO YEARS
 # CURRENT CHOICE HAS NO MISSING VALUES BUT IN GENERAL THERE WILL BE
-j = 3
+j = 0
 
 # load files and perform analysis of average rainfall
 data = pd.read_csv(file_paths[j], delimiter=';', skiprows=14,decimal=",")
@@ -35,6 +35,9 @@ data['year'] = pd.to_numeric(data['date'].str.split('/').str[2])
 
 # sort by month and year column
 data.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
+
+# remove duplicates
+data = data.drop_duplicates(subset=['month', 'year'], keep='first')
 
 # test to only include months from chosen years with not many missing values
 data = data[data['year'].isin(years_past)]

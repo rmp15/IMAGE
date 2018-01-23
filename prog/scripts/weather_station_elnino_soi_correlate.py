@@ -37,6 +37,9 @@ for i in elninos:
         data['month'] = pd.to_numeric(data['date'].str.split('/').str[1])
         data['year'] = pd.to_numeric(data['date'].str.split('/').str[2])
 
+        # remove duplicates
+        data = data.drop_duplicates(subset=['month', 'year'], keep='first')
+
         # sort by month and year column
         data.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
 

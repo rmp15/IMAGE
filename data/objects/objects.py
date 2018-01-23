@@ -46,8 +46,9 @@ weather_station_chosen_gauges = (0, 1, 2, 3, 4, 5)
 # month values
 month_numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
 
-# column names for building elnino metrics
+# column names for building metrics in tables
 r_names = ['station', 'elnino_metric', 'month', 'n', 'r_value', 'p_value']
+r_names_2 = ['station', 'threshold', 'slope', 'r_value', 'p_value']
 
 # treshold for number of days to drop to leave out a month
 threshold_drop_days = 5
