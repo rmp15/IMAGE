@@ -16,6 +16,7 @@ from scipy.stats import linregress
 # output file for r values for each station
 df_master = pd.DataFrame(columns=r_names_month)
 df_season_master = pd.DataFrame(columns=r_names_season)
+df_year_master = pd.DataFrame(columns=r_names_year)
 for i in elninos:
 
     df_submaster = pd.DataFrame(columns=r_names_month)
@@ -41,6 +42,8 @@ for i in elninos:
         # remove duplicates
         data = data.drop_duplicates(subset=['month', 'year'], keep='first')
 
+        #######################################################################################################
+
         # load the chosen el nino/soi measure and correlate
         metric = pd.read_csv(os.path.join(knmi_elnino, 'iersst_' + i + '.txt'),
                              skiprows=76, header=None, sep='\s+')
@@ -52,33 +55,63 @@ for i in elninos:
         metric['year'] = round(metric['date'].apply(np.floor))
         metric['month'] = 1 + round(12 * (metric['date'] - metric['year']))
 
+        #######################################################################################################
+
         # merge data and el nino values
         dat_merged = pd.merge(data, metric, left_on=['year', 'month'], right_on=['year', 'month'])
-
         dat_merged = pd.merge(dat_merged, df_season, left_on=['month'], right_on=['month'])
 
         # sort by month and year column
         dat_merged.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
 
-        print(dat_merged.head())
+        #######################################################################################################
 
         # calculate correlation value per season
+        for season in seasons:
 
+            # isolate season
+            dat_seasons = dat_merged[dat_merged.season == season]
+            metric = metric[metric.season == season]
 
-        # calculate correlation value of total rainfall with a particular month's values
-        # WORKING HERE
+            # filter missing data depending on length of month
+            for month in month_numbers:
+                if month in day_months_long:
+                    dat_seasons = dat_seasons.dropna(axis=0, thresh=threshold_drop_days)
+                if month in day_months_medium:
+                    dat_seasons = dat_seasons.dropna(axis=0, thresh=threshold_drop_days + 1)
+                if month in day_months_short:
+                    dat_seasons = dat_seasons.dropna(axis=0, thresh=threshold_drop_days + 3)
 
+            # sum rainfall per year per season and count the number of months in count
+            dat_grouped = dat_seasons.groupby(['season', 'year'])
+            dat_grouped = dat_grouped['total_pr'].agg(['sum', 'count'])
+
+            # drop if number of months is fewer than threshold
+            dat_grouped = dat_grouped[dat_grouped['count'] > threshold_drop_months]
+
+            print(dat_grouped.head())
+
+            # average el nino per year per season
+
+            dat_season_elnino = metric.groupby([])
+
+            # merge data and el nino values
+            dat_grouped = pd.merge(dat_grouped, metric, left_on=['year', 'month'], right_on=['year', 'month'])
+
+        #######################################################################################################
+
+#        # calculate correlation value of total rainfall with a particular month's values
+#        # WORKING HERE
+
+        #######################################################################################################
+
+#
 #         # calculate correlation value per month
 #         df = pd.DataFrame(columns=r_names_month)
 #         for k in month_numbers:
 #
 #             # isolate month
 #             temp_df = dat_merged[dat_merged.month == k]
-#
-#             # drop months which have certain number of days missing and also the total precipitation
-#             day_months_long = [1, 3, 5, 7, 8, 10, 12]
-#             day_months_medium = [4, 6, 8, 11]
-#             day_months_short = [2]
 #
 #             # filter depending on length of month
 #             if k in day_months_long:
@@ -115,10 +148,6 @@ for i in elninos:
 #
 #     df_master = df_master.append(df_submaster)
 #
-# # save correlation coefficients for all values
-# output_string = os.path.join(minas_knmi_climate_output,'minas_brazil', 'elnino_r_squared_values.csv')
-# df_master.sort_values(['r_value'], ascending=[True], inplace=True)
-# df_master.to_csv(output_string)
 #
 # # plot the correlation coefficients by for each station by month
 # g = ggplot(df_master, aes(x='month', y='r_value', color='station')) + \
@@ -134,3 +163,8 @@ for i in elninos:
 #
 # g.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', 'values_r_by_station_nino_metric_plot.pdf'))
 # h.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', 'values_r_by_station_nino_metric_sig_plot.pdf'))
+#
+# # save correlation coefficients for all values
+# output_string = os.path.join(minas_knmi_climate_output,'minas_brazil', 'elnino_r_squared_values.csv')
+# df_master.sort_values(['r_value'], ascending=[True], inplace=True)
+# df_master.to_csv(output_string)

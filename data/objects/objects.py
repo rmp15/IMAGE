@@ -14,6 +14,7 @@ metrics = 'pr'
 metric = 'pr'
 
 # season-month dictionary for brazil
+seasons = ['w', 'd']
 data_dict = {'month': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
              'season': ['w', 'w', 'w', 'd', 'd',' d', 'd', 'd', 'd', 'w', 'w', 'w']}
 df_season = pd.DataFrame(data=data_dict)
@@ -35,7 +36,7 @@ years_future_2 = list(range(year_future_start_2, year_future_end_2 + 1))
 header_knmi_raw = ['Year', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 
-# threshold value for zero precipitation NEED TO FINALISE WITH RALF
+# threshold value for zero precipitation
 pr_threshold = 1
 
 # gauges column names
@@ -56,10 +57,12 @@ month_numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
 # column names for building metrics in tables
 r_names_month = ['station', 'elnino_metric', 'month', 'n', 'r_value', 'p_value']
 r_names_season = ['station', 'elnino_metric', 'season', 'n', 'r_value', 'p_value']
+r_names_year = ['station', 'elnino_metric', 'month', 'n', 'r_value', 'p_value']
 r_names_2 = ['station', 'threshold', 'slope', 'r_value', 'p_value']
 
 # treshold for number of days to drop to leave out a month
 threshold_drop_days = 5
+threshold_drop_months = 3
 
 # relative lengths of months
 day_months_long = [1, 3, 5, 7, 8, 10, 12]
