@@ -1,5 +1,6 @@
 from prog.functions.data.data_tools import *
 from data.objects import *
+import pandas as pd
 
 # station ids for brazil
 weather_stations_brazil = ['83589CMatoDentro', '86781Diamantina']
@@ -7,6 +8,15 @@ stations_brazil = ['1843002', '1943003', '1943025', '1943035']
 
 # elnino metrics
 elninos = ['nino12a', 'nino3a', 'nino3.4a', 'nino4a', 'soi_a']
+
+# metric under observation
+metrics = 'pr'
+metric = 'pr'
+
+# season-month dictionary for brazil
+data_dict = {'month': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+             'season': ['w', 'w', 'w', 'd', 'd',' d', 'd', 'd', 'd', 'w', 'w', 'w']}
+df_season = pd.DataFrame(data=data_dict)
 
 # years of analysis for brazil
 year_past_start = 1980
@@ -24,9 +34,6 @@ years_future_2 = list(range(year_future_start_2, year_future_end_2 + 1))
 # headers for ascii files from knmi
 header_knmi_raw = ['Year', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-# metric under observation
-metrics = ('pr')
-metric = 'pr'
 
 # threshold value for zero precipitation NEED TO FINALISE WITH RALF
 pr_threshold = 1
@@ -47,7 +54,8 @@ weather_station_chosen_gauges = (0, 1, 2, 3, 4, 5)
 month_numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
 
 # column names for building metrics in tables
-r_names = ['station', 'elnino_metric', 'month', 'n', 'r_value', 'p_value']
+r_names_month = ['station', 'elnino_metric', 'month', 'n', 'r_value', 'p_value']
+r_names_season = ['station', 'elnino_metric', 'season', 'n', 'r_value', 'p_value']
 r_names_2 = ['station', 'threshold', 'slope', 'r_value', 'p_value']
 
 # treshold for number of days to drop to leave out a month

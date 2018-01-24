@@ -14,10 +14,10 @@ from scipy.stats import linregress
 # with El Nino and SOI variables
 
 # output file for r values for each station
-df_master = pd.DataFrame(columns=r_names)
+df_master = pd.DataFrame(columns=r_names_month)
 for i in elninos:
 
-    df_submaster = pd.DataFrame(columns=r_names)
+    df_submaster = pd.DataFrame(columns=r_names_month)
 
     for j in stations_brazil:
 
@@ -55,7 +55,7 @@ for i in elninos:
         dat_merged = pd.merge(data, metric, left_on=['year', 'month'], right_on=['year', 'month'])
 
         # calculate correlation value per month
-        df = pd.DataFrame(columns=r_names)
+        df = pd.DataFrame(columns=r_names_month)
         for k in month_numbers:
 
             # filter results for correct month and years
@@ -78,7 +78,7 @@ for i in elninos:
             r_value = temp_df['value'].corr(temp_df['total_pr'],)
             r_value_2 = pearsonr(temp_df['value'],temp_df['total_pr'])
             print(i, j, k, r_value_2)
-            df_append = pd.DataFrame([[j, i, k, r_value]], columns=r_names)
+            df_append = pd.DataFrame([[j, i, k, r_value]], columns=r_names_month)
             df = df.append(df_append)
 
         # plot by month over the time periods

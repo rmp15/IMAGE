@@ -14,10 +14,11 @@ from scipy.stats import linregress
 # with El Nino and SOI variables
 
 # output file for r values for each station
-df_master = pd.DataFrame(columns=r_names)
+df_master = pd.DataFrame(columns=r_names_month)
+df_season_master = pd.DataFrame(columns=r_names_season)
 for i in elninos:
 
-    df_submaster = pd.DataFrame(columns=r_names)
+    df_submaster = pd.DataFrame(columns=r_names_month)
 
     for j in stations_brazil:
 
@@ -40,9 +41,6 @@ for i in elninos:
         # remove duplicates
         data = data.drop_duplicates(subset=['month', 'year'], keep='first')
 
-        # sort by month and year column
-        data.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
-
         # load the chosen el nino/soi measure and correlate
         metric = pd.read_csv(os.path.join(knmi_elnino, 'iersst_' + i + '.txt'),
                              skiprows=76, header=None, sep='\s+')
@@ -57,69 +55,82 @@ for i in elninos:
         # merge data and el nino values
         dat_merged = pd.merge(data, metric, left_on=['year', 'month'], right_on=['year', 'month'])
 
-        # calculate correlation value per month
-        df = pd.DataFrame(columns=r_names)
-        for k in month_numbers:
+        dat_merged = pd.merge(dat_merged, df_season, left_on=['month'], right_on=['month'])
 
-            # isolate month
-            temp_df = dat_merged[dat_merged.month == k]
+        # sort by month and year column
+        dat_merged.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
 
-            # drop months which have certain number of days missing and also the total precipitation
-            day_months_long = [1, 3, 5, 7, 8, 10, 12]
-            day_months_medium = [4, 6, 8, 11]
-            day_months_short = [2]
+        print(dat_merged.head())
 
-            # filter depending on length of month
-            if k in day_months_long:
-                temp_df = temp_df.dropna(axis=0, thresh=threshold_drop_days)
-            if k in day_months_medium:
-                temp_df = temp_df.dropna(axis=0, thresh=threshold_drop_days + 1)
-            if k in day_months_short:
-                temp_df = temp_df.dropna(axis=0, thresh=threshold_drop_days + 3)
+        # calculate correlation value per season
 
-            # total precipitation record must be complete
-            temp_df = temp_df[np.isfinite(temp_df['total_pr'])]
 
-            # record number of days actually used for regression
-            n = temp_df.shape[0]
+        # calculate correlation value of total rainfall with a particular month's values
+        # WORKING HERE
 
-            #r_value = temp_df['value'].corr(temp_df['total_pr'],)
-            #r_value_2 = pearsonr(temp_df['value'],temp_df['total_pr'])
-            slope, intercept, r_value_3, p_value, std_err = linregress(temp_df['value'], temp_df['total_pr'])
-            print(i, j, k, r_value_3, p_value)
-            df_append = pd.DataFrame([[j, i, k, n, r_value_3, p_value]], columns=r_names)
-            df_append['sig'] = np.where(df_append['p_value'] <= 0.05, 1, 0)
-            print(df_append)
-            df = df.append(df_append)
-
-        # plot by month over the time periods
-        g = ggplot(dat_merged, aes(x='value', y='total_pr')) + \
-            geom_point() + \
-            facet_wrap('month', scales='free') + \
-            theme_bw()
-
-        g.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', j, j + '_' + i + '_plot.pdf'))
-
-        df_submaster = df_submaster.append(df)
-
-    df_master = df_master.append(df_submaster)
-
-# save correlation coefficients for all values
-output_string = os.path.join(minas_knmi_climate_output,'minas_brazil', 'elnino_r_squared_values.csv')
-df_master.sort_values(['r_value'], ascending=[True], inplace=True)
-df_master.to_csv(output_string)
-
-# plot the correlation coefficients by for each station by month
-g = ggplot(df_master, aes(x='month', y='r_value', color='station')) + \
-    geom_point() + \
-    facet_wrap('elnino_metric')
-    #geom_abline(a=0,b=0, type='dashed')
-
-h = ggplot(df_master, aes(x='month', y='r_value', color='station',alpha='sig')) + \
-    geom_point() + \
-    facet_wrap('elnino_metric') + \
-    ggtitle('p<0.05')
-    #geom_abline(a=0,b=0, type='dashed')
-
-g.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', 'values_r_by_station_nino_metric_plot.pdf'))
-h.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', 'values_r_by_station_nino_metric_sig_plot.pdf'))
+#         # calculate correlation value per month
+#         df = pd.DataFrame(columns=r_names_month)
+#         for k in month_numbers:
+#
+#             # isolate month
+#             temp_df = dat_merged[dat_merged.month == k]
+#
+#             # drop months which have certain number of days missing and also the total precipitation
+#             day_months_long = [1, 3, 5, 7, 8, 10, 12]
+#             day_months_medium = [4, 6, 8, 11]
+#             day_months_short = [2]
+#
+#             # filter depending on length of month
+#             if k in day_months_long:
+#                 temp_df = temp_df.dropna(axis=0, thresh=threshold_drop_days)
+#             if k in day_months_medium:
+#                 temp_df = temp_df.dropna(axis=0, thresh=threshold_drop_days + 1)
+#             if k in day_months_short:
+#                 temp_df = temp_df.dropna(axis=0, thresh=threshold_drop_days + 3)
+#
+#             # total precipitation record must be complete
+#             temp_df = temp_df[np.isfinite(temp_df['total_pr'])]
+#
+#             # record number of days actually used for regression
+#             n = temp_df.shape[0]
+#
+#             #r_value = temp_df['value'].corr(temp_df['total_pr'],)
+#             #r_value_2 = pearsonr(temp_df['value'],temp_df['total_pr'])
+#             slope, intercept, r_value_3, p_value, std_err = linregress(temp_df['value'], temp_df['total_pr'])
+#             print(i, j, k, r_value_3, p_value)
+#             df_append = pd.DataFrame([[j, i, k, n, r_value_3, p_value]], columns=r_names_month)
+#             df_append['sig'] = np.where(df_append['p_value'] <= 0.05, 1, 0)
+#             print(df_append)
+#             df = df.append(df_append)
+#
+#         # plot by month over the time periods
+#         g = ggplot(dat_merged, aes(x='value', y='total_pr')) + \
+#             geom_point() + \
+#             facet_wrap('month', scales='free') + \
+#             theme_bw()
+#
+#         g.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', j, j + '_' + i + '_plot.pdf'))
+#
+#         df_submaster = df_submaster.append(df)
+#
+#     df_master = df_master.append(df_submaster)
+#
+# # save correlation coefficients for all values
+# output_string = os.path.join(minas_knmi_climate_output,'minas_brazil', 'elnino_r_squared_values.csv')
+# df_master.sort_values(['r_value'], ascending=[True], inplace=True)
+# df_master.to_csv(output_string)
+#
+# # plot the correlation coefficients by for each station by month
+# g = ggplot(df_master, aes(x='month', y='r_value', color='station')) + \
+#     geom_point() + \
+#     facet_wrap('elnino_metric')
+#     #geom_abline(a=0,b=0, type='dashed')
+#
+# h = ggplot(df_master, aes(x='month', y='r_value', color='station')) + \
+#     geom_point(aes(shape='sig')) + \
+#     facet_wrap('elnino_metric') + \
+#     ggtitle('p<0.05') + \
+#     geom_abline(a=0,b=0, type='dashed')
+#
+# g.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', 'values_r_by_station_nino_metric_plot.pdf'))
+# h.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', 'values_r_by_station_nino_metric_sig_plot.pdf'))
