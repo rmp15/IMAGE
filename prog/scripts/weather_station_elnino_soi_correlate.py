@@ -55,11 +55,13 @@ for i in elninos:
         metric['year'] = round(metric['date'].apply(np.floor))
         metric['month'] = 1 + round(12 * (metric['date'] - metric['year']))
 
+        # attach season marker
+        metric = pd.merge(metric, df_season, left_on=['month'], right_on=['month'])
+
         #######################################################################################################
 
         # merge data and el nino values
         dat_merged = pd.merge(data, metric, left_on=['year', 'month'], right_on=['year', 'month'])
-        dat_merged = pd.merge(dat_merged, df_season, left_on=['month'], right_on=['month'])
 
         # sort by month and year column
         dat_merged.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
@@ -89,14 +91,18 @@ for i in elninos:
             # drop if number of months is fewer than threshold
             dat_grouped = dat_grouped[dat_grouped['count'] > threshold_drop_months]
 
-            print(dat_grouped.head())
-
             # average el nino per year per season
+            dat_season_elnino = metric.groupby(['season', 'year'])
+            dat_season_elnino = dat_season_elnino['value'].agg(['mean'])
 
-            dat_season_elnino = metric.groupby([])
+            print(dat_grouped.head())
+            print(dat_season_elnino.head())
 
             # merge data and el nino values
-            dat_grouped = pd.merge(dat_grouped, metric, left_on=['year', 'month'], right_on=['year', 'month'])
+            # FIX THIS BY MAKING INDEX INTO COLUMN
+            dat_grouped = pd.merge(dat_grouped, dat_season_elnino, on='year')
+
+            print(dat_grouped.head())
 
         #######################################################################################################
 
