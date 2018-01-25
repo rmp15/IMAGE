@@ -46,26 +46,23 @@ file_paths = [os.path.join(minas_knmi_climate_output, 'minas_brazil', i) for i i
 # for each file in each location, apply the percentage increase of each column value from the
 # value in the first column
 # create file paths with the desired variable
-for name in glob.glob(os.path.join(file_paths[j], metric + '_mean_scale_factors_' +
-        str(years_past[0]) + str(years_past[-1]) + '_' +
-        str(years_future_1[0]) + str(years_future_1[-1]) + '_' +
-        str(years_future_2[0]) + str(years_future_2[-1]) +
-        '*')):
-    file_paths[j] = name
+operator = pd.read_csv(
+    os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[j], metric + '_mean_scale_factors_' +
+                 str(years_past[0]) + str(years_past[-1]) + '_' +
+                 str(years_future_1[0]) + str(years_future_1[-1]) + '_' +
+                 str(years_future_2[0]) + str(years_future_2[-1]) +
+                 '.csv')).iloc[:, 6:8]
 
-    # load and apply percentage increase
-    file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[j])
+# load and apply percentage increase
+file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[j])
 
-    # create strings to find the column names
-    year_string_1 = str(years_future_1[0]) + str(years_future_1[-1]) + '_to_' + \
-                    str(years_past[0]) + str(years_past[-1]) + '_ratio'
-    year_string_2 = str(years_future_2[0]) + str(years_future_2[-1]) + '_to_' + \
-                    str(years_past[0]) + str(years_past[-1]) + '_ratio'
-    year_strings = [year_string_1,year_string_2]
+# create strings to find the column names
+year_string_1 = str(years_future_1[0]) + str(years_future_1[-1]) + '_to_' + \
+                str(years_past[0]) + str(years_past[-1]) + '_ratio'
+year_string_2 = str(years_future_2[0]) + str(years_future_2[-1]) + '_to_' + \
+                str(years_past[0]) + str(years_past[-1]) + '_ratio'
+year_strings = [year_string_1,year_string_2]
 
-    # apply scale factors to data's monthly values
-    for string in year_strings:
-        knmi_scenarios_apply_scale_factors_monthly(metric, data, file_paths[j], file_output, string)
-
-
-
+# apply scale factors to data's monthly values
+for string in year_strings:
+    knmi_scenarios_apply_scale_factors_monthly(metric, data, operator, file_output, string)

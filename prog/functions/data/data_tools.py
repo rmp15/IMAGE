@@ -4,13 +4,6 @@ import numpy as np
 from ggplot import *
 import os
 
-
-def recursive_directory(path):
-    """creates a file directory allowing for recursive creation
-    """
-    os.makedirs(path, exist_ok=1)
-
-
 def read_knmi_txt(data, skiprows, columns):
     """loads txt file and defines the separator"""
 
@@ -238,13 +231,18 @@ def knmi_scenarios_absolute_change_monthly(metric, input, output, years1, years2
         return data
 
 
+def recursive_directory(path):
+    """creates a file directory allowing for recursive creation
+    """
+    os.makedirs(path, exist_ok=1)
+
+
 def knmi_scenarios_apply_scale_factors_monthly(metric, subject, operator, output, future_years):
     """takes a dataframe and applies percentage difference of climate scenarios
     """
 
     subject = subject
     subject['num_days_pr'] = subject.iloc[:, 4:35][subject.iloc[:, 4:35] > pr_threshold].count(axis=1)
-    operator = pd.read_csv(operator).iloc[:, 6:8]
 
     # add month number to operator
     operator['month'] = operator.index + 1
