@@ -20,6 +20,8 @@ data_dict = {'month': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 df_season = pd.DataFrame(data=data_dict)
 
 # years of analysis for brazil
+years_past_long_start = 1970
+years_past_long_end = 2000
 year_past_start = 1980
 year_past_end = 2000
 year_future_start_1 = 2030
@@ -27,7 +29,11 @@ year_future_end_1 = 2050
 year_future_start_2 = 2040
 year_future_end_2 = 2060
 
+# years to skip
+years_skip = [1977, 1989, 1990, 2001]
+
 # list of years
+years_past_long = list(range(years_past_long_start, years_past_long_end + 1))
 years_past = list(range(year_past_start, year_past_end + 1))
 years_future_1 = list(range(year_future_start_1, year_future_end_1 + 1))
 years_future_2 = list(range(year_future_start_2, year_future_end_2 + 1))

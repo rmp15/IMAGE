@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/prog/scripts/weather_station_yearly_data_generate.py" afterPath="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate_detrend.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/objects/objects.py" afterPath="$PROJECT_DIR$/data/objects/objects.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/functions/data/data_tools.py" afterPath="$PROJECT_DIR$/prog/functions/data/data_tools.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/scripts/weather_station_monthly_projection_scale_factor_generate.py" afterPath="$PROJECT_DIR$/prog/scripts/weather_station_monthly_projection_scale_factor_generate.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py" afterPath="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,21 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="weather_station_yearly_generate_wet_days.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="weather_station_yearly_generate_wet_days.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="58" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weather_station_monthly_projection_scale_factor_generate.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_monthly_projection_scale_factor_generate.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -43,11 +34,31 @@
       <file leaf-file-name="data_tools.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/functions/data/data_tools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+            <state relative-caret-position="615">
+              <caret line="259" column="76" lean-forward="false" selection-start-line="259" selection-start-column="76" selection-end-line="259" selection-end-column="76" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="objects.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/objects/objects.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="25" lean-forward="true" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weather_station_monthly_projection_scale_factor_generate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_monthly_projection_scale_factor_generate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,16 +68,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="objects.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/objects/objects.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -142,13 +143,13 @@
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_mean_yearly_projection_generate.py" />
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_projection_generate.py" />
         <option value="$PROJECT_DIR$/prog/scripts/knmi_ensemble_mean_yearly_plotting_perc_change.py" />
-        <option value="$PROJECT_DIR$/data/objects/objects.py" />
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate.py" />
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_knmi_pr_correlate.py" />
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_data_generate.py" />
-        <option value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py" />
-        <option value="$PROJECT_DIR$/prog/functions/data/data_tools.py" />
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_monthly_projection_scale_factor_generate.py" />
+        <option value="$PROJECT_DIR$/prog/functions/data/data_tools.py" />
+        <option value="$PROJECT_DIR$/data/objects/objects.py" />
+        <option value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py" />
       </list>
     </option>
   </component>
@@ -271,7 +272,7 @@
       <recent name="$PROJECT_DIR$/prog/functions/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.weather_station_monthly_projection_scale_factor_generate">
+  <component name="RunManager" selected="Python.weather_station_yearly_data_generate">
     <configuration default="false" name="weather_station_elnino_soi_correlate" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -519,8 +520,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.weather_station_monthly_projection_scale_factor_generate" />
-        <item index="1" class="java.lang.String" itemvalue="Python.weather_station_yearly_data_generate" />
+        <item index="0" class="java.lang.String" itemvalue="Python.weather_station_yearly_data_generate" />
+        <item index="1" class="java.lang.String" itemvalue="Python.weather_station_monthly_projection_scale_factor_generate" />
         <item index="2" class="java.lang.String" itemvalue="Python.weather_station_elnino_soi_correlate" />
         <item index="3" class="java.lang.String" itemvalue="Python.weather_station_knmi_pr_correlate" />
         <item index="4" class="java.lang.String" itemvalue="Python.knmi_ensemble_mean_yearly_plotting_perc_change" />
@@ -849,7 +850,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516893498039</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="second commit">
+      <created>1516896545631</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1516896545631</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1150,9 +1158,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="62" column="23" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1232,32 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_yearly_projection_generate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="157" column="14" lean-forward="false" selection-start-line="157" selection-start-column="14" selection-end-line="157" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/objects/objects.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/file_paths/file_paths.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1266,28 +1246,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/functions/data/data_tools.py">
+    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="58" selection-end-column="33" />
+        <state relative-caret-position="438">
+          <caret line="172" column="32" lean-forward="true" selection-start-line="172" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_monthly_projection_scale_factor_generate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_yearly_projection_generate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/functions/data/data_tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="259" column="76" lean-forward="false" selection-start-line="259" selection-start-column="76" selection-end-line="259" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/objects/objects.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="25" lean-forward="true" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding />
         </state>
       </provider>
