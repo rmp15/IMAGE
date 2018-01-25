@@ -10,11 +10,11 @@ import numpy as np
 from scipy.stats import pearsonr
 from scipy.stats import linregress
 
-# this file will correlate monthly averages for each weather station
+# this file will correlate various averages for each weather station
 # with El Nino and SOI variables
 
 # output file for r values for each station
-df_master = pd.DataFrame(columns=r_names_month)
+df_month_master = pd.DataFrame(columns=r_names_month)
 df_season_master = pd.DataFrame(columns=r_names_season)
 df_year_master = pd.DataFrame(columns=r_names_year)
 for i in elninos:
@@ -71,9 +71,9 @@ for i in elninos:
 
         # seasonal analysis
 
-        df = pd.DataFrame(columns=r_names_season)
-
         print(j + ' ' + ' ' + i + ' seasonal analysis of el nino metrics')
+
+        df = pd.DataFrame(columns=r_names_season)
 
         # calculate correlation value per season
         for season in seasons:
@@ -111,7 +111,7 @@ for i in elninos:
 
             # calculate correlation
             slope, intercept, r_value, p_value, std_err = linregress(dat_grouped['pr_mean'], dat_grouped['metric_mean'])
-            print(i, j, season, r_value, p_value)
+            #print(i, j, season, r_value, p_value)
 
             # record number of seasons actually used for regression
             n = dat_grouped.shape[0]
@@ -125,7 +125,8 @@ for i in elninos:
 
             #######################################################################################################
 
-        # calculate correlation value of total rainfall with a particular month's values
+        # yearly analysis by month
+        # WORKING HERE
         # WORKING HERE
 
             ######################################################################################################
@@ -138,7 +139,7 @@ for i in elninos:
         df = pd.DataFrame(columns=r_names_month)
         for k in month_numbers:
 
-            print('month :' + season)
+            print('month :' + str(k))
 
             # isolate month
             temp_df = dat_merged[dat_merged.month == k]
@@ -157,47 +158,62 @@ for i in elninos:
             # record number of months actually used for regression
             n = temp_df.shape[0]
 
-            #r_value = temp_df['value'].corr(temp_df['total_pr'],)
-            #r_value_2 = pearsonr(temp_df['value'],temp_df['total_pr'])
+            # calculate correlation
             slope, intercept, r_value_3, p_value, std_err = linregress(temp_df['value'], temp_df['total_pr'])
-            print(i, j, k, r_value_3, p_value)
+            #print(i, j, k, r_value_3, p_value)
             df_append = pd.DataFrame([[j, i, k, n, r_value_3, p_value]], columns=r_names_month)
             df_append['sig'] = np.where(df_append['p_value'] <= 0.05, 1, 0)
-            #print(df_append)
             df = df.append(df_append)
-
-        # # plot by month over the time periods
-        # g = ggplot(dat_merged, aes(x='value', y='total_pr')) + \
-        #     geom_point() + \
-        #     facet_wrap('month', scales='free') + \
-        #     theme_bw()
-
-        # g.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', j, j + '_' + i + '_plot.pdf'))
 
         df_submaster = df_submaster.append(df)
 
-    df_master = df_master.append(df_submaster)
+    df_month_master = df_month_master.append(df_submaster)
     df_season_master = df_season_master.append(df_season_submaster)
 
-print(df_master)
-print(df_season_master)
+######################################################################################################
 
-# # plot the correlation coefficients by for each station by month
-# g = ggplot(df_master, aes(x='month', y='r_value', color='station')) + \
-#     geom_point() + \
-#     facet_wrap('elnino_metric')
-#     #geom_abline(a=0,b=0, type='dashed')
-#
-# h = ggplot(df_master, aes(x='month', y='r_value', color='station')) + \
-#     geom_point(aes(shape='sig')) + \
-#     facet_wrap('elnino_metric') + \
-#     ggtitle('p<0.05') + \
-#     geom_abline(a=0,b=0, type='dashed')
-#
-# g.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', 'values_r_by_station_nino_metric_plot.pdf'))
-# h.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', 'values_r_by_station_nino_metric_sig_plot.pdf'))
-#
-# # save correlation coefficients for all values
-# output_string = os.path.join(minas_knmi_climate_output,'minas_brazil', 'elnino_r_squared_values.csv')
-# df_master.sort_values(['r_value'], ascending=[True], inplace=True)
-# df_master.to_csv(output_string)
+# save results
+print('plotting and saving results')
+
+# create directory to save output
+output_directory = os.path.join(minas_knmi_climate_output, 'minas_brazil', 'elnino')
+recursive_directory(output_directory)
+
+# plot the correlation coefficients by for each station by month
+df_season_master['season'] = pd.factorize(df_season_master.season)[0]
+
+g = ggplot(df_season_master, aes(x='season', y='r_value', color='station')) + \
+    geom_point() + \
+    scale_x_continuous(breaks=[0, 1], labels=["wet", "dry"]) + \
+    scale_color_manual(guide=False) + \
+    facet_wrap('elnino_metric')
+
+h = ggplot(df_season_master, aes(x='season', y='r_value', color='station', alpha='sig')) + \
+    geom_point() + \
+    ggtitle('p<0.05') + \
+    scale_x_continuous(breaks=[0, 1], labels=["wet", "dry"]) + \
+    facet_wrap('elnino_metric')
+
+g.save(filename=os.path.join(output_directory, 'seasonal_values_r_by_station_nino_metric_plot.pdf'))
+h.save(filename=os.path.join(output_directory, 'seasonal_values_r_by_station_nino_metric_sig_plot.pdf'))
+
+# plot the correlation coefficients by for each station by month
+g = ggplot(df_month_master, aes(x='month', y='r_value', color='station')) + \
+    geom_point() + \
+    facet_wrap('elnino_metric')
+
+h = ggplot(df_month_master, aes(x='month', y='r_value', color='station', alpha='sig')) + \
+    geom_point() + \
+    ggtitle('p<0.05') + \
+    facet_wrap('elnino_metric')
+
+g.save(filename=os.path.join(output_directory, 'monthly_values_r_by_station_nino_metric_plot.pdf'))
+h.save(filename=os.path.join(output_directory, 'monthly_values_r_by_station_nino_metric_sig_plot.pdf'))
+
+# save correlation coefficients for all values
+df_month_master.sort_values(['r_value'], ascending=[True], inplace=True)
+df_season_master.sort_values(['r_value'], ascending=[True], inplace=True)
+output_string_monthly = os.path.join(output_directory, 'monthly_elnino_r_squared_values.csv')
+output_string_seasonal = os.path.join(output_directory, 'seasonal_elnino_r_squared_values.csv')
+df_month_master.to_csv(output_string_monthly)
+df_season_master.to_csv(output_string_seasonal)

@@ -33,7 +33,7 @@ data_real = data_real.iloc[:, col_chosen_gauges]
 
 # rename columns
 data_real.columns = col_names_gauges
-data_knmi.columns = ['year','1','2','3','4','5','6','7','8','9','12','11','12']
+data_knmi.columns = ['year', ' 1', '2', '3', '4', '5', '6', '7', '8', '9', '12', '11', '12']
 
 # split the data column into months and years
 data_real['month'] = pd.to_numeric(data_real['date'].str.split('/').str[1])

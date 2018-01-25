@@ -4,6 +4,13 @@ import numpy as np
 from ggplot import *
 import os
 
+
+def recursive_directory(path):
+    """creates a file directory allowing for recursive creation
+    """
+    os.makedirs(path, exist_ok=1)
+
+
 def read_knmi_txt(data, skiprows, columns):
     """loads txt file and defines the separator"""
 
@@ -229,12 +236,6 @@ def knmi_scenarios_absolute_change_monthly(metric, input, output, years1, years2
                                  str(years3[0]) + str(years3[-1]) + '.csv'))
     else:
         return data
-
-
-def recursive_directory(path):
-    """creates a file directory allowing for recursive creation
-    """
-    os.makedirs(path, exist_ok=1)
 
 
 def knmi_scenarios_apply_scale_factors_monthly(metric, subject, operator, output, future_years):
