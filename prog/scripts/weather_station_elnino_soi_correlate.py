@@ -20,6 +20,7 @@ df_year_master = pd.DataFrame(columns=r_names_year)
 for i in elninos:
 
     df_submaster = pd.DataFrame(columns=r_names_month)
+    df_season_submaster = pd.DataFrame(columns=r_names_season)
 
     for j in stations_brazil:
 
@@ -70,6 +71,8 @@ for i in elninos:
 
         # seasonal analysis
 
+        df = pd.DataFrame(columns=r_names_season)
+
         print(j + ' ' + ' ' + i + ' seasonal analysis of el nino metrics')
 
         # calculate correlation value per season
@@ -106,19 +109,19 @@ for i in elninos:
             # merge data and el nino values
             dat_grouped = pd.merge(dat_grouped, dat_season_elnino, left_index=True, right_index=True)
 
-            #print(dat_grouped.shape)
-            #print(dat_grouped.columns)
-
+            # calculate correlation
             slope, intercept, r_value, p_value, std_err = linregress(dat_grouped['pr_mean'], dat_grouped['metric_mean'])
             print(i, j, season, r_value, p_value)
 
-            # record number of months actually used for regression
+            # record number of seasons actually used for regression
             n = dat_grouped.shape[0]
 
+            # create data frame to append to main list
             df_append_season = pd.DataFrame([[j, i, season, n, r_value, p_value]], columns=r_names_season)
             df_append_season['sig'] = np.where(df_append_season['p_value'] <= 0.05, 1, 0)
+            df = df.append(df_append_season)
 
-            print(df_append_season)
+        df_season_submaster = df_season_submaster.append(df)
 
             #######################################################################################################
 
@@ -129,9 +132,13 @@ for i in elninos:
 
         # monthly analysis
 
-        # calculate correlation value per month
+        print(j + ' ' + ' ' + i + ' monthly analysis of el nino metrics')
+
+
         df = pd.DataFrame(columns=r_names_month)
         for k in month_numbers:
+
+            print('month :' + season)
 
             # isolate month
             temp_df = dat_merged[dat_merged.month == k]
@@ -156,21 +163,24 @@ for i in elninos:
             print(i, j, k, r_value_3, p_value)
             df_append = pd.DataFrame([[j, i, k, n, r_value_3, p_value]], columns=r_names_month)
             df_append['sig'] = np.where(df_append['p_value'] <= 0.05, 1, 0)
-            print(df_append)
+            #print(df_append)
             df = df.append(df_append)
 
-        # plot by month over the time periods
-        g = ggplot(dat_merged, aes(x='value', y='total_pr')) + \
-            geom_point() + \
-            facet_wrap('month', scales='free') + \
-            theme_bw()
+        # # plot by month over the time periods
+        # g = ggplot(dat_merged, aes(x='value', y='total_pr')) + \
+        #     geom_point() + \
+        #     facet_wrap('month', scales='free') + \
+        #     theme_bw()
 
-        g.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', j, j + '_' + i + '_plot.pdf'))
+        # g.save(filename=os.path.join(minas_knmi_climate_output, 'minas_brazil', j, j + '_' + i + '_plot.pdf'))
 
         df_submaster = df_submaster.append(df)
 
     df_master = df_master.append(df_submaster)
+    df_season_master = df_season_master.append(df_season_submaster)
 
+print(df_master)
+print(df_season_master)
 
 # # plot the correlation coefficients by for each station by month
 # g = ggplot(df_master, aes(x='month', y='r_value', color='station')) + \
