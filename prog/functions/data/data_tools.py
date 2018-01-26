@@ -104,6 +104,7 @@ def encode(input_string):
         lst.append(entry)
     return max(lst)
 
+
 def data_prep_knmi_scenarios_monthly(metric, input, output, years1, years2, years3):
     """takes the dataframes of the different periods and outputs
     them together

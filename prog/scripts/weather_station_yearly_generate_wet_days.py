@@ -13,7 +13,7 @@ from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly_o
 metric = 'pr'
 
 # threshold for dry days
-threshold_chosen = 1.28
+threshold_chosen = 2.14
 
 # which years
 years_chosen = years_past
