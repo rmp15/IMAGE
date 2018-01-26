@@ -36,10 +36,10 @@ for j in range(len(file_paths)):
     data = pd.read_csv(file_paths[j], delimiter=';', skiprows=14, decimal=",")
 
     # only take the data which is relevant
-    data = data.iloc[:, col_chosen_gauges]
+    data = data.iloc[:, col_chosen_gauges_long_prep]
 
     # rename columns
-    data.columns = col_names_gauges
+    data.columns = col_names_gauges_long_prep
 
     # split the data column into months and years
     data['month'] = pd.to_numeric(data['date'].str.split('/').str[1])
@@ -48,27 +48,52 @@ for j in range(len(file_paths)):
     # sort by month and year column
     data.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
 
-    print(data.head())
-
     # remove duplicates
     data = data.drop_duplicates(subset=['month', 'year'], keep='first')
-    #
-    # # test to only include chosen years with no gaps from gap analysis
-    # data = data[data['year'].isin(years_chosen)]
-    # data = data[-data['year'].isin(years_skip)]
-    #
-    # ######################################################################################################
-    #
-    # # figure out average number of wet days from data
-    #
-    # # calculate total value of variable and then divide by number of years
-    # data['new_num_days_pr'] = data.iloc[:, 4:35][data.iloc[:, 4:35] >= pr_threshold].count(axis=1)
-    # total_metric = data[str('new_num_days_' + metric)].sum() / num_years
-    # print('average number of wet days per year in ' + str(years_chosen[0]) + '-' + str(years_chosen[-1]) +
-    #       ' is ' + str(round(total_metric, 2)))
+
+    # test to only include chosen years with no gaps from gap analysis
+    data = data[data['year'].isin(years_chosen)]
+    data = data[-data['year'].isin(years_skip)]
+
+    #####################################################################################################
+
+    print('calculating consecutive dry days')
+
+    # figure out average number of consecutive dry days from data
+
+    # reformat data into long format
+    data = pd.melt(data.loc[:, data.columns != 'date'], id_vars=['gauge', 'month', 'year'],
+                   var_name ='day', value_name='pr')
+
+    # make new day column numeric
+    data['day'] = pd.to_numeric(data['day'])
+
+    # drop weird dates
+    data = exclude_weird_dates(data)
+
+    # calculate rel for each year and divide by number of years
+    data['wet_marker'] = np.where(data['pr'] >= pr_threshold, 1, 0)
+
+    # sort by month and year column
+    data.sort_values(['year', 'month', 'day'], ascending=[True, True, True], inplace=True)
+    data = data.reset_index()
+
+    # directory for output
+    # data = data.drop('index', 1)
+    # output_directory = os.path.join(minas_knmi_climate_output, 'minas_brazil', stations_brazil[j])
+    # output_string = os.path.join(output_directory, stations_brazil[j] + '_long_form_' + metric + '.csv')
+    # data.to_csv(output_string, index=False)
+
+    # find number of consecutive dry days per year
+    for i in years_used:
+        #
+
+    total_metric = data[str('consecutive_dry_days')].sum() / num_years
+    print('average number of wet days per year in ' + str(years_chosen[0]) + '-' + str(years_chosen[-1]) +
+          ' is ' + str(round(total_metric, 2)))
     #
     # #####################################################################################################
-    #
+
     # # figure out average number of wet days from scaled data
     #
     # print('loading scale factors')

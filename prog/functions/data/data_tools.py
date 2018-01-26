@@ -54,6 +54,55 @@ def column_mean(data, col_start, col_end):
 
     return df
 
+# leap year and wrong dates test functions
+def is_leap_and_29Feb(s):
+    return (s['year'] % 4 == 0) & \
+           ((s['year'] % 100 != 0) | (s['year'] % 400 == 0)) & \
+           (s['month'] == 2) & (s['day'] == 29)
+
+
+def exclude_weird_dates(data):
+    # imaginary dates exclude
+    data = data[(data['month'] != 2) | (data['day'] != 31)]
+    data = data[(data['month'] != 2) | (data['day'] != 30)]
+    data = data[(data['month'] != 4) | (data['day'] != 31)]
+    data = data[(data['month'] != 6) | (data['day'] != 31)]
+    data = data[(data['month'] != 9) | (data['day'] != 31)]
+    data = data[(data['month'] != 11) | (data['day'] != 31)]
+
+    # find dates which are legitimate 29th February dates
+    mask = is_leap_and_29Feb(data)
+
+    # legitimate 29th February dates
+    data_leap = data.loc[mask]
+
+    # take 29th February from main data
+    data = data[(data['month'] != 2) | (data['day'] != 29)]
+
+    # reattach legitimate 29th February occurances
+    data = data.append(data_leap)
+
+    return data
+
+
+def encode(input_string):
+    count = 1
+    prev = ''
+    lst = []
+    for character in input_string:
+        if character != prev:
+            if prev:
+                entry = (prev,count)
+                lst.append(entry)
+                #print lst
+            count = 1
+            prev = character
+        else:
+            count += 1
+    else:
+        entry = (character,count)
+        lst.append(entry)
+    return lst
 
 def data_prep_knmi_scenarios_monthly(metric, input, output, years1, years2, years3):
     """takes the dataframes of the different periods and outputs
