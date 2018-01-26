@@ -79,7 +79,7 @@ def exclude_weird_dates(data):
     # take 29th February from main data
     data = data[(data['month'] != 2) | (data['day'] != 29)]
 
-    # reattach legitimate 29th February occurances
+    # reattach legitimate 29th Februarys
     data = data.append(data_leap)
 
     return data
@@ -92,7 +92,7 @@ def encode(input_string):
     for character in input_string:
         if character != prev:
             if prev:
-                entry = (prev,count)
+                entry = (count)
                 lst.append(entry)
                 #print lst
             count = 1
@@ -100,9 +100,9 @@ def encode(input_string):
         else:
             count += 1
     else:
-        entry = (character,count)
+        entry = (count)
         lst.append(entry)
-    return lst
+    return max(lst)
 
 def data_prep_knmi_scenarios_monthly(metric, input, output, years1, years2, years3):
     """takes the dataframes of the different periods and outputs
