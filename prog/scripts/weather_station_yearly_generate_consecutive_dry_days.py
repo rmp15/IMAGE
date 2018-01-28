@@ -189,3 +189,19 @@ for j in range(len(file_paths)):
     percent_change = round(100*((total_metric_scaled / total_metric)-1), 1)
     print(percent_change)
 
+    #####################################################################################################
+
+    # scale the amount of rain to match 1mm threshold
+
+    # calculate total precipitation for each month before adjusting
+
+    # adjust according to difference in threshold and 1mm
+
+    # make all the values below zero into zero
+
+    # calculate new total precipitation
+
+    # calculate difference in old precipitation and new precipitation
+
+    #
+
