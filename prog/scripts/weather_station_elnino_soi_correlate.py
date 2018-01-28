@@ -179,6 +179,13 @@ print('plotting and saving results')
 output_directory = os.path.join(minas_knmi_climate_output, 'minas_brazil', 'elnino')
 recursive_directory(output_directory)
 
+print(df_month_master.head())
+print(df_season_master.head())
+
+# remove soi
+df_month_master = df_month_master[df_month_master.elnino_metric != 'soi_a']
+df_season_master = df_season_master[df_season_master.elnino_metric != 'soi_a']
+
 # plot the correlation coefficients by for each station by month
 df_season_master['season'] = pd.factorize(df_season_master.season)[0]
 
