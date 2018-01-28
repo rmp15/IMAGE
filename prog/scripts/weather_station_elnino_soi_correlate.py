@@ -195,7 +195,7 @@ g = ggplot(df_season_master, aes(x='season', y='r_value', color='station')) + \
     scale_color_manual(guide=False) + \
     facet_wrap('elnino_metric')
 
-h = ggplot(df_season_master, aes(x='season', y='r_value', color='station', alpha='sig')) + \
+h = ggplot(df_season_master, aes(x='season', y='r_value', color='station', alpha="sig")) + \
     geom_point() + \
     ggtitle('p<0.05') + \
     scale_x_continuous(breaks=[0, 1], labels=["wet", "dry"]) + \

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate_plot.R" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate.py" afterPath="$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate.py" />
     </list>
@@ -28,17 +29,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weather_station_elnino_soi_correlate.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="weather_station_elnino_soi_correlate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="678">
-              <caret line="196" column="0" lean-forward="true" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+              <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="201" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weather_station_yearly_generate_wet_days.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="weather_station_elnino_soi_correlate_plot.R" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate_plot.R">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weather_station_yearly_generate_wet_days.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -151,12 +162,13 @@
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_consecutive_dry_days.py" />
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py" />
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate.py" />
+        <option value="$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate_plot.R" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-842" />
-    <option name="y" value="-1395" />
+    <option name="y" value="-1396" />
     <option name="width" value="1780" />
     <option name="height" value="1323" />
   </component>
@@ -273,7 +285,7 @@
       <recent name="$PROJECT_DIR$/prog" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.weather_station_elnino_soi_correlate">
+  <component name="RunManager" selected="R.weather_station_elnino_soi_correlate_plot">
     <configuration default="false" name="weather_station_elnino_soi_correlate" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -304,23 +316,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="IMAGE" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="weather_station_knmi_pr_correlate" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/prog/scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="IMAGE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog/scripts/weather_station_knmi_pr_correlate.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -357,6 +352,14 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_consecutive_dry_days.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="weather_station_elnino_soi_correlate_plot" type="RRunConfigurationType" factoryName="R" temporary="true">
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate_plot.R" />
+      <option name="SCRIPT_ARGS" value="" />
+      <option name="WORKING_DIRECTORY_PATH" value="$PROJECT_DIR$/prog/scripts" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
@@ -515,17 +518,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.weather_station_elnino_soi_correlate" />
       <item index="1" class="java.lang.String" itemvalue="Python.weather_station_yearly_data_generate" />
-      <item index="2" class="java.lang.String" itemvalue="Python.weather_station_knmi_pr_correlate" />
-      <item index="3" class="java.lang.String" itemvalue="Python.weather_station_monthly_projection_scale_factor_generate" />
-      <item index="4" class="java.lang.String" itemvalue="Python.weather_station_yearly_generate_consecutive_dry_days" />
+      <item index="2" class="java.lang.String" itemvalue="Python.weather_station_monthly_projection_scale_factor_generate" />
+      <item index="3" class="java.lang.String" itemvalue="Python.weather_station_yearly_generate_consecutive_dry_days" />
+      <item index="4" class="java.lang.String" itemvalue="R.weather_station_elnino_soi_correlate_plot" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.weather_station_elnino_soi_correlate" />
-        <item index="1" class="java.lang.String" itemvalue="Python.weather_station_yearly_data_generate" />
-        <item index="2" class="java.lang.String" itemvalue="Python.weather_station_yearly_generate_consecutive_dry_days" />
-        <item index="3" class="java.lang.String" itemvalue="Python.weather_station_monthly_projection_scale_factor_generate" />
-        <item index="4" class="java.lang.String" itemvalue="Python.weather_station_knmi_pr_correlate" />
+        <item index="0" class="java.lang.String" itemvalue="R.weather_station_elnino_soi_correlate_plot" />
+        <item index="1" class="java.lang.String" itemvalue="Python.weather_station_elnino_soi_correlate" />
+        <item index="2" class="java.lang.String" itemvalue="Python.weather_station_yearly_data_generate" />
+        <item index="3" class="java.lang.String" itemvalue="Python.weather_station_yearly_generate_consecutive_dry_days" />
+        <item index="4" class="java.lang.String" itemvalue="Python.weather_station_monthly_projection_scale_factor_generate" />
       </list>
     </recent_temporary>
   </component>
@@ -542,13 +545,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
-    </task>
-    <task id="LOCAL-00003" summary="second commit">
-      <created>1514509241745</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1514509241745</updated>
     </task>
     <task id="LOCAL-00004" summary="second commit">
       <created>1514544444599</created>
@@ -886,11 +882,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516982335773</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="second commit">
+      <created>1517155536411</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1517155536411</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-842" y="-1395" width="1780" height="1323" extended-state="0" />
+    <frame x="-842" y="-1396" width="1780" height="1323" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2744534" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -900,7 +903,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920793" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="true" show_stripe_button="true" weight="0.42648253" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="953" y="-1399" width="1543" height="1352" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.42648253" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="953" y="-1399" width="1543" height="1352" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -958,13 +961,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/prog/scripts/knmi_ensemble_mean_yearly_plotting_perc_change.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/scripts/knmi_ensemble_mean_monthly_plotting_perc_change.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1288,6 +1284,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="201" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_consecutive_dry_days.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1296,18 +1300,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py">
+    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate_plot.R">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="510">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_elnino_soi_correlate.py">
+    <entry file="file://$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="196" column="0" lean-forward="true" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding />
         </state>
       </provider>
