@@ -8,13 +8,15 @@ from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly_o
 import pandas as pd
 import numpy as np
 
-# this file will create monthly averages over a normal period (dependent on the data completeness
-# get file paths for text files with weather data
+# this file will ...
 file_paths = [os.path.join(minas_real_climate_data, 'InmetData_' + i + '_DailyDatabase.txt')
               for i in weather_stations_brazil]
 
 # which metric
 metric = 'tas'
+
+# which years
+years_chosen = years_past
 
 # NEED TO FIX LOOP BELOW AS WELL AS METHOD FOR DOING FOR DIFFERENT CLIMATE SCENARIO YEARS
 j = 1
@@ -34,9 +36,10 @@ data.columns = weather_station_names
 # split the data column into months and years
 data['month'] = pd.to_numeric(data['date'].str.split('/').str[1])
 data['year'] = pd.to_numeric(data['date'].str.split('/').str[2])
+data['day'] = pd.to_numeric(data['date'].str.split('/').str[0])
 
 # sort by month and year column
-data.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
+data.sort_values(['year', 'month', 'day'], ascending=[True, True, True], inplace=True)
 
 # load the absolute differences for each month from the knmi climate data (is it ok that it's from other stations?)
 file_paths = [os.path.join(minas_knmi_climate_output, 'minas_brazil', i) for i in stations_brazil]
@@ -52,13 +55,9 @@ file_path = os.path.join(file_paths[0], metric + '_mean_abs_diff_' +
 file_output = os.path.join(minas_knmi_climate_output, 'minas_brazil', weather_stations_brazil[j])
 
 # create strings to find the column names
-year_string_1 = str(years_future_1[0]) + str(years_future_1[-1]) + '_to_' + \
+year_string = str(years_future_2[0]) + str(years_future_2[-1]) + '_to_' + \
                 str(years_past[0]) + str(years_past[-1]) + '_diff'
-year_string_2 = str(years_future_2[0]) + str(years_future_2[-1]) + '_to_' + \
-                str(years_past[0]) + str(years_past[-1]) + '_diff'
-year_strings = [year_string_1, year_string_2]
 
 # apply scale factors to data's monthly values
-for string in year_strings:
-    knmi_scenarios_apply_absolute_change_yearly(metric, data, file_path, file_output, string)
+knmi_scenarios_apply_absolute_change_yearly(metric, data, file_path, file_output, year_string)
 

@@ -96,7 +96,7 @@ for j in range(len(file_paths)):
         sum_days = sum_days + encode(data_temp['wet_marker'])
 
     total_metric = sum_days / num_years
-    print('average number of consecutive dry days is ' + str(round(total_metric,2)))
+    print('average number of consecutive dry days is ' + str(round(total_metric, 2)))
 
     #####################################################################################################
 
@@ -170,7 +170,7 @@ for j in range(len(file_paths)):
     data_melted = data_melted.drop('index', 1)
 
     # directory for output
-    output_string = os.path.join(output_directory, stations_brazil[j] + '_long_form_scaled_' + metric + '.csv')
+    output_string = os.path.join(output_directory, stations_brazil[j] + '_long_form_preadj_rcp85_' + metric + '.csv')
     data_melted.to_csv(output_string, index=False)
 
     # find number of consecutive dry days per year
@@ -181,7 +181,7 @@ for j in range(len(file_paths)):
         sum_days = sum_days + encode(data_temp_scaled['wet_marker'])
 
     total_metric_scaled = sum_days / num_years
-    print('average number of scaled dry days is ' + str(round(total_metric_scaled,2)))
+    print('average number of scaled dry days is ' + str(round(total_metric_scaled, 2)))
 
     #####################################################################################################
 
@@ -216,7 +216,8 @@ for j in range(len(file_paths)):
     data_scaled['pr_add_per_day'] = data_scaled['total_pr_diff'] / data_scaled['num_days_pr_adj']
     for day in range(1, 32):
         data_scaled[str(day)] = data_scaled.apply(
-            lambda row: round(row[str(day)] + row['pr_add_per_day'],2) if row[str(day)] >= 1 else round(row[str(day)],   2),
+            lambda row: round(row[str(day)] + row['pr_add_per_day'], 2) if row[str(day)] >= 1 else round(row[str(day)],
+                                                                                                         2),
             axis=1
         )
 
@@ -227,12 +228,13 @@ for j in range(len(file_paths)):
     data_scaled['num_days_pr_readj'] = data_scaled.iloc[:, 2:33][data_scaled.iloc[:, 2:33] > 1].count(axis=1)
 
     # calculate difference in old precipitation and new precipitation
-    data_scaled['total_pr_diff_again'] = round(data_scaled['total_pr_tgt'] - data_scaled['total_pr_readj'],2)
+    data_scaled['total_pr_diff_again'] = round(data_scaled['total_pr_tgt'] - data_scaled['total_pr_readj'], 2)
 
     # reformat data into long format
-    data_melted = pd.melt(data_scaled.iloc[:, (0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,
-                                               27,28,29,30,31,32,33,34)], id_vars=['gauge', 'month', 'year'],
-                         var_name='day', value_name='pr')
+    data_melted = pd.melt(data_scaled.iloc[:, (
+    0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+    27, 28, 29, 30, 31, 32, 33, 34)], id_vars=['gauge', 'month', 'year'],
+                          var_name='day', value_name='pr')
 
     # make new year and day column numeric
     data_melted['year'] = pd.to_numeric(data_melted['year'])
@@ -267,9 +269,16 @@ for j in range(len(file_paths)):
     print('this is a change of ', percent_change, '%')
     print('')
 
+    # only keep relevant columns
+    data_scaled = data_scaled.iloc[:,
+                  (0, 33, 34, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+                   27, 28, 29, 30, 31, 32 )]
+    data_melted = data_melted.iloc[:,0:5]
+
     # directory for output
-    output_string_wide = os.path.join(output_directory, stations_brazil[j] + '_wide_form_scaled_post_adj_' + metric + '.csv')
-    output_string_long = os.path.join(output_directory, stations_brazil[j] + '_long_form_scaled_post_adj_' + metric + '.csv')
+    output_string_wide = os.path.join(output_directory,
+                                      stations_brazil[j] + '_wide_form_rcp85_' + metric + '.csv')
+    output_string_long = os.path.join(output_directory,
+                                      stations_brazil[j] + '_long_form_rcp85_' + metric + '.csv')
     data_scaled.to_csv(output_string_wide, index=False)
     data_melted.to_csv(output_string_long, index=False)
-

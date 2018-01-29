@@ -13,7 +13,7 @@ from prog.functions.plotting.plotting_tools import plot_knmi_scenarios_monthly_o
 metric = 'pr'
 
 # threshold for dry days
-threshold_chosen = 2.14
+thresholds_chosen = [1.29, 1.55, 1.29, 1.28]
 
 # which years
 years_chosen = years_past
@@ -88,10 +88,10 @@ for j in range(len(file_paths)):
                     str(years_past[0]) + str(years_past[-1]) + '_ratio'
 
     # apply scale factors to data's monthly values
-    data_scaled = knmi_scenarios_apply_scale_factors_monthly(metric, data, operator, file_output, year_string, threshold_chosen)
+    data_scaled = knmi_scenarios_apply_scale_factors_monthly(metric, data, operator, file_output, year_string, thresholds_chosen[j])
 
     # calculate total value of variable and then divide by number of years
-    data_scaled['new_num_days_' + metric] = data_scaled.iloc[:, 4:35][data_scaled.iloc[:, 4:35] >= threshold_chosen].count(axis=1)
+    data_scaled['new_num_days_' + metric] = data_scaled.iloc[:, 4:35][data_scaled.iloc[:, 4:35] >= thresholds_chosen[j]].count(axis=1)
     total_metric_scaled = data_scaled[str('new_num_days_' + metric)].sum() / num_years
     print('average number of wet days per year in ' + str(years_chosen[0]) + '-' + str(years_chosen[-1]) +
           ' scaled by ' + str(years_future_2[0]) + '-' + str(years_future_2[-1]) +

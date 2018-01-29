@@ -4,6 +4,7 @@ import numpy as np
 from ggplot import *
 import os
 
+
 def read_knmi_txt(data, skiprows, columns):
     """loads txt file and defines the separator"""
 
@@ -11,7 +12,7 @@ def read_knmi_txt(data, skiprows, columns):
     if skiprows:
         skiprows = skiprows
     else:
-        skiprows=4
+        skiprows = 4
 
     df = pd.read_csv(data, skiprows=skiprows, delimiter='\s+')
     df = df.iloc[:, 0:13]
@@ -30,7 +31,7 @@ def years_list(start, end):
     a list of all the years between inclusively
     """
 
-    years = list(range(start, end+1))
+    years = list(range(start, end + 1))
 
     return years
 
@@ -53,6 +54,7 @@ def column_mean(data, col_start, col_end):
     df = pd.DataFrame(np.mean(data.iloc[:, col_start:col_end]))
 
     return df
+
 
 # leap year and wrong dates test functions
 def is_leap_and_29Feb(s):
@@ -94,7 +96,7 @@ def encode(input_string):
             if prev:
                 entry = (count)
                 lst.append(entry)
-                #print lst
+                # print lst
             count = 1
             prev = character
         else:
@@ -201,9 +203,11 @@ def knmi_scenarios_scale_factors_monthly(metric, input, output, years1, years2, 
         data[str(years3[0]) + '_' + str(years3[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]
     # percentage differences
     data[str(years2[0]) + str(years2[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_percdelta'] = \
-        round(100*(data[str(years2[0]) + '_' + str(years2[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100, 1)
+        round(100 * (data[str(years2[0]) + '_' + str(years2[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100,
+              1)
     data[str(years3[0]) + str(years3[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_percdelta'] = \
-        round(100*(data[str(years3[0]) + '_' + str(years3[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100, 1)
+        round(100 * (data[str(years3[0]) + '_' + str(years3[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100,
+              1)
 
     print(data)
 
@@ -233,9 +237,11 @@ def knmi_scenarios_scale_factors_yearly(metric, input, output, years1, years2, y
         data[str(years3[0]) + '_' + str(years3[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]
     # percentage differences
     data[str(years2[0]) + str(years2[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_percdelta'] = \
-        round(100*(data[str(years2[0]) + '_' + str(years2[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100, 1)
+        round(100 * (data[str(years2[0]) + '_' + str(years2[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100,
+              1)
     data[str(years3[0]) + str(years3[-1]) + '_to_' + str(years1[0]) + str(years1[-1]) + '_percdelta'] = \
-        round(100*(data[str(years3[0]) + '_' + str(years3[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100, 1)
+        round(100 * (data[str(years3[0]) + '_' + str(years3[-1])] / data[str(years1[0]) + '_' + str(years1[-1])]) - 100,
+              1)
 
     print(data)
 
@@ -245,9 +251,9 @@ def knmi_scenarios_scale_factors_yearly(metric, input, output, years1, years2, y
         recursive_directory(output_path)
 
         data.to_csv(os.path.join(output_path, metric + '_yearly_mean_scale_factors_' +
-                                            str(years1[0]) + str(years1[-1]) + '_' +
-                                            str(years2[0]) + str(years2[-1]) + '_' +
-                                            str(years3[0]) + str(years3[-1]) + '.csv'))
+                                 str(years1[0]) + str(years1[-1]) + '_' +
+                                 str(years2[0]) + str(years2[-1]) + '_' +
+                                 str(years3[0]) + str(years3[-1]) + '.csv'))
     else:
         return data
 
@@ -346,7 +352,8 @@ def knmi_scenarios_apply_absolute_change_monthly(metric, subject, operator, outp
 
     print(data_merged.head())
 
-    data_merged['num_days_pr_scenario'] = data_merged.iloc[:, 4:35][data_merged.iloc[:, 4:35] > pr_threshold].count(axis=1)
+    data_merged['num_days_pr_scenario'] = data_merged.iloc[:, 4:35][data_merged.iloc[:, 4:35] > pr_threshold].count(
+        axis=1)
 
     # output data
     if output:
@@ -377,14 +384,19 @@ def knmi_scenarios_apply_absolute_change_yearly(metric, subject, operator, outpu
     data_merged.sort_values(['year', 'month'], ascending=[True, True], inplace=True)
     data_merged = data_merged.reset_index(drop=True)
 
-    for column in range(4, 5+1):
-
+    for column in range(4, 5 + 1):
         # make sure columns are numeric
         data_merged.iloc[:, column] = pd.to_numeric(data_merged.iloc[:, column])
 
         # apply absolute difference to monthly values from desired scale factor
-        data_merged[data_merged.columns.values[column] + future_years] = \
-            data_merged.iloc[:, column] + data_merged[future_years]
+        data_merged[data_merged.columns.values[column]] = \
+            round(data_merged.iloc[:, column] + data_merged[future_years], 1)
+
+        # test to only include chosen years with no gaps from gap analysis
+        data_merged = data_merged[data_merged['year'].isin(years_past)]
+
+    # only include relevant columns
+    data_merged = data_merged.iloc[:,(0, 7, 6, 8, 4, 5)]
 
     # output data
     if output:
@@ -392,7 +404,7 @@ def knmi_scenarios_apply_absolute_change_yearly(metric, subject, operator, outpu
         output_path = output
         recursive_directory(output_path)
         # output to directory
-        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_abs_diff_' + future_years + '.csv'))
+        data_merged.to_csv(os.path.join(output_path, metric + '_real_values_abs_diff_' + future_years + '.csv'),index=False)
     else:
         return data_merged
 
@@ -421,5 +433,3 @@ def knmi_scenarios_apply_scale_factors_yearly(metric, subject, operator, output)
         subject.to_csv(os.path.join(output_path, metric + '_real_values_yearly_scaled_to_2030_2040.csv'))
     else:
         return subject
-
-
