@@ -1,0 +1,281 @@
+# using minimal fraction of valid points 30.00
+# operating on Multi-model mean of historical+rcp85 experiments of ACCESS1-0 bcc-csm1-1 CanESM2 CCSM4 CMCC-CM CMCC-CMS CNRM-CM5 CSIRO-Mk3-6-0 GFDL-CM3 GFDL-ESM2G GFDL-ESM2M HadGEM2-CC HadGEM2-ES inmcm4 IPSL-CM5A-LR IPSL-CM5A-MR IPSL-CM5B-LR MIROC5 MIROC-ESM MIROC-ESM-CHEM MPI-ESM-LR MPI-ESM-MR MRI-CGCM3 NorESM1-M
+# <a href=http://climexp.knmi.nl/select.cgi?field=cmip5_altcdd_yr_modmean_rcp85>climexp.knmi.nl/select.cgi?field=cmip5_altcdd_yr_modmean_rcp85</a>
+# file :: CMIP5/annual/altcdd/altcdd_yr_modmean_rcp85_000.nc
+# title :: spatial statistic of Multi-model mean of historical+rcp85 experiments of ACCESS1-0 bcc-csm1-1 CanESM2 CCSM4 CMCC-CM CMCC-CMS CNRM-CM5 CSIRO-Mk3-6-0 GFDL-CM3 GFDL-ESM2G GFDL-ESM2M HadGEM2-CC HadGEM2-ES inmcm4 IPSL-CM5A-LR IPSL-CM5A-MR IPSL-CM5B-LR MIROC5 MIROC-ESM MIROC-ESM-CHEM MPI-ESM-LR MPI-ESM-MR MRI-CGCM3 NorESM1-M
+# CDI :: Climate Data Interface version 1.6.3 (http://code.zmaw.de/projects/cdi)
+# source :: ACCESS1-0 2011. Atmosphere: AGCM v1.0 (N96 grid-point, 1.875 degrees EW x approx 1.25 degree NS, 38 levels); ocean: NOAA/GFDL MOM4p1 (nominal 1.0 degree EW x 1.0 degrees NS, tripolar north of 65N, equatorial refinement to 1/3 degree from 10S to 10 N, cosine dependent NS south of 25S, 50 levels); sea ice: CICE4.1 (nominal 1.0 degree EW x 1.0 degrees NS, tripolar north of 65N, equatorial refinement to 1/3 degree from 10S to 10 N, cosine dependent NS south of 25S); land: MOSES2 (1.875 degree EW x 1.25 degree NS, 4 levels
+# CSIRO-BOM_references :: See http://wiki.csiro.au/confluence/display/ACCESS/ACCESS+Publications
+# frequency :: yr
+# experiment_id :: historical+rcp85
+# forcing :: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG,global,o,s,CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)
+# CSIRO-BOM_contact :: The ACCESS wiki: http://wiki.csiro.au/confluence/display/ACCESS/Home. Contact Tony.Hirst@csiro.au regarding the ACCESS coupled climate model. Contact Peter.Uhe@csiro.au regarding ACCESS coupled climate model CMIP5 datasets.
+# initialization_method ::        1
+# physics_version ::        1
+# input_tracking_id :: 7eb1d0c3-f09f-4ce4-86de-5941278d1eb6
+# version_number :: v20120115
+# product :: output
+# experiment :: RCP8.5
+# input_frequency :: day
+# input_creation_date :: 2012-02-29T03:36:10Z
+# project_id :: CMIP5
+# table_id :: Table day (01 February 2012) b6353e9919862612c81d65cae757c88a
+# input_title :: ACCESS1-0 model output prepared for CMIP5 RCP8.5
+# modeling_realm :: atmos
+# cmor_version :: 2.8.0
+# nco_openmp_thread_number ::        1
+# ETCCDI_indices_archive :: Please check http://www.cccma.ec.gc.ca/data/climdex/climdex.shtml for errata or updates.
+# ETCCDI_institution :: Pacific Climate Impacts Consortium
+# ETCCDI_institution_id :: PCIC
+# ETCCDI_software :: climdex.pcic
+# ETCCDI_software_version :: 0.6.1
+# CDO :: Climate Data Operators version 1.6.3 (http://code.zmaw.de/projects/cdo)
+# institution :: KNMI Climate Explorer and multi-model mean computed at KNMI
+# model_id :: multi-model
+# realization :: multi-model mean
+# contact :: multi-model mean computed by oldenborgh@knmi.nl
+# creation_date :: 2014-05-19T08:57:48Z
+# history ::  2018-01-15 22:47:27 bin/get_index CMIP5/annual/altcdd/altcdd_yr_modmean_rcp85_000.nc -43.588042 -43.588042 -19.219086 -19.219086 dipole no minfac 30 nearest lsmask CMIP5/monthly/lsmask_cmip3_144.nc all nomissing cmip5_altcdd_yr_modmean_rcp85_-43.588042E_-19.219086N_n_+++\nMon May 19 10:57:48 2014: ncatted -a acknowledgements,global,d,, -a references,global,d,, -a institution,global,m,c,multi-model mean computed at KNMI -a institute_id,global,d,, -a model_id,global,m,c,multi-model -a parent_experiment_id,global,d,, -a parent_experiment_rip,global,d,, -a contact,global,m,c,multi-model mean computed by oldenborgh@knmi.nl -a tracking_id,global,d,, -a creation_date,global,m,c,2014-05-19T08:57:48Z -a title,global,m,c,Multi-model mean of historical+rcp85 experiments of ACCESS1-0 bcc-csm1-1 CanESM2 CCSM4 CMCC-CM CMCC-CMS CNRM-CM5 CSIRO-Mk3-6-0 GFDL-CM3 GFDL-ESM2G GFDL-ESM2M HadGEM2-CC HadGEM2-ES inmcm4 IPSL-CM5A-LR IPSL-CM5A-MR IPSL-CM5B-LR MIROC5 MIROC-ESM MIROC-ESM-CHEM MPI-ESM-LR MPI-ESM-MR MRI-CGCM3 NorESM1-M -a parent_experiment,global,d,, -a realization,global,m,c,multi-model mean altcdd/altcdd_Amon_modmean_rcp85_000.nc Mon May 19 10:57:44 2014: cdo -f nc4 -z zip -r ensmean altcdd/altcdd_Amon_mod_rcp85_000.nc altcdd/altcdd_Amon_mod_rcp85_001.nc altcdd/altcdd_Amon_mod_rcp85_002.nc altcdd/altcdd_Amon_mod_rcp85_003.nc altcdd/altcdd_Amon_mod_rcp85_004.nc altcdd/altcdd_Amon_mod_rcp85_005.nc altcdd/altcdd_Amon_mod_rcp85_006.nc altcdd/altcdd_Amon_mod_rcp85_007.nc altcdd/altcdd_Amon_mod_rcp85_008.nc altcdd/altcdd_Amon_mod_rcp85_009.nc altcdd/altcdd_Amon_mod_rcp85_010.nc altcdd/altcdd_Amon_mod_rcp85_011.nc altcdd/altcdd_Amon_mod_rcp85_012.nc altcdd/altcdd_Amon_mod_rcp85_013.nc altcdd/altcdd_Amon_mod_rcp85_014.nc altcdd/altcdd_Amon_mod_rcp85_015.nc altcdd/altcdd_Amon_mod_rcp85_016.nc altcdd/altcdd_Amon_mod_rcp85_017.nc altcdd/altcdd_Amon_mod_rcp85_018.nc altcdd/altcdd_Amon_mod_rcp85_019.nc altcdd/altcdd_Amon_mod_rcp85_020.nc altcdd/altcdd_Amon_mod_rcp85_021.nc altcdd/altcdd_Amon_mod_rcp85_022.nc altcdd/altcdd_Amon_mod_rcp85_023.nc altcdd/altcdd_Amon_modmean_rcp85_000.nc Mon May 19 10:57:43 2014: cdo -f nc4 -z zip -r -remapcon,144x72grid.txt aap_13099.nc altcdd/altcdd_Amon_NorESM1-M_rcp85_r1i1p1_144.nc Mon May 19 10:57:43 2014: cdo -f nc4 -z zip -r -seldate,1861-01-01,2100-12-31 altcdd/altcdd_Amon_NorESM1-M_rcp85_r1i1p1.nc aap_13099.nc Mon May 19 10:56:16 2014: cdo -f nc4 -z zip -r copy altcdd/altcdd_Amon_NorESM1-M_historical_r1i1p1.nc ftp.cccma.ec.gc.ca/data/climdex/CMIP5/rcp85/NorESM1-M/r1i1p1/v20110901/historical_NorESM1-M_r1i1p1_v20110901_historical-base_1961-1990/altcddETCCDI_yr_NorESM1-M_rcp85_r1i1p1_2006-2100.nc altcdd/altcdd_Amon_NorESM1-M_rcp85_r1i1p1.nc Mon May 19 10:46:33 2014: cdo -f nc4 -z zip -r copy ftp.cccma.ec.gc.ca/data/climdex/CMIP5/historical/NorESM1-M/r1i1p1/v20110901/base_1961-1990/altcddETCCDI_yr_NorESM1-M_historical_r1i1p1_1850-2005.nc altcdd/altcdd_Amon_NorESM1-M_historical_r1i1p1.nc Processed by climdex.pcic 0.6.1 on Sat Jul 14 14:51:30 2012  Fri Jul 15 11:50:34 2011: ncrcat -O pr_day_NorESM1-M_historical_r1i1p1_18500101-18991231.nc pr_day_NorESM1-M_historical_r1i1p1_19000101-19491231.nc pr_day_NorESM1-M_historical_r1i1p1_19500101-19991231.nc pr_day_NorESM1-M_historical_r1i1p1_20000101-20051231.nc -o pr_day_NorESM1-M_historical_r1i1p1_18500101-20051231.nc 2011-06-01T01:20:15Z CMOR rewrote data to comply with CF standards and CMIP5 requirements.
+# ave_region :: lon=  315.000  317.500, lat=  -20.000  -17.500
+# taking grid box region lon=  315.000  317.500, lat=  -20.000  -17.500
+# altcddETCCDI [days] Maximum Number of Consecutive Days Per Year with Less Than 1mm of Precipitation
+ 1861   68.45908    
+ 1862   64.65000    
+ 1863   68.07244    
+ 1864   69.12341    
+ 1865   72.48825    
+ 1866   68.14234    
+ 1867   65.04425    
+ 1868   74.88103    
+ 1869   69.24371    
+ 1870   68.83295    
+ 1871   77.10693    
+ 1872   73.65365    
+ 1873   68.49211    
+ 1874   66.70396    
+ 1875   73.34742    
+ 1876   67.10394    
+ 1877   68.31342    
+ 1878   65.76372    
+ 1879   70.32333    
+ 1880   68.08764    
+ 1881   76.46145    
+ 1882   68.15680    
+ 1883   69.81332    
+ 1884   69.62542    
+ 1885   70.56040    
+ 1886   73.47467    
+ 1887   70.86796    
+ 1888   61.82138    
+ 1889   69.39969    
+ 1890   73.21350    
+ 1891   63.92097    
+ 1892   65.26115    
+ 1893   72.62956    
+ 1894   65.48525    
+ 1895   61.61410    
+ 1896   74.53551    
+ 1897   70.48804    
+ 1898   67.28845    
+ 1899   70.25537    
+ 1900   74.09795    
+ 1901   74.60271    
+ 1902   71.66190    
+ 1903   68.43103    
+ 1904   69.58424    
+ 1905   70.37088    
+ 1906   64.99007    
+ 1907   69.16071    
+ 1908   71.87891    
+ 1909   64.47990    
+ 1910   72.88916    
+ 1911   67.65832    
+ 1912   65.37447    
+ 1913   67.25056    
+ 1914   63.76192    
+ 1915   75.59060    
+ 1916   62.72651    
+ 1917   72.60802    
+ 1918   71.99191    
+ 1919   66.25417    
+ 1920   67.07484    
+ 1921   68.12334    
+ 1922   64.88354    
+ 1923   65.59972    
+ 1924   62.53901    
+ 1925   68.71198    
+ 1926   75.02182    
+ 1927   70.98056    
+ 1928   77.58826    
+ 1929   72.03281    
+ 1930   72.62988    
+ 1931   68.98232    
+ 1932   66.02526    
+ 1933   65.87621    
+ 1934   61.22126    
+ 1935   66.88889    
+ 1936   68.88640    
+ 1937   67.88475    
+ 1938   75.62103    
+ 1939   69.66659    
+ 1940   74.05573    
+ 1941   63.92175    
+ 1942   69.24107    
+ 1943   68.63464    
+ 1944   69.96212    
+ 1945   70.91028    
+ 1946   70.21033    
+ 1947   71.35426    
+ 1948   69.22614    
+ 1949   76.13485    
+ 1950   67.57005    
+ 1951   72.82708    
+ 1952   70.77328    
+ 1953   66.28359    
+ 1954   70.16251    
+ 1955   70.10147    
+ 1956   75.76909    
+ 1957   77.61441    
+ 1958   70.74695    
+ 1959   64.10299    
+ 1960   68.12599    
+ 1961   67.98540    
+ 1962   74.27525    
+ 1963   71.48380    
+ 1964   69.67564    
+ 1965   70.51874    
+ 1966   74.04679    
+ 1967   67.77347    
+ 1968   68.57887    
+ 1969   71.84801    
+ 1970   69.18443    
+ 1971   65.74898    
+ 1972   61.07710    
+ 1973   65.92979    
+ 1974   67.68093    
+ 1975   66.22100    
+ 1976   72.12220    
+ 1977   62.48431    
+ 1978   74.89821    
+ 1979   67.97382    
+ 1980   71.63345    
+ 1981   68.66404    
+ 1982   69.36141    
+ 1983   68.29463    
+ 1984   66.96720    
+ 1985   65.70261    
+ 1986   73.57266    
+ 1987   76.20444    
+ 1988   71.55276    
+ 1989   68.15972    
+ 1990   69.63135    
+ 1991   74.39616    
+ 1992   72.24623    
+ 1993   71.43774    
+ 1994   80.93927    
+ 1995   70.66828    
+ 1996   74.58343    
+ 1997   73.02700    
+ 1998   77.30486    
+ 1999   67.84109    
+ 2000   74.50184    
+ 2001   70.82285    
+ 2002   73.36268    
+ 2003   72.46907    
+ 2004   73.36359    
+ 2005   76.31258    
+ 2006   74.29484    
+ 2007   78.45186    
+ 2008   80.05560    
+ 2009   70.18047    
+ 2010   76.13066    
+ 2011   74.69238    
+ 2012   74.72156    
+ 2013   72.39828    
+ 2014   78.88383    
+ 2015   78.86047    
+ 2016   79.82655    
+ 2017   74.75253    
+ 2018   76.65325    
+ 2019   75.54935    
+ 2020   75.51857    
+ 2021   76.92857    
+ 2022   75.17049    
+ 2023   73.55460    
+ 2024   81.10851    
+ 2025   69.28158    
+ 2026   72.37701    
+ 2027   73.52733    
+ 2028   72.09570    
+ 2029   80.48981    
+ 2030   84.97880    
+ 2031   91.01701    
+ 2032   72.37132    
+ 2033   84.96707    
+ 2034   81.05868    
+ 2035   77.30476    
+ 2036   77.33191    
+ 2037   80.09751    
+ 2038   81.77576    
+ 2039   80.73877    
+ 2040   78.56397    
+ 2041   79.34840    
+ 2042   74.74869    
+ 2043   78.27814    
+ 2044   80.58216    
+ 2045   87.55795    
+ 2046   80.38637    
+ 2047   71.35793    
+ 2048   80.80796    
+ 2049   77.93997    
+ 2050   86.32998    
+ 2051   78.35249    
+ 2052   83.39784    
+ 2053   86.17207    
+ 2054   83.00899    
+ 2055   81.33250    
+ 2056   87.23367    
+ 2057   86.23320    
+ 2058   89.08174    
+ 2059   85.90398    
+ 2060   83.85245    
+ 2061   76.90898    
+ 2062   89.21278    
+ 2063   85.53432    
+ 2064   85.61567    
+ 2065   84.44228    
+ 2066   85.60209    
+ 2067   88.28242    
+ 2068   85.49238    
+ 2069   82.59177    
+ 2070   93.10828    
+ 2071   91.96746    
+ 2072   82.22034    
+ 2073   80.72915    
+ 2074   88.29195    
+ 2075   90.77884    
+ 2076   88.82600    
+ 2077   88.19642    
+ 2078   86.76040    
+ 2079   88.58651    
+ 2080   91.76149    
+ 2081   88.33311    
+ 2082   93.55341    
+ 2083   79.79682    
+ 2084   91.93018    
+ 2085   89.51838    
+ 2086   89.76806    
+ 2087   91.01205    
+ 2088   99.01163    
+ 2089   102.4219    
+ 2090   89.14850    
+ 2091   95.86694    
+ 2092   92.38731    
+ 2093   90.81984    
+ 2094   92.59184    
+ 2095   93.32847    
+ 2096   97.93648    
+ 2097   89.05607    
+ 2098   97.70040    
+ 2099   99.46902    
+ 2100   94.98480    
