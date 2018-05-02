@@ -2,7 +2,7 @@
 
 % use correlated gaussians to model 1-year of monthly AR parameters (2 per
 % site per variable)
-% use corrrelated gaussians to model daily residuals
+% use correlated gaussians to model daily residuals
 % use iterative approach to improve monthly and daily scale correlations
 % separately
 
@@ -17,7 +17,6 @@ DESEASON=1; % post transform deseason
 %XPXnEns=100; %no. of ensembles used in XPX minimization
 SAVE_ALL=0; % save all model calcs, params...
 
-
 %% Combine Variables
 nVars=length(mv);
 o=[];   % obs data  [nDays in year, nYears, nLocations]
@@ -29,7 +28,6 @@ end
 disp(['Combined var dims= ' num2str(size(o))]);
 
 st=toc_section(st,'Setup');
-
 
 %% Pre transform Deseason
 if PREDESEAS; [op,Smp,Svp]=pre_deseason(o,lbound); end
