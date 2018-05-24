@@ -1,0 +1,1 @@
+function r=reinfer_res(o,c,p)
