@@ -15,20 +15,18 @@ addpath('prog/CLaGARMi/v1')
 
 load data/CORDEX_nobc_clagarm_input/tasmax_MPI_nobc_hist19712000.mat/
 mv(1)=v;
-load data/CORDEX_nobc_clagarm_input/tasmax_MPI_nobc_hist19712000.mat/
+load data/CORDEX_nobc_clagarm_input/appt_MPI_nobc_hist19712000.mat/
 mv(2)=v;
-load image_test_data/Tmax_l15_y30.mat
-mv(3)=v;
 clear v
-sroot='~/git/IMAGE/output/CLaGARMi/out_test_3/'; 
+sroot='~/git/IMAGE/output/CLaGARMi/euro_cordex/'; 
 % ClaGARMi will save its output in 'sroot' folder, also AR fits and Cholesky
 % decomp of AR fits get saved her for improved re-run time
 
 %validateInputData(mv); %I never really developed this validation so skip it.
 
-nyrs=300; % simulation length
+nyrs=30; % simulation length
 nmnths=12; % no 'months' per year
-niters=10; % no. iterations on residual convariance matrix
+niters=1; % no. iterations on residual convariance matrix
 split=1; %used to split very long runs into smaller chunks
 savefilename = strcat(sroot,'out_',num2str(split,'%02d'),'_y',int2str(nyrs));
 
