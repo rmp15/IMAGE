@@ -2,15 +2,11 @@
 % matlab path. CLaGARMi is Correlated Latent Gaussian Auto-Regressive Model
 % (iterative) in case you were wondering.
 
-% Loads a set of arbritrary test data extracted from E-Obs. The metadata
-% in the 'v' struct is all nonsense apart from 'lbound' and 'o', 'o' is the
-% observation data. This should fit and run in a few minutes - at least it
-% does on my 8-core work desktop. There is also a bigger test data set in 
-% the image_test_data folder, here the metadata is used to 'regrid' for mapping.
+% Loads a set of arbritrary test data for Euro CORDEX historical
 
 clear
 
-addpath('data')
+addpath('data/CORDEX_nobc_clagarm_input/')
 addpath('prog/CLaGARMi/v1')
 
 load data/CORDEX_nobc_clagarm_input/tasmax_MPI_nobc_hist19712000.mat/
