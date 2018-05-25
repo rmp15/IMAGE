@@ -2,7 +2,7 @@
 % matlab path. CLaGARMi is Correlated Latent Gaussian Auto-Regressive Model
 % (iterative) in case you were wondering.
 
-% Loads a set of arbritrary test data for Euro CORDEX historical
+% Loads Euro CORDEX historical data and then runs
 
 clear
 
@@ -17,8 +17,6 @@ clear v
 sroot='~/git/IMAGE/output/CLaGARMi/euro_cordex/'; 
 % ClaGARMi will save its output in 'sroot' folder, also AR fits and Cholesky
 % decomp of AR fits get saved her for improved re-run time
-
-%validateInputData(mv); %I never really developed this validation so skip it.
 
 nyrs=30; % simulation length
 nmnths=12; % no 'months' per year
