@@ -6,8 +6,8 @@
 
 clear
 
-addpath('data/CORDEX_nobc_clagarm_input/')
-addpath('prog/CLaGARMi/v1')
+addpath('../../data/CORDEX_nobc_clagarm_input/')
+addpath('v1')
 
 load data/CORDEX_nobc_clagarm_input/tasmax_MPI_nobc_hist19712000.mat/
 mv(1)=v;
