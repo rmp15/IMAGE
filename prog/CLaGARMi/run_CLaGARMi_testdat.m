@@ -50,4 +50,4 @@ o=reshape(o,[],size(o,3));
 s=reshape(s,[],size(s,3));
 oc=corr(o);
 sc=corr(s);
-plot(oc(:),sc(:),'k.');
+%plot(oc(:),sc(:),'k.');
