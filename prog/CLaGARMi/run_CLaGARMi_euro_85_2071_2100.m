@@ -24,11 +24,11 @@ sroot='~/git/IMAGE/output/CLaGARMi/euro_cordex/';
 
 %validateInputData(mv); %I never really developed this validation so skip it.
 
-nyrs=30; % simulation length
+nyrs=300; % simulation length
 nmnths=12; % no 'months' per year
-niters=1; % no. iterations on residual convariance matrix
+niters=10; % no. iterations on residual convariance matrix
 split=1; %used to split very long runs into smaller chunks
-savefilename = strcat(sroot,'out_',num2str(split,'%02d'),'_y',int2str(nyrs));
+savefilename = strcat(sroot,'out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_85_2071_2100');
 
 tic
 mv=CLaGARMi(nyrs,nmnths,niters,mv,sroot);

@@ -1,20 +1,23 @@
 #!/bin/bash
 
 # this script
-# run Euro-Cordex IMAGE
+# run Cordex IMAGE
 
 clear
 
+cd ~/git/IMAGE/prog/CLaGARMi/
+
 #################################################
-# 1. WEIGHTED MEAN CALCULATION
+# 1. EURO-CORDEX RUNS
 #################################################
 
-#echo "indentifying overlap between rasters and counties for pollution processing";
-#
-#for year in "${years[@]}"; do
-#for dname in "${dnames[@]}"; do
+(
 
-# identifies the overlap between grids and counties and creates weighted means
-# MATLAB SCRIPT HERE
+nohup matlab -nosplash -nodesktop -softwareopengl -r run_CLaGARMi_testdat ;
+nohup matlab -nosplash -nodesktop -softwareopengl -r run_CLaGARMi_euro_hist ;
+nohup matlab -nosplash -nodesktop -softwareopengl -r run_CLaGARMi_euro_85_2021_2050 ;
+nohup matlab -nosplash -nodesktop -softwareopengl -r run_CLaGARMi_euro_85_2071_2100 ;
+nohup matlab -nosplash -nodesktop -softwareopengl -r run_CLaGARMi_euro_45_2021_2050 ;
+nohup matlab -nosplash -nodesktop -softwareopengl -r run_CLaGARMi_euro_45_2071_2100 ;
 
-#done; done;
+) &
