@@ -18,7 +18,7 @@ sroot='~/git/IMAGE/output/CLaGARMi/euro_cordex/';
 % ClaGARMi will save its output in 'sroot' folder, also AR fits and Cholesky
 % decomp of AR fits get saved her for improved re-run time
 
-nyrs=30; % simulation length
+nyrs=300; % simulation length
 nmnths=12; % no 'months' per year
 niters=1; % no. iterations on residual convariance matrix
 split=1; %used to split very long runs into smaller chunks

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/documents/~$igures.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_testdat.m" afterPath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_testdat.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m" afterPath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +18,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="run_CLaGARMi_testdat.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="run_CLaGARMi_testdat.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_testdat.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -29,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_CLaGARMi_euro_hist.m" pinned="false" current-in-tab="false">
+      <file leaf-file-name="run_CLaGARMi_euro_hist.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="300">
+              <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -124,8 +123,8 @@
         <option value="$PROJECT_DIR$/prog/functions/data/data_tools.py" />
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_monthly_projection_absolute_change_generate.py" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/v1/CLaGARMi.m" />
-        <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_testdat.m" />
+        <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m" />
       </list>
     </option>
   </component>
@@ -531,13 +530,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00009" summary="second commit">
-      <created>1514575212070</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1514575212070</updated>
-    </task>
     <task id="LOCAL-00010" summary="second commit">
       <created>1514581412110</created>
       <option name="number" value="00010" />
@@ -874,7 +866,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517405633670</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="second commit">
+      <created>1527633872374</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1527633872375</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1268,18 +1267,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_testdat.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
           <folding />
         </state>
       </provider>
