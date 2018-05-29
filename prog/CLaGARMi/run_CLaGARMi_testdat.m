@@ -30,7 +30,7 @@ nyrs=300; % simulation length
 nmnths=12; % no 'months' per year
 niters=10; % no. iterations on residual convariance matrix
 split=1; %used to split very long runs into smaller chunks
-savefilename = strcat(sroot,'out_',num2str(split,'%02d'),'_y',int2str(nyrs)'_euro_test');
+savefilename = strcat(sroot,'out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_test');
 
 tic
 mv=CLaGARMi(nyrs,nmnths,niters,mv,sroot);
