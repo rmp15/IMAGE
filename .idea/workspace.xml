@@ -4,7 +4,6 @@
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/00_bash/run_euro.sh" afterPath="$PROJECT_DIR$/prog/00_bash/run_euro.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_testdat.m" afterPath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_testdat.m" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,8 +41,8 @@
       <file leaf-file-name="run_euro.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/00_bash/run_euro.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="20" selection-end-column="86" />
+            <state relative-caret-position="315">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -564,13 +563,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00012" summary="second commit">
-      <created>1514585268695</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1514585268695</updated>
-    </task>
     <task id="LOCAL-00013" summary="second commit">
       <created>1514586353524</created>
       <option name="number" value="00013" />
@@ -907,7 +899,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527634774145</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="second commit">
+      <created>1527634914503</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1527634914503</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1281,14 +1280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2021_2050.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1305,6 +1296,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2021_2050.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1315,8 +1314,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/00_bash/run_euro.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="20" selection-end-column="86" />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
