@@ -18,7 +18,7 @@ mv(1)=v;
 load data/CORDEX_nobc_clagarm_input/appt_MPI_nobc_8520212050.mat
 mv(2)=v;
 clear v
-sroot='~/git/IMAGE/output/CLaGARMi/euro_cordex/'; 
+sroot='~/data/IMAGE/CLaGARMi/euro_cordex/';
 % ClaGARMi will save its output in 'sroot' folder, also AR fits and Cholesky
 % decomp of AR fits get saved her for improved re-run time
 
