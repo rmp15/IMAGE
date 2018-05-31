@@ -1,4 +1,5 @@
 import scipy.io
+import h5py
 from data.objects.objects import *
 from data.file_paths.file_paths import *
 
@@ -18,4 +19,4 @@ file_path = os.path.join(image_output_local, 'out_' + section + '_y' + str(year_
 
 
 # load files and perform analysis of average rainfall
-data_real = scipy.io.loadmat(file_path)
+data_real = h5py.File(file_path, 'r')
