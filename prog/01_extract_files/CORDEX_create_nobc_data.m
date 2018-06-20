@@ -1,3 +1,7 @@
+% this program
+% processes 5-year cordex files in nc format and converts them into matlab format
+% in preparation for their use in CLaGARMi
+
 % go to correct directory
 cd '~/data/IMAGE/CORDEX/euro_cordex/'
 
@@ -16,7 +20,12 @@ start_years = {1971,2021,2021,2071,2071}
 end_years = {2000,2050,2050,2100,2100}
 scens = {'_historical','_rcp45','_rcp85','_rcp45','_rcp85'}
 
-% loop through above
+% names and boundaries for parameters
+var_names = {'tasmax','huss'}
+lbound = {NaN,0}
+ubound = {NaN,NaN}
+
+% loop through above for different scenarios
 for j = 1:5
 
     % load the year start and end values, plus the scenario
@@ -32,12 +41,7 @@ for j = 1:5
     soil_mois_test = ncread(soil_mois_test_file,'mrso');
     soil_mois_day = soil_mois_test(:,:,1);
 
-    % boundaries for parameters
-    var_names = {'tasmax','huss'}
-    lbound = {NaN,0}
-    ubound = {NaN,NaN}
-
-    % loop through variables to
+    % loop through variables to process for a matlab file
     for vn = 1:2
         clear v
         var_name = var_names{vn}
