@@ -1,12 +1,11 @@
-
-
-
+% load the year start and end values
 start_year = 2071
 end_year = 2100
 tot_years = end_year-start_year
 sy_str = int2str(start_year)
 ey_str = int2str(end_year)
 
+% load the model details
 model_grid = '_EUR-44'
 gcm = '_MPI-M-MPI-ESM-LR'
 scen = '_rcp45'
@@ -14,7 +13,8 @@ ens = '_r2i1p1'
 rcm = '_MPI-CSC-REMO2009_v1'
 time_res = '_day'
 
-soil_mois_test_file = strcat('mrso',model_grid,gcm,'_historical',ens,rcm,time_res,'_','19660101-19701231.nc')
+% not sure what this does at the moment...
+soil_mois_test_file = strcat('mrso/mrso',model_grid,gcm,'_historical',ens,rcm,time_res,'_','19660101-19701231.nc')
 soil_mois_test = ncread(soil_mois_test_file,'mrso');
 soil_mois_day = soil_mois_test(:,:,1);
 
