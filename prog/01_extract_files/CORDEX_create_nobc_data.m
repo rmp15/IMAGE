@@ -5,8 +5,8 @@ cd '~/data/IMAGE/CORDEX/euro_cordex/'
 addpath('~/git/IMAGE/prog/01_extract_files/');
 
 % load the year start and end values
-start_year = 2021
-end_year = 2050
+start_year = 1971
+end_year = 2000
 tot_years = end_year-start_year
 sy_str = int2str(start_year)
 ey_str = int2str(end_year)
