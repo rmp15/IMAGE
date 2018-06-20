@@ -4,6 +4,14 @@ cd '~/data/IMAGE/CORDEX/euro_cordex/'
 % load fiveyear_filereader for processing CORDEX files
 addpath('~/git/IMAGE/prog/01_extract_files/');
 
+% load the model details
+model_grid = '_EUR-44'
+gcm = '_MPI-M-MPI-ESM-LR'
+scen = '_rcp45'
+ens = '_r2i1p1'
+rcm = '_MPI-CSC-REMO2009_v1'
+time_res = '_day'
+
 % define start and end years
 start_years = {1971,2021,2071}
 end_years = {2000,2050,2100}
@@ -15,14 +23,6 @@ for i = 1:3
     tot_years = end_year-start_year
     sy_str = int2str(start_year)
     ey_str = int2str(end_year)
-
-    % load the model details
-    model_grid = '_EUR-44'
-    gcm = '_MPI-M-MPI-ESM-LR'
-    scen = '_rcp45'
-    ens = '_r2i1p1'
-    rcm = '_MPI-CSC-REMO2009_v1'
-    time_res = '_day'
 
     % not sure what this does at the moment...
     soil_mois_test_file = strcat('../zz_legacy/mrso',model_grid,gcm,'_historical',ens,rcm,time_res,'_','19660101-19701231.nc')
