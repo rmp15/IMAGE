@@ -32,7 +32,7 @@ for vn = 1:2
     clear v
     var_name = var_names{vn}
 
-    file_prefix = strcat(var_name,'/',var_name,model_grid,gcm,scen,ens,rcm,time_res,'_')
+    file_prefix = strcat(var_name,'/raw/',var_name,model_grid,gcm,scen,ens,rcm,time_res,'_')
     file_start_years = linspace(1951,2096,30);
     first_file_sy_i = max(find(file_start_years < start_year));
     first_file_sy = file_start_years(first_file_sy_i);
@@ -59,7 +59,7 @@ for vn = 1:2
     data_chunk = cat(2,all_data{1:7});
     save_data = data_chunk(:,start_year_gap:(start_year_gap+tot_years),:);
     v.o = save_data;
-    savefn = strcat(var_name,'/',var_name,gcm,scen,ens,rcm,int2str(start_year),int2str(end_year),'.mat');
+    savefn = strcat(var_name,'/processed/',var_name,gcm,scen,ens,rcm,int2str(start_year),int2str(end_year),'.mat');
     save(savefn,'v','-v7')
     save('lonlat/nobc_lons','new_lons','-v7')
     save('lonlat/nobc_lats','new_lats','-v7')
