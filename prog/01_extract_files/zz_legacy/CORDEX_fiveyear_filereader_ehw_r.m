@@ -1,4 +1,4 @@
-function [europe_heatwave_lons, europe_heatwave_lats, concatted_vari]=CORDEX_fiveyear_filereader_ehw(filename,var_name,soil_mois_day)
+function [europe_heatwave_lons, europe_heatwave_lats, concatted_vari]=CORDEX_fiveyear_filereader_ehw_r(filename,var_name,soil_mois_day)
 
 eurhw_y = [35.17 38.00 36.60 34.32 41.10 47.16 71.58 71.44 59.33 52.45 35.05]
 eurhw_x = [-5.56 8.47 13.79 27.08 30.40 39.23 33.65 8.85 -7.41 -15.91 -12.95]
@@ -6,9 +6,10 @@ eurhw_x = [-5.56 8.47 13.79 27.08 30.40 39.23 33.65 8.85 -7.41 -15.91 -12.95]
 
 landmask = []
 
-
-model_lons = ncread(filename,'rlon');
-model_lats = ncread(filename,'rlat');
+model_lons = ncread(filename,'lon');
+model_lats = ncread(filename,'lat');
+model_rlons = ncread(filename,'rlon');
+model_rlats = ncread(filename,'rlat');
 
 model_pr = ncread(filename,var_name);
 
@@ -30,15 +31,16 @@ end
 
 new_lons = zeros(53,51);
 new_lats = zeros(53,51);
+new_rlons = zeros(53,51);
+new_rlats = zeros(53,51);
 new_var = zeros(53,51,var_size(3));
 
 
 
 for i = 1:53
     for j = 1:51
-        old_i_coord = (i*2)-1
-        old_j_coord = (j*2)-1
-        
+        old_i_coord = (i*2)-1;
+        old_j_coord = (j*2)-1;
         lat4s(1) = model_lats(old_i_coord,old_j_coord);
         lat4s(2) = model_lats(old_i_coord+1,old_j_coord);
         lat4s(3) = model_lats(old_i_coord,old_j_coord+1);
@@ -49,6 +51,16 @@ for i = 1:53
         lon4s(4) = model_lons(old_i_coord+1,old_j_coord+1);
         new_lats(i,j) = mean(lat4s);
         new_lons(i,j) = mean(lon4s);
+        rlat4s(1) = model_rlats(old_j_coord,1);
+        rlat4s(2) = model_rlats(old_j_coord+1,1);
+        rlat4s(3) = model_rlats(old_j_coord,1);
+        rlat4s(4) = model_rlats(old_j_coord+1,1);
+        rlon4s(1) = model_rlons(old_i_coord,1);
+        rlon4s(2) = model_rlons(old_i_coord,1);
+        rlon4s(3) = model_rlons(old_i_coord+1,1);
+        rlon4s(4) = model_rlons(old_i_coord+1,1);
+        new_rlats(i,j) = mean(rlat4s);
+        new_rlons(i,j) = mean(rlon4s);
         new_var4s = [];
         new_var4s(1,:) = model_pr(old_i_coord,old_j_coord,1:var_size(3));
         new_var4s(2,:) = model_pr(old_i_coord+1,old_j_coord,1:var_size(3));
@@ -73,7 +85,7 @@ for i = 1:53
                gc_count = gc_count + 1;
            end
         end
-        if size_nan_gcs(2) >= 3
+        if size_nan_gcs(2) >= 2
             new_var(i,j,:) = nan(1,1,var_size(3));
         else
             snvd = size(new_var_data);
@@ -111,8 +123,8 @@ for x = 1:no_lons
 
                     xlist = [xlist;x];
                     ylist = [ylist;y];
-                    europe_heatwave_lats = [europe_heatwave_lats;new_lats(x,y)];
-                    europe_heatwave_lons = [europe_heatwave_lons;new_lons(x,y)];
+                    europe_heatwave_lats = [europe_heatwave_lats;new_rlats(x,y)];
+                    europe_heatwave_lons = [europe_heatwave_lons;new_rlons(x,y)];
             
                 end
             end
