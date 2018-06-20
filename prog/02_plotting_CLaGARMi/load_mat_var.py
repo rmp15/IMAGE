@@ -4,17 +4,12 @@ import h5py
 from data.file_paths.file_paths import *
 
 
-
 def load_mat_var(step, num_years, continent, scen_name, start_year, end_year):
 
     file_name = 'out_' + step + '_y' + str(num_years) + '_' + continent + '_' + str(scen_name) + '_' + str(start_year) + '_' + str(end_year) + '.mat'
 
-    # print(file_name)
+    loadmat1 = h5py.File(os.path.join(image_output_local, file_name), 'r')
 
-    with h5py.File(os.path.join(image_output_local, file_name), 'r') as f:
-        h = f
-
-    # loadmat1 = io.loadmat(os.path.join(image_output_local, file_name))
     # mat_var_name = var_name + '_s' # how does this work from the file itself?
         
     # var_o = loadmat1[mat_var_name]
