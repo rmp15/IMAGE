@@ -14,7 +14,7 @@ ey_str = int2str(end_year)
 % load the model details
 model_grid = '_EUR-44'
 gcm = '_MPI-M-MPI-ESM-LR'
-scen = '_rcp45'
+scen = '_historical' %scen = '_rcp45'
 ens = '_r2i1p1'
 rcm = '_MPI-CSC-REMO2009_v1'
 time_res = '_day'
