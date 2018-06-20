@@ -1,14 +1,11 @@
-% Run this from the 'IMAGE' dir. You'll need to add the 'v1' dir to the
-% matlab path. CLaGARMi is Correlated Latent Gaussian Auto-Regressive Model
-% (iterative) in case you were wondering.
-
-% Loads Euro CORDEX historical data and then runs
+% Loads Euro CORDEX historical data and then runs CLaGARMi
 
 clear
 
 addpath('../../data/CORDEX_nobc_clagarm_input/')
 addpath('../../prog/CLaGARMi/v1')
 
+% fix the following
 load ../../data/CORDEX_nobc_clagarm_input/tasmax_MPI_nobc_hist19712000.mat
 mv(1)=v;
 load ../../data/CORDEX_nobc_clagarm_input/appt_MPI_nobc_hist19712000.mat
@@ -20,7 +17,7 @@ sroot='~/data/IMAGE/CLaGARMi/euro_cordex/';
 
 nyrs=300; % simulation length
 nmnths=12; % no 'months' per year
-niters=1; % no. iterations on residual convariance matrix
+niters=10; % no. iterations on residual convariance matrix
 split=1; %used to split very long runs into smaller chunks
 savefilename = strcat(sroot,'out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_hist');
 

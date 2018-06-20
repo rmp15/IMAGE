@@ -1,18 +1,11 @@
-% Run this from the 'IMAGE' dir. You'll need to add the 'v1' dir to the
-% matlab path. CLaGARMi is Correlated Latent Gaussian Auto-Regressive Model
-% (iterative) in case you were wondering.
-
-% Loads a set of arbritrary test data extracted from E-Obs. The metadata
-% in the 'v' struct is all nonsense apart from 'lbound' and 'o', 'o' is the
-% observation data. This should fit and run in a few minutes - at least it
-% does on my 8-core work desktop. There is also a bigger test data set in 
-% the image_test_data folder, here the metadata is used to 'regrid' for mapping.
+% Loads Euro CORDEX rcp8.5 2021-2050 data and then runs CLaGARMi
 
 clear
 
 addpath('../../data/CORDEX_nobc_clagarm_input/')
 addpath('../../prog/CLaGARMi/v1')
 
+% fix the following
 load data/CORDEX_nobc_clagarm_input/tasmax_MPI_nobc_8520212050.mat
 mv(1)=v;
 load data/CORDEX_nobc_clagarm_input/appt_MPI_nobc_8520212050.mat
