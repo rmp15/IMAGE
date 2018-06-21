@@ -3,6 +3,7 @@ import os as os
 import h5py
 from data.file_paths.file_paths import *
 import numpy as np
+import pandas as pd
 
 # based on steve's previous code in legacy 'load_mat_var.py'
 def load_clag_output(step, num_years, continent, scen_name, start_year, end_year, var):
@@ -29,7 +30,8 @@ def monthly_data(var):
     month_start_end_inds[1:] = month_end_inds
     month_start_end_inds = month_start_end_inds.astype(int)
 
-    # create data by site and by month for entire time period
+    # create data by site and by month for entire time period of form
+    # monthly_data[month][site]
     var_shape = np.ma.shape(var)
     no_sites = var_shape[0]
     no_years = var_shape[1]
@@ -41,9 +43,6 @@ def monthly_data(var):
             month_data[:, j] = np.ndarray.flatten(var[j, :, month_start_end_inds[i]:month_start_end_inds[i + 1]])
         monthly_data[i] = month_data
     return monthly_data
-
-
-
 
 
 # def load_mat_var_together(step, num_years, continent, scen_name, start_year, end_year, var):
