@@ -18,7 +18,7 @@ def load_mat_var(var_name,model_name,scen_name,ob_sim):
     else:
         return None
        
-    file_name = var_name + ob + model_name + '_' +  scen_name + '.mat'
+    file_name = var_name + ob + model_name + '_' + scen_name + '.mat'
 
     loadmat1 = io.loadmat(file_name)
     mat_var_name = var_name + '_s'
