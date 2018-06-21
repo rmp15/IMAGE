@@ -68,14 +68,14 @@ def monthly_data(var):
     month_start_end_inds[1:] = month_end_inds
     month_start_end_inds = month_start_end_inds.astype(int)
     var_shape = np.ma.shape(var)
-    days_in_year = var_shape[0]
+    no_sites = var_shape[0]
     no_years = var_shape[1]
-    no_sites = var_shape[2]
+    days_in_year = var_shape[2]
     monthly_data = {}
     for i in range(0,12):
         month_data = np.zeros(((month_start_end_inds[i+1]-month_start_end_inds[i])*no_years,no_sites))
-        for j in range(0,no_sites):
-            month_data[:,j] = np.ndarray.flatten(var[month_start_end_inds[i]:month_start_end_inds[i+1],:,j])
+        for j in range(0, no_sites):
+            month_data[:, j] = np.ndarray.flatten(var[month_start_end_inds[i]:month_start_end_inds[i+1],:,j])
         monthly_data[i] = month_data
     return monthly_data
     
