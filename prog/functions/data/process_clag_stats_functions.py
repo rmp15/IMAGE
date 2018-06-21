@@ -3,6 +3,7 @@ import os as os
 import h5py
 from data.file_paths.file_paths import *
 import numpy as np
+import pandas as pd
 
 
 # based on steve's previous code in legacy 'load_mat_var.py'
@@ -46,5 +47,27 @@ def monthly_data(var):
     return monthly_data
 
 
-# this function will cycle through each site and find the mean value of a defined ensemble
-def
+# this function will cycle through each site per month and find the mean value of a defined ensemble
+def monthly_summary(var,ens_start,ens_end):
+
+    # figure out how to chunk
+
+    # load data
+    data = monthly_data(var)
+
+    # number of sites
+    no_sites = data[1][1,:]
+
+    # create empty frame to populate with average values per month at each site
+    data_avg = pd.DataFrame(columns=['month', 'site', 'value'])
+    for month in range(0, 12):
+        for site in range(0, no_sites):
+            mean_value = np.mean(data[month][:, site])
+            print(month, site, mean_value)
+            # print(pd.DataFrame({'month':month,'site':site,'value':mean_value},index=[0]))
+            pd.concat(data_avg, pd.DataFrame({'month': month, 'site': site, 'value': mean_value}, index=[0]))
+
+
+
+
+
