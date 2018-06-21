@@ -4,7 +4,7 @@ import h5py
 from data.file_paths.file_paths import *
 import numpy as np
 import pandas as pd
-
+import ggplot
 
 # based on steve's previous code in legacy 'load_mat_var.py'
 def load_clag_output(step, num_years, continent, scen_name, start_year, end_year, var):
@@ -67,3 +67,4 @@ def monthly_summary(var):
             data_avg = pd.concat([data_avg, data_append])
 
     return data_avg
+
