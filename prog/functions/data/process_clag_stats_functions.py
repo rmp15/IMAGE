@@ -20,6 +20,7 @@ def load_clag_output(step, num_years, continent, scen_name, start_year, end_year
     return o_array, s_array
 
 
+# this function will process the data into a format monthly_data[month][site]
 def monthly_data(var):
 
     # information for how to create the monthly array
@@ -43,3 +44,7 @@ def monthly_data(var):
             month_data[:, j] = np.ndarray.flatten(var[j, :, month_start_end_inds[i]:month_start_end_inds[i + 1]])
         monthly_data[i] = month_data
     return monthly_data
+
+
+# this function will cycle through each site and find the mean value of a defined ensemble
+def
