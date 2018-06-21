@@ -56,15 +56,13 @@ def monthly_summary(var):
     data = monthly_data(var)
 
     # number of sites
-    no_sites = data[1][1, :]
+    no_sites = len(data[1][1, :])
 
     # create empty frame to populate with average values per month at each site
     data_avg = pd.DataFrame(columns=['month', 'site', 'value'])
     for month in range(0, 12):
         for site in range(0, no_sites):
             mean_value = np.mean(data[month][:, site])
-            print(month, site, mean_value)
-            # print(pd.DataFrame({'month':month,'site':site,'value':mean_value},index=[0]))
             data_append = pd.DataFrame({'month': month, 'site': site, 'value': mean_value}, index=[0])
             data_avg = pd.concat([data_avg, data_append])
 
