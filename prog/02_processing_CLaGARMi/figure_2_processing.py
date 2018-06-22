@@ -5,17 +5,28 @@
 
 from prog.functions.data.process_clag_stats_functions import *
 
+# variables for processing CLaGARMi output PUT SOMEWHERE ELSE IN SOME SORT OF DATA FILE
+metric = 'appt'
+continent = 'euro'
+scen = 'hist'
+year_start = 1971
+year_end = 2000
+
 # loading data for both observations and simulations
-obs_data, sim_data = load_clag_output('01', 300, 'euro', 'hist', 1971, 2000, 'tasmax')
+obs_data, sim_data = load_clag_output('01', 300, continent, scen, year_start, year_end, metric)
 
 # processing monthly means for the CORDEX observation data
 obs_data_processed = monthly_summary(obs_data, 30, 0)
+
+# processing monthly means for the CORDEX sim data
+# with summary statistics for the entire period and for ensembles chunks
 sim_data_processed_all, sim_data_processed_ens = monthly_summary(sim_data, 30, 1)
-obs_data_processed.columns = ['month', 'site', 'value_obs']
-sim_data_processed_all.columns = ['month', 'site', 'value_sim']
+obs_data_processed.columns = ['mean_value_obs', 'month', 'sd_value_obs', 'site']
+sim_data_processed_all.columns = ['mean_value_sim', 'month', 'sd_value_sim', 'site']
 
-# combine two tables temporarily
-obs_sim_data_processed = pd.merge(obs_data_processed,sim_data_processed_all)
+# combine two tables of complete values temporarily (next iteration process statistics for ensembles here not in R)
+obs_sim_data_processed = pd.merge(obs_data_processed, sim_data_processed_all)
 
-# output to csv
-obs_sim_data_processed.to_csv(os.path.join('test.csv'))
+# output to merged obs and sim values to csv
+obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_sim_merged.csv')
+sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_sim_ens.csv')
