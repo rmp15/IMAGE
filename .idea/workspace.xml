@@ -579,13 +579,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00054" summary="second commit">
-      <created>1517160243511</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1517160243511</updated>
-    </task>
     <task id="LOCAL-00055" summary="second commit">
       <created>1517190119990</created>
       <option name="number" value="00055" />
@@ -922,7 +915,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529656575770</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="extracting values from clagarmi script">
+      <created>1529659984707</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1529659984707</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TodoView">
