@@ -44,19 +44,21 @@ def monthly_data(var):
         for j in range(0, no_sites):
             month_data[:, j] = np.ndarray.flatten(var[j, :, month_start_end_inds[i]:month_start_end_inds[i + 1]])
         monthly_data[i] = month_data
-    return monthly_data
+    return monthly_data, no_years, no_sites
 
 
 # this function will cycle through each site per month and find the mean value of a defined ensemble
-def monthly_summary(var):
+def monthly_summary(var,ens_length):
 
-    # figure out how to chunk
+    # load data and number of years
+    data, no_years, no_sites = monthly_data(var)
 
-    # load data
-    data = monthly_data(var)
+    # divide into ens_length-year ensembles (e.g. if no_years = 300, no_ens = 300/30 = 10
+    no_ens = int(no_years / ens_length)
 
     # number of sites
-    no_sites = len(data[1][1, :])
+    # no_sites = len(data[1][1, :])
+    no_sites = no_sites
 
     # create empty frame to populate with average values per month at each site
     data_avg = pd.DataFrame(columns=['month', 'site', 'value'])
