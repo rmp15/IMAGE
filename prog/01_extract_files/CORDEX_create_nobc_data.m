@@ -23,7 +23,7 @@ scens = {'_historical','_rcp45','_rcp85','_rcp45','_rcp85'}
 % names and boundaries for parameters
 var_names = {'tasmax','huss','sfcWindmax'}
 lbound = {NaN,0,0}
-ubound = {NaN,NaN,Nan}
+ubound = {NaN,NaN,NaN}
 
 % loop through above for different scenarios
 for j = 1:5

@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/documents/~$AGE_heat_wave_paper.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/documents/~$igures.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prog/00_bash/wget/wget-20180620175620.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prog/00_bash/wget/wget-20180620175623.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prog/00_bash/wget/wget-20180620175626.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prog/00_bash/wget/wget-20180620175630.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prog/00_bash/wget/wget-20180620175633.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prog/00_bash/wget/wget-20180620175636.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prog/00_bash/wget/wget-20180620175640.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prog/00_bash/wget/wget-20180620175643.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prog/00_bash/wget/wget-20180620175646.sh" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m" afterPath="$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m" />
     </list>
@@ -33,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/raw_file_process.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="49" />
+              <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -42,8 +31,8 @@
       <file leaf-file-name="CORDEX_create_nobc_data.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="16" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+            <state relative-caret-position="315">
+              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -153,7 +142,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="30" />
+    <option name="y" value="35" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -522,13 +512,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00055" summary="second commit">
-      <created>1517190119990</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1517190119990</updated>
-    </task>
     <task id="LOCAL-00056" summary="second commit">
       <created>1517194052322</created>
       <option name="number" value="00056" />
@@ -865,7 +848,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529659984707</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="extracting values from clagarmi script">
+      <created>1529953103429</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1529953103430</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TodoView">
@@ -878,10 +868,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="30" y="35" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24606581" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24606581" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1285,15 +1275,15 @@
     <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/raw_file_process.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="49" />
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="16" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+        <state relative-caret-position="315">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding />
         </state>
       </provider>
