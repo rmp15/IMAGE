@@ -2,43 +2,56 @@
 
 clear
 
+addpath('~/git/IMAGE/prog/01_extract_files/');
 addpath('../../data/CORDEX_nobc_clagarm_input/')
 addpath('../../prog/CLaGARMi/v1')
 
-% fix the following
-load data/CORDEX_nobc_clagarm_input/tasmax_MPI_nobc_8520712100.mat
+var_names = {'tasmax','huss','sfcWindmax'};
+
+% generalise loading process
+load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/tasmax/processed/tasmax_MPI-M-MPI-ESM-LR_rcp85_r2i1p1_MPI-CSC-REMO2009_v120712100.mat
 mv(1)=v;
-load data/CORDEX_nobc_clagarm_input/appt_MPI_nobc_8520712100.mat
+load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/huss/processed/huss_MPI-M-MPI-ESM-LR_rcp85_r2i1p1_MPI-CSC-REMO2009_v120712100.mat
 mv(2)=v;
+load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/sfcWindmax/processed/sfcWindmax_MPI-M-MPI-ESM-LR_rcp85_r2i1p1_MPI-CSC-REMO2009_v120712100.mat
+mv(3)=v;
 clear v
-sroot='~/data/IMAGE/CLaGARMi/euro_cordex/';
+
 % ClaGARMi will save its output in 'sroot' folder, also AR fits and Cholesky
 % decomp of AR fits get saved her for improved re-run time
-
-%validateInputData(mv); %I never really developed this validation so skip it.
+sroot='~/data/IMAGE/CLaGARMi/euro_cordex_output/';
 
 nyrs=300; % simulation length
 nmnths=12; % no 'months' per year
 niters=10; % no. iterations on residual convariance matrix
 split=1; %used to split very long runs into smaller chunks
-savefilename = strcat(sroot,'out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_85_2071_2100');
+savefilename = strcat('out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_85_2071_2100');
 
 tic
 mv=CLaGARMi(nyrs,nmnths,niters,mv,sroot);
 toc
 
 disp('Saving...');
-save(savefilename,'mv','-v7.3');
+save(strcat(sroot,'combined_output/',savefilename),'mv','-v7.3');
 
+% save individual outputs of variables
+tasmax_s_fn = strcat(sroot,'tasmax/',savefilename,'_tasmax_s');
+tasmax_o_fn = strcat(sroot,'tasmax/',savefilename,'_tasmax_o');
+tasmax_s = mv(1).s;
+tasmax_o = mv(1).o;
+save(tasmax_s_fn,'tasmax_s','-v7.3');
+save(tasmax_o_fn,'tasmax_o','-v7.3');
 
-%% 
-% quick check of intra variable correlations to demonstrate effect of
-% iteration, compare nIter=1 to 10
-i=3;
-o=mv(i).o;
-s=mv(i).s;
-o=reshape(o,[],size(o,3));
-s=reshape(s,[],size(s,3));
-oc=corr(o);
-sc=corr(s);
-plot(oc(:),sc(:),'k.');
+huss_s_fn = strcat(sroot,'huss/',savefilename,'_huss_s');
+huss_o_fn = strcat(sroot,'huss/',savefilename,'_huss_o');
+huss_s = mv(2).s;
+huss_o = mv(2).o;
+save(huss_s_fn,'huss_s','-v7.3');
+save(huss_o_fn,'huss_o','-v7.3');
+
+sfcWindmax_s_fn = strcat(sroot,'sfcWindmax/',savefilename,'_huss_s');
+sfcWindmax_o_fn = strcat(sroot,'sfcWindmax/',savefilename,'_huss_o');
+sfcWindmax_s = mv(3).s;
+sfcWindmax_o = mv(3).o;
+save(sfcWindmax_s_fn,'sfcWindmax_s','-v7.3');
+save(sfcWindmax_o_fn,'sfcWindmax_o','-v7.3');
