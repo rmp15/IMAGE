@@ -49,8 +49,8 @@ huss_o = mv(2).o;
 save(huss_s_fn,'huss_s','-v7.3');
 save(huss_o_fn,'huss_o','-v7.3');
 
-sfcWindmax_s_fn = strcat(sroot,'sfcWindmax/',savefilename,'_huss_s');
-sfcWindmax_o_fn = strcat(sroot,'sfcWindmax/',savefilename,'_huss_o');
+sfcWindmax_s_fn = strcat(sroot,'sfcWindmax/',savefilename,'_sfcWindmax_s');
+sfcWindmax_o_fn = strcat(sroot,'sfcWindmax/',savefilename,'_sfcWindmax_o');
 sfcWindmax_s = mv(3).s;
 sfcWindmax_o = mv(3).o;
 save(sfcWindmax_s_fn,'sfcWindmax_s','-v7.3');

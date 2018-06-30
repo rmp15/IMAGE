@@ -14,4 +14,4 @@ minas_real_climate_data = os.path.join(project,'data/minas_brazil/')
 knmi_elnino = os.path.join(project, 'data/knmi/elnino/')
 
 # IMAGE output data
-image_output_local = os.path.join('/Users/rmiparks/data/IMAGE/CLaGARMi/euro_cordex/')
+image_output_local = os.path.join('/Users/rmiparks/data/IMAGE/CLaGARMi/euro_cordex_output/')

@@ -5,7 +5,7 @@ library(plyr)
 month.short <- c('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
 
 # need to generalise to any location any ensemble etc.
-var = 'appt'
+var = 'huss'
 
 input.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures_processing/'
 output.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures/'
@@ -29,8 +29,8 @@ dat.sim.ens$month.short <- reorder(dat.sim.ens$month.short,dat.sim.ens$month)
 
 pdf(paste0(output.dir,var,'_mean.pdf'),paper='a4r',height=0,width=0)
 print(ggplot() +
-    geom_point(data=dat.obs.sim,aes(x=mean_value_obs-273.15,y=mean_value_sim-273.15),size=0.5) +
-    geom_errorbar(data=dat.sim.ens,aes(x=mean_value_obs-273.15,ymax=mean_max-273.15,ymin=mean_min-273.15),alpha=0.2,col='dark blue') +
+    geom_point(data=dat.obs.sim,aes(x=mean_value_obs,y=mean_value_sim),size=0.5) +
+    geom_errorbar(data=dat.sim.ens,aes(x=mean_value_obs,ymax=mean_max,ymin=mean_min),alpha=0.2,col='dark blue') +
     geom_abline(col='red',alpha='0.5') +
     ggtitle(paste0(var,' mean')) +
     xlab('CORDEX') + ylab('IMAGE simulated') +

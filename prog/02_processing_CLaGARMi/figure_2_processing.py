@@ -6,14 +6,16 @@
 from prog.functions.data.process_clag_stats_functions import *
 
 # variables for processing CLaGARMi output PUT SOMEWHERE ELSE IN SOME SORT OF DATA FILE
-metric = 'appt'
+slice = '01'
+years_sim = 300
+metric = 'sfcWindmax'
 continent = 'euro'
 scen = 'hist'
 year_start = 1971
 year_end = 2000
 
 # loading data for both observations and simulations
-obs_data, sim_data = load_clag_output('01', 300, continent, scen, year_start, year_end, metric)
+obs_data, sim_data = load_clag_output(slice, years_sim, continent, scen, year_start, year_end, metric)
 
 # processing monthly means for the CORDEX observation data
 obs_data_processed = monthly_summary(obs_data, 30, 0)
