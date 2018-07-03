@@ -4,15 +4,26 @@
 # processes monthly means for each of the 30-year ensembles of IMAGE data
 
 from prog.functions.data.process_clag_stats_functions import *
+import sys
+
+# get total number of arguments
+total = len(sys.argv)
+
+# get the arguments list
+cmdargs = str(sys.argv)
+
+# create script inputs from arguments
+age_arg = sys.argv[1]
+sex_arg = int(float((sys.argv[2])))
 
 # variables for processing CLaGARMi output PUT SOMEWHERE ELSE IN SOME SORT OF DATA FILE
-slice = '01'
-years_sim = 300
-metric = 'sfcWindmax'
-continent = 'euro'
-scen = 'hist'
-year_start = 1971
-year_end = 2000
+slice = sys.argv[1]
+years_sim = int(float((sys.argv[2])))
+metric = sys.argv[3]
+continent = sys.argv[4]
+scen = sys.argv[5]
+year_start = int(float((sys.argv[6])))
+year_end = int(float((sys.argv[7])))
 
 # loading data for both observations and simulations
 obs_data, sim_data = load_clag_output(slice, years_sim, continent, scen, year_start, year_end, metric)
