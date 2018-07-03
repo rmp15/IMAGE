@@ -3,3 +3,4 @@ ggplot
 numpy
 pandas
 sys
+scipy
