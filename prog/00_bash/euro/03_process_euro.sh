@@ -20,4 +20,11 @@ declare -i end_year = 2000
 # 1. EURO-CORDEX RUNS
 #################################################
 
-python ~/git/IMAGE/prog/02_processing_CLaGARMi/figure_2_processing.py $slice $year_sim $metric $continent $scen $start_year $end_year
+for years_sim in "${years_sims[@]}"; do
+for metric in "${metrics[@]}"; do
+for continent in "${continents[@]}"; do
+for scen in "${scens[@]}"; do
+
+python ~/git/IMAGE/prog/02_processing_CLaGARMi/figure_2_processing.py $slice $years_sim $metric $continent $scen $start_year $end_year
+
+done; done; done; done;
