@@ -12,11 +12,7 @@ total = len(sys.argv)
 # get the arguments list
 cmdargs = str(sys.argv)
 
-# create script inputs from arguments
-age_arg = sys.argv[1]
-sex_arg = int(float((sys.argv[2])))
-
-# variables for processing CLaGARMi output PUT SOMEWHERE ELSE IN SOME SORT OF DATA FILE
+# variables for processing CLaGARMi output
 slice = sys.argv[1]
 years_sim = int(float((sys.argv[2])))
 metric = sys.argv[3]
