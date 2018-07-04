@@ -13,13 +13,13 @@ total = len(sys.argv)
 cmdargs = str(sys.argv)
 
 # variables for processing CLaGARMi output
-slice = sys.argv[1]
-years_sim = int(float((sys.argv[2])))
-metric = sys.argv[3]
-continent = sys.argv[4]
-scen = sys.argv[5]
-year_start = int(float((sys.argv[6])))
-year_end = int(float((sys.argv[7])))
+slice = sys.argv[1]                             # slice = '01'
+years_sim = int(float((sys.argv[2])))           # year_sim = 6000
+metric = sys.argv[3]                            # metric = 'tasmax'
+continent = sys.argv[4]                         # contintent = 'euro'
+scen = sys.argv[5]                              # scen = 'hist'
+year_start = int(float((sys.argv[6])))          # year_start = 1971
+year_end = int(float((sys.argv[7])))            # year_end = 2000
 
 # loading data for both observations and simulations
 obs_data, sim_data = load_clag_output(slice, years_sim, continent, scen, year_start, year_end, metric)
