@@ -62,6 +62,15 @@ dat.sim.ens = ddply(dat.sim.ens,.(month,site),summarise,mean_max=max(mean_max),m
 
 dat.sim.ens = merge(dat.obs.sim,dat.sim.ens,by=c('month','site'),all.x=0)
 
+if(metric=='tasmax'){
+    dat.obs.sim$mean_value_obs = dat.obs.sim$mean_value_obs - 273.15
+    dat.obs.sim$mean_value_sim = dat.obs.sim$mean_value_sim - 273.15
+    dat.sim.ens$mean_value_obs = dat.sim.ens$mean_value_obs - 273.15
+    dat.sim.ens$mean_value_sim = dat.sim.ens$mean_value_sim - 273.15
+    dat.sim.ens$mean_max = dat.sim.ens$mean_max - 273.15
+    dat.sim.ens$mean_min = dat.sim.ens$mean_min - 273.15
+}
+
 # add short names of months
 dat.obs.sim$month.short <- mapvalues(dat.obs.sim$month,from=sort(unique(dat.obs.sim$month)),to=month.short)
 dat.obs.sim$month.short <- reorder(dat.obs.sim$month.short,dat.obs.sim$month)
