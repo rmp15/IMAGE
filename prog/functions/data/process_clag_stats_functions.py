@@ -4,7 +4,7 @@ import h5py
 from data.file_paths.file_paths import *
 import numpy as np
 import pandas as pd
-import ggplot
+import math
 
 # based on steve's previous code in legacy 'load_mat_var.py'
 def load_clag_output(step, num_years, continent, scen_name, start_year, end_year, var):
@@ -54,10 +54,10 @@ def monthly_summary(var, ens_length, ob_sim):
     data, no_years, no_sites = monthly_data(var)
 
     # divide into ens_length-year ensembles (e.g. if no_years = 300, no_ens = 300/30 = 10
-    no_ens = int(no_years / ens_length)
+    no_ens = int(math.floor(no_years / ens_length))
 
     # number of sites
-    no_sites = no_sites  # no_sites = len(data[1][1, :])
+    no_sites = no_sites
 
     # 1. calculate average for entire period
 

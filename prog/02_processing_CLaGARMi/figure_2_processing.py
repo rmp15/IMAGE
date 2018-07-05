@@ -14,9 +14,9 @@ cmdargs = str(sys.argv)
 
 # variables for processing CLaGARMi output
 slice = sys.argv[1]                             # slice = '01'
-years_sim = int(float((sys.argv[2])))           # year_sim = 6000
+years_sim = int(float((sys.argv[2])))           # years_sim = 4000
 metric = sys.argv[3]                            # metric = 'tasmax'
-continent = sys.argv[4]                         # contintent = 'euro'
+continent = sys.argv[4]                         # continent = 'euro'
 scen = sys.argv[5]                              # scen = 'hist'
 year_start = int(float((sys.argv[6])))          # year_start = 1971
 year_end = int(float((sys.argv[7])))            # year_end = 2000
@@ -33,9 +33,9 @@ sim_data_processed_all, sim_data_processed_ens = monthly_summary(sim_data, 30, 1
 obs_data_processed.columns = ['mean_value_obs', 'month', 'sd_value_obs', 'site']
 sim_data_processed_all.columns = ['mean_value_sim', 'month', 'sd_value_sim', 'site']
 
-# combine two tables of complete values temporarily (next iteration process statistics for ensembles here not in R)
+# combine two tables of complete values
 obs_sim_data_processed = pd.merge(obs_data_processed, sim_data_processed_all)
 
 # output to merged obs and sim values to csv
-obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_sim_merged.csv')
-sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_sim_ens.csv')
+obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_obs_sim_merged.csv')
+sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_sim_ens.csv')
