@@ -22,10 +22,6 @@ month.short <- c('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','No
 input.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures_processing/'
 output.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures/'
 
-#################################
-# Figure 2
-#################################
-
 # load data for both comparing entire sim and obs
 dat.obs.sim.1 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim1,'yrs__obs_sim_merged.csv'))
 dat.obs.sim.2 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim2,'yrs__obs_sim_merged.csv'))
@@ -76,6 +72,18 @@ dat.obs.sim$month.short <- mapvalues(dat.obs.sim$month,from=sort(unique(dat.obs.
 dat.obs.sim$month.short <- reorder(dat.obs.sim$month.short,dat.obs.sim$month)
 dat.sim.ens$month.short <- mapvalues(dat.sim.ens$month,from=sort(unique(dat.sim.ens$month)),to=month.short)
 dat.sim.ens$month.short <- reorder(dat.sim.ens$month.short,dat.sim.ens$month)
+
+# calculate mean bias and RMSE of variable simulated
+bias.mean = with(dat.sim.ens,mean(mean_value_sim-mean_value_obs))
+bias.sd = with(dat.sim.ens,mean(sd_value_sim-sd_value_obs))
+rmse.mean = with(dat.sim.ens,mean((mean_value_sim-mean_value_obs)^2))
+rmse.sd = with(dat.sim.ens,mean((sd_value_sim-sd_value_obs)^2))
+
+print(c(bias.mean,bias.sd,rmse.mean,rmse.sd))
+
+######### #########################
+# Figure 2
+#################################
 
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_mean.pdf'),paper='a4r',height=0,width=0)
 print(ggplot() +

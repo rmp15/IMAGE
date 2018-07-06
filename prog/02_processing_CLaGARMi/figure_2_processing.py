@@ -15,7 +15,7 @@ cmdargs = str(sys.argv)
 # variables for processing CLaGARMi output
 slice = sys.argv[1]                             # slice = '01'
 years_sim = int(float((sys.argv[2])))           # years_sim = 4000
-metric = sys.argv[3]                            # metric = 'tasmax'
+metric = sys.argv[3]                            # metric = 'sfcWindmax'
 continent = sys.argv[4]                         # continent = 'euro'
 scen = sys.argv[5]                              # scen = 'hist'
 year_start = int(float((sys.argv[6])))          # year_start = 1971
