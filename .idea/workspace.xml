@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/write_ups/02_european_heatwave_paper/words/01_climatic_change/10_entire/02_first_revisions/main_paper/Figures 2018 06 20.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/write_ups/02_european_heatwave_paper/words/01_climatic_change/10_entire/01_initial_upload/~$igures.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/write_ups/02_european_heatwave_paper/words/01_climatic_change/10_entire/02_first_revisions/figures/~$gures 2018 07 06.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/write_ups/02_european_heatwave_paper/words/01_climatic_change/10_entire/02_first_revisions/main_paper/~$AGE_heat_wave_paper 2018 07 05.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/00_bash/euro/03_process_euro.sh" afterPath="$PROJECT_DIR$/prog/00_bash/euro/03_process_euro.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_2_processing.py" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_2_processing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R" afterPath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" afterPath="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,53 +21,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="03_process_euro.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/03_process_euro.sh">
+      <file leaf-file-name="run_CLaGARMi_euro_45_2021_2050.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_45_2021_2050.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="405">
+              <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="figure_2_processing.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_2_processing.py">
+      <file leaf-file-name="02_run_euro.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <element signature="e#206#268#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="72" column="23" lean-forward="false" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="04_plot_euro.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/04_plot_euro.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="10" lean-forward="false" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="figures.R" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="121" selection-end-column="9" />
+            <state relative-caret-position="285">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -166,21 +134,21 @@
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_45_2021_2050.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2021_2050.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100.m" />
-        <option value="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
-        <option value="$PROJECT_DIR$/prog/00_bash/euro/04_plot_euro.sh" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/03_process_euro.sh" />
-        <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_2_processing.py" />
+        <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R" />
+        <option value="$PROJECT_DIR$/prog/00_bash/euro/04_plot_euro.sh" />
+        <option value="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1523" />
-    <option name="y" value="-427" />
+    <option name="x" value="1440" />
+    <option name="y" value="-512" />
     <option name="width" value="1280" />
-    <option name="height" value="877" />
+    <option name="height" value="1024" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -200,6 +168,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,95 +210,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="functions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMAGE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMAGE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMAGE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMAGE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="03_plotting_CLaGARMi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMAGE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMAGE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="02_processing_CLaGARMi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMAGE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMAGE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="00_bash" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="euro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -344,7 +241,7 @@
       <recent name="$PROJECT_DIR$/prog/CLaGARMi/v1" />
     </key>
   </component>
-  <component name="RunManager" selected="Bash.03_process_euro.sh">
+  <component name="RunManager" selected="Bash.04_plot_euro.sh">
     <configuration default="false" name="weather_station_yearly_data_generate" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -358,23 +255,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="IMAGE" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_wet_days.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="weather_station_yearly_generate_consecutive_dry_days" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/prog/scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="IMAGE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_generate_consecutive_dry_days.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -419,6 +299,17 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/prog/00_bash/euro" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog/00_bash/euro/03_process_euro.sh" />
+      <option name="PARAMETERS" value="" />
+      <module name="IMAGE" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="04_plot_euro.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/prog/00_bash/euro" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prog/00_bash/euro/04_plot_euro.sh" />
       <option name="PARAMETERS" value="" />
       <module name="IMAGE" />
       <envs />
@@ -579,18 +470,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.weather_station_yearly_data_generate" />
-      <item index="1" class="java.lang.String" itemvalue="Python.weather_station_yearly_generate_consecutive_dry_days" />
-      <item index="2" class="java.lang.String" itemvalue="Python.weather_station_monthly_projection_absolute_change_generate" />
-      <item index="3" class="java.lang.String" itemvalue="Python.figure_2_processing" />
-      <item index="4" class="java.lang.String" itemvalue="Bash.03_process_euro.sh" />
+      <item index="1" class="java.lang.String" itemvalue="Python.weather_station_monthly_projection_absolute_change_generate" />
+      <item index="2" class="java.lang.String" itemvalue="Python.figure_2_processing" />
+      <item index="3" class="java.lang.String" itemvalue="Bash.03_process_euro.sh" />
+      <item index="4" class="java.lang.String" itemvalue="Bash.04_plot_euro.sh" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Bash.03_process_euro.sh" />
-        <item index="1" class="java.lang.String" itemvalue="Python.figure_2_processing" />
-        <item index="2" class="java.lang.String" itemvalue="Python.weather_station_monthly_projection_absolute_change_generate" />
-        <item index="3" class="java.lang.String" itemvalue="Python.weather_station_yearly_data_generate" />
-        <item index="4" class="java.lang.String" itemvalue="Python.weather_station_yearly_generate_consecutive_dry_days" />
+        <item index="0" class="java.lang.String" itemvalue="Bash.04_plot_euro.sh" />
+        <item index="1" class="java.lang.String" itemvalue="Bash.03_process_euro.sh" />
+        <item index="2" class="java.lang.String" itemvalue="Python.figure_2_processing" />
+        <item index="3" class="java.lang.String" itemvalue="Python.weather_station_monthly_projection_absolute_change_generate" />
+        <item index="4" class="java.lang.String" itemvalue="Python.weather_station_yearly_data_generate" />
       </list>
     </recent_temporary>
   </component>
@@ -607,13 +498,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
-    </task>
-    <task id="LOCAL-00080" summary="second commit">
-      <created>1529521260992</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1529521260992</updated>
     </task>
     <task id="LOCAL-00081" summary="second commit">
       <created>1529521950692</created>
@@ -951,7 +835,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530808631261</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="extracting values from clagarmi script">
+      <created>1530874377712</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1530874377723</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TodoView">
@@ -964,28 +855,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1523" y="-427" width="1280" height="877" extended-state="0" />
-    <editor active="false" />
+    <frame x="1440" y="-512" width="1280" height="1024" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29159936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24096386" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47388536" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.42648253" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="8" y="571" width="1198" height="226" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3899371" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39922178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.42648253" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="8" y="571" width="1198" height="226" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3259318" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39922178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1033,13 +924,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/prog/zz_legacy/heatwave_python/rpec_TEST.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/zz_legacy/heatwave_python/v2_heatwave_rps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="842">
@@ -1163,13 +1047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prog/zz_legacy/heatwave_python/apparent_temp_c.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1308,13 +1185,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_45_2021_2050.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2021_2050.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1333,14 +1203,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/zz_legacy/heatwave_python/apparent_temp_c.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/zz_legacy/heatwave_python/country_borders.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/03_process_euro.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh">
+    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_2_processing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state relative-caret-position="600">
+          <caret line="40" column="15" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#206#268#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1354,35 +1248,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/04_plot_euro.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="10" lean-forward="false" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/03_process_euro.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="180">
+          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="121" selection-end-column="9" />
+        <state relative-caret-position="225">
+          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_2_processing.py">
+    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_45_2021_2050.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#206#268#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="405">
+          <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -9,9 +9,9 @@ clear
 
 # arguments for processing of files
 declare slice='01'
-declare -y years_sim1=6000
-declare -y years_sim2=4000
-declare -a metrics=('tasmax') # 'huss' 'sfcWindmax')
+declare -i years_sim1=6000
+declare -i years_sim2=4000
+declare -a metrics=('sfcWindmax') # 'huss' 'sfcWindmax')
 declare -a continents=('euro')
 declare -a scens=('hist')
 declare -i start=1971
@@ -25,6 +25,6 @@ for metric in "${metrics[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
-Rscript ~/git/IMAGE/prog/02_processing_CLaGARMi/figures.R $slice $years_sim1 $years_sim2 $metric $continent $scen $start $end
+Rscript ~/git/IMAGE/prog/03_plotting_CLaGARMi/figures.R $slice $years_sim1 $years_sim2 $metric $continent $scen $start $end
 
 done; done; done;

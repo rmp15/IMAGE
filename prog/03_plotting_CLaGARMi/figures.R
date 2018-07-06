@@ -14,6 +14,8 @@ scen <- as.character(args[6])
 start <- as.numeric(args[7])
 end <- as.numeric(args[8])
 
+print(args)
+
 years_sim_tot = years_sim1 + years_sim2
 
 # short names for months
