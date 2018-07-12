@@ -21,6 +21,13 @@ def load_clag_output(step, num_years, continent, scen_name, start_year, end_year
     return o_array, s_array
 
 
+def wind_chill_creator(tas_array, wind_array):
+
+    wind_chill_array = 13.12 + (0.6215 * tas_array) - (11.37*wind_array**0.16) + (0.3965*tas_array*wind_array**0.16)
+
+    return wind_chill_array
+
+
 # this function will process the data into a format monthly_data[month][site]
 def monthly_data(var):
 
