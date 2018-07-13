@@ -23,7 +23,7 @@ def load_clag_output(step, num_years, continent, scen_name, start_year, end_year
 
 def wind_chill_creator(tas_array, wind_array):
 
-    wind_chill_array = 13.12 + (0.6215 * tas_array) - (11.37*wind_array**0.16) + (0.3965*tas_array*wind_array**0.16)
+    wind_chill_array = 13.12 + (0.6215 * (tas_array-273.15)) - (11.37*wind_array**0.16) + (0.3965*(tas_array-273.15)*wind_array**0.16)
 
     return wind_chill_array
 

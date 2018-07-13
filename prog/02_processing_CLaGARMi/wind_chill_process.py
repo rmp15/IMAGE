@@ -27,12 +27,29 @@ wind_obs_data, wind_sim_data = load_clag_output(slice, years_sim, continent, sce
 windchill_obs_data = wind_chill_creator(tas_obs_data, wind_obs_data)
 windchill_sim_data = wind_chill_creator(tas_sim_data, wind_sim_data)
 
-# output root file
-sroot = '~/data/IMAGE/CLaGARMi/euro_cordex_output/'
-savefilename = 'out_' + slice + '_y' + str(years_sim) + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end)
+# processing monthly means for the CORDEX observation data
+obs_data_processed = monthly_summary(windchill_obs_data, 30, 0)
 
+# processing monthly means for the CORDEX sim data
+# with summary statistics for the entire period and for ensembles chunks
+sim_data_processed_all, sim_data_processed_ens = monthly_summary(windchill_sim_data, 30, 1)
+obs_data_processed.columns = ['mean_value_obs', 'month', 'sd_value_obs', 'site']
 
-windchill_o_fn = sroot + 'windchill/' + savefilename + '_windchill_o'
-windchill_s_fn = sroot + 'windchill/' + savefilename + '_windchill_s'
+sim_data_processed_all.columns = ['mean_value_sim', 'month', 'sd_value_sim', 'site']
 
+# combine two tables of complete values
+obs_sim_data_processed = pd.merge(obs_data_processed, sim_data_processed_all)
 
+# output to merged obs and sim values to csv
+obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_obs_sim_merged.csv')
+sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_sim_ens.csv')
+
+#
+# # output root file
+# sroot = '~/data/IMAGE/CLaGARMi/euro_cordex_output/'
+# savefilename = 'out_' + slice + '_y' + str(years_sim) + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end)
+#
+# windchill_o_fn = sroot + 'windchill/' + savefilename + '_windchill_o'
+# windchill_s_fn = sroot + 'windchill/' + savefilename + '_windchill_s'
+#
+#
