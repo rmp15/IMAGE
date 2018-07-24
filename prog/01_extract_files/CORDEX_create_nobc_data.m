@@ -21,7 +21,7 @@ end_years = {2000,2050,2050,2100,2100}
 scens = {'_historical','_rcp45','_rcp85','_rcp45','_rcp85'}
 
 % names and boundaries for parameters
-var_names = {'tasmax','huss','sfcWindmax' 'pr'}
+var_names = {'tasmax','huss','sfcWindmax' 'ps'}
 lbound = {NaN,0,0,0}
 ubound = {NaN,NaN,NaN,NaN}
 
