@@ -15,7 +15,7 @@ load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/huss/processed/huss_MPI-M-MPI-ESM
 mv(2)=v;
 load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/sfcWindmax/processed/sfcWindmax_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
 mv(3)=v;
-load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/sfcWindmax/processed/ps_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
+load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/ps/processed/ps_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
 mv(4)=v;
 clear v
 
