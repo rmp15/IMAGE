@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m" afterPath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" afterPath="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="02_run_euro.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="02_run_euro.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -53,8 +53,8 @@
       <file leaf-file-name="01_raw_file_process.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/01_raw_file_process.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -70,7 +70,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_CLaGARMi_euro_hist.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="run_CLaGARMi_euro_hist.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="975">
@@ -212,7 +212,6 @@
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_45_2021_2050.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_45_2071_2100.m" />
-        <option value="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/app_temp_process.py" />
         <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/wind_chill_process.py" />
@@ -220,6 +219,7 @@
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100.m" />
         <option value="$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist.m" />
+        <option value="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" />
       </list>
     </option>
   </component>
@@ -304,25 +304,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CLaGARMi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMAGE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IMAGE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="00_bash" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="euro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -607,13 +593,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
-    </task>
-    <task id="LOCAL-00091" summary="extracting values from clagarmi script">
-      <created>1529578473589</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1529578473589</updated>
     </task>
     <task id="LOCAL-00092" summary="extracting values from clagarmi script">
       <created>1529592395969</created>
@@ -951,7 +930,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532428864801</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="extracting values from clagarmi script">
+      <created>1532429053218</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1532429053218</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1312,14 +1298,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1362,14 +1340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/01_raw_file_process.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1382,6 +1352,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
           <caret line="65" column="16" lean-forward="false" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/01_raw_file_process.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
