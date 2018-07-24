@@ -21,9 +21,9 @@ end_years = {2000,2050,2050,2100,2100}
 scens = {'_historical','_rcp45','_rcp85','_rcp45','_rcp85'}
 
 % names and boundaries for parameters
-var_names = {'tasmax','huss','sfcWindmax'}
-lbound = {NaN,0,0}
-ubound = {NaN,NaN,NaN}
+var_names = {'tasmax','huss','sfcWindmax' 'pr'}
+lbound = {NaN,0,0,0}
+ubound = {NaN,NaN,NaN,NaN}
 
 % loop through above for different scenarios
 for j = 1:5
@@ -42,7 +42,7 @@ for j = 1:5
     soil_mois_day = soil_mois_test(:,:,1);
 
     % loop through variables to process for a matlab file
-    for vn = 1:3
+    for vn = 1:4
         clear v
         var_name = var_names{vn}
 

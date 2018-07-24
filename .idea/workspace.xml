@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100.m" afterPath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m" afterPath="$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,10 +28,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_CLaGARMi_euro_85_2071_2100.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="run_CLaGARMi_euro_85_2071_2100.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="345">
               <caret line="23" column="6" lean-forward="false" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
               <folding />
             </state>
@@ -41,11 +41,31 @@
       <file leaf-file-name="wind_chill_process.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/wind_chill_process.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="44" column="240" lean-forward="false" selection-start-line="44" selection-start-column="240" selection-end-line="44" selection-end-column="240" />
+            <state relative-caret-position="247">
+              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
               <folding>
                 <element signature="e#206#268#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="01_raw_file_process.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/01_raw_file_process.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CORDEX_create_nobc_data.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1515">
+              <caret line="101" column="11" lean-forward="false" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -172,7 +192,6 @@
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_234.R" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/process_clag_stats_functions.py" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_2.R" />
-        <option value="$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/v1/CLaGARMi.m" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/run_euro.sh" />
         <option value="$PROJECT_DIR$/data/file_paths/file_paths.py" />
@@ -190,14 +209,13 @@
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/wind_chill_process.py" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/04_plot_euro.sh" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100.m" />
+        <option value="$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-639" />
-    <option name="y" value="-1316" />
     <option name="width" value="1440" />
-    <option name="height" value="877" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -310,6 +328,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -582,13 +601,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
-    </task>
-    <task id="LOCAL-00088" summary="second commit">
-      <created>1529533793700</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1529533793700</updated>
     </task>
     <task id="LOCAL-00089" summary="second commit">
       <created>1529574263447</created>
@@ -926,7 +938,14 @@
       <option name="project" value="LOCAL" />
       <updated>1531435658145</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="extracting values from clagarmi script">
+      <created>1531500888251</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1531500888251</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TodoView">
@@ -939,10 +958,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-639" y="-1316" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23891273" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24749643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1008,13 +1027,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/prog/zz_legacy/heatwave_python/heatwaves_spaghetti.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="66" column="41" lean-forward="true" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/v1/run_CLaGARMi_testdat.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="35">
@@ -1178,13 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/01_raw_file_process.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/v1/calc_AR1_per_loc_sp_par.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1269,21 +1274,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/zz_legacy/heatwave_python/apparent_temp_c.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/functions/data/wind_chill_appt_functions.py" />
-    <entry file="file://$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="92" column="10" lean-forward="false" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/app_temp_process.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -1314,24 +1305,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/wind_chill_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="44" column="240" lean-forward="false" selection-start-line="44" selection-start-column="240" selection-end-line="44" selection-end-column="240" />
-          <folding>
-            <element signature="e#206#268#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/04_plot_euro.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1350,8 +1323,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="345">
           <caret line="23" column="6" lean-forward="false" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/zz_legacy/heatwave_python/apparent_temp_c.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/zz_legacy/heatwave_python/warm_spell_duration_distributions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/wind_chill_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#206#268#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/01_raw_file_process.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1515">
+          <caret line="101" column="11" lean-forward="false" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
           <folding />
         </state>
       </provider>
