@@ -6,7 +6,7 @@ addpath('~/git/IMAGE/prog/01_extract_files/');
 addpath('../../data/CORDEX_nobc_clagarm_input/')
 addpath('../../prog/CLaGARMi/v1')
 
-var_names = {'tasmax','huss','sfcWindmax', 'ps'};
+var_names = {'tasmax','huss','sfcWindmax','ps'};
 
 % generalise loading process
 load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/tasmax/processed/tasmax_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
