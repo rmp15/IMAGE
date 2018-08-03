@@ -24,8 +24,30 @@ year_end = int(float((sys.argv[7])))            # year_end = 2000
 # loading data for both observations and simulations
 obs_data, sim_data = load_clag_output(slice, years_sim, continent, scen, year_start, year_end, metric)
 
-# processing seasonal percentile means for the CORDEX observation data
-obs_data_processed = monthly_percentile_summary(obs_data, 30, 0)
+# TO FINISH THE BELOW FUNCTIONS IN PROCESS_CLAG_STATS_FUNCTIONS.py
+
+# processing seasonal percentiles and then calculating number of consecutive days over it for observed data
+obs_data_processed = seasonal_hw_duration_summary(obs_data, obs_data, 5, 9, 99)
+
+# processing seasonal percentiles and then calculating number of consecutive days over it for simulated data
+sims_data_processed = seasonal_hw_duration_summary(obs_data, obs_data, 5, 9, 99)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # processing monthly means for the CORDEX sim data
 # with summary statistics for the entire period and for ensembles chunks

@@ -27,6 +27,13 @@ def wind_chill_creator(tas_array, wind_array):
 
     return wind_chill_array
 
+# information for how to create the seasonal array
+month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+month_end_inds = np.cumsum(month_days)
+month_start_end_inds = np.zeros(13)
+month_start_end_inds[0] = 0
+month_start_end_inds[1:] = month_end_inds
+month_start_end_inds = month_start_end_inds.astype(int)
 
 # this function will process the data into a format monthly_data[month][site]
 def monthly_data(var):
@@ -70,13 +77,13 @@ def seasonal_data(var,start,end):
     no_sites = var_shape[0]
     no_years = var_shape[1]
     days_in_year = var_shape[2]
-    monthly_data = {}
-    for i in range(0, 12):
-        month_data = np.zeros(((month_start_end_inds[i + 1] - month_start_end_inds[i]) * no_years, no_sites))
-        for j in range(0, no_sites):
-            month_data[:, j] = np.ndarray.flatten(var[j, :, month_start_end_inds[i]:month_start_end_inds[i + 1]])
-        monthly_data[i] = month_data
-    return monthly_data, no_years, no_sites
+    seasonal_data = {}
+    # for i in range(0, 12):
+    season_data = np.zeros(((month_start_end_inds[end] - month_start_end_inds[start-1]) * no_years, no_sites)) # is this right???
+    for j in range(0, no_sites):
+        season_data[:, j] = np.ndarray.flatten(var[j, :, month_start_end_inds[start-1]:month_start_end_inds[end]]) # is this right???
+    seasonal_data[1] = season_data # only built for one season's data at the moment
+    return seasonal_data, no_years, no_sites
 
 # this function will cycle through each site per month and find the mean value of a defined ensemble
 def monthly_mean_summary(var, ens_length, ob_sim):
@@ -142,67 +149,49 @@ def monthly_mean_summary(var, ens_length, ob_sim):
     if ob_sim == 0:
         return data_avg
 
-# this function will cycle through each site per month and find the percentile values of a defined ensemble
-def seasonal_percentile_summary(var, ens_length, ob_sim):
+# this function will cycle through each site for selected season and find the percentile values of observed values
+def seasonal_percentile_calculator(var, start, end, pctile):
+
+    # information for how to create the seasonal array
+    month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    month_end_inds = np.cumsum(month_days)
+    month_start_end_inds = np.zeros(13)
+    month_start_end_inds[0] = 0
+    month_start_end_inds[1:] = month_end_inds
+    month_start_end_inds = month_start_end_inds.astype(int)
 
     # load data and number of years
-    data, no_years, no_sites = monthly_data(var)
+    data, no_years, no_sites = seasonal_data(var, start, end)
 
-    # divide into ens_length-year ensembles (e.g. if no_years = 300, no_ens = 300/30 = 10
-    no_ens = int(math.floor(no_years / ens_length))
+    # calculate percentile for each site
+    pctile_data = {}
+    for j in range(0, no_sites):
+        pctile_data[1, j] = np.percentile(np.ndarray.flatten(var[j, :, month_start_end_inds[start-1]:month_start_end_inds[end]]), pctile)
 
-    # number of sites
-    no_sites = no_sites
+    return pctile_data
 
-    # 1. calculate average for entire period
+def seasonal_hw_duration_summary(var, var_process, start, end, pctile):
 
-    print('Processing all values together ')
+    # load data to process, number of years and number of sites
+    data, no_years, no_sites = seasonal_data(var_process, start, end)
 
-    # create empty frame to populate with average values per month at each site
-    data_avg = pd.DataFrame(columns=['month', 'site', 'mean_value', 'sd_value'])
-    # cycle through months
-    for month in range(0, 12):
-        # cycle through sites
-        for site in range(0, no_sites):
-            mean_value = np.mean(data[month][:, site])
-            sd_value = np.std(data[month][:, site])
-            data_append = pd.DataFrame({'month': int(month+1), 'site': int(site+1), 'mean_value': mean_value,
-                                        'sd_value':sd_value}, index=[0])
-            data_avg = pd.concat([data_avg, data_append])
+    # calculate where the pctile desired is for each site from a source dataset
+    pctile_data = seasonal_percentile_calculator(var, start, end, pctile)
 
-    if ob_sim == 1:
+    # for each year, at each site, calculate maximum number of consecutive days above XXth percentile from pctile_data
+    no_days = (month_start_end_inds[end] - month_start_end_inds[start - 1])
+    year_data = np.zeros((no_days, no_years, no_sites))
+    threshold_data = np.zeros((no_days, no_years, no_sites))
+    for i in range(0, no_years):
+        for j in range(0, no_sites):
+            # assign seasonal data to the year and site
+            year_data[:, i, j] = np.ndarray.flatten(var[j, :, month_start_end_inds[start-1]:month_start_end_inds[end]])[(i*no_days):((i+1)*no_days)]
+            # recover percentile data for comparison
+            pctile_threshold = pctile_data[1, j]
+            # test on entire year for above or below threshold
+            threshold_data[:, i, j] = (year_data[:, i, j] >= pctile_threshold)
+            # figure out longest consecutive over threshold
 
-        # 2. calculate average for ens_length-year ensembles
 
-        # create empty frame to populate with average values per month at each site
-        data_avg_ens = pd.DataFrame(columns=['month', 'site', 'ens', 'mean_value', 'sd_value'])
-        for k in range(0,no_ens):
 
-            print('Processing ensemble ' + str(k + 1) + ' of ' + str(no_ens))
-
-            # create empty frame to populate with average values per month at each site in particular ensemble
-            data_avg_ens_working = pd.DataFrame(columns=['month', 'site', 'ens', 'mean_value', 'sd_value'])
-            # cycle through months
-            for month in range(0, 12):
-
-                # number of days in each month
-                month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-                # starting position of ensemble slice in particular month
-                slice_size = month_days[month] * ens_length
-
-                # cycle through sites
-                for site in range(0, no_sites):
-                    mean_value = np.mean(data[month][k*slice_size:(k+1)*slice_size, site])
-                    sd_value = np.std(data[month][k*slice_size:(k+1)*slice_size, site])
-                    data_append = pd.DataFrame({'month': int(month+1), 'site': int(site+1), 'ens': int(k+1),
-                                                'mean_value': mean_value, 'sd_value': sd_value}, index=[0])
-                    data_avg_ens_working = pd.concat([data_avg_ens_working, data_append])
-
-            # append to master ensemble file
-            data_avg_ens = pd.concat([data_avg_ens,data_avg_ens_working])
-
-        return data_avg, data_avg_ens
-
-    if ob_sim == 0:
-        return data_avg
 
