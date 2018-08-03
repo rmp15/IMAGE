@@ -25,11 +25,11 @@ year_end = int(float((sys.argv[7])))            # year_end = 2000
 obs_data, sim_data = load_clag_output(slice, years_sim, continent, scen, year_start, year_end, metric)
 
 # processing monthly means for the CORDEX observation data
-obs_data_processed = monthly_summary(obs_data, 30, 0)
+obs_data_processed = monthly_mean_summary(obs_data, 30, 0)
 
 # processing monthly means for the CORDEX sim data
 # with summary statistics for the entire period and for ensembles chunks
-sim_data_processed_all, sim_data_processed_ens = monthly_summary(sim_data, 30, 1)
+sim_data_processed_all, sim_data_processed_ens = monthly_mean_summary(sim_data, 30, 1)
 obs_data_processed.columns = ['mean_value_obs', 'month', 'sd_value_obs', 'site']
 sim_data_processed_all.columns = ['mean_value_sim', 'month', 'sd_value_sim', 'site']
 

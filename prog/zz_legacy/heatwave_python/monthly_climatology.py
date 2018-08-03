@@ -55,7 +55,6 @@ def monthly_pctile(var,pctile):
 
     for i in range(0,12):
         for site in range(0,no_sites):
-
             
             month_pctile[i,site] = np.percentile(np.ndarray.flatten(var[month_start_end_inds[i]:month_start_end_inds[i+1],:,site]),pctile)
     return month_pctile
