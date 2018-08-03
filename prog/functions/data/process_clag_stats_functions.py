@@ -190,7 +190,7 @@ def seasonal_hw_duration_summary(var, var_process, start, end, pctile):
             pctile_threshold = pctile_data[1, j]
             # test on entire year for above or below threshold
             threshold_data[:, i, j] = (year_data[:, i, j] >= pctile_threshold)
-            # figure out longest consecutive over threshold
+            # figure out longest consecutive over threshold (need equivalent of rle in R)
 
 
 
