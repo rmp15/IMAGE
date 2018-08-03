@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import math
 
+
 # based on steve's previous code in legacy 'load_mat_var.py'
 def load_clag_output(step, num_years, continent, scen_name, start_year, end_year, var):
 
@@ -26,6 +27,7 @@ def wind_chill_creator(tas_array, wind_array):
     wind_chill_array = 13.12 + (0.6215 * (tas_array-273.15)) - (11.37*wind_array**0.16) + (0.3965*(tas_array-273.15)*wind_array**0.16)
 
     return wind_chill_array
+
 
 # this function will process the data into a format monthly_data[month][site]
 def monthly_data(var):
@@ -52,8 +54,9 @@ def monthly_data(var):
         monthly_data[i] = month_data
     return monthly_data, no_years, no_sites
 
+
 # this function will process the data into a format seasonal_data[season][site]
-def seasonal_data(var,start,end):
+def seasonal_data(var, start, end):
 
     # information for how to create the seasonal array
     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -70,12 +73,12 @@ def seasonal_data(var,start,end):
     no_years = var_shape[1]
     days_in_year = var_shape[2]
     seasonal_data = {}
-    # for i in range(0, 12):
-    season_data = np.zeros(((month_start_end_inds[end] - month_start_end_inds[start-1]) * no_years, no_sites)) # is this right???
+    season_data = np.zeros(((month_start_end_inds[end] - month_start_end_inds[start-1]) * no_years, no_sites))  # is this right???
     for j in range(0, no_sites):
-        season_data[:, j] = np.ndarray.flatten(var[j, :, month_start_end_inds[start-1]:month_start_end_inds[end]]) # is this right???
-    seasonal_data[1] = season_data # only built for one season's data at the moment
+        season_data[:, j] = np.ndarray.flatten(var[j, :, month_start_end_inds[start-1]:month_start_end_inds[end]])  # is this right???
+    seasonal_data[1] = season_data  # only built for one season's data at the moment
     return seasonal_data, no_years, no_sites
+
 
 # this function will cycle through each site per month and find the mean value of a defined ensemble
 def monthly_mean_summary(var, ens_length, ob_sim):
@@ -141,6 +144,7 @@ def monthly_mean_summary(var, ens_length, ob_sim):
     if ob_sim == 0:
         return data_avg
 
+
 # this function will cycle through each site for selected season and find the percentile values of observed values
 def seasonal_percentile_calculator(var, start, end, pctile):
 
@@ -162,7 +166,9 @@ def seasonal_percentile_calculator(var, start, end, pctile):
 
     return pctile_data
 
+
 # this function will cycle through each site per year for selected season and figure out how many consecutive days are above a threshold
+# TO FINISH
 def seasonal_hw_duration_summary(var, var_process, start, end, pctile):
 
     # information for how to create the seasonal array
@@ -183,12 +189,38 @@ def seasonal_hw_duration_summary(var, var_process, start, end, pctile):
     no_days = (month_start_end_inds[end] - month_start_end_inds[start - 1])
     year_data = np.zeros((no_days, no_years, no_sites))
     threshold_data = np.zeros((no_days, no_years, no_sites))
+    consecutive_data = np.zeros((no_years, no_sites))
     for i in range(0, no_years):
         for j in range(0, no_sites):
             # assign seasonal data to the year and site
-            year_data[:, i, j] = np.ndarray.flatten(var[j, :, month_start_end_inds[start-1]:month_start_end_inds[end]])[(i*no_days):((i+1)*no_days)]
+            year_data[:, i, j] = np.ndarray.flatten(var_process[j, :, month_start_end_inds[start-1]:month_start_end_inds[end]])[(i*no_days):((i+1)*no_days)]
             # recover percentile data for comparison
             pctile_threshold = pctile_data[1, j]
             # test on entire year for above or below threshold
-            threshold_data[:, i, j] = [0 if a < pctile_threshold else 1 for a in year_data[:, i, j]]    #(year_data[:, i, j] >= pctile_threshold)
-            # figure out longest consecutive over threshold (need equivalent of rle in R)
+            threshold_data[:, i, j] = [0 if a < pctile_threshold else 1 for a in year_data[:, i, j]]
+            # figure out longest consecutive over threshold (equivalent of rle in R and outputting longest 'streak')
+            consecutive_data[i, j] = consecutive_one(threshold_data[:, i, j])
+            print(i,j)
+
+    return consecutive_data
+
+
+# rle equivalent in R to give longest string of 1's
+def consecutive_one(data):
+    longest = 0
+    current = 0
+    for num in data:
+        if num == 1:
+            current += 1
+        else:
+            longest = max(longest, current)
+            current = 0
+
+    return max(longest, current)
+
+
+if __name__ == '__main__':
+    data = [0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0]
+    print(consecutive_one(data))
+
+
