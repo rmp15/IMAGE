@@ -27,14 +27,6 @@ def wind_chill_creator(tas_array, wind_array):
 
     return wind_chill_array
 
-# information for how to create the seasonal array
-month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-month_end_inds = np.cumsum(month_days)
-month_start_end_inds = np.zeros(13)
-month_start_end_inds[0] = 0
-month_start_end_inds[1:] = month_end_inds
-month_start_end_inds = month_start_end_inds.astype(int)
-
 # this function will process the data into a format monthly_data[month][site]
 def monthly_data(var):
 
@@ -170,7 +162,16 @@ def seasonal_percentile_calculator(var, start, end, pctile):
 
     return pctile_data
 
+# this function will cycle through each site per year for selected season and figure out how many consecutive days are above a threshold
 def seasonal_hw_duration_summary(var, var_process, start, end, pctile):
+
+    # information for how to create the seasonal array
+    month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    month_end_inds = np.cumsum(month_days)
+    month_start_end_inds = np.zeros(13)
+    month_start_end_inds[0] = 0
+    month_start_end_inds[1:] = month_end_inds
+    month_start_end_inds = month_start_end_inds.astype(int)
 
     # load data to process, number of years and number of sites
     data, no_years, no_sites = seasonal_data(var_process, start, end)
@@ -189,9 +190,5 @@ def seasonal_hw_duration_summary(var, var_process, start, end, pctile):
             # recover percentile data for comparison
             pctile_threshold = pctile_data[1, j]
             # test on entire year for above or below threshold
-            threshold_data[:, i, j] = (year_data[:, i, j] >= pctile_threshold)
+            threshold_data[:, i, j] = [0 if a < pctile_threshold else 1 for a in year_data[:, i, j]]    #(year_data[:, i, j] >= pctile_threshold)
             # figure out longest consecutive over threshold (need equivalent of rle in R)
-
-
-
-
