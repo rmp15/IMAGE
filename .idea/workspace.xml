@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R" afterPath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures_2_3_4.R" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures_2_3_4.R" afterPath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures_2_3_4.R" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,17 +30,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="figures_2_3_4.R" pinned="false" current-in-tab="false">
+      <file leaf-file-name="figures_2_3_4.R" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures_2_3_4.R">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="123" selection-end-column="9" />
+            <state relative-caret-position="615">
+              <caret line="127" column="33" lean-forward="false" selection-start-line="127" selection-start-column="33" selection-end-line="127" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="figure_8.R" pinned="false" current-in-tab="true">
+      <file leaf-file-name="figure_8.R" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8.R">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -136,7 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_projection_generate.py" />
         <option value="$PROJECT_DIR$/prog/scripts/knmi_ensemble_mean_yearly_plotting_perc_change.py" />
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_knmi_pr_correlate.py" />
         <option value="$PROJECT_DIR$/prog/scripts/weather_station_yearly_data_generate.py" />
@@ -187,6 +185,7 @@
         <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures.R" />
+        <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures_2_3_4.R" />
       </list>
     </option>
   </component>
@@ -541,13 +540,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00115" summary="extracting values from clagarmi script">
-      <created>1530435884786</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1530435884787</updated>
-    </task>
     <task id="LOCAL-00116" summary="extracting values from clagarmi script">
       <created>1530457616045</created>
       <option name="number" value="00116" />
@@ -884,7 +876,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533858620531</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="extracting values from clagarmi script">
+      <created>1533858679813</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1533858679813</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1303,18 +1302,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures_2_3_4.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="123" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8.R">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures_2_3_4.R">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="127" column="33" lean-forward="false" selection-start-line="127" selection-start-column="33" selection-end-line="127" selection-end-column="33" />
           <folding />
         </state>
       </provider>
