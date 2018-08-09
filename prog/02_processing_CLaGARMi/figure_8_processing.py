@@ -5,6 +5,7 @@
 
 from prog.functions.data.process_clag_stats_functions import *
 import sys
+from scipy.stats import rankdata
 
 # get total number of arguments
 total = len(sys.argv)
@@ -33,7 +34,32 @@ obs_data_processed = seasonal_hw_duration_summary(obs_data, obs_data, season_sta
 # processing seasonal percentiles and then calculating number of consecutive days over it for simulated data
 sim_data_processed = seasonal_hw_duration_summary(obs_data, sim_data, season_start, season_end, percentile)
 
-# figure out way to generate return periods based on results for observed and simulated data
+# generate return periods based on results for observed and simulated data
+# return period = (n+1)/m, where n=number of years in data set, m=rank of
+
+# cycle through locations adding to dataframe for heat wave intensity for observed data
+data_master = pd.DataFrame()
+for j in range(0, no_sites):
+
+    # for each location, generate a probability rank, where lowest number is lowest ranked
+    rank_data = len(obs_data_processed[:, j]) + 1 - rankdata(obs_data_processed[:, j], method='min')
+
+    # calculate return period
+    return_period = (len(obs_data_processed[:, j])+1) / rank_data
+
+    # collect values of heat wave intensity and return period for each location
+    data_current = pd.DataFrame({'site': (j+1),'days_over':np.unique(obs_data_processed[:, j]),'return_period':np.unique(return_period)})
+    data_master = pd.concat([data_master.reset_index(drop=True), data_current.reset_index(drop=True)], axis=0)
+    # data_master.append(data_current, ignore_index=True)
+    print(data_master.head())
+
+
+data_master.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods.csv')
+
+
+
+
+
 
 
 
