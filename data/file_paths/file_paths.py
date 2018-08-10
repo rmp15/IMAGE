@@ -15,3 +15,5 @@ knmi_elnino = os.path.join(project, 'data/knmi/elnino/')
 
 # IMAGE output data
 image_output_local = os.path.join('/Users/rmiparks/data/IMAGE/CLaGARMi/euro_cordex_output/')
+cordex_output_local = os.path.join('/Users/rmiparks/data/IMAGE/CORDEX/')
+

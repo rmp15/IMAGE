@@ -27,8 +27,8 @@ output.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures/'
 # load data for both comparing entire sim and obs
 dat.obs= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods.csv'))
 dat.obs.mean = ddply(dat.obs,.(return_period),summarise,days_over=mean(days_over))
-# dat.sim = ...
-
+dat.sim= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim1,'yrs_sim_intensity_return_periods.csv'))
+dat.sim.mean = ddply(dat.sim,.(return_period),summarise,days_over=mean(days_over))
 # average observations over entire
 
 #################################
@@ -40,6 +40,24 @@ pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_inte
 ggplot() +
     geom_line(data=dat.obs,aes(x=return_period,y=days_over,color=as.factor(site)))+
     geom_line(data=dat.obs.mean,aes(x=return_period,y=days_over),size=1.5)+
+    guides(color=FALSE,size=FALSE) +
+    xlab('Return period (years)') + ylab('Heat wave duration (days)') +
+    ggtitle('Whole domain') +
+    scale_x_log10() +
+    theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
+    plot.title = element_text(hjust = 0.5),panel.background = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.border = element_rect(colour = "black"),strip.background = element_blank(),
+    legend.position = 'bottom',legend.justification='center',
+    legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
+dev.off()
+
+pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods.pdf'),paper='a4r',height=0,width=0)
+ggplot() +
+    geom_line(data=dat.sim,aes(x=return_period,y=days_over,color=as.factor(site)),linetype='longdash')+
+    geom_line(data=dat.sim.mean,aes(x=return_period,y=days_over),size=1,linetype='longdash')+
+    geom_line(data=dat.obs,aes(x=return_period,y=days_over,color=as.factor(site)))+
+    geom_line(data=dat.obs.mean,aes(x=return_period,y=days_over),size=1)+
     guides(color=FALSE,size=FALSE) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
     ggtitle('Whole domain') +

@@ -6,6 +6,7 @@
 from prog.functions.data.process_clag_stats_functions import *
 import sys
 from scipy.stats import rankdata
+import scipy.io
 
 # get total number of arguments
 total = len(sys.argv)
@@ -15,7 +16,7 @@ cmdargs = str(sys.argv)
 
 # variables for processing CLaGARMi output
 slice = sys.argv[1]                             # slice = '01'
-years_sim = int(float((sys.argv[2])))           # years_sim = 4000
+years_sim_1 = int(float((sys.argv[2])))         # years_sim_1 = 4000 ; years_sim_2 = 6000
 metric = sys.argv[3]                            # metric = 'tasmax'
 continent = sys.argv[4]                         # continent = 'euro'
 scen = sys.argv[5]                              # scen = 'hist'
@@ -25,10 +26,22 @@ season_start = int(float((sys.argv[8])))        # season_start = 5
 season_end = int(float((sys.argv[9])))          # season_end = 9
 percentile = int(float((sys.argv[10])))         # percentile = 99
 
-# loading data for both observations and simulations
-obs_data, sim_data = load_clag_output(slice, years_sim, continent, scen, year_start, year_end, metric)
+# load lon/lat data for European
+lons = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lons.mat'))
+lats = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lats.mat'))
 
-# NEED TO COMBINE THE TWO SETS OF SIMS SOMEHOW BEFORE CALCULATING RETURN PERIODS
+lonlat = pd.DataFrame([np.ndarray.flatten(lons), np.ndarray.flatten(lats)])
+
+# loading data for both observations and simulations
+obs_data, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, year_start, year_end, metric)
+obs_data, sim_data_2 = load_clag_output(slice, years_sim_2, continent, scen, year_start, year_end, metric)
+
+# combine two sets of simulations (must be a faster way?) (check out numpy.stack
+sim_data_combined = np.empty([no_sites,(years_sim_1+years_sim_2),365])
+for i in range(0, no_sites):
+    for j in range(0,365):
+        sim_data_combined[i,:,j] = np.concatenate((sim_data_1[i,:,j], sim_data_2[i,:,j]), axis=0)
+
 
 #################################
 # HEAT WAVE DURATION
@@ -38,7 +51,7 @@ obs_data, sim_data = load_clag_output(slice, years_sim, continent, scen, year_st
 obs_data_processed = seasonal_hw_duration_summary(obs_data, obs_data, season_start, season_end, percentile)
 
 # processing seasonal percentiles and then calculating number of consecutive days over it for simulated data
-sim_data_processed = seasonal_hw_duration_summary(obs_data, sim_data, season_start, season_end, percentile)
+sim_data_processed = seasonal_hw_duration_summary(obs_data, sim_data_combined, season_start, season_end, percentile)
 
 # generate return periods based on results for observed and simulated data
 # return period = (n+1)/m, where n=number of years in data set, m=rank of
@@ -64,7 +77,8 @@ data_obs = hw_duration_return_periods(obs_data_processed)
 data_sim = hw_duration_return_periods(sim_data_processed)
 
 # save to csv
-data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods.csv')
+data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_sim_intensity_return_periods.csv')
+data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' +  str(years_sim) + 'yrs_sim_intensity_return_periods.csv')
 
 #################################
 # HEAT WAVE INTENSITY

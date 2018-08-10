@@ -19,6 +19,9 @@ continent = sys.argv[3]                         # continent = 'euro'
 scen = sys.argv[4]                              # scen = 'hist'
 year_start = int(float((sys.argv[5])))          # year_start = 1971
 year_end = int(float((sys.argv[6])))            # year_end = 2000
+
+# FINISH
+
 #
 # # loading data for both observations and simulations
 # tas_obs_data,  tas_sim_data = load_clag_output(slice, years_sim, continent, scen, year_start, year_end, 'tasmax')
