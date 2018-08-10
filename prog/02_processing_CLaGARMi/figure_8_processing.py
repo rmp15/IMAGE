@@ -26,7 +26,7 @@ season_start = int(float((sys.argv[8])))        # season_start = 5
 season_end = int(float((sys.argv[9])))          # season_end = 9
 percentile = int(float((sys.argv[10])))         # percentile = 99
 
-# load lon/lat data for European
+# load lon/lat data for European grids
 lons = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lons.mat'))
 lons_array = np.array(lons[list(lons.keys())[3]])
 lats = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lats.mat'))
