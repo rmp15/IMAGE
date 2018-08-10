@@ -28,6 +28,12 @@ percentile = int(float((sys.argv[10])))         # percentile = 99
 # loading data for both observations and simulations
 obs_data, sim_data = load_clag_output(slice, years_sim, continent, scen, year_start, year_end, metric)
 
+# NEED TO COMBINE THE TWO SETS OF SIMS SOMEHOW BEFORE CALCULATING RETURN PERIODS
+
+#################################
+# HEAT WAVE DURATION
+#################################
+
 # processing seasonal percentiles and then calculating number of consecutive days over it for observed data
 obs_data_processed = seasonal_hw_duration_summary(obs_data, obs_data, season_start, season_end, percentile)
 
@@ -36,35 +42,33 @@ sim_data_processed = seasonal_hw_duration_summary(obs_data, sim_data, season_sta
 
 # generate return periods based on results for observed and simulated data
 # return period = (n+1)/m, where n=number of years in data set, m=rank of
+def hw_duration_return_periods(data):
+    data_master = pd.DataFrame()
+    for j in range(0, data.shape[1]):
+        # for each location, generate a probability rank, where lowest number is lowest ranked
+        rank_data = len(data[:, j]) + 1 - rankdata(data[:, j], method='min')
 
-# cycle through locations adding to dataframe for heat wave intensity for observed data
-data_master = pd.DataFrame()
-for j in range(0, no_sites):
+        # calculate return period
+        return_period = (len(data[:, j]) + 1) / rank_data
 
-    # for each location, generate a probability rank, where lowest number is lowest ranked
-    rank_data = len(obs_data_processed[:, j]) + 1 - rankdata(obs_data_processed[:, j], method='min')
+        # collect values of heat wave intensity and return period for each location
+        data_current = pd.DataFrame({'site': (j + 1), 'days_over': np.unique(data[:, j]),
+                                     'return_period': np.unique(return_period)})
+        data_master = pd.concat([data_master.reset_index(drop=True), data_current.reset_index(drop=True)], axis=0)
+        # data_master.append(data_current, ignore_index=True)
 
-    # calculate return period
-    return_period = (len(obs_data_processed[:, j])+1) / rank_data
+    return data_master
 
-    # collect values of heat wave intensity and return period for each location
-    data_current = pd.DataFrame({'site': (j+1),'days_over':np.unique(obs_data_processed[:, j]),'return_period':np.unique(return_period)})
-    data_master = pd.concat([data_master.reset_index(drop=True), data_current.reset_index(drop=True)], axis=0)
-    # data_master.append(data_current, ignore_index=True)
-    print(data_master.head())
+# create duration characteristics for each site
+data_obs = hw_duration_return_periods(obs_data_processed)
+data_sim = hw_duration_return_periods(sim_data_processed)
 
+# save to csv
+data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods.csv')
 
-data_master.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods.csv')
-
-
-
-
-
-
-
-
-
-
+#################################
+# HEAT WAVE INTENSITY
+#################################
 
 
 
@@ -78,15 +82,15 @@ data_master.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures
 
 
 
-# processing monthly means for the CORDEX sim data
-# with summary statistics for the entire period and for ensembles chunks
-sim_data_processed_all, sim_data_processed_ens = monthly_summary(sim_data, 30, 1)
-obs_data_processed.columns = ['mean_value_obs', 'month', 'sd_value_obs', 'site']
-sim_data_processed_all.columns = ['mean_value_sim', 'month', 'sd_value_sim', 'site']
-
-# combine two tables of complete values
-obs_sim_data_processed = pd.merge(obs_data_processed, sim_data_processed_all)
-
-# output to merged obs and sim values to csv
-obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_obs_sim_merged.csv')
-sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_sim_ens.csv')
+# # processing monthly means for the CORDEX sim data
+# # with summary statistics for the entire period and for ensembles chunks
+# sim_data_processed_all, sim_data_processed_ens = monthly_summary(sim_data, 30, 1)
+# obs_data_processed.columns = ['mean_value_obs', 'month', 'sd_value_obs', 'site']
+# sim_data_processed_all.columns = ['mean_value_sim', 'month', 'sd_value_sim', 'site']
+#
+# # combine two tables of complete values
+# obs_sim_data_processed = pd.merge(obs_data_processed, sim_data_processed_all)
+#
+# # output to merged obs and sim values to csv
+# obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_obs_sim_merged.csv')
+# sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_sim_ens.csv')
