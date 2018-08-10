@@ -28,9 +28,10 @@ percentile = int(float((sys.argv[10])))         # percentile = 99
 
 # load lon/lat data for European
 lons = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lons.mat'))
+lons_array = np.array(lons[list(lons.keys())[3]])
 lats = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lats.mat'))
-
-lonlat = pd.DataFrame(['lon':lons, 'lat':lats)])
+lats_array = np.array(lats[list(lats.keys())[3]])
+lonlat = pd.DataFrame(pd.concat([lons_array, lats_array]))
 
 # loading data for both observations and simulations
 obs_data, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, year_start, year_end, metric)
