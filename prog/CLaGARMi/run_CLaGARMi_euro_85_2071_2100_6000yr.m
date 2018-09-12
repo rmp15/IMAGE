@@ -6,18 +6,18 @@ addpath('~/git/IMAGE/prog/01_extract_files/');
 addpath('../../data/CORDEX_nobc_clagarm_input/')
 addpath('../../prog/CLaGARMi/v1')
 
-var_names = {'tasmax','huss','sfcWindmax'};
+%var_names = {'tasmax','huss','sfcWindmax'};
 
 % generalise loading process
-load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/tasmax/processed/tasmax_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
+load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/tasmax/processed/tasmax_MPI-M-MPI-ESM-LR_rcp85_r2i1p1_MPI-CSC-REMO2009_v120712100.mat
 mv(1)=v;
-load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/huss/processed/huss_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
+load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/huss/processed/huss_MPI-M-MPI-ESM-LR_rcp85_r2i1p1_MPI-CSC-REMO2009_v120712100.mat
 mv(2)=v;
-load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/sfcWindmax/processed/sfcWindmax_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
+load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/sfcWindmax/processed/sfcWindmax_MPI-M-MPI-ESM-LR_rcp85_r2i1p1_MPI-CSC-REMO2009_v120712100.mat
 mv(3)=v;
-load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/ps/processed/ps_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
+load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/ps/processed/ps_MPI-M-MPI-ESM-LR_rcp85_r2i1p1_MPI-CSC-REMO2009_v120712100.mat
 mv(4)=v;
-load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/pr/processed/pr_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
+load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/pr/processed/pr_MPI-M-MPI-ESM-LR_rcp85_r2i1p1_MPI-CSC-REMO2009_v120712100.mat
 mv(5)=v;
 clear v
 
