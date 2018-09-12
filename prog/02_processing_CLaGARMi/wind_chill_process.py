@@ -43,11 +43,3 @@ obs_sim_data_processed = pd.merge(obs_data_processed, sim_data_processed_all)
 # output to merged obs and sim values to csv
 obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_obs_sim_merged.csv')
 sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_sim_ens.csv')
-
-#
-# # output root file
-# sroot = '~/data/IMAGE/CLaGARMi/euro_cordex_output/'
-# savefilename = 'out_' + slice + '_y' + str(years_sim) + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end)
-#
-# windchill_o_fn = sroot + 'windchill/' + savefilename + '_windchill_o'
-# windchill_s_fn = sroot + 'windchill/' + savefilename + '_windchill_s'
