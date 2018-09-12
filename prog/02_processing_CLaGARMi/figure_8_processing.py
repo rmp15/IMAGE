@@ -31,7 +31,10 @@ lons = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/n
 lons_array = np.array(lons[list(lons.keys())[3]])
 lats = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lats.mat'))
 lats_array = np.array(lats[list(lats.keys())[3]])
-lonlat = pd.DataFrame(pd.concat([lons_array, lats_array]))
+lonlat = pd.DataFrame(np.concatenate([lons_array, lats_array], axis=1),columns=['lon','lat'])
+
+# export lon/lat table
+lonlat.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/'+ continent +'_lonlat.csv')
 
 # loading data for both observations and simulations
 obs_data, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, year_start, year_end, metric)
