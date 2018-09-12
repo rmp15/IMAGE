@@ -17,8 +17,8 @@ load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/sfcWindmax/processed/sfcWindmax_M
 mv(3)=v;
 load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/ps/processed/ps_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
 mv(4)=v;
-%load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/pr/processed/pr_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
-%mv(5)=v;
+load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/pr/processed/pr_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
+mv(5)=v;
 clear v
 
 % ClaGARMi will save its output in 'sroot' folder, also AR fits and Cholesky
@@ -67,9 +67,9 @@ ps_o = mv(4).o;
 save(ps_s_fn,'ps_s','-v7.3');
 save(ps_o_fn,'ps_o','-v7.3');
 
-%pr_s_fn = strcat(sroot,'pr/',savefilename,'_pr_s');
-%pr_o_fn = strcat(sroot,'pr/',savefilename,'_pr_o');
-%pr_s = mv(5).s;
-%pr_o = mv(5).o;
-%save(pr_s_fn,'pr_s','-v7.3');
-%save(pr_o_fn,'pr_o','-v7.3');
+pr_s_fn = strcat(sroot,'pr/',savefilename,'_pr_s');
+pr_o_fn = strcat(sroot,'pr/',savefilename,'_pr_o');
+pr_s = mv(5).s;
+pr_o = mv(5).o;
+save(pr_s_fn,'pr_s','-v7.3');
+save(pr_o_fn,'pr_o','-v7.3');
