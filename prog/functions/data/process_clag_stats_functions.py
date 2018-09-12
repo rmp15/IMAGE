@@ -29,6 +29,34 @@ def wind_chill_creator(tas_array, wind_array):
     return wind_chill_array
 
 
+def rel_humid_creator(tas_array, huss_array, ps_array):
+
+    # from
+    # % e = (ps. * huss). / (0.622 + 0.378 * huss); (steve's code in CORDEX_create_nobc_data.m)
+    # % dpt = (log(e / 6.112) * 243.5). / (17.67 - log(e / 6.112)); (steve's code in CORDEX_create_nobc_data.m)
+    # RH: = 100*(EXP((17.625*TD)/(243.04+TD))/EXP((17.625*T)/(243.04+T))) (http://andrew.rsmas.miami.edu/bmcnoldy/Humidity.html)
+
+    e_array = (ps_array * huss_array) / (0.622 + 0.378 * huss_array)
+    dpt_array = (np.log(e_array / 6.112) * 243.5) / (17.67 - np.log(e_array / 6.112))
+    rel_humid_array = 100*(np.exp((17.625*dpt_array)/(243.04+dpt_array))/np.exp((17.625*tas_array)/(243.04+tas_array)))
+
+    return rel_humid_array
+
+
+def app_temp_creator(tas_array, huss_array, ps_array):
+
+    # from steve's code in CORDEX_create_nobc_data.m
+    # %e = (ps.*huss)./(0.622 + 0.378*huss);
+    # %dpt = (log(e/6.112) * 243.5) ./ (17.67 - log(e/6.112));
+    # %appt = (0.0153*(dpt.*dpt)) +(0.994*tas) - 2.653;
+
+    e_array = (ps_array * huss_array) / (0.622 + 0.378 * huss_array)
+    dpt_array = (np.log(e_array / 6.112) * 243.5) / (17.67 - np.log(e_array / 6.112))
+    appt_array = (0.0153 * (dpt_array * dpt_array)) + (0.994*tas_array) - 2.653
+
+    return appt_array
+
+
 # this function will process the data into a format monthly_data[month][site]
 def monthly_data(var):
 
