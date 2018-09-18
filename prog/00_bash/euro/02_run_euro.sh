@@ -13,7 +13,7 @@ cd ~/git/IMAGE/prog/CLaGARMi/
 
 (
 
-nohup matlab -nodesktop -softwareopengl -r test.m 's=2';
+nohup matlab -nosplash -nodesktop -softwareopengl -r test 's=2';
 
 #nohup matlab -nosplash -nodesktop -softwareopengl -r run_CLaGARMi_euro_hist_6000yr;
 #nohup matlab -nosplash -nodesktop -softwareopengl -r run_CLaGARMi_euro_hist_4000yr;
