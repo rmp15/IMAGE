@@ -1,4 +1,4 @@
-function rs=PMVNgen(r,nYears,sroot)
+function rs=PMVNgen(r,nYears,hdir)
 
 nsp=size(r,1);
 %nmp=size(r,2);
@@ -8,7 +8,7 @@ rp=permute(r,[2 1 3]);
 rp=rp(:,:);
 
 SIG=cov(rp);
-rs=mvnrnd_eigs_save(zeros(nYears,nlocs*nsp),SIG,[sroot 'cholcov_precalc\']);
+rs=mvnrnd_eigs_save(zeros(nYears,nlocs*nsp),SIG,[hdir 'cholcov_precalc/']);
 rs=reshape(rs,nYears,nsp,nlocs);
 rs=permute(rs,[2 1 3]);
 

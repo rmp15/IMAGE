@@ -6,8 +6,6 @@ addpath('~/git/IMAGE/prog/01_extract_files/');
 addpath('../../data/CORDEX_nobc_clagarm_input/')
 addpath('../../prog/CLaGARMi/v1')
 
-%var_names = {'tasmax','huss','sfcWindmax','ps'};
-
 % loading process
 load /home/rmp15/data/IMAGE/CORDEX/euro_cordex/tasmax/processed/tasmax_MPI-M-MPI-ESM-LR_historical_r2i1p1_MPI-CSC-REMO2009_v119712000.mat
 mv(1)=v;
@@ -21,14 +19,21 @@ clear v
 % decomp of AR fits get saved her for improved re-run time
 sroot='~/data/IMAGE/CLaGARMi/euro_cordex_output/';
 
+output_label='temp_humi_wind';
+
 nyrs=4000; % simulation length
 nmnths=12; % no 'months' per year
 niters=10; % no. iterations on residual convariance matrix
 split=1; %used to split very long runs into smaller chunks
-savefilename = strcat('out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_hist_1971_2000');
+savefilename = strcat('out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_hist_1971_2000_',output_label);
+
+scen        = 'hist'
+starty      = '1971'
+endy        = '2000'
+var_names   = 'tasmax_huss_sfcWindmax'
 
 tic
-mv=CLaGARMi(nyrs,nmnths,niters,mv,sroot);
+mv=CLaGARMi(nyrs,nmnths,niters,mv,sroot,scen,starty,endy,var_names);
 toc
 
 disp('Saving...');
@@ -55,17 +60,3 @@ sfcWindmax_s = mv(3).s;
 sfcWindmax_o = mv(3).o;
 save(sfcWindmax_s_fn,'sfcWindmax_s','-v7.3');
 save(sfcWindmax_o_fn,'sfcWindmax_o','-v7.3');
-
-ps_s_fn = strcat(sroot,'ps/',savefilename,'_ps_s');
-ps_o_fn = strcat(sroot,'ps/',savefilename,'_ps_o');
-ps_s = mv(4).s;
-ps_o = mv(4).o;
-save(ps_s_fn,'ps_s','-v7.3');
-save(ps_o_fn,'ps_o','-v7.3');
-
-pr_s_fn = strcat(sroot,'pr/',savefilename,'_pr_s');
-pr_o_fn = strcat(sroot,'pr/',savefilename,'_pr_o');
-pr_s = mv(5).s;
-pr_o = mv(5).o;
-save(pr_s_fn,'pr_s','-v7.3');
-save(pr_o_fn,'pr_o','-v7.3');

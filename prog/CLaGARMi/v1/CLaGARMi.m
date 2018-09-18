@@ -6,7 +6,7 @@
 % use iterative approach to improve monthly and daily scale correlations
 % separately
 
-function mv=CLaGARMi(nYears,nsp,nIters,mv,sroot)
+function mv=CLaGARMi(nYears,nsp,nIters,mv,sroot,scen,starty,endy,var_names)
 tic; st=[]; %init section timer for toc_section calls
 
 %% Model options
@@ -57,18 +57,24 @@ if ~DESEASON; opzbd=opzb;end
 % does not use hashing anymore, probs with ettting hash from large data.
 % just use filemane now so clear dirs for full refit
 
-hdir=[sroot 'ARfitdat/'];
+hdir=[sroot 'ARfitdat/',scen,'_',starty,'_',endy,'_',var_names,'_',num2str(nYears),'yr/'];
 h=[hdir 'ARfitdat'];
+
 %hdir='interm_data/'; % dir to store intermediate files with hashed filnames
 if ~exist([h '.mat'])
     disp('Performing model fitting');
     [c,p,r]=calc_AR1_per_loc_sp_par(opzbd,nsp);  %returns c=constant, p=coefficient, r=resid.
-    mkdir(hdir);
+    if ~exist(hdir)
+        mkdir(hdir)
+    end
     save([h],'c','p','r','-v7.3')
 else
     disp('Loading precalculated fitting params');
     load([h '.mat'])
 end
+
+% CURRENTLY HERE IN THE SCRIPT. CONTINUE RUNNING AND CHECK THE NAME LOGIC OF THE CHOLCOV STUFF
+
 %identify fitting failures by comparing theoretical AR mean mu with actual
 %mean,opzbd_spm
 [c,p]=fixARfit(c,p,opzbd,nsp);
@@ -97,7 +103,7 @@ for i=1:nIters
         [mupz,mupz_dat]=mloc_nscore(mup,'linlim'); %use ll for now. GP requires applying limPXARcoef correction. Later try paretotails ecdf function with kernal smoothing
         
         %[mupsz,SIGar]=PMVNgen_iter(mupz,SIGar,o,s,nYears);
-        [mupsz]=PMVNgen(mupz,nYears,sroot);
+        [mupsz]=PMVNgen(mupz,nYears,hdir);
         mups=mloc_inscore(mupsz,mupz_dat);
         muspu=mups(:,:,1:size(c,3));
         pspu=mups(:,:,1+size(c,3):end);
