@@ -39,6 +39,9 @@ toc
 disp('Saving...');
 save(strcat(sroot,'combined_output/',savefilename),'mv','-v7.3');
 
+% reuse savefilename for the isolate outputs
+savefilename = strcat('out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_hist_1971_2000_');
+
 % save individual outputs of variables
 tasmax_s_fn = strcat(sroot,'tasmax/',savefilename,'_tasmax_s');
 tasmax_o_fn = strcat(sroot,'tasmax/',savefilename,'_tasmax_o');
