@@ -1,6 +1,6 @@
 % Loads Euro CORDEX historical data and then runs CLaGARMi
 
-function []=test(arg1,arg2)
+function []=test(arg1)
 
 clear
 
