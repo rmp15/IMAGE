@@ -27,10 +27,10 @@ niters=10; % no. iterations on residual convariance matrix
 split=1; %used to split very long runs into smaller chunks
 savefilename = strcat('out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_hist_1971_2000_',output_label);
 
-scen        = 'hist'
-starty      = '1971'
-endy        = '2000'
-var_names   = 'tasmax_huss_sfcWindmax'
+scen        = 'hist';
+starty      = '1971';
+endy        = '2000';
+var_names   = 'tasmax_huss_sfcWindmax';
 
 tic
 mv=CLaGARMi(nyrs,nmnths,niters,mv,sroot,scen,starty,endy,var_names);

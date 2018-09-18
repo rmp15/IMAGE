@@ -6,7 +6,7 @@
 % use iterative approach to improve monthly and daily scale correlations
 % separately
 
-function mv=CLaGARMi(nYears,nsp,nIters,mv,sroot,scen,starty,endy,var_names)
+function mv=CLaGARMi(nYears, nsp, nIters, mv, sroot, scen, starty, endy, var_names)
 tic; st=[]; %init section timer for toc_section calls
 
 %% Model options
@@ -107,7 +107,7 @@ for i=1:nIters
         mups=mloc_inscore(mupsz,mupz_dat);
         muspu=mups(:,:,1:size(c,3));
         pspu=mups(:,:,1+size(c,3):end);
-        
+
         cspu=muspu.*(1-pspu);
         
         % save([hAR],'cspu','pspu','-v7.3')
