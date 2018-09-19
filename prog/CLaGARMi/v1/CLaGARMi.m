@@ -73,8 +73,6 @@ else
     load([h '.mat'])
 end
 
-% CURRENTLY HERE IN THE SCRIPT. CONTINUE RUNNING AND CHECK THE NAME LOGIC OF THE CHOLCOV STUFF
-
 %identify fitting failures by comparing theoretical AR mean mu with actual
 %mean,opzbd_spm
 [c,p]=fixARfit(c,p,opzbd,nsp);
