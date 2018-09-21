@@ -57,7 +57,8 @@ if ~DESEASON; opzbd=opzb;end
 % does not use hashing anymore, probs with ettting hash from large data.
 % just use filemane now so clear dirs for full refit
 
-hdir=[sroot 'ARfitdat/',scen,'_',starty,'_',endy,'_',var_names,'_',num2str(nYears),'yr/'];
+%hdir=[sroot 'ARfitdat/',scen,'_',starty,'_',endy,'_',var_names,'_',num2str(nYears),'yr/'];
+hdir=[sroot 'ARfitdat/',scen,'_',starty,'_',endy,'_',var_names,'/'];
 h=[hdir 'ARfitdat'];
 
 %hdir='interm_data/'; % dir to store intermediate files with hashed filnames
