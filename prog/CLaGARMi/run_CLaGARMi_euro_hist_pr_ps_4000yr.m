@@ -19,7 +19,7 @@ sroot='~/data/IMAGE/CLaGARMi/euro_cordex_output/';
 
 output_label='pr_ps';
 
-nyrs=6000; % simulation length
+nyrs=4000; % simulation length
 nmnths=12; % no 'months' per year
 niters=10; % no. iterations on residual convariance matrix
 split=1; %used to split very long runs into smaller chunks
