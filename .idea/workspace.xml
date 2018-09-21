@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100_tasmax_huss_sfcWindmax_6000yr.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" afterPath="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100_tasmax_huss_sfcWindmax_6000yr.m" afterPath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100_tasmax_huss_sfcWindmax_6000yr.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_4000yr.m" afterPath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_4000yr.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_6000yr.m" afterPath="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_6000yr.m" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,18 +33,8 @@
       <file leaf-file-name="run_CLaGARMi_euro_85_2071_2100_tasmax_huss_sfcWindmax_6000yr.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100_tasmax_huss_sfcWindmax_6000yr.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run_CLaGARMi_euro_hist_pr_ps_4000yr.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_pr_ps_4000yr.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+            <state relative-caret-position="578">
+              <caret line="42" column="92" lean-forward="false" selection-start-line="42" selection-start-column="92" selection-end-line="42" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -60,7 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>var</find>
       <find>monthly_pctile</find>
       <find>pd</find>
       <find>pd.concat</find>
@@ -90,6 +80,7 @@
       <find>sroot</find>
       <find>Iteration</find>
       <find>FFMC</find>
+      <find>output_label</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -98,7 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/prog/00_bash/euro/04_plot_euro.sh" />
         <option value="$PROJECT_DIR$/prog/01_extract_files/CORDEX_create_nobc_data.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_45_2021_2050.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100.m" />
@@ -143,12 +133,13 @@
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_4000yr.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_temp_humi_wind_4000yr.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/v1/PMVNgen.m" />
-        <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_6000yr.m" />
-        <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_4000yr.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_pr_ps_6000yr.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/v1/CLaGARMi.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_pr_ps_4000yr.m" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" />
+        <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_4000yr.m" />
+        <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_6000yr.m" />
+        <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100_tasmax_huss_sfcWindmax_6000yr.m" />
       </list>
     </option>
   </component>
@@ -502,13 +493,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00148" summary="extracting values from clagarmi script">
-      <created>1532596802324</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1532596802324</updated>
-    </task>
     <task id="LOCAL-00149" summary="extracting values from clagarmi script">
       <created>1532596860583</created>
       <option name="number" value="00149" />
@@ -845,7 +829,14 @@
       <option name="project" value="LOCAL" />
       <updated>1537536098434</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="extracting values from clagarmi script">
+      <created>1537536193402</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1537536193402</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TodoView">
@@ -859,9 +850,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26967096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26967096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32809225" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1192,22 +1183,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_4000yr.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="91" lean-forward="false" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_6000yr.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_pr_ps_6000yr.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -1258,6 +1233,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_6000yr.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1266,10 +1249,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_4000yr.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_85_2071_2100_tasmax_huss_sfcWindmax_6000yr.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="578">
+          <caret line="42" column="92" lean-forward="false" selection-start-line="42" selection-start-column="92" selection-end-line="42" selection-end-column="92" />
           <folding />
         </state>
       </provider>

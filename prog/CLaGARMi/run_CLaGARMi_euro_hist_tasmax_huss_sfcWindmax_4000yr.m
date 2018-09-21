@@ -19,7 +19,7 @@ clear v
 % decomp of AR fits get saved her for improved re-run time
 sroot='~/data/IMAGE/CLaGARMi/euro_cordex_output/';
 
-output_label='temp_humi_wind';
+output_label='tasmax_huss_sfcWindmax';
 
 nyrs=4000; % simulation length
 nmnths=12; % no 'months' per year
