@@ -27,7 +27,7 @@ niters=10; % no. iterations on residual convariance matrix
 split=1; %used to split very long runs into smaller chunks
 savefilename = strcat('out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_rcp85_2021_2050_',output_label);
 
-scen        = 'hist';
+scen        = 'rcp85';
 starty      = '2021';
 endy        = '2050';
 var_names   = 'tasmax_huss_sfcWindmax';
