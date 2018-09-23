@@ -40,7 +40,7 @@ disp('Saving...');
 save(strcat(sroot,'combined_output/',savefilename),'mv','-v7.3');
 
 % reuse savefilename for the isolated outputs
-savefilename = strcat('out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_rcp85_2021_2050');
+savefilename = strcat('out_',num2str(split,'%02d'),'_y',int2str(nyrs),'_euro_rcp85_2071_2100');
 
 % save individual outputs of variables
 tasmax_s_fn = strcat(sroot,'tasmax/',savefilename,'_tasmax_s');
