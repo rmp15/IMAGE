@@ -30,9 +30,16 @@ pr_jja_sum_sim = seasonal_sum_calculator(pr_sim_data[:,0:1000,:], 6, 8)
 pr_jja_mean_obs = seasonal_mean_calculator(pr_obs_data, 6, 8)
 pr_jja_mean_sim = seasonal_mean_calculator(pr_sim_data[:,0:1000,:], 6, 8)
 
+# calculate gamma fit parameters for each site
+
+#  cycle through obs and sim to generate spi for each site
+
+
+
+
 # temporary save text
-np.savetxt('pr_jja_mean_obs.csv', pr_jja_mean_obs, delimiter=",")
-np.savetxt('pr_jja_mean_sim.csv', pr_jja_mean_sim, delimiter=",")
+# np.savetxt('pr_jja_mean_obs.csv', pr_jja_mean_obs, delimiter=",")
+# np.savetxt('pr_jja_mean_sim.csv', pr_jja_mean_sim, delimiter=",")
 
 # take only the JJA months of data for each site and calculate rainfall percentiles
 # pr_obs_jja = seasonal_data(pr_obs_data, 6, 8)
