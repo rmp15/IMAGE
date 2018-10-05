@@ -195,6 +195,41 @@ def seasonal_percentile_calculator(var, start, end, pctile):
     return pctile_data
 
 
+# this function will cycle through each site for selected season and sum the variable
+def seasonal_sum_calculator(var, start, end):
+
+    # information for how to create the seasonal array
+    month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    month_end_inds = np.cumsum(month_days)
+    month_start_end_inds = np.zeros(13)
+    month_start_end_inds[0] = 0
+    month_start_end_inds[1:] = month_end_inds
+    month_start_end_inds = month_start_end_inds.astype(int)
+
+    # load data and number of years
+    data, no_years, no_sites = seasonal_data(var, start, end)
+
+    # calculate sum for each site
+    sum_data = np.zeros((no_sites, no_years))
+    for j in range(0, no_sites):
+        for k in range(0, no_years):
+            sum_data[j, k] = 86400 * np.sum(np.ndarray.flatten(var[j, k, month_start_end_inds[start-1]:month_start_end_inds[end]]))
+
+    return sum_data
+
+# this function will calculate the seasonal averages for each site
+def seasonal_mean_calculator(var,start,end):
+
+    temp_array = seasonal_sum_calculator(var, start, end)
+    no_sites = temp_array.shape[0]
+
+    mean_data = np.zeros((int(no_sites), 1))
+    for j in range(0, no_sites):
+        mean_data[j] = np.mean(np.ndarray.flatten(temp_array[j, :]))
+
+    return mean_data
+
+
 # this function will cycle through each site per year for selected season and figure out how many consecutive days are above a threshold
 # TO FINISH
 def seasonal_hw_duration_summary(var, var_process, start, end, pctile):
