@@ -34,9 +34,6 @@ pr_jja_mean_sim = seasonal_mean_calculator(pr_sim_data[:,0:1000,:], 6, 8)
 
 #  cycle through obs and sim to generate spi for each site
 
-
-
-
 # temporary save text
 # np.savetxt('pr_jja_mean_obs.csv', pr_jja_mean_obs, delimiter=",")
 # np.savetxt('pr_jja_mean_sim.csv', pr_jja_mean_sim, delimiter=",")
@@ -48,19 +45,7 @@ pr_jja_mean_sim = seasonal_mean_calculator(pr_sim_data[:,0:1000,:], 6, 8)
 # appt_obs_data = app_temp_creator(tas_obs_data, huss_obs_data, ps_obs_data)
 # appt_sim_data = app_temp_creator(tas_sim_data, huss_sim_data, ps_sim_data)
 
-# processing monthly means for the CORDEX observation data
-obs_data_processed = monthly_summary(appt_obs_data, 30, 0)
 
-# processing monthly means for the CORDEX sim data
-# with summary statistics for the entire period and for ensembles chunks
-sim_data_processed_all, sim_data_processed_ens = monthly_summary(appt_sim_data, 30, 1)
-obs_data_processed.columns = ['mean_value_obs', 'month', 'sd_value_obs', 'site']
-
-sim_data_processed_all.columns = ['mean_value_sim', 'month', 'sd_value_sim', 'site']
-
-# combine two tables of complete values
-obs_sim_data_processed = pd.merge(obs_data_processed, sim_data_processed_all)
-
-# output to merged obs and sim values to csv
-obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_obs_sim_merged.csv')
-sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_sim_ens.csv')
+# # output to merged obs and sim values to csv
+# obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_obs_sim_merged.csv')
+# sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_sim_ens.csv')
