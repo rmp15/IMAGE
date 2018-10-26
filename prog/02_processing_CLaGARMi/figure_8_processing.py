@@ -57,7 +57,20 @@ for i in range(0, no_sites):
 
 obs_data_processed = seasonal_hw_duration_summary_europe(obs_data, obs_data, season_start, season_end, percentile)
 
+# take sample of 1000 years from sim_data_1 (TEMPORARY)
+# sim_data_1_subset = sim_data_1
+
+# sim_data_processed = seasonal_hw_duration_summary_europe(obs_data, sim_data_1_subset, season_start, season_end, percentile)
 sim_data_processed = seasonal_hw_duration_summary_europe(obs_data, sim_data_combined, season_start, season_end, percentile)
+
+# create duration characteristics for each site
+data_obs = hw_duration_return_periods_europe(obs_data_processed)
+data_sim = hw_duration_return_periods_europe(sim_data_processed)
+
+# save to csv
+data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods_europe.csv')
+# data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' +  str(years_sim) + 'yrs_sim_intensity_return_periods_europe.csv')
+data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_1000yrs_sim_intensity_return_periods_europe.csv')
 
 #################################
 # HEAT WAVE DURATION BY SITE
@@ -68,25 +81,6 @@ obs_data_processed = seasonal_hw_duration_summary(obs_data, obs_data, season_sta
 
 # processing seasonal percentiles and then calculating number of consecutive days over it for simulated data
 sim_data_processed = seasonal_hw_duration_summary(obs_data, sim_data_combined, season_start, season_end, percentile)
-
-# generate return periods based on results for observed and simulated data
-# return period = (n+1)/m, where n=number of years in data set, m=rank of
-def hw_duration_return_periods(data):
-    data_master = pd.DataFrame()
-    for j in range(0, data.shape[1]):
-        # for each location, generate a probability rank, where lowest number is lowest ranked
-        rank_data = len(data[:, j]) + 1 - rankdata(data[:, j], method='min')
-
-        # calculate return period
-        return_period = (len(data[:, j]) + 1) / rank_data
-
-        # collect values of heat wave intensity and return period for each location
-        data_current = pd.DataFrame({'site': (j + 1), 'days_over': np.unique(data[:, j]),
-                                     'return_period': np.unique(return_period)})
-        data_master = pd.concat([data_master.reset_index(drop=True), data_current.reset_index(drop=True)], axis=0)
-        # data_master.append(data_current, ignore_index=True)
-
-    return data_master
 
 # create duration characteristics for each site
 data_obs = hw_duration_return_periods(obs_data_processed)
@@ -103,18 +97,6 @@ data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_pr
 # HEAT WAVE INTENSITY
 #################################
 
-
-
-
-
-
-
-
-
-
-
-
-
 # # processing monthly means for the CORDEX sim data
 # # with summary statistics for the entire period and for ensembles chunks
 # sim_data_processed_all, sim_data_processed_ens = monthly_summary(sim_data, 30, 1)
@@ -127,3 +109,24 @@ data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_pr
 # # output to merged obs and sim values to csv
 # obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_obs_sim_merged.csv')
 # sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_sim_ens.csv')
+
+#################################
+# DROUGHT DURATION EUROPE-WIDE
+#################################
+
+obs_data_processed = seasonal_drought_duration_summary_europe(obs_data, obs_data, season_start, season_end, 1)
+
+# take sample of 1000 years from sim_data_1 (TEMPORARY)
+# sim_data_1_subset = sim_data_1[:,range(0,1000),:]
+
+# sim_data_processed = seasonal_hw_duration_summary_europe(obs_data, sim_data_1_subset, season_start, season_end, percentile)
+sim_data_processed = seasonal_drought_duration_summary_europe(obs_data, sim_data_1_subset, season_start, season_end, 1)
+
+# create duration characteristics for each site
+data_obs = hw_duration_return_periods_europe(obs_data_processed)
+data_sim = hw_duration_return_periods_europe(sim_data_processed)
+
+# save to csv
+data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_drought_intensity_return_periods_europe.csv')
+# data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' +  str(years_sim) + 'yrs_sim_intensity_return_periods_europe.csv')
+data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_1000yrs_sim_drought_intensity_return_periods_europe.csv')

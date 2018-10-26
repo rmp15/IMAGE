@@ -14,6 +14,8 @@ scen <- as.character(args[6])
 start <- as.numeric(args[7])
 end <- as.numeric(args[8])
 
+# slice = '01' ; years_sim1 = 4000 ; years_sim2 = 6000 ; metric = 'tasmax' ; continent = 'euro' ; scen = 'hist' ; start = 1971 ;end = 2000
+
 print(args)
 
 years_sim_tot = years_sim1 + years_sim2

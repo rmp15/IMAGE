@@ -297,8 +297,6 @@ def seasonal_hw_duration_summary_europe(var, var_process, start, end, pctile):
 
     # for each year, calculate maximum number of consecutive days above XXth percentile from pctile_data
     no_days = (month_start_end_inds[end] - month_start_end_inds[start - 1])
-    # year_data = np.zeros((no_years))
-    # threshold_data = np.zeros((no_years))
     consecutive_data = np.zeros((no_years))
     for i in range(0, no_years):
             # assign seasonal data to the year
@@ -378,9 +376,102 @@ def consecutive_one(data):
 
     return max(longest, current)
 
+# rle equivalent in R to give longest string of 1's
+def consecutive_zero(data):
+    longest = 0
+    current = 0
+    for num in data:
+        num= 1- num
+        if num == 1:
+            current += 1
+        else:
+            longest = max(longest, current)
+            current = 0
+
+    return max(longest, current)
+
 
 if __name__ == '__main__':
     data = [0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0]
     print(consecutive_one(data))
 
 
+# generate return periods based on results for observed and simulated data
+# return period = (n+1)/m, where n=number of years in data set, m=rank of
+def hw_durationreturn_periods(data):
+    data_master = pd.DataFrame()
+    for j in range(0, data.shape[1]):
+        # for each location, generate a probability rank, where lowest number is lowest ranked
+        rank_data = len(data[:, j]) + 1 - rankdata(data[:, j], method='min')
+
+        # calculate return period
+        return_period = (len(data[:, j]) + 1) / rank_data
+
+        # collect values of heat wave intensity and return period for each location
+        data_current = pd.DataFrame({'site': (j + 1), 'days_over': np.unique(data[:, j]),
+                                     'return_period': np.unique(return_period)})
+        data_master = pd.concat([data_master.reset_index(drop=True), data_current.reset_index(drop=True)], axis=0)
+        # data_master.append(data_current, ignore_index=True)
+
+    return data_master
+
+
+# generate return periods based on results for observed and simulated data
+# return period = (n+1)/m, where n=number of years in data set, m=rank of
+def hw_duration_return_periods_europe(data):
+    data_master = pd.DataFrame()
+    # for entire Europe, generate a probability rank, where lowest number is lowest ranked
+    rank_data = len(data) + 1 - rankdata(data, method='min')
+
+    # calculate return periods
+    return_period = (len(data) + 1) / rank_data
+
+    # collect values of heat wave intensity and return period for each location
+    data_current = pd.DataFrame({'days_over': np.unique(data),
+                                     'return_period': np.unique(return_period)})
+
+    return data_current
+
+# drought calculator
+def seasonal_drought_duration_summary_europe(var, var_process, start, end, pctile):
+
+    # information for how to create the seasonal array
+    month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    month_end_inds = np.cumsum(month_days)
+    month_start_end_inds = np.zeros(13)
+    month_start_end_inds[0] = 0
+    month_start_end_inds[1:] = month_end_inds
+    month_start_end_inds = month_start_end_inds.astype(int)
+
+    # load data to process, number of years
+    data, no_years, no_sites = seasonal_data_2(var_process, start, end)
+
+    no_years = var_process.shape[1]
+
+    # calculate where the pctile desired is for europe from a source dataset
+    pctile_data = seasonal_percentile_calculator_europe(var, start, end, pctile)
+
+    # take average for entire europe for each day for the entire period
+    days = (month_start_end_inds[end] - month_start_end_inds[start-1])
+    num_days = days * no_years
+    avg_data = np.zeros(num_days)
+    for j in range(0,no_years):
+        for i in range(0, days):
+            k = j*days+i
+            avg_data[k] = np.mean(np.ndarray.flatten(data[:, j, i]))
+
+    # for each year, calculate maximum number of consecutive days below XXth percentile from pctile_data
+    no_days = (month_start_end_inds[end] - month_start_end_inds[start - 1])
+    consecutive_data = np.zeros((no_years))
+    for i in range(0, no_years):
+            # assign seasonal data to the year
+            year_data = np.ndarray.flatten(avg_data[(i*no_days):((i+1)*no_days)])
+            # recover percentile data for comparison
+            pctile_threshold = pctile_data
+            # test on entire year for above or below threshold
+            threshold_data = [0 if a > pctile_threshold else 1 for a in year_data]
+            # figure out longest consecutive over threshold (equivalent of rle in R and outputting longest 'streak')
+            consecutive_data[i] = consecutive_zero(threshold_data)
+            print(i)
+
+    return consecutive_data
