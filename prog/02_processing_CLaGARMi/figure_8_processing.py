@@ -40,15 +40,27 @@ lonlat.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/'+ co
 obs_data, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, year_start, year_end, metric)
 obs_data, sim_data_2 = load_clag_output(slice, years_sim_2, continent, scen, year_start, year_end, metric)
 
-# combine two sets of simulations (must be a faster way?) (check out numpy.stack
+no_sites = obs_data.shape[0]
+
+# combine two sets of simulations (must be a faster way?) (check out numpy.stack)
 sim_data_combined = np.empty([no_sites,(years_sim_1+years_sim_2),365])
 for i in range(0, no_sites):
     for j in range(0,365):
         sim_data_combined[i,:,j] = np.concatenate((sim_data_1[i,:,j], sim_data_2[i,:,j]), axis=0)
 
+# sim_data_combined = np.stack((sim_data_1,sim_data_2), axis=1)
+# sim_data_combined = np.block([sim_data_1,sim_data_2])
 
 #################################
-# HEAT WAVE DURATION
+# HEAT WAVE DURATION EUROPE-WIDE
+#################################
+
+obs_data_processed = seasonal_hw_duration_summary_europe(obs_data, obs_data, season_start, season_end, percentile)
+
+sim_data_processed = seasonal_hw_duration_summary_europe(obs_data, sim_data_combined, season_start, season_end, percentile)
+
+#################################
+# HEAT WAVE DURATION BY SITE
 #################################
 
 # processing seasonal percentiles and then calculating number of consecutive days over it for observed data
@@ -83,6 +95,9 @@ data_sim = hw_duration_return_periods(sim_data_processed)
 # save to csv
 data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_sim_intensity_return_periods.csv')
 data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' +  str(years_sim) + 'yrs_sim_intensity_return_periods.csv')
+
+# need to create heatwave duration characteristics for each footprint instead of each site
+
 
 #################################
 # HEAT WAVE INTENSITY
