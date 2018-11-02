@@ -105,6 +105,61 @@ for subset in range(0, int(np.floor(sim_data_1.shape[1]/30))):
 # save to csv
 data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_30yrs_subsets_4000yrs_sim_intensity_return_periods_europe.csv',index=False)
 
+#################################
+# HEAT WAVE DURATION ONE COUNTRY (all data)
+#################################
+
+obs_data_site = obs_data[range(0,2),:,:] # this needs to be corrected to match a footprint of each country
+
+obs_data_processed_site = seasonal_hw_duration_summary_europe(obs_data_site, obs_data_site, season_start, season_end, percentile)
+
+# take sample of XX years from sim_data_1 (TEMPORARY)
+sim_data_1_subset = sim_data_1[range(0,2),:,:]
+
+sim_data_processed_site = seasonal_hw_duration_summary_europe(obs_data_site, sim_data_1_subset, season_start, season_end, percentile)
+# sim_data_processed = seasonal_hw_duration_summary_europe(obs_data, sim_data_combined, season_start, season_end, percentile)
+
+# create duration characteristics for each site
+data_obs = hw_duration_return_periods_europe(obs_data_processed)
+data_sim = hw_duration_return_periods_europe(sim_data_processed)
+
+# save to csv
+data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods_one_country.csv')
+# data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' +  str(years_sim) + 'yrs_sim_intensity_return_periods_europe.csv')
+data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_4000yrs_sim_intensity_return_periods_one_country.csv')
+
+#################################
+# HEAT WAVE DURATION ONE COUNTRY (30-year chunks)
+#################################
+
+# create empty frame to populate with subset values
+data_avg = pd.DataFrame(columns=['days_over', 'return_period', 'subset'])
+
+# loop through subsets to get some heat wave return periods
+for subset in range(0, int(np.floor(sim_data_1.shape[1]/30))):
+
+    # print subset
+    print(subset)
+
+    # take sample of 30 years from sim_data_1 recursively
+    sim_data_1_subset = sim_data_1[:,range(30*subset,(30*(subset+1))),:]
+
+    sim_data_processed_temp = seasonal_hw_duration_summary_europe(obs_data, sim_data_1_subset, season_start, season_end, percentile)
+
+    # create duration characteristics for each site
+    data_sim_temp = hw_duration_return_periods_europe(sim_data_processed_temp)
+
+    # convert into pandas dataframe
+    data_sim_temp = pd.DataFrame(data_sim_temp)
+    data_sim_temp['subset'] = subset + 1
+
+    # concatenate to master file
+    data_avg = pd.concat([data_avg.reset_index(drop=True), data_sim_temp.reset_index(drop=True)], axis=0)
+
+
+# save to csv
+data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_30yrs_subsets_4000yrs_sim_intensity_return_periods_europe.csv',index=False)
+
 
 #################################
 # HEAT WAVE DURATION BY SITE
