@@ -109,20 +109,20 @@ data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_pr
 #################################
 # HEAT WAVE DURATION BY SITE
 #################################
-
-# processing seasonal percentiles and then calculating number of consecutive days over it for observed data
-obs_data_processed = seasonal_hw_duration_summary(obs_data, obs_data, season_start, season_end, percentile)
-
-# processing seasonal percentiles and then calculating number of consecutive days over it for simulated data
-sim_data_processed = seasonal_hw_duration_summary(obs_data, sim_data_combined, season_start, season_end, percentile)
-
-# create duration characteristics for each site
-data_obs = hw_duration_return_periods(obs_data_processed)
-data_sim = hw_duration_return_periods(sim_data_processed)
-
-# save to csv
-data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_sim_intensity_return_periods.csv')
-data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' +  str(years_sim) + 'yrs_sim_intensity_return_periods.csv')
+#
+# # processing seasonal percentiles and then calculating number of consecutive days over it for observed data
+# obs_data_processed = seasonal_hw_duration_summary(obs_data, obs_data, season_start, season_end, percentile)
+#
+# # processing seasonal percentiles and then calculating number of consecutive days over it for simulated data
+# sim_data_processed = seasonal_hw_duration_summary(obs_data, sim_data_combined, season_start, season_end, percentile)
+#
+# # create duration characteristics for each site
+# data_obs = hw_duration_return_periods(obs_data_processed)
+# data_sim = hw_duration_return_periods(sim_data_processed)
+#
+# # save to csv
+# data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_sim_intensity_return_periods.csv')
+# data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' +  str(years_sim) + 'yrs_sim_intensity_return_periods.csv')
 
 # need to create heatwave duration characteristics for each footprint instead of each site
 

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/write_ups/02_european_heatwave_paper/words/01_climatic_change/10_entire/01_initial_upload/~$AGE_heat_wave_paper.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/write_ups/02_european_heatwave_paper/words/01_climatic_change/10_entire/01_initial_upload/~$igures.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R" afterPath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" afterPath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +22,8 @@
       <file leaf-file-name="figure_8_processing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="126" column="90" lean-forward="false" selection-start-line="126" selection-start-column="90" selection-end-line="126" selection-end-column="90" />
+            <state relative-caret-position="-9">
+              <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding>
                 <element signature="e#217#279#0" expanded="true" />
               </folding>
@@ -36,8 +34,8 @@
       <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="708">
-              <caret line="438" column="13" lean-forward="false" selection-start-line="438" selection-start-column="13" selection-end-line="438" selection-end-column="13" />
+            <state relative-caret-position="138">
+              <caret line="400" column="79" lean-forward="false" selection-start-line="400" selection-start-column="79" selection-end-line="400" selection-end-column="79" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <element signature="e#5485#8196#0" expanded="false" />
@@ -156,9 +154,9 @@
         <option value="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro.sh" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/spi_process.py" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8.R" />
-        <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" />
+        <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
       </list>
     </option>
   </component>
@@ -554,13 +552,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00168" summary="extracting values from clagarmi script">
-      <created>1533897985167</created>
-      <option name="number" value="00168" />
-      <option name="presentableId" value="LOCAL-00168" />
-      <option name="project" value="LOCAL" />
-      <updated>1533897985167</updated>
-    </task>
     <task id="LOCAL-00169" summary="extracting values from clagarmi script">
       <created>1533912657163</created>
       <option name="number" value="00169" />
@@ -897,7 +888,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540548967678</updated>
     </task>
-    <option name="localTasksCounter" value="217" />
+    <task id="LOCAL-00217" summary="extracting values from clagarmi script">
+      <created>1541155327100</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1541155327101</updated>
+    </task>
+    <option name="localTasksCounter" value="218" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1317,16 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="126" column="90" lean-forward="false" selection-start-line="126" selection-start-column="90" selection-end-line="126" selection-end-column="90" />
-          <folding>
-            <element signature="e#217#279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1335,10 +1323,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding>
+            <element signature="e#217#279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="438" column="13" lean-forward="false" selection-start-line="438" selection-start-column="13" selection-end-line="438" selection-end-column="13" />
+        <state relative-caret-position="138">
+          <caret line="400" column="79" lean-forward="false" selection-start-line="400" selection-start-column="79" selection-end-line="400" selection-end-column="79" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <element signature="e#5485#8196#0" expanded="false" />

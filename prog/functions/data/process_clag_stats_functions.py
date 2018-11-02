@@ -397,7 +397,8 @@ if __name__ == '__main__':
 
 
 # generate return periods based on results for observed and simulated data
-# return period = (n+1)/m, where n=number of years in data set, m=rank of
+# return period = (n+1)/m, where n=number of years in data set, m=rank of exceedence probability
+# based on http://geog.uoregon.edu/amarcus/geog422/Handout_Recurrence_calcs.htm
 def hw_durationreturn_periods(data):
     data_master = pd.DataFrame()
     for j in range(0, data.shape[1]):
@@ -417,7 +418,8 @@ def hw_durationreturn_periods(data):
 
 
 # generate return periods based on results for observed and simulated data
-# return period = (n+1)/m, where n=number of years in data set, m=rank of
+# return period = (n+1)/m, where n=number of years in data set, m=rank of exceedence probability
+# based on http://geog.uoregon.edu/amarcus/geog422/Handout_Recurrence_calcs.htm
 def hw_duration_return_periods_europe(data):
     data_master = pd.DataFrame()
     # for entire Europe, generate a probability rank, where lowest number is lowest ranked
