@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/IMAGE.iml" afterPath="$PROJECT_DIR$/.idea/IMAGE.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prog/04_mapping/points_identify.R" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/file_paths/file_paths.py" afterPath="$PROJECT_DIR$/data/file_paths/file_paths.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" afterPath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="figure_8_processing.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="figure_8_processing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="55" selection-end-column="97" />
+              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="61" selection-end-column="43" />
               <folding>
                 <element signature="e#217#279#0" expanded="true" />
               </folding>
@@ -34,14 +30,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="points_identify.R" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/prog/04_mapping/points_identify.R">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="file_paths.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/file_paths/file_paths.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#32#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,14 +53,65 @@
       <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1224">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#5487#8198#0" expanded="false" />
-                <element signature="e#10464#11204#0" expanded="false" />
-                <element signature="e#13291#13549#0" expanded="false" />
-                <element signature="e#13778#15570#0" expanded="false" />
+                <marker date="1541685735615" expanded="true" signature="294:874" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="923:1088" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="1146:1799" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="1152:1495" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="1856:2333" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="1862:2074" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="2436:3393" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="2784:2881" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="3051:3349" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="3511:4532" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="3860:3959" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="4572:5327" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="4920:5019" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="5481:8195" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="6069:6487" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="6139:6487" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="6287:6416" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="6508:8150" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="6518:6655" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="6785:8111" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="7158:7991" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="7505:7991" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="7733:7888" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="8373:9073" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="9260:10324" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="9945:10072" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="9978:10072" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="10458:11204" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="11014:11183" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="11284:13171" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="12181:12308" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="12214:12308" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="12567:13142" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="13285:13549" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="13552:13700" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="13772:15570" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="14807:15541" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="14844:15541" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="15651:15866" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="15704:15832" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="15764:15832" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="15947:16182" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="16000:16148" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="16080:16148" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="16211:16316" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="16319:16570" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="16607:17400" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="16678:17376" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="17066:17197" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="17403:17654" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="17699:18214" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="18079:18187" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="19217:19344" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="19250:19344" ph="..." />
+                <marker date="1541685735615" expanded="true" signature="19603:20179" ph="..." />
               </folding>
             </state>
           </provider>
@@ -65,7 +120,7 @@
       <file leaf-file-name="figure_8_europewide.R" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
+            <state relative-caret-position="1155">
               <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding />
             </state>
@@ -121,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro_temperature.sh" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/02_run_euro_precipitation.sh" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_precip_4000yr.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_precip_6000yr.m" />
@@ -169,17 +223,16 @@
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/spi_process.py" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8.R" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R" />
-        <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" />
         <option value="$PROJECT_DIR$/data/file_paths/file_paths.py" />
         <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
+        <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" />
+        <option value="$PROJECT_DIR$/prog/04_mapping/points_identify.R" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -199,6 +252,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -221,7 +276,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
+              <option name="myItemId" value="prog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -235,18 +290,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
+              <option name="myItemId" value="prog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="file_paths" />
+              <option name="myItemId" value="04_mapping" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -884,16 +937,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16970702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17167382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32809225" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24096386" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327852" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31413612" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31325302" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -955,13 +1008,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/v1/validateInputData.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/CLaGARMi/v1/NQT_GPt.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -1281,15 +1327,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-257">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
+        <state relative-caret-position="1155">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding />
         </state>
@@ -1297,24 +1340,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/file_paths/file_paths.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#32#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="285">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1224">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#5487#8198#0" expanded="false" />
-            <element signature="e#10464#11204#0" expanded="false" />
-            <element signature="e#13291#13549#0" expanded="false" />
-            <element signature="e#13778#15570#0" expanded="false" />
+            <marker date="1541685735615" expanded="true" signature="294:874" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="923:1088" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="1146:1799" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="1152:1495" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="1856:2333" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="1862:2074" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="2436:3393" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="2784:2881" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="3051:3349" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="3511:4532" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="3860:3959" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="4572:5327" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="4920:5019" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="5481:8195" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="6069:6487" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="6139:6487" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="6287:6416" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="6508:8150" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="6518:6655" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="6785:8111" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="7158:7991" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="7505:7991" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="7733:7888" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="8373:9073" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="9260:10324" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="9945:10072" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="9978:10072" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="10458:11204" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="11014:11183" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="11284:13171" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="12181:12308" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="12214:12308" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="12567:13142" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="13285:13549" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="13552:13700" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="13772:15570" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="14807:15541" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="14844:15541" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="15651:15866" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="15704:15832" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="15764:15832" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="15947:16182" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="16000:16148" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="16080:16148" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="16211:16316" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="16319:16570" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="16607:17400" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="16678:17376" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="17066:17197" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="17403:17654" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="17699:18214" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="18079:18187" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="19217:19344" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="19250:19344" ph="..." />
+            <marker date="1541685735615" expanded="true" signature="19603:20179" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1322,10 +1414,18 @@
     <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="55" selection-end-column="97" />
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="61" selection-end-column="43" />
           <folding>
             <element signature="e#217#279#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/04_mapping/points_identify.R">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>

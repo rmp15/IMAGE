@@ -1,0 +1,1 @@
+europe = readOGR(dsn=path.expand("~/git/IMAGE/data/shapefiles/Europe/"),layer='Europe')
