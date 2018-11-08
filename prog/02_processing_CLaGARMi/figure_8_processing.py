@@ -26,11 +26,17 @@ season_start = int(float((sys.argv[8])))        # season_start = 5
 season_end = int(float((sys.argv[9])))          # season_end = 9
 percentile = int(float((sys.argv[10])))         # percentile = 99
 
+# file loc in case its being run on linux platform
+if sys.platform == 'linux' or sys.platform == 'linux2':
+    image_output_local = os.path.join('/home/rmp15/data/IMAGE/CLaGARMi/euro_cordex_output/')
+    cordex_output_local = os.path.join('/home/rmp15/data/IMAGE/CORDEX/')
+
+
 # load lon/lat data for European grids
 lons = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lons.mat'))
-lons_array = np.array(lons[list(lons.keys())[3]])
+lons_array = np.array(lons[list(lons.keys())[0]])
 lats = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lats.mat'))
-lats_array = np.array(lats[list(lats.keys())[3]])
+lats_array = np.array(lats[list(lats.keys())[0]])
 lonlat = pd.DataFrame(np.concatenate([lons_array, lats_array], axis=1),columns=['lon','lat'])
 
 # export lon/lat table
