@@ -1,6 +1,6 @@
 import numpy as np
 from shapely.geometry import Point
-from shapely.geometry.polygon import Polygon
+from shapely.geometry.polygon import Polygon, LinearRing
 import cartopy as cp
 from os import chdir
 from prog.functions.data.process_clag_stats_functions import *
@@ -21,19 +21,10 @@ def country_polygon(country_name):
         record = next(records)
         cntry_name = record.attributes['NAME']
 
-        country_polygon = record.geometry
+        # country_polygon = record.geometry
+        country_polygon = next(geos)
         geom_dict[cntry_name] = country_polygon
 
-
-
-    # aruba_geo = record.geometry
-    # print(aruba_geo)
-    # print(aruba_geo.type)
-    #
-    # p1 = Point( -70, 12.5)
-    #
-    # y = p1.within(aruba_geo)
-    # print(y)
     try:
         polygon_borders = geom_dict[country_name]
         return polygon_borders
