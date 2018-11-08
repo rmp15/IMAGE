@@ -3,13 +3,16 @@ from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
 import cartopy as cp
 from os import chdir
-from pprint import pprint
+from prog.functions.data.process_clag_stats_functions import *
+import sys
+from scipy.stats import rankdata
+import scipy.io
+from data.file_paths.file_paths import *
 
 
 def country_polygon(country_name):
-    chdir('C:/Users/srh110/Documents/ne_10m_admin_0_countries')
 
-    countries = cp.io.shapereader.Reader('ne_10m_admin_0_countries.shp')
+    countries = cp.io.shapereader.Reader(os.path.join(shapefile_europe, 'Europe.shp'))
     records = countries.records()
     geos = countries.geometries()
 
@@ -20,6 +23,8 @@ def country_polygon(country_name):
 
         country_polygon = record.geometry
         geom_dict[cntry_name] = country_polygon
+
+
 
     # aruba_geo = record.geometry
     # print(aruba_geo)
