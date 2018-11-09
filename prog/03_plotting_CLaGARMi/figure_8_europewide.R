@@ -34,9 +34,13 @@ dat.sim= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',e
 dat.sim.sub = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_4000yrs_sim_intensity_return_periods_europe.csv'))
 
 # load data for both comparing entire sim and obs
-dat.obs.one= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_one_country.csv'))
-dat.sim.one= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_4000yrs_sim_intensity_return_periods_one_country.csv'))
-# dat.sim.sub = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_4000yrs_sim_intensity_return_periods_europe.csv'))
+dat.obs.one= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_uk.csv'))
+dat.sim.one= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_4000yrs_sim_intensity_return_periods_uk.csv'))
+dat.sim.sub.one = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_4000yrs_sim_intensity_return_periods_uk.csv'))
+
+dat.obs.port= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_portugal.csv'))
+dat.sim.port= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_4000yrs_sim_intensity_return_periods_portugal.csv'))
+dat.sim.sub.port = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_4000yrs_sim_intensity_return_periods_portugal.csv'))
 
 #################################
 # FIGURE 8
@@ -100,14 +104,69 @@ ggplot() +
     legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
 dev.off()
 
-pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_one_country.pdf'),paper='a4r',height=0,width=0)
+pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_uk.pdf'),paper='a4r',height=0,width=0)
 ggplot() +
-    # geom_line(data=dat.sim.sub,aes(x=return_period,y=days_over,group=subset,color=subset),alpha=0.3)+
-    geom_line(data=dat.sim.one,aes(x=return_period,y=days_over),linetype='longdash',size=1)+
-    geom_line(data=dat.obs.one,aes(x=return_period,y=days_over),size=1)+
+    geom_line(data=dat.sim.sub,aes(x=return_period,y=days_over,group=subset,color=subset),alpha=0.3)+
+    # geom_line(data=dat.sim.one,aes(x=return_period,y=days_over),linetype='longdash',size=1) +
+    geom_line(data=dat.obs.one,aes(x=return_period,y=days_over),size=1) +
+    geom_jitter(data=dat.sim.sub.one,aes(x=return_period,y=days_over,color=subset),alpha=0.3) +
     guides(color=FALSE,size=FALSE) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
-    ggtitle('Spain') +
+    ggtitle('UK') +
+    scale_x_log10() +
+    theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
+    plot.title = element_text(hjust = 0.5),panel.background = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.border = element_rect(colour = "black"),strip.background = element_blank(),
+    legend.position = 'bottom',legend.justification='center',
+    legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
+dev.off()
+
+pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_uk_boxplots.pdf'),paper='a4r',height=0,width=0)
+ggplot() +
+    geom_line(data=dat.sim.sub,aes(x=return_period,y=days_over,group=subset,color=subset),alpha=0.3)+
+    geom_boxplot(data=subset(dat.sim.sub.one),aes(x=return_period, y=days_over,group=return_period),alpha=0.3)+
+    geom_line(data=dat.obs.one,aes(x=return_period,y=days_over),size=1) +
+    geom_jitter(data=dat.sim.sub.one,aes(x=return_period,y=days_over,color=subset),alpha=0.3) +
+    guides(color=FALSE,size=FALSE) +
+    xlab('Return period (years)') + ylab('Heat wave duration (days)') +
+    ggtitle('UK') +
+    scale_x_log10() +
+    theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
+    plot.title = element_text(hjust = 0.5),panel.background = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.border = element_rect(colour = "black"),strip.background = element_blank(),
+    legend.position = 'bottom',legend.justification='center',
+    legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
+dev.off()
+
+pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_portugal.pdf'),paper='a4r',height=0,width=0)
+ggplot() +
+    geom_line(data=dat.sim.sub.port,aes(x=return_period,y=days_over,group=subset,color=subset),alpha=0.3)+
+    # geom_line(data=dat.sim.one,aes(x=return_period,y=days_over),linetype='longdash',size=1) +
+    geom_line(data=dat.obs.port,aes(x=return_period,y=days_over),size=1) +
+    geom_jitter(data=dat.sim.sub.port,aes(x=return_period,y=days_over,color=subset),alpha=0.3) +
+    guides(color=FALSE,size=FALSE) +
+    xlab('Return period (years)') + ylab('Heat wave duration (days)') +
+    ggtitle('Portugal') +
+    scale_x_log10() +
+    theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
+    plot.title = element_text(hjust = 0.5),panel.background = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.border = element_rect(colour = "black"),strip.background = element_blank(),
+    legend.position = 'bottom',legend.justification='center',
+    legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
+dev.off()
+
+pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_portugal_boxplots.pdf'),paper='a4r',height=0,width=0)
+ggplot() +
+    geom_line(data=dat.sim.sub.port,aes(x=return_period,y=days_over,group=subset,color=subset),alpha=0.3)+
+    geom_boxplot(data=subset(dat.sim.sub.port),aes(x=return_period, y=days_over,group=return_period),alpha=0.3)+
+    geom_line(data=dat.obs.port,aes(x=return_period,y=days_over),size=1) +
+    geom_jitter(data=dat.sim.sub.port,aes(x=return_period,y=days_over,color=subset),alpha=0.3) +
+    guides(color=FALSE,size=FALSE) +
+    xlab('Return period (years)') + ylab('Heat wave duration (days)') +
+    ggtitle('Portugal') +
     scale_x_log10() +
     theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
     plot.title = element_text(hjust = 0.5),panel.background = element_blank(),

@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/map_test.R" afterPath="$PROJECT_DIR$/prog/04_mapping/map_test.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/04_mapping/points_identify.R" afterPath="$PROJECT_DIR$/prog/04_mapping/points_identify.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" afterPath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R" afterPath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +22,8 @@
       <file leaf-file-name="figure_8_processing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="175" column="84" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+            <state relative-caret-position="3075">
+              <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
               <folding>
                 <element signature="e#217#279#0" expanded="true" />
               </folding>
@@ -37,8 +34,8 @@
       <file leaf-file-name="figure_8_europewide.R" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="100" selection-end-column="9" />
+            <state relative-caret-position="90">
+              <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="122" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -69,7 +66,7 @@
       <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="6240">
               <caret line="422" column="0" lean-forward="false" selection-start-line="422" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -174,18 +171,18 @@
         <option value="$PROJECT_DIR$/prog/zz_legacy/heatwave_python/country_borders.py" />
         <option value="$PROJECT_DIR$/data/file_paths/file_paths.py" />
         <option value="$PROJECT_DIR$/prog/functions/mapping/mapping_tools.py" />
-        <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R" />
         <option value="$PROJECT_DIR$/prog/04_mapping/points_identify.R" />
         <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py" />
+        <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-882" />
-    <option name="y" value="-1388" />
+    <option name="x" value="22" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="1320" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -653,13 +650,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00176" summary="extracting values from clagarmi script">
-      <created>1536791561255</created>
-      <option name="number" value="00176" />
-      <option name="presentableId" value="LOCAL-00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1536791561255</updated>
-    </task>
     <task id="LOCAL-00177" summary="extracting values from clagarmi script">
       <created>1536793632928</created>
       <option name="number" value="00177" />
@@ -996,7 +986,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541753773445</updated>
     </task>
-    <option name="localTasksCounter" value="225" />
+    <task id="LOCAL-00225" summary="extracting values from clagarmi script">
+      <created>1541758853988</created>
+      <option name="number" value="00225" />
+      <option name="presentableId" value="LOCAL-00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1541758853988</updated>
+    </task>
+    <option name="localTasksCounter" value="226" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1009,16 +1006,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-882" y="-1388" width="1440" height="1320" extended-state="0" />
-    <editor active="true" />
+    <frame x="22" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17596567" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17811158" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32809225" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24096386" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32736155" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31188926" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48789808" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1364,7 +1361,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1388,9 +1384,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1408,13 +1401,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="27" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="6240">
           <caret line="422" column="0" lean-forward="false" selection-start-line="422" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
@@ -1426,14 +1418,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-338">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/figure_8_processing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="175" column="84" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+        <state relative-caret-position="3075">
+          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
           <folding>
             <element signature="e#217#279#0" expanded="true" />
           </folding>
@@ -1442,8 +1433,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figure_8_europewide.R">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="100" selection-end-column="9" />
+        <state relative-caret-position="90">
+          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="122" selection-end-column="9" />
           <folding />
         </state>
       </provider>
