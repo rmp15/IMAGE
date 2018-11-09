@@ -58,10 +58,35 @@ ggplot() +
     legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
 dev.off()
 
+# dat.sim.sub$density = get_density(dat.sim.sub$return_period,dat.sim.sub$days_over)
+
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_europe.pdf'),paper='a4r',height=0,width=0)
 ggplot() +
     geom_line(data=dat.sim.sub,aes(x=return_period,y=days_over,group=subset,color=subset),alpha=0.3)+
-    geom_line(data=dat.sim,aes(x=return_period,y=days_over),linetype='longdash',size=1)+
+    # geom_hex(data=dat.sim.sub,aes(x=return_period,y=days_over,color=subset),alpha=0.3,bins=70)+
+    geom_jitter(data=dat.sim.sub,aes(x=return_period,y=days_over,color=subset),alpha=0.3)+
+    # geom_boxplot(data=subset(dat.sim.sub),aes(x=return_period,y=days_over),alpha=0.3)+
+    # geom_line(data=dat.sim,aes(x=return_period,y=days_over),linetype='longdash',size=1)+
+    geom_line(data=dat.obs,aes(x=return_period,y=days_over),size=1)+
+    guides(color=FALSE,size=FALSE) +
+    xlab('Return period (years)') + ylab('Heat wave duration (days)') +
+    ggtitle('Whole domain') +
+    scale_x_log10() +
+    theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
+    plot.title = element_text(hjust = 0.5),panel.background = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.border = element_rect(colour = "black"),strip.background = element_blank(),
+    legend.position = 'bottom',legend.justification='center',
+    legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
+dev.off()
+
+pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_europe_boxplots.pdf'),paper='a4r',height=0,width=0)
+ggplot() +
+    geom_line(data=dat.sim.sub,aes(x=return_period,y=days_over,group=subset,color=subset),alpha=0.3)+
+    # geom_hex(data=dat.sim.sub,aes(x=return_period,y=days_over,color=subset),alpha=0.3,bins=70)+
+    geom_jitter(data=dat.sim.sub,aes(x=return_period,y=days_over,color=subset),alpha=0.3)+
+    geom_boxplot(data=subset(dat.sim.sub),aes(x=return_period, y=days_over,group=return_period),alpha=0.3)+
+    # geom_line(data=dat.sim,aes(x=return_period,y=days_over),linetype='longdash',size=1)+
     geom_line(data=dat.obs,aes(x=return_period,y=days_over),size=1)+
     guides(color=FALSE,size=FALSE) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
@@ -91,12 +116,6 @@ ggplot() +
     legend.position = 'bottom',legend.justification='center',
     legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
 dev.off()
-
-
-
-
-
-
 
 # DROUGHT
 
