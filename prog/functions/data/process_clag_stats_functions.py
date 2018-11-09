@@ -434,6 +434,7 @@ def hw_duration_return_periods_europe(data):
 
     return data_current
 
+
 # drought calculator
 def seasonal_drought_duration_summary_europe(var, var_process, start, end, pctile):
 
