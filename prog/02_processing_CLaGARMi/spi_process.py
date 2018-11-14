@@ -5,6 +5,7 @@ from prog.functions.data.process_clag_stats_functions import *
 import sys
 import scipy.stats as stats
 import matplotlib.pyplot as plt
+import standard_precip
 
 # get total number of arguments
 total = len(sys.argv)
@@ -35,7 +36,7 @@ pr_jja_mean_sim = seasonal_mean_calculator(pr_sim_data[:, 0:1000, :], 6, 8)
 no_sites = int(pr_jja_sum_obs.shape[0])
 
 # for each site in the data
-for i in range(0,no_sites):
+for i in range(0, no_sites):
 
     # calculate gamma fit parameters for each site
     fit_alpha, fit_loc, fit_beta = stats.gamma.fit(pr_jja_sum_obs[i, :])
@@ -43,8 +44,9 @@ for i in range(0,no_sites):
     #  cycle through obs and sim to generate spi for each site
     x = np.linspace(0, 100, 200)
     y1 = stats.gamma.pdf(x, a=fit_alpha, scale=fit_beta)
-    y2 = np.cumsum(y1)
-    plt.plot(x, y1)
+    y2 = stats.gamma.cdf(x, a=fit_alpha, scale=fit_beta)
+    plt.plot(x, y2)
+
 
 
 # temporary save text
