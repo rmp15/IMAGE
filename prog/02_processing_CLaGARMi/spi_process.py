@@ -4,6 +4,7 @@
 from prog.functions.data.process_clag_stats_functions import *
 import sys
 import scipy.stats as stats
+import matplotlib.pyplot as plt
 
 # get total number of arguments
 total = len(sys.argv)
@@ -28,24 +29,25 @@ pr_jja_sum_sim = seasonal_sum_calculator(pr_sim_data[:,0:1000,:], 6, 8)
 
 # compare a year of the simulated data to the mean value for each site
 pr_jja_mean_obs = seasonal_mean_calculator(pr_obs_data, 6, 8)
-pr_jja_mean_sim = seasonal_mean_calculator(pr_sim_data[:,0:1000,:], 6, 8)
+pr_jja_mean_sim = seasonal_mean_calculator(pr_sim_data[:, 0:1000, :], 6, 8)
 
-# calculate gamma fit parameters for each site
+# number of sites to cycle through
+no_sites = int(pr_jja_sum_obs.shape[0])
 
-#  cycle through obs and sim to generate spi for each site
+# for each site in the data
+for i in range(0,no_sites):
+
+    # calculate gamma fit parameters for each site
+    fit_alpha, fit_loc, fit_beta = stats.gamma.fit(pr_jja_sum_obs[i, :])
+
+    #  cycle through obs and sim to generate spi for each site
+    x = np.linspace(0, 100, 200)
+    y1 = stats.gamma.pdf(x, a=fit_alpha, scale=fit_beta)
+    y2 = np.cumsum(y1)
+    plt.plot(x, y1)
+
 
 # temporary save text
 # np.savetxt('pr_jja_mean_obs.csv', pr_jja_mean_obs, delimiter=",")
 # np.savetxt('pr_jja_mean_sim.csv', pr_jja_mean_sim, delimiter=",")
 
-# take only the JJA months of data for each site and calculate rainfall percentiles
-# pr_obs_jja = seasonal_data(pr_obs_data, 6, 8)
-# pr_percentile_jja = seasonal_percentile_calculator(pr_obs_data, 6, 8, 50)
-
-# appt_obs_data = app_temp_creator(tas_obs_data, huss_obs_data, ps_obs_data)
-# appt_sim_data = app_temp_creator(tas_sim_data, huss_sim_data, ps_sim_data)
-
-
-# # output to merged obs and sim values to csv
-# obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_obs_sim_merged.csv')
-# sim_data_processed_ens.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + '_sim_ens.csv')

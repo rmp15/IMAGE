@@ -313,7 +313,7 @@ def seasonal_hw_duration_summary_europe(var, var_process, start, end, pctile):
 
 
 # this function will calculate the seasonal averages for each site
-def seasonal_mean_calculator(var,start,end):
+def seasonal_mean_calculator(var, start, end):
 
     temp_array = seasonal_sum_calculator(var, start, end)
     no_sites = temp_array.shape[0]
