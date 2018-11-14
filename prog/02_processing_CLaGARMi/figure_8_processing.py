@@ -5,8 +5,6 @@
 
 from prog.functions.data.process_clag_stats_functions import *
 import sys
-from scipy.stats import rankdata
-import scipy.io
 
 # get total number of arguments
 total = len(sys.argv)
@@ -120,8 +118,8 @@ data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_pr
 
 # UK first of all
 # lonlat.loc[lonlat['country']] == 'UK'
-UK_values = [66,79,80,81,84,95,96,97,98,99,100,101,102,103,115,116,117,118,119,120,121,122,123,124,135,136,137,138,139,
-             140,141,142,143,144,154,155,156,157,167]
+# UK_values = [66,79,80,81,84,95,96,97,98,99,100,101,102,103,115,116,117,118,119,120,121,122,123,124,135,136,137,138,139,
+#              140,141,142,143,144,154,155,156,157,167]
 
 # take footprint of country TO FINISH
 obs_data_site = obs_data[UK_values,:,:]

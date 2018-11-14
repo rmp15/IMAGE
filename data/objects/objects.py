@@ -83,3 +83,7 @@ threshold_drop_months = 3
 day_months_long = [1, 3, 5, 7, 8, 10, 12]
 day_months_medium = [4, 6, 8, 11]
 day_months_short = [2]
+
+# particular ID locations for countries in Europe (rough)
+UK_values = [66,79,80,81,84,95,96,97,98,99,100,101,102,103,115,116,117,118,119,120,121,122,123,124,135,136,137,138,139,
+             140,141,142,143,144,154,155,156,157,167]
