@@ -31,8 +31,8 @@
       <file leaf-file-name="03_convert_euro.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/03_convert_euro.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            <state relative-caret-position="240">
+              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -165,7 +165,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1440" />
+    <option name="width" value="1071" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -555,13 +555,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00186" summary="extracting values from clagarmi script">
-      <created>1537281438748</created>
-      <option name="number" value="00186" />
-      <option name="presentableId" value="LOCAL-00186" />
-      <option name="project" value="LOCAL" />
-      <updated>1537281438748</updated>
-    </task>
     <task id="LOCAL-00187" summary="extracting values from clagarmi script">
       <created>1537281986127</created>
       <option name="number" value="00187" />
@@ -898,7 +891,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542298793410</updated>
     </task>
-    <option name="localTasksCounter" value="235" />
+    <task id="LOCAL-00235" summary="extracting values from clagarmi script">
+      <created>1542298814751</created>
+      <option name="number" value="00235" />
+      <option name="presentableId" value="LOCAL-00235" />
+      <option name="project" value="LOCAL" />
+      <updated>1542298814751</updated>
+    </task>
+    <option name="localTasksCounter" value="236" />
     <servers />
   </component>
   <component name="TodoView">
@@ -911,10 +911,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1071" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22389127" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3041788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32809225" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1358,8 +1358,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/03_convert_euro.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        <state relative-caret-position="240">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding />
         </state>
       </provider>

@@ -10,7 +10,7 @@ clear
 # arguments for processing of files
 declare slice='01'
 declare -a years_sims=(4000 6000)
-declare -a metrics=('huss') # 'huss' 'sfcWindmax')
+declare -a metrics=('tasmax') # 'huss' 'sfcWindmax')
 declare -a continents=('euro')
 declare -a scens=('hist')
 declare -i start=1971
