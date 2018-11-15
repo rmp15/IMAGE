@@ -31,3 +31,12 @@ pr.sim = np$load(file.loc.sim)
 # concatenate 4000,6000 year files
 # FIGURE OUT LATER
 
+# test take one site and calculate SPI as test, convert to mm m-2 s-1 (currently in kg m-2 s-1)
+site = pr.hist[1,,]
+site.vector = as.vector(t(site))
+
+# calculate monthly means through time
+month_days = c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+month_end_inds = cumsum(month_days)
+
+# create dataframe with year, month, precipitation
