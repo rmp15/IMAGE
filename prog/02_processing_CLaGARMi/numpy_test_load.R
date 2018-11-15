@@ -11,8 +11,8 @@ year_end = as.numeric(args[7])                  # year_end = 2000
 # slice = '01' ; years_sim_1 = 4000 ; years_sim_2 = 6000 ; metric = 'tasmax' ; continent = 'euro' ;
 # scen = 'hist'; year_start = 1971 ; year_end = 2000
 
-# local file outputs from IMAGE
-image_output_local = '~/data/IMAGE/CLaGARMi/euro_cordex_output/'
+# local file outputs from IMAGE (change for on wrfstore because of python's weird system)
+image_output_local = '/Users/rmiparks/data/IMAGE/CLaGARMi/euro_cordex_output/'
 
 file.loc = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_',scen,'_',year_start,'_',year_end,'_',metric,'_o.npy' )
 # image_output_local + metric + '/out_' + slice + '_y' + str(years_sim_1) + '_' + continent + '_' + str(scen) + '_' \
