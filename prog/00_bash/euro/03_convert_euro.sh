@@ -17,7 +17,7 @@ declare -i start=1971
 declare -i end=2000
 
 #################################################
-# 1. EURO-CORDEX RUNS
+# 1. CONVERT MATLAB TO NUMPY
 #################################################
 
 for years_sim in "${years_sims[@]}"; do
