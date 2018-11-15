@@ -7,6 +7,7 @@
 import sys
 import os
 import h5py
+import numpy as np
 
 # get total number of arguments
 total = len(sys.argv)
@@ -17,7 +18,7 @@ cmdargs = str(sys.argv)
 # variables for processing CLaGARMi output
 slice = sys.argv[1]                             # slice = '01'
 years_sim_1 = int(float((sys.argv[2])))         # years_sim_1 = 4000 ; years_sim_2 = 6000
-metric = sys.argv[3]                            # metric = 'tasmax'
+metric = sys.argv[3]                            # metric = ''
 continent = sys.argv[4]                         # continent = 'euro'
 scen = sys.argv[5]                              # scen = 'hist'
 year_start = int(float((sys.argv[6])))          # year_start = 1971
@@ -27,8 +28,8 @@ season_end = int(float((sys.argv[9])))          # season_end = 9
 percentile = int(float((sys.argv[10])))         # percentile = 99
 
 # only for when inputting manually
-#slice = '01'; years_sim_1 = 4000 ; years_sim_2 = 6000; metric = 'tasmax'; continent = 'euro'; scen = 'hist'
-# year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99
+#slice = '01'; years_sim_1 = 4000 ; years_sim_2 = 6000; metric = 'pr'; continent = 'euro'; scen = 'hist'
+#year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99
 
 # file loc in case its being run on linux platform
 if sys.platform == 'linux' or sys.platform == 'linux2':
