@@ -3,7 +3,7 @@
 # processes monthly means for the total length of the IMAGE data
 # processes monthly means for each of the 30-year ensembles of IMAGE data
 
-from prog.functions.data.process_clag_stats_functions import *
+# from prog.functions.data.process_clag_stats_functions import *
 import sys
 import os
 import h5py
