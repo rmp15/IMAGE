@@ -6,6 +6,7 @@
 from prog.functions.data.process_clag_stats_functions import *
 import sys
 import os
+import h5py
 
 # get total number of arguments
 total = len(sys.argv)
@@ -33,6 +34,20 @@ percentile = int(float((sys.argv[10])))         # percentile = 99
 if sys.platform == 'linux' or sys.platform == 'linux2':
     image_output_local = os.path.join('/home/rmp15/data/IMAGE/CLaGARMi/euro_cordex_output/')
     cordex_output_local = os.path.join('/home/rmp15/data/IMAGE/CORDEX/')
+
+def load_clag_output(step, num_years, continent, scen_name, start_year, end_year, var):
+
+    fn_o = var + '/out_' + step + '_y' + str(num_years) + '_' + continent + '_' + str(scen_name) + '_' + str(start_year) + '_' + str(end_year) + '_' + var + '_o.mat'
+    fn_s = var + '/out_' + step + '_y' + str(num_years) + '_' + continent + '_' + str(scen_name) + '_' + str(start_year) + '_' + str(end_year) + '_' + var + '_s.mat'
+
+    o = h5py.File(os.path.join(image_output_local, fn_o), 'r')
+    s = h5py.File(os.path.join(image_output_local, fn_s), 'r')
+
+    o_array = np.array(o[list(o.keys())[0]])
+    s_array = np.array(s[list(s.keys())[0]])
+
+    return o_array, s_array
+
 
 # loading data for both observations and simulations
 obs_data, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, year_start, year_end, metric)
