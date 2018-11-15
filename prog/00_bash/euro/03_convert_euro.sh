@@ -25,8 +25,6 @@ for metric in "${metrics[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
-python ~/git/IMAGE/prog/02_processing_CLaGARMi/figure_2_3_processing.py $slice $years_sim $metric $continent $scen $start $end
+python ~/git/IMAGE/prog/02_processing_CLaGARMi/matlab_to_numpy_conversion.py $slice $years_sim $metric $continent $scen $start $end
 
 done; done; done; done;
-
-python ~/git/IMAGE/prog/02_processing_CLaGARMi/figure_8_processing.py $slice $years_sim $metric $continent $scen $start $end
