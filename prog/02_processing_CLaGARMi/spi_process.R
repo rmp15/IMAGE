@@ -3,6 +3,7 @@ rm(list=ls())
 library(SPEI)
 library(plyr)
 library(reticulate)
+library(ggplot2)
 
 # break down the arguments from Rscript
 args <- commandArgs(trailingOnly=TRUE)
@@ -30,11 +31,9 @@ np = import("numpy")
 # load historical file and sim files
 pr.hist = np$load(file.loc.pr.hist)
 pr.sim = np$load(file.loc.pr.sim)
-
-# load future period
 pr.sim.future = np$load(file.loc.pr.sim)
 
-# REAL DATA
+# 1.'REAL' HISTORICAL DATA
 
 # test take one site and calculate SPI as test
 site = pr.hist[1,,]
@@ -52,15 +51,14 @@ dat.site.summarised = ddply(dat.site,.(year,month),summarise,precip=sum(precip))
 # scale factor is 10,000
 dat.site.summarised$precip = 10000 * dat.site.summarised$precip
 
-library(ggplot2)
 # ggplot(data=dat.site.summarised) + geom_line(aes(x=year,y=precip,group=month,color=month)) + facet_wrap(~month)
 
 # use SPEI program to calculate SPI
-spi_1 <- spi(dat.site.summarised[,'precip'], 1)
-spi_3 <- spi(dat.site.summarised[,'precip'], 3)
-spi_12 <- spi(dat.site.summarised[,'precip'], 12)
+spi_1.hist.obs <- spi(dat.site.summarised[,'precip'], 1)
+spi_3.hist.obs <- spi(dat.site.summarised[,'precip'], 3)
+spi_12.hist.obs <- spi(dat.site.summarised[,'precip'], 12)
 
-# SIM DATA WITH FIXED REFERENCE PERIOD FOR PRESENT
+# 2. SIM DATA WITH FIXED REFERENCE PERIOD FOR PRESENT
 site = pr.sim[1,,]
 site.vector.sim = as.vector(t(site))
 
