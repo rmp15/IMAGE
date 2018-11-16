@@ -50,17 +50,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spi_process.R" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spi_process.R" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/spi_process.R">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="92" column="24" lean-forward="false" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
+            <state relative-caret-position="757">
+              <caret line="99" column="6" lean-forward="true" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
@@ -573,13 +573,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00200" summary="extracting values from clagarmi script">
-      <created>1537538189981</created>
-      <option name="number" value="00200" />
-      <option name="presentableId" value="LOCAL-00200" />
-      <option name="project" value="LOCAL" />
-      <updated>1537538189981</updated>
-    </task>
     <task id="LOCAL-00201" summary="extracting values from clagarmi script">
       <created>1537538273986</created>
       <option name="number" value="00201" />
@@ -916,7 +909,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542325225110</updated>
     </task>
-    <option name="localTasksCounter" value="249" />
+    <task id="LOCAL-00249" summary="extracting values from clagarmi script">
+      <created>1542332900800</created>
+      <option name="number" value="00249" />
+      <option name="presentableId" value="LOCAL-00249" />
+      <option name="project" value="LOCAL" />
+      <updated>1542332900800</updated>
+    </task>
+    <option name="localTasksCounter" value="250" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1365,6 +1365,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/spi_process.R">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="99" column="6" lean-forward="true" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1373,14 +1381,6 @@
             <element signature="e#0#21#0" expanded="true" />
             <element signature="e#298#872#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/spi_process.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="92" column="24" lean-forward="false" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -90,6 +90,11 @@ spi_1 <- spi(dat.site.summarised[,'precip'], 1, ref.start=c(1,1), ref.end=c(30,1
 spi_3 <- spi(dat.site.summarised[,'precip'], 3, ref.start=c(1,1), ref.end=c(30,12))
 spi_12 <- spi(dat.site.summarised[,'precip'], 12, ref.start=c(1,1), ref.end=c(30,12))
 
-# plot fitted SPI values
+library(MASS)
+
+# plot histogram fitted SPI values
 hist(spi_3$fitted,prob=TRUE)
-hist(spi_3$fitted,prob=TRUE)
+
+fit  = fitdistr(na.omit(spi_3$fitted), "normal")
+para = fit$estimate
+curve(dnorm(spi_3$fitted, para[1], para[2]), col=2)
