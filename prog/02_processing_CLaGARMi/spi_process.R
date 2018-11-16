@@ -22,7 +22,6 @@ year_end = as.numeric(args[7])                  # year_end = 2000
 image_output_local = '/Users/rmiparks/data/IMAGE/CLaGARMi/euro_cordex_output/'
 file.loc.pr.hist = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_',scen,'_',year_start,'_',year_end,'_',metric,'_o.npy' )
 file.loc.pr.sim = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_',scen,'_',year_start,'_',year_end,'_',metric,'_s.npy' )
-
 file.loc.pr.sim.future = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_','rcp85','_','2071','_','2100','_',metric,'_s.npy' )
 
 # to enable reading of numpy files in R
@@ -84,15 +83,49 @@ library(ggplot2)
 # ggplot(data=dat.site.summarised) + geom_line(aes(x=year,y=precip,group=month,color=month)) + facet_wrap(~month)
 
 # use SPEI program to calculate SPI
-spi_1 <- spi(dat.site.summarised[,'precip'], 1, ref.start=c(1,1), ref.end=c(30,12))
-spi_3 <- spi(dat.site.summarised[,'precip'], 3, ref.start=c(1,1), ref.end=c(30,12))
-spi_12 <- spi(dat.site.summarised[,'precip'], 12, ref.start=c(1,1), ref.end=c(30,12))
+spi_1.hist.sim <- spi(dat.site.summarised[,'precip'], 1, ref.start=c(1,1), ref.end=c(30,12))
+spi_3.hist.sim <- spi(dat.site.summarised[,'precip'], 3, ref.start=c(1,1), ref.end=c(30,12))
+spi_12.hist.sim <- spi(dat.site.summarised[,'precip'], 12, ref.start=c(1,1), ref.end=c(30,12))
 
-library(MASS)
+# 3. SIM DATA WITH FIXED REFERENCE PERIOD FOR FUTURE
+site = pr.sim.future[1,,]
+site.vector.sim.future = as.vector(t(site))
 
-# plot histogram fitted SPI values
-hist(spi_3$fitted,prob=TRUE)
+num.years = dim(site)[1]
 
-fit  = fitdistr(na.omit(spi_3$fitted), "normal")
-para = fit$estimate
-curve(dnorm(spi_3$fitted, para[1], para[2]), col=2)
+# create dataframe with year, month, precipitation
+year.seq.long = rep(31:(num.years+30), each=365)
+month.seq = c(rep(1,31),rep(2,28),rep(3,31),rep(4,30),rep(5,31),rep(6,30),rep(7,31),rep(8,31),rep(9,30),rep(10,31),rep(11,30),rep(12,31))
+
+year.seq.long = c(year.seq, year.seq.long)
+site.vector.long = c(site.vector.obs, site.vector.sim.future)
+
+dat.site = data.frame(year=year.seq.long,month=month.seq,precip=site.vector.long)
+
+# summarise precipitation by month
+dat.site.summarised = ddply(dat.site,.(year,month),summarise,precip=sum(precip))
+
+# convert to mm m-2 s-1 (currently in kg m-2 s-1) https://www.convertunits.com/from/kg/cm2/to/water+column+[millimeter]
+# scale factor is 10,000
+dat.site.summarised$precip = 10000 * dat.site.summarised$precip
+
+library(ggplot2)
+# ggplot(data=dat.site.summarised) + geom_line(aes(x=year,y=precip,group=month,color=month)) + facet_wrap(~month)
+
+# use SPEI program to calculate SPI
+spi_1.future.sim <- spi(dat.site.summarised[,'precip'], 1, ref.start=c(1,1), ref.end=c(30,12))
+spi_3.future.sim <- spi(dat.site.summarised[,'precip'], 3, ref.start=c(1,1), ref.end=c(30,12))
+spi_12.future.sim <- spi(dat.site.summarised[,'precip'], 12, ref.start=c(1,1), ref.end=c(30,12))
+
+# create histograms by month
+dat.spi_3.hist.obs = data.frame(spi=spi_3.hist.obs$fitted,month=rep(c(1:12)))
+dat.spi_3.future.sim = data.frame(spi=spi_3.future.sim$fitted,month=rep(c(1:12)))
+names(dat.spi_3.future.sim) = c('spi','month') ; names(dat.spi_3.hist.obs) = c('spi','month')
+
+# pdf TO FIX LOCATION
+pdf("~/Desktop/spi_plot.pdf",paper='a4r',height=0,width=0)
+ggplot() +
+    geom_density(data=dat.spi_3.hist.obs, aes(x=spi),color='black') +
+    geom_density(data=dat.spi_3.future.sim, aes(x=spi),color='red') +
+    facet_wrap(~month)
+dev.off()
