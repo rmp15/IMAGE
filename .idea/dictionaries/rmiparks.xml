@@ -1004,6 +1004,7 @@
       <w>CoordMap</w>
       <w>CoordPolar</w>
       <w>CoordQuickmap</w>
+      <w>CoordSf</w>
       <w>CoordTrans</w>
       <w>Copenhagen</w>
       <w>Cordoba</w>
@@ -1217,6 +1218,7 @@
       <w>GeomPointrange</w>
       <w>GeomPolygon</w>
       <w>GeomQuantile</w>
+      <w>GeomRangeFrame</w>
       <w>GeomRaster</w>
       <w>GeomRasterAnn</w>
       <w>GeomRect</w>
@@ -1225,11 +1227,13 @@
       <w>GeomRidgelineGradient</w>
       <w>GeomRug</w>
       <w>GeomSegment</w>
+      <w>GeomSf</w>
       <w>GeomSmooth</w>
       <w>GeomSpoke</w>
       <w>GeomStep</w>
       <w>GeomText</w>
       <w>GeomTile</w>
+      <w>GeomTufteboxplot</w>
       <w>GeomVRidgeline</w>
       <w>GeomViolin</w>
       <w>GeomVline</w>
@@ -1473,6 +1477,7 @@
       <w>Lagos</w>
       <w>LaguerreHalf</w>
       <w>LakeHuron</w>
+      <w>Layout</w>
       <w>Lb_ddf</w>
       <w>Lcoefs</w>
       <w>Lcomoment.Lk12</w>
@@ -1768,6 +1773,7 @@
       <w>Porto_Velho</w>
       <w>Position</w>
       <w>PositionDodge</w>
+      <w>PositionDodge2</w>
       <w>PositionFill</w>
       <w>PositionIdentity</w>
       <w>PositionJitter</w>
@@ -2357,12 +2363,16 @@
       <w>StatDensityRidges</w>
       <w>StatEcdf</w>
       <w>StatEllipse</w>
+      <w>StatFivenumber</w>
       <w>StatForecast</w>
       <w>StatFunction</w>
       <w>StatIdentity</w>
       <w>StatPlsmo</w>
       <w>StatQq</w>
+      <w>StatQqLine</w>
       <w>StatQuantile</w>
+      <w>StatSf</w>
+      <w>StatSfCoordinates</w>
       <w>StatSmooth</w>
       <w>StatSum</w>
       <w>StatSummary</w>
@@ -4302,6 +4312,7 @@
       <w>bandwidth.kernel</w>
       <w>bandwidth.nrd</w>
       <w>bandwidth.rq</w>
+      <w>bank_slopes</w>
       <w>banking</w>
       <w>bannerplot</w>
       <w>barchart</w>
@@ -4639,6 +4650,8 @@
       <w>calcSummary</w>
       <w>calcVoronoi</w>
       <w>calc_element</w>
+      <w>calc_pal</w>
+      <w>calc_shape_pal</w>
       <w>calcium</w>
       <w>calculus.grades</w>
       <w>calibrate</w>
@@ -4680,6 +4693,8 @@
       <w>cancor</w>
       <w>cane</w>
       <w>canonical.theme</w>
+      <w>canva_pal</w>
+      <w>canva_palettes</w>
       <w>canyonprecip</w>
       <w>capabilities</w>
       <w>capability</w>
@@ -4920,6 +4935,7 @@
       <w>circ.reg</w>
       <w>circ.summary</w>
       <w>circleGrob</w>
+      <w>circlefill_shape_pal</w>
       <w>circular.averaging</w>
       <w>citEntry</w>
       <w>citFooter</w>
@@ -4928,6 +4944,7 @@
       <w>cite</w>
       <w>citeNatbib</w>
       <w>city</w>
+      <w>cividis</w>
       <w>cksum</w>
       <w>clamp</w>
       <w>clara</w>
@@ -4956,6 +4973,7 @@
       <w>clearSearch</w>
       <w>clearValues</w>
       <w>clearforkporosity</w>
+      <w>cleveland_shape_pal</w>
       <w>cli</w>
       <w>click</w>
       <w>clickOpts</w>
@@ -5135,6 +5153,7 @@
       <w>color_scheme_get</w>
       <w>color_scheme_set</w>
       <w>color_scheme_view</w>
+      <w>colorblind_pal</w>
       <w>colors</w>
       <w>colorschemes</w>
       <w>colorspace</w>
@@ -5324,6 +5343,7 @@
       <w>coord_munch</w>
       <w>coord_polar</w>
       <w>coord_quickmap</w>
+      <w>coord_sf</w>
       <w>coord_trans</w>
       <w>coordinates</w>
       <w>coordinatevalues</w>
@@ -6186,6 +6206,7 @@
       <w>ecget</w>
       <w>economics</w>
       <w>economics_long</w>
+      <w>economist_pal</w>
       <w>edays</w>
       <w>edit</w>
       <w>edit.nb</w>
@@ -6368,6 +6389,8 @@
       <w>example_x_data</w>
       <w>example_y_data</w>
       <w>example_yrep_draws</w>
+      <w>excel_new_pal</w>
+      <w>excel_pal</w>
       <w>excel_sheets</w>
       <w>exclude</w>
       <w>exclude.too.far</w>
@@ -6388,6 +6411,7 @@
       <w>expand_</w>
       <w>expand_limits</w>
       <w>expand_range</w>
+      <w>expand_scale</w>
       <w>expcov</w>
       <w>expect.max.ostat</w>
       <w>expect.min.ostat</w>
@@ -6423,6 +6447,8 @@
       <w>extended</w>
       <w>extended.figures</w>
       <w>extended_breaks</w>
+      <w>extended_range_breaks</w>
+      <w>extended_range_breaks_</w>
       <w>extendrange</w>
       <w>extends</w>
       <w>extension</w>
@@ -6526,6 +6552,8 @@
       <w>fdSperio</w>
       <w>fetch</w>
       <w>fetch_heads</w>
+      <w>few_pal</w>
+      <w>few_shape_pal</w>
       <w>ffCompress</w>
       <w>fft</w>
       <w>fgl</w>
@@ -6657,6 +6685,7 @@
       <w>fitted.values</w>
       <w>fitvario</w>
       <w>fivenum</w>
+      <w>fivethirtyeight_pal</w>
       <w>fix</w>
       <w>fix.family.link</w>
       <w>fix.family.ls</w>
@@ -6981,6 +7010,7 @@
       <w>gdalDrivers</w>
       <w>gdata</w>
       <w>gdbsource</w>
+      <w>gdocs_pal</w>
       <w>geary</w>
       <w>geary.mc</w>
       <w>geary.test</w>
@@ -7037,7 +7067,9 @@
       <w>geom_pointrange</w>
       <w>geom_polygon</w>
       <w>geom_qq</w>
+      <w>geom_qq_line</w>
       <w>geom_quantile</w>
+      <w>geom_rangeframe</w>
       <w>geom_raster</w>
       <w>geom_rect</w>
       <w>geom_ribbon</w>
@@ -7045,11 +7077,15 @@
       <w>geom_ridgeline_gradient</w>
       <w>geom_rug</w>
       <w>geom_segment</w>
+      <w>geom_sf</w>
+      <w>geom_sf_label</w>
+      <w>geom_sf_text</w>
       <w>geom_smooth</w>
       <w>geom_spoke</w>
       <w>geom_step</w>
       <w>geom_text</w>
       <w>geom_tile</w>
+      <w>geom_tufteboxplot</w>
       <w>geom_violin</w>
       <w>geom_vline</w>
       <w>geom_vridgeline</w>
@@ -7564,6 +7600,7 @@
       <w>ggplot2like</w>
       <w>ggplot2like.opts</w>
       <w>ggplotGrob</w>
+      <w>ggplot_add</w>
       <w>ggplot_build</w>
       <w>ggplot_gtable</w>
       <w>ggproto</w>
@@ -7574,6 +7611,8 @@
       <w>ggsubseriesplot</w>
       <w>ggtaperedacf</w>
       <w>ggtaperedpacf</w>
+      <w>ggthemes</w>
+      <w>ggthemes_data</w>
       <w>ggtitle</w>
       <w>ggtsdisplay</w>
       <w>gibbs</w>
@@ -7822,7 +7861,11 @@
       <w>guess_type</w>
       <w>guide_colorbar</w>
       <w>guide_colourbar</w>
+      <w>guide_gengrob</w>
+      <w>guide_geom</w>
       <w>guide_legend</w>
+      <w>guide_merge</w>
+      <w>guide_train</w>
       <w>guides</w>
       <w>gunzip</w>
       <w>gunzip.default</w>
@@ -7895,6 +7938,7 @@
       <w>haven</w>
       <w>hazard.ratio.plot</w>
       <w>hboxplot</w>
+      <w>hc_pal</w>
       <w>hccm</w>
       <w>hcell2xy</w>
       <w>hcell2xyInt</w>
@@ -9947,6 +9991,7 @@
       <w>mergeIntervals.numeric</w>
       <w>mergeMethods</w>
       <w>merge_base</w>
+      <w>merge_element</w>
       <w>mergedTrellisLegendGrob</w>
       <w>message</w>
       <w>message_cnd</w>
@@ -10066,6 +10111,7 @@
       <w>modify_depth</w>
       <w>modify_if</w>
       <w>modify_url</w>
+      <w>modulus_trans</w>
       <w>mom_calc</w>
       <w>mom_calc_int2</w>
       <w>moments</w>
@@ -10522,6 +10568,10 @@
       <w>num_colors</w>
       <w>num_range</w>
       <w>num_to_letter</w>
+      <w>number</w>
+      <w>number_bytes</w>
+      <w>number_bytes_format</w>
+      <w>number_format</w>
       <w>numcolwise</w>
       <w>numeric</w>
       <w>numeric.string</w>
@@ -10658,7 +10708,10 @@
       <w>ordergibbs</w>
       <w>orderx</w>
       <w>ordinal</w>
+      <w>ordinal_english</w>
       <w>ordinal_format</w>
+      <w>ordinal_french</w>
+      <w>ordinal_spanish</w>
       <w>origin</w>
       <w>orm</w>
       <w>orm.fit</w>
@@ -10728,6 +10781,7 @@
       <w>pairwise.wilcox.test</w>
       <w>pal2SpatialPolygons</w>
       <w>palette</w>
+      <w>palette_pander</w>
       <w>pam</w>
       <w>pandoc</w>
       <w>paneViewer</w>
@@ -11359,6 +11413,7 @@
       <w>pos.to.env</w>
       <w>posamsize</w>
       <w>position_dodge</w>
+      <w>position_dodge2</w>
       <w>position_fill</w>
       <w>position_identity</w>
       <w>position_jitter</w>
@@ -11785,6 +11840,7 @@
       <w>ps.options</w>
       <w>psc</w>
       <w>pseudo.absence</w>
+      <w>pseudo_log_trans</w>
       <w>pseudobma_weights</w>
       <w>psi.bisquare</w>
       <w>psi.hampel</w>
@@ -11803,6 +11859,7 @@
       <w>pstamp</w>
       <w>psurvreg</w>
       <w>pt</w>
+      <w>ptol_pal</w>
       <w>ptukey</w>
       <w>pu</w>
       <w>puffin</w>
@@ -11829,7 +11886,9 @@
       <w>putKey</w>
       <w>putKeyEmpty</w>
       <w>putRasterData</w>
+      <w>pvalue</w>
       <w>pvalueFormatter</w>
+      <w>pvalue_format</w>
       <w>pvec</w>
       <w>pvm</w>
       <w>pw561</w>
@@ -12334,6 +12393,7 @@
       <w>regmatches</w>
       <w>regroup</w>
       <w>regsubsets</w>
+      <w>regular_minor_breaks</w>
       <w>rejectionRate</w>
       <w>rejectsampling</w>
       <w>rel</w>
@@ -12880,60 +12940,130 @@
       <w>scale_alpha</w>
       <w>scale_alpha_continuous</w>
       <w>scale_alpha_cyclical</w>
+      <w>scale_alpha_date</w>
+      <w>scale_alpha_datetime</w>
       <w>scale_alpha_discrete</w>
       <w>scale_alpha_identity</w>
       <w>scale_alpha_manual</w>
+      <w>scale_alpha_ordinal</w>
       <w>scale_color_brewer</w>
+      <w>scale_color_calc</w>
+      <w>scale_color_canva</w>
+      <w>scale_color_colorblind</w>
       <w>scale_color_continuous</w>
+      <w>scale_color_continuous_tableau</w>
       <w>scale_color_cyclical</w>
       <w>scale_color_discrete</w>
       <w>scale_color_distiller</w>
+      <w>scale_color_economist</w>
+      <w>scale_color_excel</w>
+      <w>scale_color_excel_new</w>
+      <w>scale_color_few</w>
+      <w>scale_color_fivethirtyeight</w>
+      <w>scale_color_gdocs</w>
       <w>scale_color_gradient</w>
       <w>scale_color_gradient2</w>
+      <w>scale_color_gradient2_tableau</w>
+      <w>scale_color_gradient_tableau</w>
       <w>scale_color_gradientn</w>
       <w>scale_color_grey</w>
+      <w>scale_color_hc</w>
       <w>scale_color_hue</w>
       <w>scale_color_identity</w>
       <w>scale_color_manual</w>
+      <w>scale_color_pander</w>
+      <w>scale_color_ptol</w>
       <w>scale_color_selection</w>
+      <w>scale_color_solarized</w>
+      <w>scale_color_stata</w>
+      <w>scale_color_tableau</w>
       <w>scale_color_viridis</w>
+      <w>scale_color_viridis_c</w>
+      <w>scale_color_viridis_d</w>
+      <w>scale_color_wsj</w>
       <w>scale_colour_brewer</w>
+      <w>scale_colour_calc</w>
+      <w>scale_colour_canva</w>
+      <w>scale_colour_colorblind</w>
       <w>scale_colour_continuous</w>
       <w>scale_colour_cyclical</w>
       <w>scale_colour_date</w>
       <w>scale_colour_datetime</w>
       <w>scale_colour_discrete</w>
       <w>scale_colour_distiller</w>
+      <w>scale_colour_economist</w>
+      <w>scale_colour_excel</w>
+      <w>scale_colour_excel_new</w>
+      <w>scale_colour_few</w>
+      <w>scale_colour_fivethirtyeight</w>
+      <w>scale_colour_gdocs</w>
       <w>scale_colour_gradient</w>
       <w>scale_colour_gradient2</w>
+      <w>scale_colour_gradient2_tableau</w>
+      <w>scale_colour_gradient_tableau</w>
       <w>scale_colour_gradientn</w>
       <w>scale_colour_grey</w>
+      <w>scale_colour_hc</w>
       <w>scale_colour_hue</w>
       <w>scale_colour_identity</w>
       <w>scale_colour_manual</w>
+      <w>scale_colour_ordinal</w>
+      <w>scale_colour_pander</w>
+      <w>scale_colour_ptol</w>
+      <w>scale_colour_solarized</w>
+      <w>scale_colour_stata</w>
+      <w>scale_colour_tableau</w>
+      <w>scale_colour_viridis_c</w>
+      <w>scale_colour_viridis_d</w>
+      <w>scale_colour_wsj</w>
+      <w>scale_continuous_identity</w>
+      <w>scale_discrete_identity</w>
       <w>scale_discrete_manual</w>
       <w>scale_fill_brewer</w>
+      <w>scale_fill_calc</w>
+      <w>scale_fill_canva</w>
+      <w>scale_fill_colorblind</w>
       <w>scale_fill_continuous</w>
+      <w>scale_fill_continuous_tableau</w>
       <w>scale_fill_cyclical</w>
       <w>scale_fill_date</w>
       <w>scale_fill_datetime</w>
       <w>scale_fill_discrete</w>
       <w>scale_fill_distiller</w>
+      <w>scale_fill_economist</w>
+      <w>scale_fill_excel</w>
+      <w>scale_fill_excel_new</w>
+      <w>scale_fill_few</w>
+      <w>scale_fill_fivethirtyeight</w>
+      <w>scale_fill_gdocs</w>
       <w>scale_fill_gradient</w>
       <w>scale_fill_gradient2</w>
+      <w>scale_fill_gradient2_tableau</w>
+      <w>scale_fill_gradient_tableau</w>
       <w>scale_fill_gradientn</w>
       <w>scale_fill_grey</w>
+      <w>scale_fill_hc</w>
       <w>scale_fill_hue</w>
       <w>scale_fill_identity</w>
       <w>scale_fill_manual</w>
+      <w>scale_fill_ordinal</w>
+      <w>scale_fill_pander</w>
+      <w>scale_fill_ptol</w>
       <w>scale_fill_selection</w>
+      <w>scale_fill_solarized</w>
+      <w>scale_fill_stata</w>
+      <w>scale_fill_tableau</w>
       <w>scale_fill_viridis</w>
+      <w>scale_fill_viridis_c</w>
+      <w>scale_fill_viridis_d</w>
+      <w>scale_fill_wsj</w>
       <w>scale_linetype</w>
       <w>scale_linetype_continuous</w>
       <w>scale_linetype_cyclical</w>
       <w>scale_linetype_discrete</w>
       <w>scale_linetype_identity</w>
       <w>scale_linetype_manual</w>
+      <w>scale_linetype_stata</w>
       <w>scale_point_color_continuous</w>
       <w>scale_point_color_discrete</w>
       <w>scale_point_color_gradient</w>
@@ -12947,10 +13077,18 @@
       <w>scale_point_size_continuous</w>
       <w>scale_radius</w>
       <w>scale_shape</w>
+      <w>scale_shape_calc</w>
+      <w>scale_shape_circlefill</w>
+      <w>scale_shape_cleveland</w>
       <w>scale_shape_continuous</w>
       <w>scale_shape_discrete</w>
+      <w>scale_shape_few</w>
       <w>scale_shape_identity</w>
       <w>scale_shape_manual</w>
+      <w>scale_shape_ordinal</w>
+      <w>scale_shape_stata</w>
+      <w>scale_shape_tableau</w>
+      <w>scale_shape_tremmel</w>
       <w>scale_size</w>
       <w>scale_size_area</w>
       <w>scale_size_continuous</w>
@@ -12960,6 +13098,8 @@
       <w>scale_size_discrete</w>
       <w>scale_size_identity</w>
       <w>scale_size_manual</w>
+      <w>scale_size_ordinal</w>
+      <w>scale_type</w>
       <w>scale_vline_color_continuous</w>
       <w>scale_vline_color_discrete</w>
       <w>scale_vline_color_gradient</w>
@@ -13238,6 +13378,7 @@
       <w>set_expr</w>
       <w>set_header</w>
       <w>set_hooks</w>
+      <w>set_last_plot</w>
       <w>set_ll_TOL</w>
       <w>set_ll_warn</w>
       <w>set_lockfile_metadata</w>
@@ -13354,8 +13495,10 @@
       <w>showWKT</w>
       <w>show_ansi_colors</w>
       <w>show_col</w>
+      <w>show_linetypes</w>
       <w>show_news</w>
       <w>show_query</w>
+      <w>show_shapes</w>
       <w>shrimp</w>
       <w>shuttle</w>
       <w>sidebarLayout</w>
@@ -13438,6 +13581,8 @@
       <w>slp</w>
       <w>slsqp</w>
       <w>sluggerdata</w>
+      <w>smart_digits</w>
+      <w>smart_digits_format</w>
       <w>smartbind</w>
       <w>smartypants</w>
       <w>smean.cl.boot</w>
@@ -13498,6 +13643,7 @@
       <w>soil</w>
       <w>soil250</w>
       <w>soja98</w>
+      <w>solarized_pal</w>
       <w>solarnoon</w>
       <w>solarpos</w>
       <w>solder</w>
@@ -13748,6 +13894,7 @@
       <w>stanc_builder</w>
       <w>standard.theme</w>
       <w>standardGeneric</w>
+      <w>standardise_aes_names</w>
       <w>stanford2</w>
       <w>stanfordheart</w>
       <w>stars</w>
@@ -13766,6 +13913,7 @@
       <w>stash</w>
       <w>stash_drop</w>
       <w>stash_list</w>
+      <w>stat</w>
       <w>stat.anova</w>
       <w>stat_bin</w>
       <w>stat_bin2d</w>
@@ -13782,11 +13930,15 @@
       <w>stat_density_ridges</w>
       <w>stat_ecdf</w>
       <w>stat_ellipse</w>
+      <w>stat_fivenumber</w>
       <w>stat_function</w>
       <w>stat_identity</w>
       <w>stat_plsmo</w>
       <w>stat_qq</w>
+      <w>stat_qq_line</w>
       <w>stat_quantile</w>
+      <w>stat_sf</w>
+      <w>stat_sf_coordinates</w>
       <w>stat_smooth</w>
       <w>stat_spoke</w>
       <w>stat_sum</w>
@@ -13798,6 +13950,9 @@
       <w>stat_unique</w>
       <w>stat_ydensity</w>
       <w>stata.get</w>
+      <w>stata_linetype_pal</w>
+      <w>stata_pal</w>
+      <w>stata_shape_pal</w>
       <w>state.carto.center</w>
       <w>state.cartoMapEnv</w>
       <w>state.fips</w>
@@ -14192,10 +14347,13 @@
       <w>summarise_</w>
       <w>summarise_all</w>
       <w>summarise_at</w>
+      <w>summarise_coord</w>
       <w>summarise_each</w>
       <w>summarise_each_</w>
       <w>summarise_each_q</w>
       <w>summarise_if</w>
+      <w>summarise_layers</w>
+      <w>summarise_layout</w>
       <w>summarize</w>
       <w>summarize_</w>
       <w>summarize_all</w>
@@ -14396,6 +14554,11 @@
       <w>table_latexdefs</w>
       <w>table_pc</w>
       <w>table_trio</w>
+      <w>tableau_color_pal</w>
+      <w>tableau_div_gradient_pal</w>
+      <w>tableau_gradient_pal</w>
+      <w>tableau_seq_gradient_pal</w>
+      <w>tableau_shape_pal</w>
       <w>tables</w>
       <w>tabsetPanel</w>
       <w>tabulate</w>
@@ -14514,21 +14677,43 @@
       <w>theEconomist.theme</w>
       <w>theme</w>
       <w>themeSelector</w>
+      <w>theme_base</w>
       <w>theme_bw</w>
+      <w>theme_calc</w>
       <w>theme_classic</w>
       <w>theme_dark</w>
       <w>theme_default</w>
+      <w>theme_economist</w>
+      <w>theme_economist_white</w>
+      <w>theme_excel</w>
+      <w>theme_excel_new</w>
+      <w>theme_few</w>
+      <w>theme_fivethirtyeight</w>
+      <w>theme_foundation</w>
+      <w>theme_gdocs</w>
       <w>theme_get</w>
       <w>theme_gray</w>
       <w>theme_grey</w>
+      <w>theme_hc</w>
+      <w>theme_igray</w>
       <w>theme_light</w>
       <w>theme_linedraw</w>
+      <w>theme_map</w>
       <w>theme_minimal</w>
+      <w>theme_pander</w>
+      <w>theme_par</w>
       <w>theme_replace</w>
       <w>theme_ridges</w>
       <w>theme_set</w>
+      <w>theme_solarized</w>
+      <w>theme_solarized_2</w>
+      <w>theme_solid</w>
+      <w>theme_stata</w>
+      <w>theme_test</w>
+      <w>theme_tufte</w>
       <w>theme_update</w>
       <w>theme_void</w>
+      <w>theme_wsj</w>
       <w>theoLmoms</w>
       <w>theoLmoms.max.ostat</w>
       <w>theoLmoms.min.ostat</w>
@@ -14574,6 +14759,7 @@
       <w>timeNdayOnOrBefore</w>
       <w>timeNthNdayInMonth</w>
       <w>timeSequence</w>
+      <w>time_format</w>
       <w>time_length</w>
       <w>time_trans</w>
       <w>timeout</w>
@@ -14930,6 +15116,7 @@
       <w>trellis.switchFocus</w>
       <w>trellis.unfocus</w>
       <w>trellis.vpname</w>
+      <w>tremmel_shape_pal</w>
       <w>trend.line</w>
       <w>trend.spatial</w>
       <w>trendcycle</w>
@@ -15345,6 +15532,7 @@
       <w>vignetteEngine</w>
       <w>viridis</w>
       <w>viridis.map</w>
+      <w>viridisLite</w>
       <w>viridis_pal</w>
       <w>vis.gam</w>
       <w>vitamind</w>
@@ -15625,6 +15813,7 @@
       <w>writehex</w>
       <w>wrld_simpl</w>
       <w>wrpcauchy.ml</w>
+      <w>wsj_pal</w>
       <w>wt</w>
       <w>wt.avg</w>
       <w>wt.centroid</w>

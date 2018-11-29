@@ -33,12 +33,25 @@ np = import("numpy")
 print('loading precipitation files')
 
 # load historical file and sim files
+i=1 # to fix
 pr.hist.obs = np$load(file.loc.pr.hist.obs)
+site.hist.obs = pr.hist.obs[i,,] ; rm(pr.hist.obs)
 pr.hist.sim = np$load(file.loc.pr.hist.sim)
+site.hist.sim = pr.hist.sim[i,,] ; rm(pr.hist.sim)
 pr.rcp45.2021 = np$load(file.loc.pr.rcp45.2021)
+site.rcp45.2021 = pr.rcp45.2021[i,,] ; rm(pr.rcp45.2021)
 pr.rcp45.2071 = np$load(file.loc.pr.rcp45.2071)
+site.rcp45.2071 = pr.rcp45.2071[i,,] ; rm(pr.rcp45.2071)
 pr.rcp85.2021 = np$load(file.loc.pr.rcp85.2021)
+site.rcp85.2021 = pr.rcp85.2021[i,,] ; rm(pr.rcp85.2021)
 pr.rcp85.2071 = np$load(file.loc.pr.rcp85.2071)
+site.rcp85.2071 = pr.rcp85.2071[i,,] ; rm(pr.rcp85.2071)
+
+# function to create X month SPI, attached reference data onto the front of the dataset if not the original real historical dataset
+# once working with one site, adapt sites to be multiple IDs which can
+process_spi = function(sites,,,){
+
+}
 
 # 1.'REAL' HISTORICAL DATA
 
