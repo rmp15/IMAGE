@@ -19,23 +19,31 @@ year_end = as.numeric(args[7])                  # year_end = 2000
 # scen = 'hist'; year_start = 1971 ; year_end = 2000
 
 # local file outputs from IMAGE (change for on wrfstore because of python's weird system imposed by reticulate below)
-image_output_local = '/Users/rmiparks/data/IMAGE/CLaGARMi/euro_cordex_output/'
-file.loc.pr.hist = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_',scen,'_',year_start,'_',year_end,'_',metric,'_o.npy' )
-file.loc.pr.sim = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_',scen,'_',year_start,'_',year_end,'_',metric,'_s.npy' )
-file.loc.pr.sim.future = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_','rcp85','_','2071','_','2100','_',metric,'_s.npy' )
+image_output_local = '/home/rmp15/data/IMAGE/CLaGARMi/euro_cordex_output/'
+file.loc.pr.hist.obs   = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_hist_1971_2000_',metric,'_o.npy' )
+file.loc.pr.hist.sim   = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_hist_1971_2000_',metric,'_s.npy' )
+file.loc.pr.rcp45.2021 = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_rcp45_2021_2050_',metric,'_s.npy' )
+file.loc.pr.rcp45.2071 = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_rcp45_2071_2100_',metric,'_s.npy' )
+file.loc.pr.rcp85.2021 = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_rcp85_2021_2050_',metric,'_s.npy' )
+file.loc.pr.rcp85.2071 = paste0(image_output_local,metric,'/out_',slice,'_y',years_sim_1,'_',continent,'_rcp85_2071_2100_',metric,'_s.npy' )
 
 # to enable reading of numpy files in R
 np = import("numpy")
 
+print('loading precipitation files')
+
 # load historical file and sim files
-pr.hist = np$load(file.loc.pr.hist)
-pr.sim = np$load(file.loc.pr.sim)
-pr.sim.future = np$load(file.loc.pr.sim)
+pr.hist.obs = np$load(file.loc.pr.hist.obs)
+pr.hist.sim = np$load(file.loc.pr.hist.sim)
+pr.rcp45.2021 = np$load(file.loc.pr.rcp45.2021)
+pr.rcp45.2071 = np$load(file.loc.pr.rcp45.2071)
+pr.rcp85.2021 = np$load(file.loc.pr.rcp85.2021)
+pr.rcp85.2071 = np$load(file.loc.pr.rcp85.2071)
 
 # 1.'REAL' HISTORICAL DATA
 
 # test take one site and calculate SPI as test
-site = pr.hist[1,,]
+site = pr.hist.obs[1,,]
 site.vector.obs = as.vector(t(site))
 
 # create dataframe with year, month, precipitation
@@ -58,7 +66,7 @@ spi_3.hist.obs <- spi(dat.site.summarised[,'precip'], 3)
 spi_12.hist.obs <- spi(dat.site.summarised[,'precip'], 12)
 
 # 2. SIM DATA WITH FIXED REFERENCE PERIOD FOR PRESENT
-site = pr.sim[1,,]
+site = pr.hist.sim[1,,]
 site.vector.sim = as.vector(t(site))
 
 num.years = dim(site)[1]
