@@ -33,7 +33,7 @@ np = import("numpy")
 print('loading precipitation files')
 
 # load historical file and sim files
-i=1 # to fix
+i=484 # to fix
 pr.hist.obs = np$load(file.loc.pr.hist.obs)
 site.hist.obs = pr.hist.obs[i,,] ; rm(pr.hist.obs)
 pr.hist.sim = np$load(file.loc.pr.hist.sim)
@@ -50,6 +50,20 @@ site.rcp85.2071 = pr.rcp85.2071[i,,] ; rm(pr.rcp85.2071)
 # month and year data
 year.seq = rep(1:30, each=365)
 month.seq = c(rep(1,31),rep(2,28),rep(3,31),rep(4,30),rep(5,31),rep(6,30),rep(7,31),rep(8,31),rep(9,30),rep(10,31),rep(11,30),rep(12,31))
+
+time_series_create = function(scen,type){
+    dat = get(paste0('site.',scen,'.',type))
+
+    dat.vector = as.vector(t(dat))
+
+    dat.site = data.frame(precip = dat.vector,month=month.seq)
+
+    dat.site.summarised = ddply(dat.site,.(month),summarise,precip=mean(precip))
+
+    dat.site.summarised$precip = 10000 * dat.site.summarised$precip
+
+    return(dat.site.summarised)
+}
 
 # function to create X month SPI, attached reference data onto the front of the dataset if not the original real historical dataset
 # once working with one site, adapt sites to be multiple IDs which can
@@ -97,7 +111,7 @@ process_spi = function(scen,type,spi.length){
         dat.spi <- spi(dat.site.summarised[,'precip'], spi.length)
     }
     if(type!='obs'){
-        dat.sp <- spi(dat.site.summarised[,'precip'], spi.length, ref.start=c(1,1), ref.end=c(30,12))
+        dat.spi <- spi(dat.site.summarised[,'precip'], spi.length, ref.start=c(1,1), ref.end=c(30,12))
 
     }
     return(dat.spi)
@@ -111,9 +125,7 @@ spi_3.rcp45.2071 = process_spi('rcp45','2071',3)
 spi_3.rcp85.2021 = process_spi('rcp85','2021',3)
 spi_3.rcp85.2071 = process_spi('rcp85','2071',3)
 
-
 # create histograms by month
-
 create_hist = function(dat){
     dat.hist = data.frame(spi=dat$fitted,month=rep(c(1:12)))
     names(dat.hist) = c('spi','month')
@@ -133,8 +145,9 @@ dat.spi_3.rcp85.2071 = create_hist(spi_3.rcp85.2071)
 # dat.spi_3.future.sim = data.frame(spi=spi_3.future.sim$fitted,month=rep(c(1:12)))
 # names(dat.spi_3.future.sim) = c('spi','month') ; names(dat.spi_3.hist.obs) = c('spi','month')
 
-# pdf TO FIX LOCATION
-pdf("~/git/IMAGE/spi_plot.pdf",paper='a4r',height=0,width=0)
+# pdf of
+# TO FIX LOCATION
+pdf("~/git/IMAGE/spi_plot_greece.pdf",paper='a4r',height=0,width=0)
 ggplot() +
     geom_density(data=dat.spi_3.hist.obs, aes(x=spi),color='black') +
     geom_density(data=dat.spi_3.hist.sim, aes(x=spi),color='grey') +
@@ -143,6 +156,40 @@ ggplot() +
     geom_density(data=dat.spi_3.rcp45.2071, aes(x=spi),color='red') +
     geom_density(data=dat.spi_3.rcp85.2071, aes(x=spi),color='dark red') +
     facet_wrap(~month)
+dev.off()
+
+# plot average rainfall values also
+time_series_create = function(scen,type){
+    dat = get(paste0('site.',scen,'.',type))
+
+    dat.vector = as.vector(t(dat))
+
+    dat.site = data.frame(precip = dat.vector,month=month.seq)
+
+    dat.site.summarised = ddply(dat.site,.(month),summarise,precip=mean(precip))
+
+    dat.site.summarised$precip = 10000 * dat.site.summarised$precip
+
+    return(dat.site.summarised)
+}
+
+# pdf TO FIX LOCATION
+time.hist.obs = time_series_create('hist','obs')
+time.hist.sim = time_series_create('hist','sim')
+time.rcp45.2021 = time_series_create('rcp45','2021')
+time.rcp45.2071 = time_series_create('rcp45','2071')
+time.rcp85.2021 = time_series_create('rcp85','2021')
+time.rcp85.2071 = time_series_create('rcp85','2071')
+
+# fix pdf name
+pdf("~/git/IMAGE/average_rainfall_plot_greece.pdf",paper='a4r',height=0,width=0)
+ggplot() +
+    geom_line(data=time.hist.obs, aes(x=month,y=precip),color='black') +
+    geom_line(data=time.hist.sim, aes(x=month,y=precip),color='grey') +
+    geom_line(data=time.rcp45.2021, aes(x=month,y=precip),color='yellow') +
+    geom_line(data=time.rcp85.2021, aes(x=month,y=precip),color='orange') +
+    geom_line(data=time.rcp45.2071, aes(x=month,y=precip),color='red') +
+    geom_line(data=time.rcp85.2071, aes(x=month,y=precip),color='dark red')
 dev.off()
 
 ########################################
