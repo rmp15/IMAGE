@@ -16,14 +16,15 @@ cmdargs = str(sys.argv)
 # variables for processing CLaGARMi output
 slice = sys.argv[1]                             # slice = '01'
 # years_sim_1 = int(float((sys.argv[2])))         # years_sim_1 = 4000 ; years_sim_2 = 6000
-metric = sys.argv[2]                            # metric = 'tasmax'
-continent = sys.argv[3]                         # continent = 'euro'
-scen = sys.argv[4]                              # scen = 'hist'
-year_start = int(float((sys.argv[5])))          # year_start = 1971
-year_end = int(float((sys.argv[6])))            # year_end = 2000
-season_start = int(float((sys.argv[7])))        # season_start = 5
-season_end = int(float((sys.argv[8])))          # season_end = 9
-percentile = int(float((sys.argv[9])))          # percentile = 99
+# years_sim_2 = int(float((sys.argv[3])))         # years_sim_1 = 4000 ; years_sim_2 = 6000
+metric = sys.argv[4]                            # metric = 'tasmax'
+continent = sys.argv[5]                         # continent = 'euro'
+scen = sys.argv[6]                              # scen = 'hist'
+year_start = int(float((sys.argv[7])))          # year_start = 1971
+year_end = int(float((sys.argv[8])))            # year_end = 2000
+season_start = int(float((sys.argv[9])))        # season_start = 5
+season_end = int(float((sys.argv[10])))          # season_end = 9
+percentile = int(float((sys.argv[11])))          # percentile = 99
 
 # # file loc in case its being run on linux platform
 # if sys.platform == 'linux' or sys.platform == 'linux2':
