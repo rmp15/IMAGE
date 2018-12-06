@@ -10,6 +10,8 @@ total = len(sys.argv)
 # get the arguments list
 cmdargs = str(sys.argv)
 
+print(cmdargs)
+
 # variables for processing CLaGARMi output
 slice = sys.argv[1]                             # slice = '01'
 years_sim = int(float((sys.argv[2])))           # years_sim = 4000
@@ -51,6 +53,8 @@ np.save(os.path.join(image_output_local, fn_o), appt_obs_data)
 np.save(os.path.join(image_output_local, fn_s), appt_sim_data)
 
 print('complete')
+
+# below is legacy code
 
 # # processing monthly means for the CORDEX observation data
 # obs_data_processed = monthly_summary(appt_obs_data, 30, 0)

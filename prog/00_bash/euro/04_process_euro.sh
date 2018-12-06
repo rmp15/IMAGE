@@ -31,7 +31,6 @@ python3.6 -m prog.02_processing_CLaGARMi.app_temp_process $slice $years_sim $con
 
 done; done; done;
 
-
 for years_sim in "${years_sims[@]}"; do
 for metric in "${metrics[@]}"; do
 for continent in "${continents[@]}"; do
