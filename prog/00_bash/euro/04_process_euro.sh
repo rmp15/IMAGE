@@ -6,7 +6,7 @@
 
 clear
 
-#cd ~/git/IMAGE/prog/CLaGARMi/
+cd ~/git/IMAGE/
 
 # arguments for processing of files
 declare slice='01'
