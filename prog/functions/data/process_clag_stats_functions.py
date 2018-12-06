@@ -16,8 +16,6 @@ def load_clag_output(step, num_years, continent, scen_name, start_year, end_year
     else:
         ext = 'mat'
 
-    print(ext)
-
     fn_o = var + '/out_' + step + '_y' + str(num_years) + '_' + continent + '_' + str(scen_name) + '_' + str(start_year) + '_' + str(end_year) + '_' + var + '_o.' + ext
     fn_s = var + '/out_' + step + '_y' + str(num_years) + '_' + continent + '_' + str(scen_name) + '_' + str(start_year) + '_' + str(end_year) + '_' + var + '_s.' + ext
 
