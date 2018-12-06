@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" afterPath="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +31,8 @@
       <file leaf-file-name="return_period_plots_processing.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+            <state relative-caret-position="648">
+              <caret line="193" column="0" lean-forward="true" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
               <folding>
                 <element signature="e#217#279#0" expanded="true" />
               </folding>
@@ -531,13 +530,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00235" summary="extracting values from clagarmi script">
-      <created>1542298814751</created>
-      <option name="number" value="00235" />
-      <option name="presentableId" value="LOCAL-00235" />
-      <option name="project" value="LOCAL" />
-      <updated>1542298814751</updated>
-    </task>
     <task id="LOCAL-00236" summary="extracting values from clagarmi script">
       <created>1542298862585</created>
       <option name="number" value="00236" />
@@ -874,7 +866,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544110822560</updated>
     </task>
-    <option name="localTasksCounter" value="284" />
+    <task id="LOCAL-00284" summary="extracting values from clagarmi script">
+      <created>1544110967002</created>
+      <option name="number" value="00284" />
+      <option name="presentableId" value="LOCAL-00284" />
+      <option name="project" value="LOCAL" />
+      <updated>1544110967002</updated>
+    </task>
+    <option name="localTasksCounter" value="285" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1289,8 +1288,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        <state relative-caret-position="648">
+          <caret line="193" column="0" lean-forward="true" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
           <folding>
             <element signature="e#217#279#0" expanded="true" />
           </folding>
