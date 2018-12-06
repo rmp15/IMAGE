@@ -26,6 +26,8 @@ season_start = int(float((sys.argv[9])))        # season_start = 5
 season_end = int(float((sys.argv[10])))         # season_end = 9
 percentile = int(float((sys.argv[11])))         # percentile = 99
 
+years_sim = years_sim_1 + years_sim_2
+
 # # file loc in case its being run on linux platform
 # if sys.platform == 'linux' or sys.platform == 'linux2':
 #     image_output_local = os.path.join('/home/rmp15/data/IMAGE/CLaGARMi/euro_cordex_output/')
