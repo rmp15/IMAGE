@@ -3,6 +3,8 @@
 
 from prog.functions.data.process_clag_stats_functions import *
 import sys
+import hdf5storage
+
 
 # get total number of arguments
 total = len(sys.argv)
@@ -40,11 +42,17 @@ appt_sim_data = app_temp_creator(tas_sim_data, huss_sim_data, ps_sim_data)
 
 
 # names for output files
-fn_o = var + '/out_' + step + '_y' + str(num_years) + '_' + continent + '_' + str(scen_name) + '_' + str(
-    start_year) + '_' + str(end_year) + '_' + var + '_o.mat'
-fn_s = var + '/out_' + step + '_y' + str(num_years) + '_' + continent + '_' + str(scen_name) + '_' + str(
-    start_year) + '_' + str(end_year) + '_' + var + '_s.mat'
+fn_o = 'appt/out_' + slice + '_y' + str(years_sim) + '_' + continent + '_' + str(scen) + '_' + str(
+    year_start) + '_' + str(year_end) + '_appt_o.mat'
+fn_s = 'appt/out_' + slice + '_y' + str(years_sim) + '_' + continent + '_' + str(scen) + '_' + str(
+    year_start) + '_' + str(year_end) + '_appt_s.mat'
 
+# save files
+print('saving files')
+np.save(os.path.join(image_output_local, fn_o), appt_obs_data)
+np.save(os.path.join(image_output_local, fn_s), appt_sim_data)
+
+print('complete')
 
 # # processing monthly means for the CORDEX observation data
 # obs_data_processed = monthly_summary(appt_obs_data, 30, 0)
