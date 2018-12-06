@@ -14,8 +14,8 @@ declare -a years_sims=(4000 6000)
 declare -a metrics=('huss') # 'huss' 'sfcWindmax')
 declare -a continents=('euro')
 declare -a scens=('rcp45' 'rcp85')
-declare -i start=2021
-declare -i end=2050
+declare -i start=2071
+declare -i end=2100
 
 #################################################
 # 1. EURO-CORDEX RUNS
