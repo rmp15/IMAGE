@@ -31,6 +31,8 @@ for scen in "${scens[@]}"; do
 
 done; done; done;
 
+declare -i year_sim_1=4000
+declare -i year_sim_2=6000
 declare -i season_start=5
 declare -i season_end=9
 declare -i percentile=99
