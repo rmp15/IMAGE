@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # this script
+# processes output of CLaGARMi into combined metrics like apparent temperature and SPEI
 # processes the output of CLaGARMi into something R can plot
 
 clear
