@@ -10,8 +10,9 @@ from scipy.stats import rankdata
 # based on steve's previous code in legacy 'load_mat_var.py'
 def load_clag_output(step, num_years, continent, scen_name, start_year, end_year, var):
 
+
     if var == 'appt':
-        ext = 'npy'
+        ext = 'mat.npy'
     else:
         ext = 'mat'
 

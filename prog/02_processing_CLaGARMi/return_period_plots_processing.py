@@ -26,8 +26,8 @@ season_start = int(float((sys.argv[9])))
 season_end = int(float((sys.argv[10])))
 percentile = int(float((sys.argv[11])))
 
-slice = '01'; years_sim_1 = 4000; years_sim_2 = 6000; metric = 'appt'; continent = 'euro'; scen = 'hist'
-year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99
+# slice = '01'; years_sim_1 = 4000; years_sim_2 = 6000; metric = 'appt'; continent = 'euro'; scen = 'hist'
+# year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99
 
 years_sim = years_sim_1 + years_sim_2
 
