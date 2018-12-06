@@ -18,11 +18,14 @@ def load_clag_output(step, num_years, continent, scen_name, start_year, end_year
     fn_o = var + '/out_' + step + '_y' + str(num_years) + '_' + continent + '_' + str(scen_name) + '_' + str(start_year) + '_' + str(end_year) + '_' + var + '_o.' + ext
     fn_s = var + '/out_' + step + '_y' + str(num_years) + '_' + continent + '_' + str(scen_name) + '_' + str(start_year) + '_' + str(end_year) + '_' + var + '_s.' + ext
 
-    o = h5py.File(os.path.join(image_output_local, fn_o), 'r')
-    s = h5py.File(os.path.join(image_output_local, fn_s), 'r')
-
-    o_array = np.array(o[list(o.keys())[0]])
-    s_array = np.array(s[list(s.keys())[0]])
+    if var == 'appt':
+        o_array = np.load(os.path.join(image_output_local, fn_o))
+        s_array = np.load(os.path.join(image_output_local, fn_s))
+    else:
+        o = h5py.File(os.path.join(image_output_local, fn_o), 'r')
+        s = h5py.File(os.path.join(image_output_local, fn_s), 'r')
+        o_array = np.array(o[list(o.keys())[0]])
+        s_array = np.array(s[list(s.keys())[0]])
 
     return o_array, s_array
 
