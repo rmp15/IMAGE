@@ -37,6 +37,8 @@ print(str(years_sim)+ ' total years of simluation')
 # load lon/lat table with country identifiers
 lonlat = pd.read_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/'+ continent +'_lonlat_edit.csv')
 
+print('loading all data')
+
 # loading data for both observations and simulations
 obs_data, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, year_start, year_end, metric)
 obs_data, sim_data_2 = load_clag_output(slice, years_sim_2, continent, scen, year_start, year_end, metric)
