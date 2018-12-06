@@ -26,7 +26,15 @@ for years_sim in "${years_sims[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
-#python ~/git/IMAGE/prog/02_processing_CLaGARMi/figure_2_3_processing.py $slice $years_sim $metric $continent $scen $start $end
+python3.6 -m prog.02_processing_CLaGARMi.app_temp_process $slice $years_sim $continent $scen $start $end
+
+done; done; done;
+
+# process return periods
+for years_sim in "${years_sims[@]}"; do
+for continent in "${continents[@]}"; do
+for scen in "${scens[@]}"; do
+
 python3.6 -m prog.02_processing_CLaGARMi.app_temp_process $slice $years_sim $continent $scen $start $end
 
 done; done; done;
@@ -40,7 +48,5 @@ for scen in "${scens[@]}"; do
 #python ~/git/IMAGE/prog/02_processing_CLaGARMi/figure_2_3_processing.py $slice $years_sim $metric $continent $scen $start $end
 
 done; done; done; done;
-
-
 
 #python ~/git/IMAGE/prog/02_processing_CLaGARMi/figure_8_processing.py $slice $years_sim $metric $continent $scen $start $end
