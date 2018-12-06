@@ -3,6 +3,10 @@
 # processes monthly means for the total length of the IMAGE data
 # processes monthly means for each of the 30-year ensembles of IMAGE data
 
+# arguments for testing
+# slice = '01'; years_sim_1 = 4000; years_sim_2 = 6000; metric = 'appt'; continent = 'euro'; scen = 'hist'
+# year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99
+
 from prog.functions.data.process_clag_stats_functions import *
 import sys
 
@@ -12,7 +16,6 @@ total = len(sys.argv)
 # get the arguments list
 cmdargs = str(sys.argv)
 
-#  $slice $metric $continent $scen $start $end
 # variables for processing CLaGARMi output
 slice = sys.argv[1]
 years_sim_1 = int(float((sys.argv[2])))
@@ -26,16 +29,8 @@ season_start = int(float((sys.argv[9])))
 season_end = int(float((sys.argv[10])))
 percentile = int(float((sys.argv[11])))
 
-# arguments for testing
-# slice = '01'; years_sim_1 = 4000; years_sim_2 = 6000; metric = 'appt'; continent = 'euro'; scen = 'hist'
-# year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99
-
 years_sim = years_sim_1 + years_sim_2
-
-# # file loc in case its being run on linux platform
-# if sys.platform == 'linux' or sys.platform == 'linux2':
-#     image_output_local = os.path.join('/home/rmp15/data/IMAGE/CLaGARMi/euro_cordex_output/')
-#     cordex_output_local = os.path.join('/home/rmp15/data/IMAGE/CORDEX/')
+print(str(years_sim)+ ' total years of simluation')
 
 # load lon/lat table with country identifiers
 lonlat = pd.read_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/'+ continent +'_lonlat_edit.csv')
@@ -45,6 +40,8 @@ obs_data, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, yea
 obs_data, sim_data_2 = load_clag_output(slice, years_sim_2, continent, scen, year_start, year_end, metric)
 
 no_sites = obs_data.shape[0]
+
+print('combining all simulation years')
 
 # combine two sets of simulations (must be a faster way?) (check out numpy.stack)
 # TO DO make a separate code to do this once
@@ -56,6 +53,8 @@ for i in range(0, no_sites):
 #################################
 # HEAT WAVE DURATION PORTUGAL (30-year chunks)
 #################################
+
+print('calculating Portugal return periods')
 
 # create empty frame to populate with subset values
 data_avg = pd.DataFrame(columns=['days_over', 'return_period', 'subset'])
@@ -74,8 +73,12 @@ for subset in range(0, int(np.floor(sim_data_combined_subset.shape[1]/30))):
     # concatenate to master file
     data_avg = pd.concat([data_avg.reset_index(drop=True), data_sim_temp.reset_index(drop=True)], axis=0)
 
+print('saving Portugal return periods')
+
 # save to csv
 data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_30yrs_subsets_' + str(years_sim) + 'yrs_sim_intensity_return_periods_portugal.csv',index=False)
+
+print('thank u, next')
 
 # BELOW TO FINISH
 
