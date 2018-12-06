@@ -36,7 +36,7 @@ for years_sim in "${years_sims[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
-python3.6 -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $continent $scen $start $end
+python3.6 -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $metric $continent $scen $start $end
 
 done; done; done;
 
