@@ -11,7 +11,7 @@ cd ~/git/IMAGE/
 # arguments for processing of files
 declare slice='01'
 declare -a years_sims=(6000)
-declare -a metrics=('huss') # 'huss' 'sfcWindmax')
+declare -a metrics=('appt') # 'huss' 'sfcWindmax')
 declare -a continents=('euro')
 declare -a scens=('hist')
 declare -i start=1971
@@ -27,7 +27,7 @@ for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
 :
-python3.6 -m prog.02_processing_CLaGARMi.app_temp_process $slice $years_sim $continent $scen $start $end
+#python3.6 -m prog.02_processing_CLaGARMi.app_temp_process $slice $years_sim $continent $scen $start $end
 
 done; done; done;
 
@@ -38,11 +38,11 @@ declare -i season_end=9
 declare -i percentile=99
 
 # process return periods
-for years_sim in "${years_sims[@]}"; do
+for metric in "${metrics[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
-#python3.6 -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $metric $continent $scen $start $end $season_start $season_end $percentile
+python3.6 -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $metric $continent $scen $start $end $season_start $season_end $percentile
 
 done; done; done;
 

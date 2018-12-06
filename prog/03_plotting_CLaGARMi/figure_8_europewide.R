@@ -39,8 +39,8 @@ dat.sim.one= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'
 dat.sim.sub.one = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_4000yrs_sim_intensity_return_periods_uk.csv'))
 
 dat.obs.port= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_portugal.csv'))
-dat.sim.port= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_4000yrs_sim_intensity_return_periods_portugal.csv'))
-dat.sim.sub.port = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_4000yrs_sim_intensity_return_periods_portugal.csv'))
+dat.sim.port= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_10000yrs_sim_intensity_return_periods_portugal.csv'))
+dat.sim.sub.port = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_10000yrs_sim_intensity_return_periods_portugal.csv'))
 
 #################################
 # FIGURE 8
