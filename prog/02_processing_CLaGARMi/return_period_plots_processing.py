@@ -16,6 +16,8 @@ total = len(sys.argv)
 # get the arguments list
 cmdargs = str(sys.argv)
 
+print(cmdargs)
+
 # variables for processing CLaGARMi output
 slice = sys.argv[1]
 years_sim_1 = int(float((sys.argv[2])))
