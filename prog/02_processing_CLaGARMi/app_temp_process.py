@@ -40,7 +40,6 @@ print('processing apparent temperature')
 appt_obs_data = app_temp_creator(tas_obs_data, huss_obs_data, ps_obs_data)
 appt_sim_data = app_temp_creator(tas_sim_data, huss_sim_data, ps_sim_data)
 
-
 # names for output files
 fn_o = 'appt/out_' + slice + '_y' + str(years_sim) + '_' + continent + '_' + str(scen) + '_' + str(
     year_start) + '_' + str(year_end) + '_appt_o.mat'
