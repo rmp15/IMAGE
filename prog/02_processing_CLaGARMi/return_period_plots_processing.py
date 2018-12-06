@@ -58,6 +58,14 @@ for i in range(0, no_sites):
 # HEAT WAVE DURATION PORTUGAL (30-year chunks)
 #################################
 
+port_values = [0,1,2,3,4,5,6,7,8]
+
+# take footprint of country TO FINISH
+obs_data_site = obs_data[port_values,:,:]
+
+# take sample of combined years from sim_data_1
+sim_data_combined_subset = sim_data_combined[port_values,:,:]
+
 print('calculating Portugal return periods')
 
 # create empty frame to populate with subset values
