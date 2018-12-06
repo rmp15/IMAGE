@@ -3,8 +3,6 @@
 
 from prog.functions.data.process_clag_stats_functions import *
 import sys
-import hdf5storage
-
 
 # get total number of arguments
 total = len(sys.argv)
