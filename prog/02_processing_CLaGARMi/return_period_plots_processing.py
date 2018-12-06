@@ -25,10 +25,10 @@ season_start = int(float((sys.argv[7])))        # season_start = 5
 season_end = int(float((sys.argv[8])))          # season_end = 9
 percentile = int(float((sys.argv[9])))          # percentile = 99
 
-# file loc in case its being run on linux platform
-if sys.platform == 'linux' or sys.platform == 'linux2':
-    image_output_local = os.path.join('/home/rmp15/data/IMAGE/CLaGARMi/euro_cordex_output/')
-    cordex_output_local = os.path.join('/home/rmp15/data/IMAGE/CORDEX/')
+# # file loc in case its being run on linux platform
+# if sys.platform == 'linux' or sys.platform == 'linux2':
+#     image_output_local = os.path.join('/home/rmp15/data/IMAGE/CLaGARMi/euro_cordex_output/')
+#     cordex_output_local = os.path.join('/home/rmp15/data/IMAGE/CORDEX/')
 
 
 # # load lon/lat data for European grids
