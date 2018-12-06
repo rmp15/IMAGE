@@ -31,12 +31,16 @@ for scen in "${scens[@]}"; do
 
 done; done; done;
 
+declare -i season_start=5
+declare -i season_end=9
+declare -i percentile=99
+
 # process return periods
 for years_sim in "${years_sims[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
-python3.6 -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $metric $continent $scen $start $end
+python3.6 -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $metric $continent $scen $start $end $season_start $season_end $percentile
 
 done; done; done;
 
