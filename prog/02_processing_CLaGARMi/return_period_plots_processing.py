@@ -120,6 +120,8 @@ data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_pr
 # data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' +  str(years_sim) + 'yrs_sim_intensity_return_periods_europe.csv')
 data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_sim_intensity_return_periods_portugal.csv')
 
+print('thank u, next again')
+
 #################################
 # HEAT WAVE DURATION EUROPE-WIDE (all data)
 #################################
