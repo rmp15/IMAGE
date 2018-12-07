@@ -13,9 +13,9 @@ declare slice='01'
 declare -a years_sims=(6000)
 declare -a metrics=('appt') # 'huss' 'sfcWindmax')
 declare -a continents=('euro')
-declare -a scens=('rcp85' 'rcp45')
-declare -i start=2021
-declare -i end=2050
+declare -a scens=('hist')
+declare -i start=1971
+declare -i end=2000
 
 #################################################
 # 1. EURO-CORDEX RUNS
