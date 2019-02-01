@@ -11,7 +11,7 @@ clear
 declare slice='01'
 declare -i years_sim1=6000
 declare -i years_sim2=4000
-declare -a metrics=('windchill') # 'huss' 'sfcWindmax')
+declare -a metrics=('appt') # 'huss' 'sfcWindmax')
 declare -a continents=('euro')
 declare -a scens=('hist')
 declare -i start=1971
@@ -25,6 +25,6 @@ for metric in "${metrics[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
-Rscript ~/git/IMAGE/prog/03_plotting_CLaGARMi/figures.R $slice $years_sim1 $years_sim2 $metric $continent $scen $start $end
+Rscript ~/git/IMAGE/prog/03_plotting_CLaGARMi/30_year_averages_plot.R $slice $years_sim1 $years_sim2 $metric $continent $scen $start $end
 
 done; done; done;
