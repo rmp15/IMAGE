@@ -2,36 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/appt_euro_hist_1971_2000_1e+05yrs_obs_sim_intensity_return_periods_portugal_scenarios_2.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/average_rainfall_plot.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/average_rainfall_plot_greece.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/average_rainfall_plot_uk.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/huss_euro_hist_1971_2000_10000yrs_mean.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/huss_euro_hist_1971_2000_10000yrs_sd.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/obs.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/pr_euro_hist_1971_2000_10000yrs_obs_sim_intensity_return_periods_europe.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/sfcWindmax_euro_hist_1971_2000_10000yrs_mean.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/sfcWindmax_euro_hist_1971_2000_10000yrs_sd.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/sim-obs.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/sim.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/spi_plot.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/spi_plot_greece.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/spi_plot_location_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/spi_plot_uk.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_10000yrs_mean.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_10000yrs_obs_sim_intensity_return_periods_europe.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_10000yrs_obs_sim_intensity_return_periods_europe_boxplots.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_10000yrs_obs_sim_intensity_return_periods_one_country.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_10000yrs_obs_sim_intensity_return_periods_portugal.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_10000yrs_obs_sim_intensity_return_periods_portugal_boxplots.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_10000yrs_obs_sim_intensity_return_periods_uk.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_10000yrs_obs_sim_intensity_return_periods_uk_boxplots.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_10000yrs_sd.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_1000yrs_obs_sim_intensity_return_periods_europe.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_obs_intensity_return_periods.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/tasmax_euro_hist_1971_2000_obs_sim_intensity_return_periods.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/windchill_euro_hist_1971_2000_10000yrs_mean.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/figures/windchill_euro_hist_1971_2000_10000yrs_sd.pdf" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/30_year_averages_processing.py" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/30_year_averages_processing.py" />
     </list>
@@ -73,8 +43,8 @@
       <file leaf-file-name="30_year_averages_processing.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/30_year_averages_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="33" column="29" lean-forward="false" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="31" />
+            <state relative-caret-position="675">
+              <caret line="46" column="131" lean-forward="false" selection-start-line="46" selection-start-column="131" selection-end-line="46" selection-end-column="131" />
               <folding />
             </state>
           </provider>
@@ -579,13 +549,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00269" summary="extracting values from clagarmi script">
-      <created>1544106162853</created>
-      <option name="number" value="00269" />
-      <option name="presentableId" value="LOCAL-00269" />
-      <option name="project" value="LOCAL" />
-      <updated>1544106162853</updated>
-    </task>
     <task id="LOCAL-00270" summary="extracting values from clagarmi script">
       <created>1544106186255</created>
       <option name="number" value="00270" />
@@ -922,7 +885,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548983828854</updated>
     </task>
-    <option name="localTasksCounter" value="318" />
+    <task id="LOCAL-00318" summary="extracting values from clagarmi script">
+      <created>1548984235737</created>
+      <option name="number" value="00318" />
+      <option name="presentableId" value="LOCAL-00318" />
+      <option name="project" value="LOCAL" />
+      <updated>1548984235737</updated>
+    </task>
+    <option name="localTasksCounter" value="319" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1319,6 +1289,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures_2_3_4.R">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-797">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/app_temp_process.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1329,18 +1307,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures_2_3_4.R">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-797">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/30_year_averages_processing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="33" column="29" lean-forward="false" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="31" />
+        <state relative-caret-position="675">
+          <caret line="46" column="131" lean-forward="false" selection-start-line="46" selection-start-column="131" selection-end-line="46" selection-end-column="131" />
           <folding />
         </state>
       </provider>
