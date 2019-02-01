@@ -26,6 +26,7 @@ for years_sim in "${years_sims[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
+:
 #python -m prog.02_processing_CLaGARMi.app_temp_process $slice $years_sim $continent $scen $start $end
 
 done; done; done;
