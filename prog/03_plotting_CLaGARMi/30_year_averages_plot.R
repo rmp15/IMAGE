@@ -64,12 +64,12 @@ dat.sim.ens = ddply(dat.sim.ens,.(month,site),summarise,mean_max=max(mean_max),m
 dat.sim.ens = merge(dat.obs.sim,dat.sim.ens,by=c('month','site'),all.x=0)
 
 if(metric%in%c('appt','tasmax')){
-    dat.obs.sim$mean_value_obs = dat.obs.sim$mean_value_obs - 273.15
-    dat.obs.sim$mean_value_sim = dat.obs.sim$mean_value_sim - 273.15
-    dat.sim.ens$mean_value_obs = dat.sim.ens$mean_value_obs - 273.15
-    dat.sim.ens$mean_value_sim = dat.sim.ens$mean_value_sim - 273.15
-    dat.sim.ens$mean_max = dat.sim.ens$mean_max - 273.15
-    dat.sim.ens$mean_min = dat.sim.ens$mean_min - 273.15
+    # dat.obs.sim$mean_value_obs = dat.obs.sim$mean_value_obs - 273.15
+    # dat.obs.sim$mean_value_sim = dat.obs.sim$mean_value_sim - 273.15
+    # dat.sim.ens$mean_value_obs = dat.sim.ens$mean_value_obs - 273.15
+    # dat.sim.ens$mean_value_sim = dat.sim.ens$mean_value_sim - 273.15
+    # dat.sim.ens$mean_max = dat.sim.ens$mean_max - 273.15
+    # dat.sim.ens$mean_min = dat.sim.ens$mean_min - 273.15
 }
 
 # add short names of months
@@ -86,8 +86,8 @@ rmse.sd = with(dat.sim.ens,mean((sd_value_sim-sd_value_obs)^2))
 
 print(c(bias.mean,bias.sd,rmse.mean,rmse.sd))
 
-######### #########################
-# Figure 2
+##################################
+# plot of 30-year means
 #################################
 
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_mean.pdf'),paper='a4r',height=0,width=0)
@@ -107,7 +107,7 @@ print(ggplot() +
 dev.off()
 
 #################################
-# Figure 3
+# plot of 30-year sds
 #################################
 
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_sd.pdf'),paper='a4r',height=0,width=0)
