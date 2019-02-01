@@ -35,7 +35,7 @@ print('processing monthly means')
 
 # processing monthly means for the CORDEX sim data
 # with summary statistics for the entire period and for ensembles chunks
-sim_data_processed_all, sim_data_processed_ens = monthly_mean_summary(sim_data, 30, 1)
+sim_data_processed_all, sim_data_processed_ens = monthly_mean_summary(sim_data, 1000, 1)
 obs_data_processed.columns = ['mean_value_obs', 'month', 'sd_value_obs', 'site']
 sim_data_processed_all.columns = ['mean_value_sim', 'month', 'sd_value_sim', 'site']
 
