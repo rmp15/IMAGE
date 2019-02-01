@@ -21,7 +21,7 @@ years_sim_tot = years_sim1 + years_sim2
 # short names for months
 month.short <- c('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
 
-input.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures_processing/'
+input.dir = paste0('~/git/IMAGE/output/CLaGARMi/euro_cordex/figures_processing/',metric,'/')
 output.dir = paste0('~/git/IMAGE/output/CLaGARMi/euro_cordex/figures/',metric,'/')
 
 # create directory for output

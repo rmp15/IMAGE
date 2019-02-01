@@ -51,8 +51,8 @@
       <file leaf-file-name="30_year_averages_plot.R" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/30_year_averages_plot.R">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="23" column="92" lean-forward="false" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -547,13 +547,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00273" summary="extracting values from clagarmi script">
-      <created>1544106967464</created>
-      <option name="number" value="00273" />
-      <option name="presentableId" value="LOCAL-00273" />
-      <option name="project" value="LOCAL" />
-      <updated>1544106967464</updated>
-    </task>
     <task id="LOCAL-00274" summary="extracting values from clagarmi script">
       <created>1544107255949</created>
       <option name="number" value="00274" />
@@ -890,7 +883,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548984683825</updated>
     </task>
-    <option name="localTasksCounter" value="322" />
+    <task id="LOCAL-00322" summary="extracting values from clagarmi script">
+      <created>1549011075095</created>
+      <option name="number" value="00322" />
+      <option name="presentableId" value="LOCAL-00322" />
+      <option name="project" value="LOCAL" />
+      <updated>1549011075095</updated>
+    </task>
+    <option name="localTasksCounter" value="323" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1308,8 +1308,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/30_year_averages_plot.R">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="345">
+          <caret line="23" column="92" lean-forward="false" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
           <folding />
         </state>
       </provider>
