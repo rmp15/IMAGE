@@ -22,7 +22,10 @@ years_sim_tot = years_sim1 + years_sim2
 month.short <- c('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
 
 input.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures_processing/'
-output.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures/'
+output.dir = paste0('~/git/IMAGE/output/CLaGARMi/euro_cordex/figures/',metric,'/')
+
+# create directory for output
+ifelse(!dir.exists(output.dir), dir.create(output.dir, recursive=TRUE), FALSE)
 
 # load data for both comparing entire sim and obs
 dat.obs.sim.1 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim1,'yrs_obs_sim_merged.csv'))
@@ -60,7 +63,7 @@ dat.sim.ens = ddply(dat.sim.ens,.(month,site),summarise,mean_max=max(mean_max),m
 
 dat.sim.ens = merge(dat.obs.sim,dat.sim.ens,by=c('month','site'),all.x=0)
 
-if(metric=='tasmax'){
+if(metric%in%c('appt','tasmax')){
     dat.obs.sim$mean_value_obs = dat.obs.sim$mean_value_obs - 273.15
     dat.obs.sim$mean_value_sim = dat.obs.sim$mean_value_sim - 273.15
     dat.sim.ens$mean_value_obs = dat.sim.ens$mean_value_obs - 273.15
