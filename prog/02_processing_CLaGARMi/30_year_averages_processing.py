@@ -29,7 +29,7 @@ obs_data, sim_data = load_clag_output(slice, years_sim, continent, scen, year_st
 print('processing monthly means')
 
 # processing monthly means for the CORDEX observation data
-obs_data_processed = monthly_mean_summary(obs_data, 30, 0)
+obs_data_processed = monthly_mean_summary(obs_data, 1000, 0)
 
 print('processing monthly means')
 
