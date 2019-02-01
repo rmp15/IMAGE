@@ -38,7 +38,7 @@ for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
 :
-python ~/git/IMAGE/prog/02_processing_CLaGARMi/figure_2_3_processing.py $slice $years_sim $metric $continent $scen $start $end
+python ~/git/IMAGE/prog/02_processing_CLaGARMi/30_year_averages_processing.py $slice $years_sim $metric $continent $scen $start $end
 
 done; done; done; done;
 
