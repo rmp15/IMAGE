@@ -58,6 +58,16 @@ def app_temp_creator(tas_array, huss_array, ps_array):
     # %e = (ps.*huss)./(0.622 + 0.378*huss);
     # %dpt = (log(e/6.112) * 243.5) ./ (17.67 - log(e/6.112));
     # %appt = (0.0153*(dpt.*dpt)) +(0.994*tas) - 2.653;
+    #
+    # %load(tas_file);
+    # %tas = v.o - 273.15;
+    # %load(huss_file);
+    # %huss = save_data;
+    # %load(ps_file);
+    # %ps = v.o / 100;
+
+    tas_array = tas_array - 273.15
+    ps_array = ps_array / 100
 
     e_array = (ps_array * huss_array) / (0.622 + 0.378 * huss_array)
     dpt_array = (np.log(e_array / 6.112) * 243.5) / (17.67 - np.log(e_array / 6.112))
