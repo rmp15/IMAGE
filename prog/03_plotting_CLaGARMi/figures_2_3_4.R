@@ -25,8 +25,8 @@ input.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures_processing/'
 output.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures/'
 
 # load data for both comparing entire sim and obs
-dat.obs.sim.1 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim1,'yrs__obs_sim_merged.csv'))
-dat.obs.sim.2 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim2,'yrs__obs_sim_merged.csv'))
+dat.obs.sim.1 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim1,'yrs_obs_sim_merged.csv'))
+dat.obs.sim.2 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim2,'yrs_obs_sim_merged.csv'))
 dat.obs.sim.1$mean_value_sim1 = dat.obs.sim.1$mean_value_sim ; dat.obs.sim.1$mean_value_sim = NULL
 dat.obs.sim.2$mean_value_sim2 = dat.obs.sim.2$mean_value_sim ; dat.obs.sim.2$mean_value_sim = NULL
 dat.obs.sim.1$sd_value_sim1 = dat.obs.sim.1$sd_value_sim ; dat.obs.sim.1$sd_value_sim = NULL
@@ -46,8 +46,8 @@ dat.obs.sim = dat.obs.sim[order(dat.obs.sim$month,dat.obs.sim$site),]
 rownames(dat.obs.sim) = seq(1:nrow(dat.obs.sim))
 
 # also load sim ensemble data and find mins and max from total combined years
-dat.sim.ens.1 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim1,'yrs__sim_ens.csv'))
-dat.sim.ens.2 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim2,'yrs__sim_ens.csv'))
+dat.sim.ens.1 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim1,'yrs_sim_ens.csv'))
+dat.sim.ens.2 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim2,'yrs_sim_ens.csv'))
 
 dat.sim.ens.1 = ddply(dat.sim.ens.1,.(month,site),summarise,mean_max=max(mean_value), mean_min=min(mean_value),
                     sd_max=max(sd_value),sd_min=min(sd_value))

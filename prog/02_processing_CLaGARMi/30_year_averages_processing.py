@@ -39,8 +39,12 @@ sim_data_processed_all, sim_data_processed_ens = monthly_mean_summary(sim_data, 
 obs_data_processed.columns = ['mean_value_obs', 'month', 'sd_value_obs', 'site']
 sim_data_processed_all.columns = ['mean_value_sim', 'month', 'sd_value_sim', 'site']
 
+print('merging files')
+
 # combine two tables of complete values
 obs_sim_data_processed = pd.merge(obs_data_processed, sim_data_processed_all)
+
+print('saving processed files')
 
 # output to merged obs and sim values to csv
 obs_sim_data_processed.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_' + 'obs_sim_merged.csv')
