@@ -29,13 +29,13 @@ obs_data, sim_data = load_clag_output(slice, years_sim, continent, scen, year_st
 print('processing monthly means')
 
 # processing monthly means for the CORDEX observation data
-obs_data_processed = monthly_mean_summary(obs_data, 1000, 0)
+obs_data_processed = monthly_mean_summary(obs_data, 30, 0)
 
 print('processing monthly means')
 
 # processing monthly means for the CORDEX sim data
 # with summary statistics for the entire period and for ensembles chunks
-sim_data_processed_all, sim_data_processed_ens = monthly_mean_summary(sim_data, 1000, 1)
+sim_data_processed_all, sim_data_processed_ens = monthly_mean_summary(sim_data, 30, 1)
 obs_data_processed.columns = ['mean_value_obs', 'month', 'sd_value_obs', 'site']
 sim_data_processed_all.columns = ['mean_value_sim', 'month', 'sd_value_sim', 'site']
 
