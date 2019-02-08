@@ -35,7 +35,7 @@ years_sim = years_sim_1 + years_sim_2
 print(str(years_sim) + ' total years of simluation')
 
 # load lon/lat table with country identifiers
-lonlat = pd.read_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/ '+ continent +'_lonlat_edit.csv')
+lonlat = pd.read_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/' + continent +'_lonlat_edit.csv')
 
 print('loading all data')
 
