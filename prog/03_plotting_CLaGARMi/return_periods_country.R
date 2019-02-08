@@ -54,15 +54,15 @@ dat.sim.sub.port.rcp85.2071 = read.csv(paste0(input.dir,metric,'_',continent,'_r
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_portugal_scenarios.pdf'),paper='a4r',height=0,width=0)
 ggplot() +
     geom_line(data=dat.obs.port,aes(x=return_period,y=days_over),alpha=0.3, size=1) +
-    # geom_point(data=dat.obs.port,aes(x=return_period,y=days_over),size=1) +
+    geom_point(data=dat.obs.port,aes(x=return_period,y=days_over),size=1) +
     geom_line(data=dat.sim.port,aes(x=return_period,y=days_over),alpha=0.3,color='black')+
-    # geom_line(data=dat.sim.port.rcp45.2021,aes(x=return_period,y=days_over),alpha=1,color='yellow')+
-    # geom_line(data=dat.sim.port.rcp85.2021,aes(x=return_period,y=days_over),alpha=1,color='orange')+
-    # geom_line(data=dat.sim.port.rcp45.2071,aes(x=return_period,y=days_over),alpha=1,color='red')+
-    # geom_line(data=dat.sim.port.rcp85.2071,aes(x=return_period,y=days_over),alpha=1,color='dark red')+
+    geom_line(data=dat.sim.port.rcp45.2021,aes(x=return_period,y=days_over),alpha=1,color='yellow')+
+    geom_line(data=dat.sim.port.rcp85.2021,aes(x=return_period,y=days_over),alpha=1,color='orange')+
+    geom_line(data=dat.sim.port.rcp45.2071,aes(x=return_period,y=days_over),alpha=1,color='red')+
+    geom_line(data=dat.sim.port.rcp85.2071,aes(x=return_period,y=days_over),alpha=1,color='dark red')+
     guides(color=FALSE,size=FALSE) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
-    ggtitle(region) +
+    # ggtitle(region) +
     theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
     plot.title = element_text(hjust = 0.5),panel.background = element_blank(),
     panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
