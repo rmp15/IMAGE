@@ -289,6 +289,8 @@ def seasonal_sum_calculator(var, start, end):
 
 def seasonal_hw_duration_summary_europe(var, var_process, start, end, pctile):
 
+    print('Calculating seasonal heatwave duration summary for loaded data')
+
     # information for how to create the seasonal array
     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     month_end_inds = np.cumsum(month_days)
@@ -316,7 +318,9 @@ def seasonal_hw_duration_summary_europe(var, var_process, start, end, pctile):
 
     # for each year, calculate maximum number of consecutive days above XXth percentile from pctile_data
     no_days = (month_start_end_inds[end] - month_start_end_inds[start - 1])
-    consecutive_data = np.zeros((no_years))
+    consecutive_data = np.zeros(no_years)
+
+    # iteratively go through years to figure out number of days over a threshold selected
     for i in range(0, no_years):
             # assign seasonal data to the year
             year_data = np.ndarray.flatten(avg_data[(i*no_days):((i+1)*no_days)])
@@ -440,6 +444,7 @@ def hw_durationreturn_periods(data):
 # return period = (n+1)/m, where n=number of years in data set, m=rank of exceedence probability
 # based on http://geog.uoregon.edu/amarcus/geog422/Handout_Recurrence_calcs.htm
 def hw_duration_return_periods_europe(data):
+
     data_master = pd.DataFrame()
     # for entire Europe, generate a probability rank, where lowest number is lowest ranked
     rank_data = len(data) + 1 - rankdata(data, method='min')
