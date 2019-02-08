@@ -446,7 +446,7 @@ def hw_durationreturn_periods(data):
 # based on http://geog.uoregon.edu/amarcus/geog422/Handout_Recurrence_calcs.htm
 def hw_duration_return_periods_europe(data):
 
-    print('loading data to calculate return period')
+    print('loading data to calculate return periods')
 
     print(data)
 
