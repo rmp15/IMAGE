@@ -35,7 +35,7 @@ years_sim = years_sim_1 + years_sim_2
 print(str(years_sim) + ' total years of simluation')
 
 # load lon/lat table with country identifiers
-lonlat = pd.read_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/ '+ continent +'_lonlat_edit.csv')
+lonlat = pd.read_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/'+ continent +'_lonlat_edit.csv')
 
 print('loading all data')
 
@@ -48,27 +48,23 @@ no_sites = obs_data.shape[0]
 print('combining all simulation years')
 
 # combine two sets of simulations (must be a faster way?) (check out numpy.stack)
+# TO DO make a separate code to do this once
 sim_data_combined = np.empty([no_sites,(years_sim_1+years_sim_2),365])
 for i in range(0, no_sites):
     for j in range(0,365):
-        sim_data_combined[i,:,j] = np.concatenate((sim_data_1[i, :, j], sim_data_2[i, :, j]), axis=0)
-
-print('simulation years combined')
-
-# PORTUGAL
+        sim_data_combined[i,:,j] = np.concatenate((sim_data_1[i,:,j], sim_data_2[i,:,j]), axis=0)
 
 #################################
-# HEAT WAVE DURATION(30-year chunks)
+# HEAT WAVE DURATION PORTUGAL (30-year chunks)
 #################################
 
-# values for location
-port_values = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+port_values = [0,1,2,3,4,5,6,7,8]
 
 # take footprint of country TO FINISH
-obs_data_site = obs_data[port_values, :, :]
+obs_data_site = obs_data[port_values,:,:]
 
 # take sample of combined years from sim_data_1
-sim_data_combined_subset = sim_data_combined[port_values, :, :]
+sim_data_combined_subset = sim_data_combined[port_values,:,:]
 
 print('calculating Portugal return periods')
 

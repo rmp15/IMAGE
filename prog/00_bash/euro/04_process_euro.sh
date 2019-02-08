@@ -38,7 +38,7 @@ for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
 :
-python -m prog.02_processing_CLaGARMi.30_year_averages_processing $slice $years_sim $metric $continent $scen $start $end
+#python -m prog.02_processing_CLaGARMi.30_year_averages_processing $slice $years_sim $metric $continent $scen $start $end
 
 done; done; done; done;
 
@@ -57,7 +57,7 @@ for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
 :
-#python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent $scen $start $end $season_start $season_end $percentile
+python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent $scen $start $end $season_start $season_end $percentile
 
 done; done; done;
 
