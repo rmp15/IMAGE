@@ -330,7 +330,8 @@ def seasonal_hw_duration_summary_europe(var, var_process, start, end, pctile):
             threshold_data = [0 if a < pctile_threshold else 1 for a in year_data]
             # figure out longest consecutive over threshold (equivalent of rle in R and outputting longest 'streak')
             consecutive_data[i] = consecutive_one(threshold_data)
-            print(i)
+
+    print('Processed heat wave duration summary for loaded data')
 
     return consecutive_data
 
@@ -445,6 +446,10 @@ def hw_durationreturn_periods(data):
 # based on http://geog.uoregon.edu/amarcus/geog422/Handout_Recurrence_calcs.htm
 def hw_duration_return_periods_europe(data):
 
+    print('loading data to calculate return period')
+
+    print(data.head())
+
     data_master = pd.DataFrame()
     # for entire Europe, generate a probability rank, where lowest number is lowest ranked
     rank_data = len(data) + 1 - rankdata(data, method='min')
@@ -455,6 +460,8 @@ def hw_duration_return_periods_europe(data):
     # collect values of heat wave intensity and return period for each location
     data_current = pd.DataFrame({'days_over': np.unique(data),
                                      'return_period': np.unique(return_period)})
+
+    print('return periods calculated')
 
     return data_current
 

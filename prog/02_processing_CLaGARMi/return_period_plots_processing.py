@@ -79,11 +79,11 @@ sim_data_processed_site = seasonal_hw_duration_summary_europe(obs_data_site, sim
 
 # create duration characteristics for each site
 data_obs = hw_duration_return_periods_europe(obs_data_processed_site)
-# data_sim = hw_duration_return_periods_europe(sim_data_processed_site)
+data_sim = hw_duration_return_periods_europe(sim_data_processed_site)
 
 # save to csv
 data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods_portugal.csv')
-# data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_sim_intensity_return_periods_portugal.csv')
+data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_sim_intensity_return_periods_portugal.csv')
 
 print('Heatwave return periods calculated for Portugal for ' + scen + ' ' + str(year_start) + ' - ' + str(year_end))
 

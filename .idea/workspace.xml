@@ -4,6 +4,7 @@
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" afterPath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="return_period_plots_processing.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="return_period_plots_processing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="827">
-              <caret line="80" column="20" lean-forward="true" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+            <state relative-caret-position="842">
+              <caret line="81" column="11" lean-forward="false" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="44" />
               <folding>
                 <element signature="e#437#499#0" expanded="true" />
               </folding>
@@ -40,13 +41,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1740">
-              <caret line="460" column="0" lean-forward="true" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
+            <state relative-caret-position="1052">
+              <caret line="463" column="38" lean-forward="false" selection-start-line="463" selection-start-column="38" selection-end-line="463" selection-end-column="38" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#331#1169#0" expanded="false" />
+                <element signature="e#1224#1383#0" expanded="false" />
+                <element signature="e#1447#2094#0" expanded="false" />
+                <element signature="e#2157#2844#0" expanded="false" />
+                <element signature="e#2953#3904#0" expanded="false" />
+                <element signature="e#4028#5043#0" expanded="false" />
+                <element signature="e#5088#5838#0" expanded="false" />
+                <element signature="e#5998#8709#0" expanded="false" />
+                <element signature="e#9777#10835#0" expanded="false" />
+                <element signature="e#10975#11715#0" expanded="false" />
+                <element signature="e#14016#14274#0" expanded="false" />
+                <element signature="e#14503#16295#0" expanded="false" />
+                <element signature="e#16381#16591#0" expanded="false" />
+                <element signature="e#16677#16907#0" expanded="false" />
+                <element signature="e#17337#18125#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -109,10 +125,10 @@
       <find>seasonal_mean_calculator</find>
       <find>seasonal_percentile_calculator_europe</find>
       <find>country_only_points</find>
-      <find>hw_duration_return_periods_europe</find>
       <find>app_temp_creator</find>
       <find>load_clag_output</find>
       <find>seasonal_hw_duration_summary_europe</find>
+      <find>hw_duration_return_periods_europe</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,8 +186,8 @@
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/30_year_averages_plot.R" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R" />
-        <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" />
+        <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
       </list>
     </option>
   </component>
@@ -549,13 +565,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00287" summary="extracting values from clagarmi script">
-      <created>1544111908542</created>
-      <option name="number" value="00287" />
-      <option name="presentableId" value="LOCAL-00287" />
-      <option name="project" value="LOCAL" />
-      <updated>1544111908542</updated>
-    </task>
     <task id="LOCAL-00288" summary="extracting values from clagarmi script">
       <created>1544113019913</created>
       <option name="number" value="00288" />
@@ -892,7 +901,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549618965556</updated>
     </task>
-    <option name="localTasksCounter" value="336" />
+    <task id="LOCAL-00336" summary="extracting values from clagarmi script">
+      <created>1549619434668</created>
+      <option name="number" value="00336" />
+      <option name="presentableId" value="LOCAL-00336" />
+      <option name="project" value="LOCAL" />
+      <updated>1549619434668</updated>
+    </task>
+    <option name="localTasksCounter" value="337" />
     <servers />
   </component>
   <component name="TodoView">
@@ -949,7 +965,7 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1290,22 +1306,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
+    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="460" column="0" lean-forward="true" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
+        <state relative-caret-position="842">
+          <caret line="81" column="11" lean-forward="false" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="44" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#437#499#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py">
+    <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="80" column="20" lean-forward="true" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+        <state relative-caret-position="1052">
+          <caret line="463" column="38" lean-forward="false" selection-start-line="463" selection-start-column="38" selection-end-line="463" selection-end-column="38" />
           <folding>
-            <element signature="e#437#499#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#331#1169#0" expanded="false" />
+            <element signature="e#1224#1383#0" expanded="false" />
+            <element signature="e#1447#2094#0" expanded="false" />
+            <element signature="e#2157#2844#0" expanded="false" />
+            <element signature="e#2953#3904#0" expanded="false" />
+            <element signature="e#4028#5043#0" expanded="false" />
+            <element signature="e#5088#5838#0" expanded="false" />
+            <element signature="e#5998#8709#0" expanded="false" />
+            <element signature="e#9777#10835#0" expanded="false" />
+            <element signature="e#10975#11715#0" expanded="false" />
+            <element signature="e#14016#14274#0" expanded="false" />
+            <element signature="e#14503#16295#0" expanded="false" />
+            <element signature="e#16381#16591#0" expanded="false" />
+            <element signature="e#16677#16907#0" expanded="false" />
+            <element signature="e#17337#18125#0" expanded="false" />
           </folding>
         </state>
       </provider>
