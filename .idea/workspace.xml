@@ -43,8 +43,8 @@
       <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="460" column="40" lean-forward="false" selection-start-line="460" selection-start-column="40" selection-end-line="460" selection-end-column="40" />
+            <state relative-caret-position="692">
+              <caret line="456" column="20" lean-forward="false" selection-start-line="456" selection-start-column="20" selection-end-line="456" selection-end-column="20" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <element signature="e#331#1169#0" expanded="false" />
@@ -564,13 +564,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00290" summary="extracting values from clagarmi script">
-      <created>1544126749734</created>
-      <option name="number" value="00290" />
-      <option name="presentableId" value="LOCAL-00290" />
-      <option name="project" value="LOCAL" />
-      <updated>1544126749734</updated>
-    </task>
     <task id="LOCAL-00291" summary="extracting values from clagarmi script">
       <created>1544126969724</created>
       <option name="number" value="00291" />
@@ -907,7 +900,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549620467105</updated>
     </task>
-    <option name="localTasksCounter" value="339" />
+    <task id="LOCAL-00339" summary="extracting values from clagarmi script">
+      <created>1549620777185</created>
+      <option name="number" value="00339" />
+      <option name="presentableId" value="LOCAL-00339" />
+      <option name="project" value="LOCAL" />
+      <updated>1549620777185</updated>
+    </task>
+    <option name="localTasksCounter" value="340" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1317,8 +1317,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="460" column="40" lean-forward="false" selection-start-line="460" selection-start-column="40" selection-end-line="460" selection-end-column="40" />
+        <state relative-caret-position="692">
+          <caret line="456" column="20" lean-forward="false" selection-start-line="456" selection-start-column="20" selection-end-line="456" selection-end-column="20" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <element signature="e#331#1169#0" expanded="false" />

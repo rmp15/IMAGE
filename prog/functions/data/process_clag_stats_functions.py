@@ -454,6 +454,8 @@ def hw_duration_return_periods_europe(data):
     # for entire Europe, generate a probability rank, where lowest number is lowest ranked
     rank_data = len(data) + 1 - rankdata(data, method='min')
 
+    print(rank_data)
+
     # calculate return periods
     return_period = (len(data) + 1) / rank_data
 
