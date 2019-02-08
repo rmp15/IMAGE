@@ -457,6 +457,9 @@ def hw_duration_return_periods_europe(data):
     # calculate return periods
     return_period = (len(data) + 1) / rank_data
 
+    print(len(np.unique(data)))
+    print(len(np.unique(return_period)))
+
     # collect values of heat wave intensity and return period for each location
     data_current = pd.DataFrame({'days_over': np.unique(data),
                                      'return_period': np.unique(return_period)})
