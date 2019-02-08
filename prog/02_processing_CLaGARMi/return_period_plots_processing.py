@@ -56,7 +56,7 @@ for i in range(0, no_sites):
 print('simulation years combined')
 
 #################################
-# PORTUGAL
+# PORTUGAL (to generalise)
 #################################
 
 # values for location
@@ -71,46 +71,6 @@ sim_data_combined_subset = sim_data_combined[port_values, :, :]
 print('calculating Portugal return periods')
 
 #################################
-# HEAT WAVE DURATION (30-year chunks)
-# #################################
-
-# create empty frame to populate with subset values
-data_avg = pd.DataFrame(columns=['days_over', 'return_period', 'subset'])
-
-# loop through subsets to get some heat wave return periods
-for subset in range(0, int(np.floor(sim_data_combined_subset.shape[1]/30))):
-    print(subset)
-    # take sample of 30 years from sim_data_1 recursively
-    sim_data_1_subset_subset = sim_data_combined_subset[:,range(30*subset,(30*(subset+1))),:]
-    sim_data_processed_temp = seasonal_hw_duration_summary_europe(obs_data_site, sim_data_1_subset_subset, season_start, season_end, percentile)
-    # create duration characteristics for each site
-    data_sim_temp = hw_duration_return_periods_europe(sim_data_processed_temp)
-    # convert into pandas dataframe
-    data_sim_temp = pd.DataFrame(data_sim_temp)
-    data_sim_temp['subset'] = subset + 1
-    # concatenate to master file
-    data_avg = pd.concat([data_avg.reset_index(drop=True), data_sim_temp.reset_index(drop=True)], axis=0)
-
-print('saving Portugal return periods')
-
-# save to csv
-data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_30yrs_subsets_' + str(years_sim) + 'yrs_sim_intensity_return_periods_portugal.csv',index=False)
-
-print('thank u, next')
-
-# BELOW TO FINISH
-
-# # load lon/lat data for European grids
-# lons = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lons.mat'))
-# lons_array = np.array(lons[list(lons.keys())[3]])
-# lats = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lats.mat'))
-# lats_array = np.array(lats[list(lats.keys())[3]])
-# lonlat = pd.DataFrame(np.concatenate([lons_array, lats_array], axis=1),columns=['lon','lat'])
-#
-# # export lon/lat table
-# lonlat.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/'+ continent +'_lonlat.csv')
-
-#################################
 # HEAT WAVE DURATION PORTUGAL
 #################################
 
@@ -123,7 +83,46 @@ data_sim = hw_duration_return_periods_europe(sim_data_processed_site)
 
 # save to csv
 data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods_portugal.csv')
-# data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' +  str(years_sim) + 'yrs_sim_intensity_return_periods_europe.csv')
 data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_sim_intensity_return_periods_portugal.csv')
 
-print('thank u, next again')
+print('Heatwave return periods calculated for Portugal for ' + scen + ' ' + year_start + ' - ' + year_end)
+
+#################################
+# HEAT WAVE DURATION (30-year chunks)
+# #################################
+
+# # create empty frame to populate with subset values
+# data_avg = pd.DataFrame(columns=['days_over', 'return_period', 'subset'])
+#
+# # loop through subsets to get some heat wave return periods
+# for subset in range(0, int(np.floor(sim_data_combined_subset.shape[1]/30))):
+#     print(subset)
+#     # take sample of 30 years from sim_data_1 recursively
+#     sim_data_1_subset_subset = sim_data_combined_subset[:,range(30*subset,(30*(subset+1))),:]
+#     sim_data_processed_temp = seasonal_hw_duration_summary_europe(obs_data_site, sim_data_1_subset_subset, season_start, season_end, percentile)
+#     # create duration characteristics for each site
+#     data_sim_temp = hw_duration_return_periods_europe(sim_data_processed_temp)
+#     # convert into pandas dataframe
+#     data_sim_temp = pd.DataFrame(data_sim_temp)
+#     data_sim_temp['subset'] = subset + 1
+#     # concatenate to master file
+#     data_avg = pd.concat([data_avg.reset_index(drop=True), data_sim_temp.reset_index(drop=True)], axis=0)
+#
+# print('saving Portugal return periods')
+#
+# # save to csv
+# data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_30yrs_subsets_' + str(years_sim) + 'yrs_sim_intensity_return_periods_portugal.csv',index=False)
+#
+# print('thank u, next')
+
+# BELOW TO FINISH
+
+# # load lon/lat data for European grids
+# lons = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lons.mat'))
+# lons_array = np.array(lons[list(lons.keys())[3]])
+# lats = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lats.mat'))
+# lats_array = np.array(lats[list(lats.keys())[3]])
+# lonlat = pd.DataFrame(np.concatenate([lons_array, lats_array], axis=1),columns=['lon','lat'])
+#
+# # export lon/lat table
+# lonlat.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/'+ continent +'_lonlat.csv')
