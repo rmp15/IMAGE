@@ -52,6 +52,7 @@ rownames(dat.obs.sim) = seq(1:nrow(dat.obs.sim))
 dat.sim.ens.1 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim1,'yrs_sim_ens.csv'))
 dat.sim.ens.2 = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim2,'yrs_sim_ens.csv'))
 
+# summarise for other plots (not sd of monthly values)
 dat.sim.ens.1 = ddply(dat.sim.ens.1,.(month,site),summarise,mean_max=max(mean_value), mean_min=min(mean_value),
                     sd_max=max(sd_value),sd_min=min(sd_value))
 dat.sim.ens.2 = ddply(dat.sim.ens.2,.(month,site),summarise,mean_max=max(mean_value), mean_min=min(mean_value),

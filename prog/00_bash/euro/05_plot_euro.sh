@@ -21,6 +21,7 @@ declare -i end=2000
 # 1. EURO-CORDEX RUNS
 #################################################
 
+# COMPARISON OF
 for metric in "${metrics[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
