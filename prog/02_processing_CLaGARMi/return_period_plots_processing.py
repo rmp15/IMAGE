@@ -4,7 +4,7 @@
 # processes monthly means for each of the 30-year ensembles of IMAGE data
 
 # arguments for testing
-# slice = '01'; years_sim_1 = 4000; years_sim_2 = 6000; metric = 'tasmax'; continent = 'euro'; scen = 'hist'
+# slice = '01'; years_sim_1 = 4000; years_sim_2 = 6000; metric = 'appt'; continent = 'euro'; scen = 'hist'
 # year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99; country = 'Sweden'
 
 from prog.functions.data.process_clag_stats_functions import *
@@ -61,6 +61,17 @@ if country != 'Europe':
     # take sample of sim years then combine
     sim_data_1_subset = sim_data_1[footprint_values, :, :]
     sim_data_2_subset = sim_data_2[footprint_values, :, :]
+
+
+if country == 'Europe':
+    footprint_values = range(0,obs_data.shape[0])
+
+    obs_data_footprint = obs_data
+
+    # take sample of sim years then combine
+    sim_data_1_subset = sim_data_1
+    sim_data_2_subset = sim_data_2
+
 
 #################################
 # COMBINE ALL SIM YEARS TOGETHER
