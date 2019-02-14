@@ -11,7 +11,7 @@ cd ~/git/IMAGE/
 # arguments for processing of files
 declare slice='01'
 declare -a years_sims=(4000 6000)
-declare -a metrics=('tasmax')
+declare -a metrics=('appt')
 declare -a continents=('euro')
 declare -a countries=('Sweden' 'UK' 'Spain' 'Italy' 'Romania')
 declare -a scens=('hist')
@@ -44,7 +44,6 @@ for scen in "${scens[@]}"; do
 done; done; done; done;
 
 #python ~/git/IMAGE/prog/02_processing_CLaGARMi/figure_8_processing.py $slice $years_sim $metric $continent $scen $start $end
-
 
 # PROCESS RETURN PERIODS
 declare -i year_sim_1=4000
