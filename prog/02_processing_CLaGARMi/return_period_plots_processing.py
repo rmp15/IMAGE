@@ -5,7 +5,7 @@
 
 # arguments for testing
 # slice = '01'; years_sim_1 = 4000; years_sim_2 = 6000; metric = 'tasmax'; continent = 'euro'; scen = 'hist'
-# year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99; country = 'Romania'
+# year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99; country = 'Sweden'
 
 from prog.functions.data.process_clag_stats_functions import *
 import sys
@@ -115,7 +115,6 @@ for subset in range(0, int(np.floor(sim_data_footprint.shape[1]/30))):
     data_sim_temp['subset'] = subset + 1
     # concatenate to master file
     data_avg = pd.concat([data_avg.reset_index(drop=True), data_sim_temp.reset_index(drop=True)], axis=0)
-
 
 print('saving ' + country + ' return periods')
 
