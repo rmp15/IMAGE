@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/IMAGE.iml" afterPath="$PROJECT_DIR$/.idea/IMAGE.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/lonlat/euro_lonlat_edit.csv" afterPath="$PROJECT_DIR$/output/CLaGARMi/euro_cordex/lonlat/euro_lonlat_edit.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" afterPath="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R" afterPath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" afterPath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,8 +31,8 @@
       <file leaf-file-name="return_period_plots_processing.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+            <state relative-caret-position="634">
+              <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
               <folding>
                 <element signature="e#457#519#0" expanded="true" />
               </folding>
@@ -191,8 +185,8 @@
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/30_year_averages_plot.R" />
         <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" />
-        <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R" />
+        <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" />
       </list>
     </option>
   </component>
@@ -568,13 +562,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00295" summary="extracting values from clagarmi script">
-      <created>1544128685626</created>
-      <option name="number" value="00295" />
-      <option name="presentableId" value="LOCAL-00295" />
-      <option name="project" value="LOCAL" />
-      <updated>1544128685626</updated>
-    </task>
     <task id="LOCAL-00296" summary="extracting values from clagarmi script">
       <created>1544128948509</created>
       <option name="number" value="00296" />
@@ -911,7 +898,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549622975056</updated>
     </task>
-    <option name="localTasksCounter" value="344" />
+    <task id="LOCAL-00344" summary="extracting values from clagarmi script">
+      <created>1550159732137</created>
+      <option name="number" value="00344" />
+      <option name="presentableId" value="LOCAL-00344" />
+      <option name="project" value="LOCAL" />
+      <updated>1550159732138</updated>
+    </task>
+    <option name="localTasksCounter" value="345" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1328,8 +1322,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        <state relative-caret-position="634">
+          <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
           <folding>
             <element signature="e#457#519#0" expanded="true" />
           </folding>

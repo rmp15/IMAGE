@@ -119,7 +119,7 @@ data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_pr
 
 # print('thank u, next')
 
-# BELOW TO FINISH
+# legacy for lonlat
 
 # # load lon/lat data for European grids
 # lons = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lons.mat'))
