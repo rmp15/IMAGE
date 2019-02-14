@@ -58,7 +58,6 @@ for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 for country in "${counties[@]}"; do
 
-:
 python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent $scen $start $end $season_start $season_end $percentile $country
 
 done; done; done; done;
