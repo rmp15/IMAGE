@@ -122,7 +122,7 @@ print('saving ' + country + ' return periods')
 # save to csv
 data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_30yrs_subsets_' + str(years_sim) + 'yrs_sim_intensity_return_periods_'+ country +'.csv',index=False)
 
-# print('thank u, next')
+print(country + ' done. Thank u, next')
 
 # legacy for lonlat
 
