@@ -13,6 +13,7 @@ declare slice='01'
 declare -a years_sims=(4000 6000)
 declare -a metrics=('appt') # 'huss' 'sfcWindmax')
 declare -a continents=('euro')
+declare -a countries=('Sweden' 'UK' 'Spain' 'Italy' 'Romania')
 declare -a scens=('hist')
 declare -i start=1971
 declare -i end=2000
@@ -55,9 +56,10 @@ declare -i percentile=99
 for metric in "${metrics[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
+for country in "${counties[@]}"; do
 
 :
-python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent $scen $start $end $season_start $season_end $percentile
+python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent $scen $start $end $season_start $season_end $percentile $country
 
-done; done; done;
+done; done; done; done;
 

@@ -302,16 +302,16 @@ def seasonal_hw_duration_summary_europe(var, var_process, start, end, pctile):
     # load data to process, number of years
     data, no_years, no_sites = seasonal_data_2(var_process, start, end)
 
-    no_years = var_process.shape[1]
+    # no_years = var_process.shape[1]
 
     # calculate where the pctile desired is for europe from a source dataset
     pctile_data = seasonal_percentile_calculator_europe(var, start, end, pctile)
 
-    # take average for entire europe for each day for the entire period
+    # take average for entire footprint for each day for the entire period
     days = (month_start_end_inds[end] - month_start_end_inds[start-1])
     num_days = days * no_years
     avg_data = np.zeros(num_days)
-    for j in range(0,no_years):
+    for j in range(0, no_years):
         for i in range(0, days):
             k = j*days+i
             avg_data[k] = np.mean(np.ndarray.flatten(data[:, j, i]))
@@ -459,8 +459,8 @@ def hw_duration_return_periods_europe(data):
     # calculate return periods
     return_period = (len(data) + 1) / rank_data
 
-    print(np.unique(data))
-    print(np.unique(return_period))
+    # print(np.unique(data))
+    # print(np.unique(return_period))
 
     # collect values of heat wave intensity and return period for each location
     data_current = pd.DataFrame({'days_over': np.unique(data),
