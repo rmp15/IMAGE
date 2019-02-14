@@ -4,8 +4,8 @@
 # processes monthly means for each of the 30-year ensembles of IMAGE data
 
 # arguments for testing
-# slice = '01'; years_sim_1 = 4000; years_sim_2 = 6000; metric = 'appt'; continent = 'euro'; scen = 'hist'
-# year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99; country = 'Sweden'
+# slice = '01'; years_sim_1 = 4000; years_sim_2 = 6000; metric = 'tasmax'; continent = 'euro'; scen = 'hist'
+# year_start = 1971; year_end = 2000; season_start = 5; season_end = 9; percentile = 99; country = 'Romania'
 
 from prog.functions.data.process_clag_stats_functions import *
 import sys
@@ -41,7 +41,7 @@ print('loading all data')
 obs_data, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, year_start, year_end, metric)
 obs_data, sim_data_2 = load_clag_output(slice, years_sim_2, continent, scen, year_start, year_end, metric)
 
-# obtain number of sites
+# obtain number of sites (redundant?)
 no_sites = obs_data.shape[0]
 
 #################################
@@ -52,22 +52,27 @@ no_sites = obs_data.shape[0]
 lonlat = pd.read_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/' + continent +'_lonlat_edit.csv')
 
 # isolate particular country IDs and put into list
-footprint_values = lonlat[lonlat['country'] == country]['ID'].tolist()
+if country != 'Europe':
+    footprint_values = lonlat[lonlat['country'] == country]['ID'].tolist()
 
-# take footprint of country
-obs_data_footprint = obs_data[footprint_values, :, :]
+    # take footprint of country
+    obs_data_footprint = obs_data[footprint_values, :, :]
 
-# take sample of sim years then combine
-sim_data_1_subset = sim_data_1[footprint_values, :, :]
-sim_data_2_subset = sim_data_2[footprint_values, :, :]
+    # take sample of sim years then combine
+    sim_data_1_subset = sim_data_1[footprint_values, :, :]
+    sim_data_2_subset = sim_data_2[footprint_values, :, :]
+
+#################################
+# COMBINE ALL SIM YEARS TOGETHER
+#################################
 
 print('combining all simulation years')
 
-# combine two sets of simulations
+# combine two sets of simulations SOMETHING GOING WRONG HERE
 sim_data_footprint = np.empty([len(footprint_values), (years_sim_1 + years_sim_2), 365])
 for i in range(0, len(footprint_values)):
     for j in range(0, 365):
-        sim_data_footprint[i, :, j] = np.concatenate((sim_data_1[i, :, j], sim_data_2[i, :, j]), axis=0)
+        sim_data_footprint[i, :, j] = np.concatenate((sim_data_1_subset[i, :, j], sim_data_2_subset[i, :, j]), axis=0)
 
 print('simulation years combined')
 
