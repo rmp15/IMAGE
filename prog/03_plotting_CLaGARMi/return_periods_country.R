@@ -15,17 +15,20 @@ start <- as.numeric(args[7])
 end <- as.numeric(args[8])
 country <- as.character(args[9])
 
-# slice = '01' ; years_sim1 = 4000 ; years_sim2 = 6000 ; metric = 'appt' ; continent = 'euro' ; scen = 'hist' ; start = 1971 ;end = 2000 ; country = 'Europe'
+# slice = '01' ; years_sim1 = 4000 ; years_sim2 = 6000 ; metric = 'appt' ; continent = 'euro' ; scen = 'hist' ; start = 1971 ;end = 2000
 
 print(args)
 
 years_sim_tot = years_sim1 + years_sim2
 
 # short names for months
-month.short <- c('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
+# month.short <- c('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
 
 input.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures_processing/'
 output.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures/'
+
+# list of countries used
+countries = c('Europe', 'Sweden', 'UK', 'Spain', 'Italy', 'Romania')
 
 # HEATWAVES DURATION
 
@@ -34,22 +37,40 @@ output.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures/'
 # dat.sim= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_4000yrs_sim_intensity_return_periods_europe.csv'))
 # dat.sim.sub = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_4000yrs_sim_intensity_return_periods_europe.csv'))
 
-dat.obs.country = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_',country,'.csv'))
-dat.sim.country = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_10000yrs_sim_intensity_return_periods_',country,'.csv'))
+# dat.obs.country = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_',country,'.csv'))
+# dat.sim.country = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_10000yrs_sim_intensity_return_periods_',country,'.csv'))
 # dat.sim.country.rcp45.2021 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2021_2050_10000yrs_sim_intensity_return_periods_',country,'.csv'))
 # dat.sim.country.rcp45.2071 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2071_2100_10000yrs_sim_intensity_return_periods_',country,'.csv'))
 # dat.sim.country.rcp85.2021 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2021_2050_10000yrs_sim_intensity_return_periods_',country,'.csv'))
 # dat.sim.country.rcp85.2071 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2071_2100_10000yrs_sim_intensity_return_periods_',country,'.csv'))
 
-dat.sim.sub.country = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_10000yrs_sim_intensity_return_periods_',country,'.csv'))
-# dat.sim.sub.country.rcp45.2021 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2021_2050_30yrs_subsets_10000yrs_sim_intensity_return_periods_',country,'.csv'))
-# dat.sim.sub.country.rcp85.2021 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2021_2050_30yrs_subsets_10000yrs_sim_intensity_return_periods_',country,'.csv'))
-# dat.sim.sub.country.rcp45.2071 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2071_2100_30yrs_subsets_10000yrs_sim_intensity_return_periods_',country,'.csv'))
-# dat.sim.sub.country.rcp85.2071 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2071_2100_30yrs_subsets_10000yrs_sim_intensity_return_periods_',country,'.csv'))
+# 30 year subsets for each country for historical subsets
+dat.sim.sub.country.all = data.frame()
+dat.obs.country.all = data.frame()
+
+for (i in countries){
+
+    dat.obs.country.current = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_',i,'.csv'))
+    dat.obs.country.current$country = i
+    dat.obs.country.all = rbind(dat.obs.country.all,dat.obs.country.current)
+    do.call("<-", list(paste0('dat.obs.',i,'.current'), dat.obs.country.current))
+
+    dat.sim.sub.country.current = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.sub.country.current$country = i
+    dat.sim.sub.country.all = rbind(dat.sim.sub.country.all,dat.sim.sub.country.current)
+    do.call("<-", list(paste0('dat.sim.sub.',i,'.current'), dat.sim.sub.country.current))
+
+    # dat.sim.sub.country.rcp45.2021 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2021_2050_30yrs_subsets_10000yrs_sim_intensity_return_periods_',country,'.csv'))
+    # dat.sim.sub.country.rcp85.2021 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2021_2050_30yrs_subsets_10000yrs_sim_intensity_return_periods_',country,'.csv'))
+    # dat.sim.sub.country.rcp45.2071 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2071_2100_30yrs_subsets_10000yrs_sim_intensity_return_periods_',country,'.csv'))
+    # dat.sim.sub.country.rcp85.2071 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2071_2100_30yrs_subsets_10000yrs_sim_intensity_return_periods_',country,'.csv'))
+}
 
 ###################################
 # PLOT FIGURE
 # #################################
+
+# one line per scenario
 
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_',country,'_scenarios.pdf'),paper='a4r',height=0,width=0)
 ggplot() +
@@ -71,23 +92,25 @@ ggplot() +
     legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
 dev.off()
 
+# historical 30-year chunks
 
-pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_',country,'_boxplots_scenarios.pdf'),paper='a4r',height=0,width=0)
+pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_countries_boxplots_scenarios.pdf'),paper='a4r',height=0,width=0)
 ggplot() +
-    geom_line(data=dat.sim.sub.country,aes(x=return_period,y=days_over,group=subset),alpha=0.3,color='blue')+
+    geom_line(data=dat.sim.sub.country.all,aes(x=return_period,y=days_over,group=subset),alpha=0.3,color='light blue')+
     # geom_line(data=dat.sim.sub.country.rcp85.2071,aes(x=return_period,y=days_over,group=subset),alpha=0.3,color='red')+
-    geom_boxplot(data=subset(dat.sim.sub.country),aes(x=return_period, y=days_over,group=return_period),alpha=0.5, color='red') +
+    geom_boxplot(data=subset(dat.sim.sub.country.all),aes(x=return_period, y=days_over,group=return_period),alpha=0.5, color='red') +
     # geom_boxplot(data=subset(dat.sim.sub.country.rcp45.2021),aes(x=return_period, y=days_over,group=return_period),alpha=0.3, color='yellow') +
     # geom_boxplot(data=subset(dat.sim.sub.port.rcp85.2021),aes(x=return_period, y=days_over,group=return_period),alpha=0.3, color='orange') +
     # geom_boxplot(data=subset(dat.sim.sub.port.rcp45.2071),aes(x=return_period, y=days_over,group=return_period),alpha=0.3, color='red') +
     # geom_boxplot(data=subset(dat.sim.sub.port.rcp85.2071),aes(x=return_period, y=days_over,group=return_period),alpha=0.3, color='dark red') +
-    geom_line(data=dat.obs.country,aes(x=return_period,y=days_over),size=2) +
+    geom_line(data=dat.obs.country.all,aes(x=return_period,y=days_over),size=1,linetype=1) +
     # geom_jitter(data=dat.sim.sub.port,aes(x=return_period,y=days_over,color=subset),alpha=0.3) +
     guides(color=FALSE,size=FALSE) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
-    ylim(c(0,30)) + # TO CHANGE
-    ggtitle(country) +
+    # ylim(c(0,30)) + # TO CHANGE
+    # ggtitle(country) +
     scale_x_log10() +
+    facet_wrap(~country) +
     theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
     plot.title = element_text(hjust = 0.5),panel.background = element_blank(),
     panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
@@ -95,6 +118,27 @@ ggplot() +
     legend.position = 'bottom',legend.justification='center',
     legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
 dev.off()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # LEGACY BELOW
 
@@ -248,12 +292,12 @@ dev.off()
 
 # DROUGHT
 
-# load data for both comparing entire sim and obs
-dat.obs= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_drought_intensity_return_periods_europe.csv'))
-# dat.obs.mean = ddply(dat.obs,.(return_period),summarise,days_over=mean(days_over))
-# dat.sim= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim1,'yrs_sim_intensity_return_periods_europe.csv'))
-dat.sim= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_1000yrs_sim_drought_intensity_return_periods_europe.csv'))
-# dat.sim.mean = ddply(dat.sim,.(return_period),summarise,days_over=mean(days_over))
+# # load data for both comparing entire sim and obs
+# dat.obs= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_drought_intensity_return_periods_europe.csv'))
+# # dat.obs.mean = ddply(dat.obs,.(return_period),summarise,days_over=mean(days_over))
+# # dat.sim= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim1,'yrs_sim_intensity_return_periods_europe.csv'))
+# dat.sim= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_1000yrs_sim_drought_intensity_return_periods_europe.csv'))
+# # dat.sim.mean = ddply(dat.sim,.(return_period),summarise,days_over=mean(days_over))
 # average observations over entire
 
 #################################

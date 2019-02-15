@@ -62,7 +62,7 @@ if country != 'Europe':
     sim_data_1_subset = sim_data_1[footprint_values, :, :]
     sim_data_2_subset = sim_data_2[footprint_values, :, :]
 
-
+# if want to take entire continent then special option
 if country == 'Europe':
     footprint_values = range(0,obs_data.shape[0])
 
