@@ -52,10 +52,11 @@ declare -i percentile=99
 
 for metric in "${metrics[@]}"; do
 for continent in "${continents[@]}"; do
-for scen in "${scens[@]}"; do
+#for scen in "${scens[@]}"; do
 for country in "${countries[@]}"; do
 
-python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent $scen $start $end $season_start $season_end $percentile $country
+python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent rcp45 2021 2050 $season_start $season_end $percentile $country
+#python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent $scen $start $end $season_start $season_end $percentile $country
 
-done; done; done; done;
+done; done; done;
 
