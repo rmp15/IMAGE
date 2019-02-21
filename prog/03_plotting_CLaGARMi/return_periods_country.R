@@ -37,12 +37,19 @@ countries = c('Europe', 'Sweden', 'UK', 'Spain', 'Italy', 'Romania')
 # dat.sim= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_4000yrs_sim_intensity_return_periods_europe.csv'))
 # dat.sim.sub = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_4000yrs_sim_intensity_return_periods_europe.csv'))
 
-# dat.obs.country = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_',country,'.csv'))
-# dat.sim.country = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_10000yrs_sim_intensity_return_periods_',country,'.csv'))
-# dat.sim.country.rcp45.2021 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2021_2050_10000yrs_sim_intensity_return_periods_',country,'.csv'))
-# dat.sim.country.rcp45.2071 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2071_2100_10000yrs_sim_intensity_return_periods_',country,'.csv'))
-# dat.sim.country.rcp85.2021 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2021_2050_10000yrs_sim_intensity_return_periods_',country,'.csv'))
-# dat.sim.country.rcp85.2071 = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2071_2100_10000yrs_sim_intensity_return_periods_',country,'.csv'))
+# entire duration of heat waves
+dat.sim.sub.country.all = data.frame()
+dat.obs.country.all = data.frame()
+for (i in countries){
+
+    dat.obs.country.current             = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.current             = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.rcp45.2021.current  = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2021_2050_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.rcp45.2071.current  = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2071_2100_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.rcp85.2021.current  = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2021_2050_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.rcp85.2071.current  = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2071_2100_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+
+}
 
 # 30 year subsets for each country for historical subsets
 dat.sim.sub.country.all = data.frame()
