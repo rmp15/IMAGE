@@ -26,6 +26,6 @@ for metric in "${metrics[@]}"; do
 for continent in "${continents[@]}"; do
 for scen in "${scens[@]}"; do
 
-Rscript ~/git/IMAGE/prog/03_plotting_CLaGARMi/30_year_averages_plot.R $slice $years_sim1 $years_sim2 $metric $continent $scen $start $end
+Rscript ~/git/IMAGE/prog/03_plotting_CLaGARMi/return_periods_country.R $slice $years_sim1 $years_sim2 $metric $continent $scen $start $end
 
 done; done; done;
