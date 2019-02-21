@@ -38,16 +38,24 @@ countries = c('Europe', 'Sweden', 'UK', 'Spain', 'Italy', 'Romania')
 # dat.sim.sub = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_30yrs_subsets_4000yrs_sim_intensity_return_periods_europe.csv'))
 
 # entire duration of heat waves
-dat.sim.sub.country.all = data.frame()
-dat.obs.country.all = data.frame()
+dat.sim.country.all = data.frame()
 for (i in countries){
 
-    dat.obs.country.current             = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_',i,'.csv'))
-    dat.sim.country.current             = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_10000yrs_sim_intensity_return_periods_',i,'.csv'))
-    dat.sim.country.rcp45.2021.current  = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2021_2050_10000yrs_sim_intensity_return_periods_',i,'.csv'))
-    dat.sim.country.rcp45.2071.current  = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2071_2100_10000yrs_sim_intensity_return_periods_',i,'.csv'))
-    dat.sim.country.rcp85.2021.current  = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2021_2050_10000yrs_sim_intensity_return_periods_',i,'.csv'))
-    dat.sim.country.rcp85.2071.current  = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2071_2100_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.current                     = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.current$scen                = 'historical'
+    dat.sim.country.rcp45.2021.current          = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2021_2050_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.rcp45.2021.current$scen     = 'RCP4.5 2021-2050'
+    dat.sim.country.rcp45.2071.current          = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2071_2100_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.rcp45.2071.current$scen     = 'RCP4.5 2071-2100'
+    dat.sim.country.rcp85.2021.current          = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2021_2050_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.rcp85.2021.current$scen     = 'RCP8.5 2021-2050'
+    dat.sim.country.rcp85.2071.current          = read.csv(paste0(input.dir,metric,'_',continent,'_rcp85_2071_2100_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.rcp85.2071.current$scen     = 'RCP8.5 2071-2100'
+
+    dat.sim.country = rbind(dat.sim.country.current,dat.sim.country.rcp45.2021.current,dat.sim.country.rcp45.2071.current,
+                                dat.sim.country.rcp85.2021.current,dat.sim.country.rcp85.2071.current)
+    dat.sim.country$country = i
+    dat.sim.country.all = rbind(dat.sim.country.all,dat.sim.country)
 
 }
 
@@ -81,16 +89,9 @@ for (i in countries){
 
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_',country,'_scenarios.pdf'),paper='a4r',height=0,width=0)
 ggplot() +
-    # geom_line(data=dat.obs.country,aes(x=return_period,y=days_over),alpha=0.3, size=1) +
-    geom_point(data=dat.obs.country,aes(x=return_period,y=days_over),size=1) +
-    geom_line(data=dat.sim.country,aes(x=return_period,y=days_over),alpha=0.3,color='black') +
-    # geom_line(data=dat.sim.country.rcp45.2021,aes(x=return_period,y=days_over),alpha=1,color='yellow') +
-    # geom_line(data=dat.sim.country.rcp85.2021,aes(x=return_period,y=days_over),alpha=1,color='orange') +
-    # geom_line(data=dat.sim.country.rcp45.2071,aes(x=return_period,y=days_over),alpha=1,color='red') +
-    # geom_line(data=dat.sim.country.rcp85.2071,aes(x=return_period,y=days_over),alpha=1,color='dark red') +
-    guides(color=FALSE,size=FALSE) +
+    geom_line(data=dat.sim.country.all,aes(x=return_period,y=days_over,group=scen,color=scen),alpha=0.3) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
-    ggtitle(country) +
+    facet_wrap(~country) +
     theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
     plot.title = element_text(hjust = 0.5),panel.background = element_blank(),
     panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
@@ -104,18 +105,10 @@ dev.off()
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_countries_boxplots_scenarios.pdf'),paper='a4r',height=0,width=0)
 ggplot() +
     geom_line(data=dat.sim.sub.country.all,aes(x=return_period,y=days_over,group=subset),alpha=0.3,color='light blue')+
-    # geom_line(data=dat.sim.sub.country.rcp85.2071,aes(x=return_period,y=days_over,group=subset),alpha=0.3,color='red')+
     geom_boxplot(data=subset(dat.sim.sub.country.all),aes(x=return_period, y=days_over,group=return_period),alpha=0.5, color='red') +
-    # geom_boxplot(data=subset(dat.sim.sub.country.rcp45.2021),aes(x=return_period, y=days_over,group=return_period),alpha=0.3, color='yellow') +
-    # geom_boxplot(data=subset(dat.sim.sub.port.rcp85.2021),aes(x=return_period, y=days_over,group=return_period),alpha=0.3, color='orange') +
-    # geom_boxplot(data=subset(dat.sim.sub.port.rcp45.2071),aes(x=return_period, y=days_over,group=return_period),alpha=0.3, color='red') +
-    # geom_boxplot(data=subset(dat.sim.sub.port.rcp85.2071),aes(x=return_period, y=days_over,group=return_period),alpha=0.3, color='dark red') +
     geom_line(data=dat.obs.country.all,aes(x=return_period,y=days_over),size=1,linetype=1) +
-    # geom_jitter(data=dat.sim.sub.port,aes(x=return_period,y=days_over,color=subset),alpha=0.3) +
     guides(color=FALSE,size=FALSE) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
-    # ylim(c(0,30)) + # TO CHANGE
-    # ggtitle(country) +
     scale_x_log10() +
     facet_wrap(~country) +
     theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
