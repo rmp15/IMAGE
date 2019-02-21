@@ -448,19 +448,19 @@ def hw_duration_return_periods_europe(data):
 
     print('loading data to calculate return periods')
 
-    print(data)
+    # print(data)
 
     data_master = pd.DataFrame()
     # for entire Europe, generate a probability rank, where lowest number is lowest ranked
     rank_data = len(data) + 1 - rankdata(data, method='min')
 
-    print(rank_data)
+    # print(rank_data)
 
     # calculate return periods
     return_period = (len(data) + 1) / rank_data
 
-    # print(np.unique(data))
-    # print(np.unique(return_period))
+    print(np.unique(data))
+    print(np.unique(return_period))
 
     # collect values of heat wave intensity and return period for each location
     data_current = pd.DataFrame({'days_over': np.unique(data),
