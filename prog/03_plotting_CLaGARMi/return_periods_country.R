@@ -101,7 +101,7 @@ for (i in countries){
 
 # one line per scenario
 
-pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_',country,'_scenarios.pdf'),paper='a4r',height=0,width=0)
+pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_countries_scenarios.pdf'),paper='a4r',height=0,width=0)
 ggplot() +
     geom_line(data=dat.sim.country.all,aes(x=return_period,y=days_over,group=scen,color=scen)) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
@@ -123,7 +123,7 @@ ggplot() +
     geom_line(data=dat.sim.sub.country.all,aes(x=return_period,y=days_over,group=subset),alpha=0.3,color='light blue')+
     geom_boxplot(data=subset(dat.sim.sub.country.all),aes(x=return_period, y=days_over,group=return_period),alpha=0.5, color='red') +
     geom_line(data=dat.obs.country.all,aes(x=return_period,y=days_over),size=1,linetype=1) +
-3    guides(color=FALSE,size=FALSE) +
+    guides(color=FALSE,size=FALSE) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
     scale_x_log10() +
     facet_wrap(~country) +
