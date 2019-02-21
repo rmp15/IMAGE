@@ -32,6 +32,10 @@ countries = c('Europe', 'Sweden', 'UK', 'Spain', 'Italy', 'Romania')
 
 # HEATWAVES DURATION
 
+###################################
+# LOAD DATA
+# #################################
+
 # # load data for both comparing entire sim and obs
 # dat.obs= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_obs_intensity_return_periods_europe.csv'))
 # dat.sim= read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_4000yrs_sim_intensity_return_periods_europe.csv'))
@@ -41,7 +45,7 @@ countries = c('Europe', 'Sweden', 'UK', 'Spain', 'Italy', 'Romania')
 dat.sim.country.all = data.frame()
 for (i in countries){
 
-    dat.sim.country.current                     = read.csv(paste0(input.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.current                     = read.csv(paste0(input.dir,metric,'_',continent,'_',hist,'_1971_2000_10000yrs_sim_intensity_return_periods_',i,'.csv'))
     dat.sim.country.current$scen                = 'historical'
     dat.sim.country.rcp45.2021.current          = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2021_2050_10000yrs_sim_intensity_return_periods_',i,'.csv'))
     dat.sim.country.rcp45.2021.current$scen     = 'RCP4.5 2021-2050'
@@ -92,6 +96,8 @@ ggplot() +
     geom_line(data=dat.sim.country.all,aes(x=return_period,y=days_over,group=scen,color=scen),alpha=0.3) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
     facet_wrap(~country) +
+    scale_fill_manual(values=colors.subinjuries[c(1,2,3,4,5)]) +
+    guides(fill=guide_legend(title="",nrow=1)) +
     theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
     plot.title = element_text(hjust = 0.5),panel.background = element_blank(),
     panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
