@@ -107,7 +107,7 @@ ggplot() +
     geom_line(data=dat.sim.sub.country.all,aes(x=return_period,y=days_over,group=subset),alpha=0.3,color='light blue')+
     geom_boxplot(data=subset(dat.sim.sub.country.all),aes(x=return_period, y=days_over,group=return_period),alpha=0.5, color='red') +
     geom_line(data=dat.obs.country.all,aes(x=return_period,y=days_over),size=1,linetype=1) +
-    guides(color=FALSE,size=FALSE) +
+3    guides(color=FALSE,size=FALSE) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
     scale_x_log10() +
     facet_wrap(~country) +
