@@ -28,11 +28,11 @@ mycols <- c(f("Dark2"), f("Set1")[1:8], f("Set2"), f("Set3"),"#89C5DA", "#DA5724
 # plot(1:length(mycols),col=mycols[1:length(mycols)],cex=4,pch=20); abline(v=c(10,20,30,40,50,60))
 
 # pick colors for climate scenarios
-colors.scen = mycols[c(         24,  # Other
-                                40,  # Injuries
-                                15,  # Cancer
-                                10,  #
-                                62)] # Cardio
+colors.scen = mycols[c(         47,  # hist
+                                17,  # 4.5 2021
+                                1,  # 4.5 2071
+                                13,  # 8.5 2021
+                                57)] # 8.5 2071
 
 input.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures_processing/'
 output.dir = '~/git/IMAGE/output/CLaGARMi/euro_cordex/figures/'
@@ -55,8 +55,8 @@ countries = c('Europe', 'Sweden', 'UK', 'Spain', 'Italy', 'Romania')
 dat.sim.country.all = data.frame()
 for (i in countries){
 
-    dat.sim.country.current                     = read.csv(paste0(input.dir,metric,'_',continent,'_',hist,'_1971_2000_10000yrs_sim_intensity_return_periods_',i,'.csv'))
-    dat.sim.country.current$scen                = 'historical'
+    dat.sim.country.current                     = read.csv(paste0(input.dir,metric,'_',continent,'_hist_1971_2000_10000yrs_sim_intensity_return_periods_',i,'.csv'))
+    dat.sim.country.current$scen                = 'Historical'
     dat.sim.country.rcp45.2021.current          = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2021_2050_10000yrs_sim_intensity_return_periods_',i,'.csv'))
     dat.sim.country.rcp45.2021.current$scen     = 'RCP4.5 2021-2050'
     dat.sim.country.rcp45.2071.current          = read.csv(paste0(input.dir,metric,'_',continent,'_rcp45_2071_2100_10000yrs_sim_intensity_return_periods_',i,'.csv'))
@@ -103,11 +103,11 @@ for (i in countries){
 
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_',country,'_scenarios.pdf'),paper='a4r',height=0,width=0)
 ggplot() +
-    geom_line(data=dat.sim.country.all,aes(x=return_period,y=days_over,group=scen,color=scen),alpha=0.3) +
+    geom_line(data=dat.sim.country.all,aes(x=return_period,y=days_over,group=scen,color=scen)) +
     xlab('Return period (years)') + ylab('Heat wave duration (days)') +
     facet_wrap(~country) +
-    scale_fill_manual(values=colors.subinjuries[c(1,2,3,4,5)]) +
-    guides(fill=guide_legend(title="",nrow=1)) +
+    scale_color_manual(values=colors.scen) +
+    guides(color=guide_legend(title="Scenario",nrow=1)) +
     theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
     plot.title = element_text(hjust = 0.5),panel.background = element_blank(),
     panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
