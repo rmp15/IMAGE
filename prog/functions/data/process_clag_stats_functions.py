@@ -31,6 +31,25 @@ def load_clag_output(step, num_years, continent, scen_name, start_year, end_year
     return o_array, s_array
 
 
+# based on steve's previous code in legacy 'load_mat_var.py'
+def load_clag_output_observed_only(step, num_years, continent, scen_name, start_year, end_year, var):
+
+
+    if var == 'appt':
+        ext = 'mat.npy'
+    else:
+        ext = 'mat'
+
+    fn_o = var + '/out_' + step + '_y' + str(num_years) + '_' + continent + '_' + str(scen_name) + '_' + str(start_year) + '_' + str(end_year) + '_' + var + '_o.' + ext
+
+    if var in ['appt']:
+        o_array = np.load(os.path.join(image_output_local, fn_o))
+    else:
+        o = h5py.File(os.path.join(image_output_local, fn_o), 'r')
+        o_array = np.array(o[list(o.keys())[0]])
+
+    return o_array
+
 def wind_chill_creator(tas_array, wind_array):
 
     wind_chill_array = 13.12 + (0.6215 * (tas_array-273.15)) - (11.37*wind_array**0.16) + (0.3965*(tas_array-273.15)*wind_array**0.16)

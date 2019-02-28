@@ -37,9 +37,12 @@ print(str(years_sim) + ' total years of simluation')
 
 print('loading all data')
 
-# loading data for both observations and simulations
-obs_data, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, year_start, year_end, metric)
-obs_data, sim_data_2 = load_clag_output(slice, years_sim_2, continent, scen, year_start, year_end, metric)
+# loading data for simulations
+dummy, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, year_start, year_end, metric)
+dummy, sim_data_2 = load_clag_output(slice, years_sim_2, continent, scen, year_start, year_end, metric)
+
+# loading data for original observed data to calculate percentiles against
+obs_data = load_clag_output_observed_only(slice, continent, 'hist', 1971, 2000, metric)
 
 # obtain number of sites (redundant?)
 no_sites = obs_data.shape[0]
@@ -106,33 +109,33 @@ print('Heatwave return periods calculated for entire period for '+country +' for
 data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods_'+country+'.csv')
 data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_sim_intensity_return_periods_'+country+'.csv')
 
-#################################
-# HEAT WAVE DURATION (30-year chunks)
 # #################################
-
-# create empty frame to populate with subset values
-data_avg = pd.DataFrame(columns=['days_over', 'return_period', 'subset'])
-
-# loop through subsets to get some heat wave return periods
-for subset in range(0, int(np.floor(sim_data_footprint.shape[1]/30))):
-    print(subset)
-    # take sample of 30 years from sim_data_1 recursively
-    sim_data_footprint_subset = sim_data_footprint[:,range(30*subset,(30*(subset+1))),:]
-    sim_data_processed_temp = seasonal_hw_duration_summary_europe(obs_data_footprint, sim_data_footprint_subset, season_start, season_end, percentile)
-    # create duration characteristics for each site
-    data_sim_temp = hw_duration_return_periods_europe(sim_data_processed_temp)
-    # convert into pandas dataframe
-    data_sim_temp = pd.DataFrame(data_sim_temp)
-    data_sim_temp['subset'] = subset + 1
-    # concatenate to master file
-    data_avg = pd.concat([data_avg.reset_index(drop=True), data_sim_temp.reset_index(drop=True)], axis=0)
-
-print('saving ' + country + ' return periods')
-
-# save to csv
-data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_30yrs_subsets_' + str(years_sim) + 'yrs_sim_intensity_return_periods_'+ country +'.csv',index=False)
-
-print(country + ' done. Thank u, next')
+# # HEAT WAVE DURATION (30-year chunks)
+# # #################################
+#
+# # create empty frame to populate with subset values
+# data_avg = pd.DataFrame(columns=['days_over', 'return_period', 'subset'])
+#
+# # loop through subsets to get some heat wave return periods
+# for subset in range(0, int(np.floor(sim_data_footprint.shape[1]/30))):
+#     print(subset)
+#     # take sample of 30 years from sim_data_1 recursively
+#     sim_data_footprint_subset = sim_data_footprint[:,range(30*subset,(30*(subset+1))),:]
+#     sim_data_processed_temp = seasonal_hw_duration_summary_europe(obs_data_footprint, sim_data_footprint_subset, season_start, season_end, percentile)
+#     # create duration characteristics for each site
+#     data_sim_temp = hw_duration_return_periods_europe(sim_data_processed_temp)
+#     # convert into pandas dataframe
+#     data_sim_temp = pd.DataFrame(data_sim_temp)
+#     data_sim_temp['subset'] = subset + 1
+#     # concatenate to master file
+#     data_avg = pd.concat([data_avg.reset_index(drop=True), data_sim_temp.reset_index(drop=True)], axis=0)
+#
+# print('saving ' + country + ' return periods')
+#
+# # save to csv
+# data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_30yrs_subsets_' + str(years_sim) + 'yrs_sim_intensity_return_periods_'+ country +'.csv',index=False)
+#
+# print(country + ' done. Thank u, next')
 
 # legacy for lonlat
 
