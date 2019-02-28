@@ -109,9 +109,9 @@ print('Drought return periods calculated for entire period for ' + country + ' f
 data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods_'+country+'.csv')
 data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_sim_intensity_return_periods_'+country+'.csv')
 
-# #################################
-# # DROUGHT DURATION (30-year chunks)
-# # #################################
+#################################
+# DROUGHT DURATION (30-year chunks)
+#################################
 #
 # # create empty frame to populate with subset values
 # data_avg = pd.DataFrame(columns=['days_over', 'return_period', 'subset'])

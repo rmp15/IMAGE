@@ -327,6 +327,9 @@ def seasonal_hw_duration_summary_europe(var, var_process, start, end, pctile):
     # calculate where the pctile desired is for europe from a source dataset
     pctile_data = seasonal_percentile_calculator_europe(var, start, end, pctile)
 
+    print('percentile data')
+    print(pctile_data)
+
     # take average for entire footprint for each day for the entire period
     days = (month_start_end_inds[end] - month_start_end_inds[start-1])
     num_days = days * no_years

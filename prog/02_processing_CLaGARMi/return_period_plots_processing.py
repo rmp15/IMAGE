@@ -82,7 +82,7 @@ if country == 'Europe':
 
 print('combining all simulation years')
 
-# combine two sets of simulations SOMETHING GOING WRONG HERE
+# combine two sets of simulations
 sim_data_footprint = np.empty([len(footprint_values), (years_sim_1 + years_sim_2), 365])
 for i in range(0, len(footprint_values)):
     for j in range(0, 365):
@@ -109,10 +109,10 @@ print('Heatwave return periods calculated for entire period for '+country +' for
 data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods_'+country+'.csv')
 data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_sim_intensity_return_periods_'+country+'.csv')
 
-# #################################
-# # HEAT WAVE DURATION (30-year chunks)
-# # #################################
-#
+#################################
+# HEAT WAVE DURATION (30-year chunks)
+#################################
+
 # # create empty frame to populate with subset values
 # data_avg = pd.DataFrame(columns=['days_over', 'return_period', 'subset'])
 #
@@ -136,9 +136,9 @@ data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_pr
 # data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_30yrs_subsets_' + str(years_sim) + 'yrs_sim_intensity_return_periods_'+ country +'.csv',index=False)
 #
 # print(country + ' done. Thank u, next')
-
+#
 # legacy for lonlat
-
+#
 # # load lon/lat data for European grids
 # lons = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lons.mat'))
 # lons_array = np.array(lons[list(lons.keys())[3]])
