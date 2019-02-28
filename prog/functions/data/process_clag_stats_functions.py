@@ -353,7 +353,7 @@ def seasonal_hw_duration_summary_europe(var, var_process, start, end, pctile):
             threshold_data = [0 if a < pctile_threshold else 1 for a in year_data]
             # figure out longest consecutive over threshold (equivalent of rle in R and outputting longest 'streak')
             consecutive_data[i] = consecutive_one(threshold_data)
-
+    print(consecutive_data[i])
     print('Processed heat wave duration summary for loaded data')
 
     return consecutive_data
