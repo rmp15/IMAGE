@@ -100,11 +100,10 @@ for (i in countries){
 # #################################
 
 # one line per scenario
-
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_countries_scenarios.pdf'),paper='a4r',height=0,width=0)
-ggplot() +
+p = ggplot() +
     geom_line(data=dat.sim.country.all,aes(x=return_period,y=days_over,group=scen,color=scen)) +
-    xlab('Return period (years)') + ylab('Heat wave duration (days)') +
+    xlab('Return period (years)') +
     facet_wrap(~country) +
     scale_color_manual(values=colors.scen) +
     guides(color=guide_legend(title="Scenario",nrow=1)) +
@@ -114,17 +113,23 @@ ggplot() +
     panel.border = element_rect(colour = "black"),strip.background = element_blank(),
     legend.position = 'bottom',legend.justification='center',
     legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
+
+# establish y-axis label
+if(metric=='appt'){p = p + ylab('Heat wave duration (days)') }
+if(metric=='pr'){p = p + ylab('Drought duration (days)')  }
+
+print(p)
+
 dev.off()
 
 # historical 30-year chunks
-
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_countries_boxplots_scenarios.pdf'),paper='a4r',height=0,width=0)
-ggplot() +
+ p = ggplot() +
     geom_line(data=dat.sim.sub.country.all,aes(x=return_period,y=days_over,group=subset),alpha=0.3,color='light blue')+
     geom_boxplot(data=subset(dat.sim.sub.country.all),aes(x=return_period, y=days_over,group=return_period),alpha=0.5, color='red') +
     geom_line(data=dat.obs.country.all,aes(x=return_period,y=days_over),size=1,linetype=1) +
     guides(color=FALSE,size=FALSE) +
-    xlab('Return period (years)') + ylab('Heat wave duration (days)') +
+    xlab('Return period (years)') +
     scale_x_log10() +
     facet_wrap(~country) +
     theme_bw() + theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle=0),
@@ -133,6 +138,13 @@ ggplot() +
     panel.border = element_rect(colour = "black"),strip.background = element_blank(),
     legend.position = 'bottom',legend.justification='center',
     legend.background = element_rect(fill="gray90", size=.5, linetype="dotted"))
+
+# establish y-axis label
+if(metric=='appt'){p = p + ylab('Heat wave duration (days)') }
+if(metric=='pr'){p = p + ylab('Drought duration (days)')  }
+
+print(p)
+
 dev.off()
 
 
