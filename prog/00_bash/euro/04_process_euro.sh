@@ -22,6 +22,8 @@ declare -i end=2000
 # 1. EURO-CORDEX RUNS
 #################################################
 
+# APPARENT TEMPERATURE
+
 # PROCESS APPARENT TEMPERATURE
 for years_sim in "${years_sims[@]}"; do
 for continent in "${continents[@]}"; do
@@ -55,6 +57,7 @@ for continent in "${continents[@]}"; do
 #for scen in "${scens[@]}"; do
 for country in "${countries[@]}"; do
 
+python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent hist  1971 2000 $season_start $season_end $percentile $country
 python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent rcp45 2021 2050 $season_start $season_end $percentile $country
 python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent rcp85 2021 2050 $season_start $season_end $percentile $country
 python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent rcp45 2071 2100 $season_start $season_end $percentile $country
@@ -63,3 +66,20 @@ python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $yea
 
 done; done; done;
 
+# DROUGHT
+
+declare -a metrics=('pr')
+
+for metric in "${metrics[@]}"; do
+for continent in "${continents[@]}"; do
+#for scen in "${scens[@]}"; do
+for country in "${countries[@]}"; do
+
+python -m prog.02_processing_CLaGARMi.return_period_plots_processing_pr $slice $year_sim_1 $year_sim_2 $metric $continent hist  1971 2000 $season_start $season_end $percentile $country
+python -m prog.02_processing_CLaGARMi.return_period_plots_processing_pr $slice $year_sim_1 $year_sim_2 $metric $continent rcp45 2021 2050 $season_start $season_end $percentile $country
+python -m prog.02_processing_CLaGARMi.return_period_plots_processing_pr $slice $year_sim_1 $year_sim_2 $metric $continent rcp85 2021 2050 $season_start $season_end $percentile $country
+python -m prog.02_processing_CLaGARMi.return_period_plots_processing_pr $slice $year_sim_1 $year_sim_2 $metric $continent rcp45 2071 2100 $season_start $season_end $percentile $country
+python -m prog.02_processing_CLaGARMi.return_period_plots_processing_pr $slice $year_sim_1 $year_sim_2 $metric $continent rcp85 2071 2100 $season_start $season_end $percentile $country
+#python -m prog.02_processing_CLaGARMi.return_period_plots_processing $slice $year_sim_1 $year_sim_2 $metric $continent $scen $start $end $season_start $season_end $percentile $country
+
+done; done; done;
