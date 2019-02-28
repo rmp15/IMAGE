@@ -37,12 +37,12 @@ print(str(years_sim) + ' total years of simluation')
 
 print('loading all data')
 
+# loading data for original observed data to calculate percentiles against
+obs_data = load_clag_output_observed_only(slice, years_sim_1, continent, 'hist', 1971, 2000, metric)
+
 # loading data for simulations
 dummy, sim_data_1 = load_clag_output(slice, years_sim_1, continent, scen, year_start, year_end, metric)
 dummy, sim_data_2 = load_clag_output(slice, years_sim_2, continent, scen, year_start, year_end, metric)
-
-# loading data for original observed data to calculate percentiles against
-obs_data = load_clag_output_observed_only(slice, continent, 'hist', 1971, 2000, metric)
 
 # obtain number of sites (redundant?)
 no_sites = obs_data.shape[0]
