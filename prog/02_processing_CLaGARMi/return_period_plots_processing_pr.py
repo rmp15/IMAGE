@@ -118,7 +118,7 @@ for subset in range(0, int(np.floor(sim_data_footprint.shape[1]/30))):
     print(subset)
     # take sample of 30 years from sim_data_1 recursively
     sim_data_footprint_subset = sim_data_footprint[:,range(30*subset,(30*(subset+1))),:]
-    sim_data_processed_temp = seasonal_hw_duration_summary_europe(obs_data_footprint, sim_data_footprint_subset, season_start, season_end, percentile)
+    sim_data_processed_temp = seasonal_drought_duration_summary_europe_2(obs_data_footprint, sim_data_footprint_subset, season_start, season_end, percentile)
     # create duration characteristics for each site
     data_sim_temp = hw_duration_return_periods_europe(sim_data_processed_temp)
     # convert into pandas dataframe
