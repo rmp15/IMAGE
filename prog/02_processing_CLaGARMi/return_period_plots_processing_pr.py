@@ -97,17 +97,17 @@ obs_data_processed_site = seasonal_drought_duration_summary_europe_2(obs_data_fo
 sim_data_processed_site = seasonal_drought_duration_summary_europe_2(obs_data_footprint, sim_data_footprint, season_start, season_end, percentile)
 
 # create duration characteristics for each site
-data_obs = hw_duration_return_periods_europe(obs_data_processed_site) # TO CHANGE
-data_sim = hw_duration_return_periods_europe(sim_data_processed_site) # TO CHANGE
+data_obs = hw_duration_return_periods_europe(obs_data_processed_site)  # TO CHANGE
+data_sim = hw_duration_return_periods_europe(sim_data_processed_site)  # TO CHANGE
 
-print('Heatwave return periods calculated for entire period for '+country +' for ' + scen + ' ' + str(year_start) + ' - ' + str(year_end))
+print('Drought return periods calculated for entire period for '+country +' for ' + scen + ' ' + str(year_start) + ' - ' + str(year_end))
 
 # save to csv
 data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods_'+country+'.csv')
 data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_sim_intensity_return_periods_'+country+'.csv')
 
 #################################
-# HEAT WAVE DURATION (30-year chunks)
+# DROUGHT DURATION (30-year chunks)
 # #################################
 
 # create empty frame to populate with subset values
@@ -133,15 +133,3 @@ print('saving ' + country + ' return periods')
 data_avg.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_30yrs_subsets_' + str(years_sim) + 'yrs_sim_intensity_return_periods_'+ country +'.csv',index=False)
 
 print(country + ' done. Thank u, next')
-
-# legacy for lonlat
-
-# # load lon/lat data for European grids
-# lons = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lons.mat'))
-# lons_array = np.array(lons[list(lons.keys())[3]])
-# lats = scipy.io.loadmat(os.path.join(cordex_output_local,'euro_cordex','lonlat/nobc_lats.mat'))
-# lats_array = np.array(lats[list(lats.keys())[3]])
-# lonlat = pd.DataFrame(np.concatenate([lons_array, lats_array], axis=1),columns=['lon','lat'])
-#
-# # export lon/lat table
-# lonlat.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/lonlat/'+ continent +'_lonlat.csv')

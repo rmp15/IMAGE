@@ -68,6 +68,7 @@ done; done; done;
 
 # DROUGHT
 
+declare -i percentile=1
 declare -a metrics=('pr')
 
 for metric in "${metrics[@]}"; do

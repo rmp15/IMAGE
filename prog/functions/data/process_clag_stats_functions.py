@@ -524,7 +524,7 @@ def seasonal_drought_duration_summary_europe(var, var_process, start, end, pctil
 # this function will create a drought summary for a chosen footprint (which could be Europe but also a country)
 def seasonal_drought_duration_summary_europe_2(var, var_process, start, end, pctile):
 
-    print('Calculating seasonal heatwave duration summary for loaded data')
+    print('Calculating seasonal drought duration summary for loaded data')
 
     # information for how to create the seasonal array
     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -536,8 +536,6 @@ def seasonal_drought_duration_summary_europe_2(var, var_process, start, end, pct
 
     # load data to process, number of years
     data, no_years, no_sites = seasonal_data_2(var_process, start, end)
-
-    # no_years = var_process.shape[1]
 
     # calculate where the pctile desired is for europe from a source dataset
     pctile_data = seasonal_percentile_calculator_europe(var, start, end, pctile)
@@ -566,6 +564,6 @@ def seasonal_drought_duration_summary_europe_2(var, var_process, start, end, pct
             # figure out longest consecutive over threshold (equivalent of rle in R and outputting longest 'streak')
             consecutive_data[i] = consecutive_one(threshold_data)
 
-    print('Processed heat wave duration summary for loaded data')
+    print('Processed seasonal drought duration summary for loaded data')
 
     return consecutive_data
