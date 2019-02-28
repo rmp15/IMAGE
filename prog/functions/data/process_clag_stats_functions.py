@@ -476,7 +476,7 @@ def hw_duration_return_periods_europe(data):
     return data_current
 
 
-# drought calculator
+# drought calculator LEGACY DO NOT USE
 def seasonal_drought_duration_summary_europe(var, var_process, start, end, pctile):
 
     # information for how to create the seasonal array
@@ -504,7 +504,7 @@ def seasonal_drought_duration_summary_europe(var, var_process, start, end, pctil
             k = j*days+i
             avg_data[k] = np.mean(np.ndarray.flatten(data[:, j, i]))
 
-    # for each year, calculate maximum number of consecutive days below XXth percentile from pctile_data
+    # for each year, calculate maximum number of consecutive days below chosen percentile from pctile_data
     no_days = (month_start_end_inds[end] - month_start_end_inds[start - 1])
     consecutive_data = np.zeros((no_years))
     for i in range(0, no_years):
@@ -549,18 +549,18 @@ def seasonal_drought_duration_summary_europe_2(var, var_process, start, end, pct
             k = j*days+i
             avg_data[k] = np.mean(np.ndarray.flatten(data[:, j, i]))
 
-    # for each year, calculate maximum number of consecutive days above XXth percentile from pctile_data
+    # for each year, calculate maximum number of consecutive days below chosen percentile from pctile_data
     no_days = (month_start_end_inds[end] - month_start_end_inds[start - 1])
     consecutive_data = np.zeros(no_years)
 
-    # iteratively go through years to figure out number of days over a threshold selected
+    # iteratively go through years to figure out number of days under a threshold selected
     for i in range(0, no_years):
             # assign seasonal data to the year
             year_data = np.ndarray.flatten(avg_data[(i*no_days):((i+1)*no_days)])
             # recover percentile data for comparison
             pctile_threshold = pctile_data
             # test on entire year for above or below threshold
-            threshold_data = [0 if a < pctile_threshold else 1 for a in year_data]
+            threshold_data = [0 if a > pctile_threshold else 1 for a in year_data]
             # figure out longest consecutive over threshold (equivalent of rle in R and outputting longest 'streak')
             consecutive_data[i] = consecutive_one(threshold_data)
 
