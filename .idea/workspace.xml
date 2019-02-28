@@ -21,8 +21,8 @@
       <file leaf-file-name="04_process_euro.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="739">
-              <caret line="63" column="145" lean-forward="true" selection-start-line="63" selection-start-column="145" selection-end-line="63" selection-end-column="145" />
+            <state relative-caret-position="225">
+              <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -194,7 +194,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="138" />
     <option name="y" value="-1403" />
-    <option name="width" value="1741" />
+    <option name="width" value="1447" />
     <option name="height" value="1261" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -530,13 +530,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
-    </task>
-    <task id="LOCAL-00328" summary="extracting values from clagarmi script">
-      <created>1549014679771</created>
-      <option name="number" value="00328" />
-      <option name="presentableId" value="LOCAL-00328" />
-      <option name="project" value="LOCAL" />
-      <updated>1549014679771</updated>
     </task>
     <task id="LOCAL-00329" summary="extracting values from clagarmi script">
       <created>1549016178605</created>
@@ -874,7 +867,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551364303274</updated>
     </task>
-    <option name="localTasksCounter" value="377" />
+    <task id="LOCAL-00377" summary="fixing up drought return periods">
+      <created>1551365215488</created>
+      <option name="number" value="00377" />
+      <option name="presentableId" value="LOCAL-00377" />
+      <option name="project" value="LOCAL" />
+      <updated>1551365215488</updated>
+    </task>
+    <option name="localTasksCounter" value="378" />
     <servers />
   </component>
   <component name="TodoView">
@@ -887,7 +887,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="138" y="-1403" width="1741" height="1261" extended-state="0" />
+    <frame x="138" y="-1403" width="1447" height="1261" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20835786" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1178,8 +1178,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="63" column="145" lean-forward="true" selection-start-line="63" selection-start-column="145" selection-end-line="63" selection-end-column="145" />
+        <state relative-caret-position="225">
+          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
           <folding />
         </state>
       </provider>
