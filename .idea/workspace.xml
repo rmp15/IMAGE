@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing_pr.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" afterPath="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing_pr.py" afterPath="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing_pr.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" afterPath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,23 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="return_period_plots_processing.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="115" column="3" lean-forward="true" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
-              <folding>
-                <element signature="e#457#519#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="return_period_plots_processing_pr.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="return_period_plots_processing_pr.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing_pr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="885">
+              <caret line="95" column="63" lean-forward="false" selection-start-line="95" selection-start-column="63" selection-end-line="95" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -55,8 +42,8 @@
       <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="453" column="31" lean-forward="false" selection-start-line="453" selection-start-column="31" selection-end-line="453" selection-end-column="31" />
+            <state relative-caret-position="484">
+              <caret line="524" column="46" lean-forward="false" selection-start-line="524" selection-start-column="4" selection-end-line="524" selection-end-column="46" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <element signature="e#331#1169#0" expanded="false" />
@@ -64,11 +51,9 @@
                 <element signature="e#1447#2094#0" expanded="false" />
                 <element signature="e#2157#2844#0" expanded="false" />
                 <element signature="e#2953#3904#0" expanded="false" />
-                <element signature="e#4028#5043#0" expanded="false" />
-                <element signature="e#5088#5838#0" expanded="false" />
-                <element signature="e#5998#8709#0" expanded="false" />
-                <element signature="e#9777#10835#0" expanded="false" />
-                <element signature="e#10975#11715#0" expanded="false" />
+                <element signature="e#6038#8749#0" expanded="false" />
+                <element signature="e#9817#10875#0" expanded="false" />
+                <element signature="e#11015#11755#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -140,11 +125,11 @@
       <find>country_only_points</find>
       <find>app_temp_creator</find>
       <find>load_clag_output</find>
-      <find>seasonal_hw_duration_summary_europe</find>
       <find>obs_data_site</find>
       <find>hw_duration_return_periods_europe</find>
       <find>country</find>
       <find>linetype</find>
+      <find>seasonal_hw_duration_summary_europe</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,7 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_pr_ps_6000yr.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/v1/CLaGARMi.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_4000yr.m" />
         <option value="$PROJECT_DIR$/prog/CLaGARMi/run_CLaGARMi_euro_hist_tasmax_huss_sfcWindmax_6000yr.m" />
@@ -201,9 +185,10 @@
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/30_year_averages_plot.R" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/05_plot_euro.sh" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R" />
-        <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" />
+        <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
+        <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing_pr.py" />
       </list>
     </option>
   </component>
@@ -547,13 +532,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00324" summary="extracting values from clagarmi script">
-      <created>1549012096254</created>
-      <option name="number" value="00324" />
-      <option name="presentableId" value="LOCAL-00324" />
-      <option name="project" value="LOCAL" />
-      <updated>1549012096254</updated>
-    </task>
     <task id="LOCAL-00325" summary="extracting values from clagarmi script">
       <created>1549014425552</created>
       <option name="number" value="00325" />
@@ -890,7 +868,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550764557724</updated>
     </task>
-    <option name="localTasksCounter" value="373" />
+    <task id="LOCAL-00373" summary="fixing up drought return periods">
+      <created>1551362700564</created>
+      <option name="number" value="00373" />
+      <option name="presentableId" value="LOCAL-00373" />
+      <option name="project" value="LOCAL" />
+      <updated>1551362700564</updated>
+    </task>
+    <option name="localTasksCounter" value="374" />
     <servers />
   </component>
   <component name="TodoView">
@@ -937,7 +922,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="second commit" />
     <MESSAGE value="extracting values from clagarmi script" />
-    <option name="LAST_COMMIT_MESSAGE" value="extracting values from clagarmi script" />
+    <MESSAGE value="fixing up drought return periods" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing up drought return periods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -981,11 +967,9 @@
             <element signature="e#1447#2094#0" expanded="false" />
             <element signature="e#2157#2844#0" expanded="false" />
             <element signature="e#2953#3904#0" expanded="false" />
-            <element signature="e#4028#5043#0" expanded="false" />
-            <element signature="e#5088#5838#0" expanded="false" />
-            <element signature="e#5998#8709#0" expanded="false" />
-            <element signature="e#9777#10835#0" expanded="false" />
-            <element signature="e#10975#11715#0" expanded="false" />
+            <element signature="e#6038#8749#0" expanded="false" />
+            <element signature="e#9817#10875#0" expanded="false" />
+            <element signature="e#11015#11755#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1043,11 +1027,9 @@
             <element signature="e#1447#2094#0" expanded="false" />
             <element signature="e#2157#2844#0" expanded="false" />
             <element signature="e#2953#3904#0" expanded="false" />
-            <element signature="e#4028#5043#0" expanded="false" />
-            <element signature="e#5088#5838#0" expanded="false" />
-            <element signature="e#5998#8709#0" expanded="false" />
-            <element signature="e#9777#10835#0" expanded="false" />
-            <element signature="e#10975#11715#0" expanded="false" />
+            <element signature="e#6038#8749#0" expanded="false" />
+            <element signature="e#9817#10875#0" expanded="false" />
+            <element signature="e#11015#11755#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1097,11 +1079,9 @@
             <element signature="e#1447#2094#0" expanded="false" />
             <element signature="e#2157#2844#0" expanded="false" />
             <element signature="e#2953#3904#0" expanded="false" />
-            <element signature="e#4028#5043#0" expanded="false" />
-            <element signature="e#5088#5838#0" expanded="false" />
-            <element signature="e#5998#8709#0" expanded="false" />
-            <element signature="e#9777#10835#0" expanded="false" />
-            <element signature="e#10975#11715#0" expanded="false" />
+            <element signature="e#6038#8749#0" expanded="false" />
+            <element signature="e#9817#10875#0" expanded="false" />
+            <element signature="e#11015#11755#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1153,46 +1133,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="453" column="31" lean-forward="false" selection-start-line="453" selection-start-column="31" selection-end-line="453" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#331#1169#0" expanded="false" />
-            <element signature="e#1224#1383#0" expanded="false" />
-            <element signature="e#1447#2094#0" expanded="false" />
-            <element signature="e#2157#2844#0" expanded="false" />
-            <element signature="e#2953#3904#0" expanded="false" />
-            <element signature="e#4028#5043#0" expanded="false" />
-            <element signature="e#5088#5838#0" expanded="false" />
-            <element signature="e#5998#8709#0" expanded="false" />
-            <element signature="e#9777#10835#0" expanded="false" />
-            <element signature="e#10975#11715#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/matlab_to_numpy_conversion.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing_pr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="81" column="71" lean-forward="false" selection-start-line="81" selection-start-column="71" selection-end-line="81" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -1204,6 +1148,40 @@
           <folding>
             <element signature="e#457#519#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="81" column="71" lean-forward="false" selection-start-line="81" selection-start-column="71" selection-end-line="81" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="524" column="46" lean-forward="false" selection-start-line="524" selection-start-column="4" selection-end-line="524" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#331#1169#0" expanded="false" />
+            <element signature="e#1224#1383#0" expanded="false" />
+            <element signature="e#1447#2094#0" expanded="false" />
+            <element signature="e#2157#2844#0" expanded="false" />
+            <element signature="e#2953#3904#0" expanded="false" />
+            <element signature="e#6038#8749#0" expanded="false" />
+            <element signature="e#9817#10875#0" expanded="false" />
+            <element signature="e#11015#11755#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing_pr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="95" column="63" lean-forward="false" selection-start-line="95" selection-start-column="63" selection-end-line="95" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>

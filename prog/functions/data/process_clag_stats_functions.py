@@ -126,7 +126,7 @@ def seasonal_data(var, start, end):
     seasonal_data[1] = season_data  # only built for one season's data at the moment
     return seasonal_data, no_years, no_sites
 
-
+# this is the improved function of above
 def seasonal_data_2(var, start, end):
     # information for how to create the seasonal array
     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -287,6 +287,7 @@ def seasonal_sum_calculator(var, start, end):
 
     return sum_data
 
+# this function will create a heatwave summary for a chosen footprint (which could be Europe but also a country)
 def seasonal_hw_duration_summary_europe(var, var_process, start, end, pctile):
 
     print('Calculating seasonal heatwave duration summary for loaded data')
@@ -516,5 +517,55 @@ def seasonal_drought_duration_summary_europe(var, var_process, start, end, pctil
             # figure out longest consecutive over threshold (equivalent of rle in R and outputting longest 'streak')
             consecutive_data[i] = consecutive_zero(threshold_data)
             print(i)
+
+    return consecutive_data
+
+
+# this function will create a drought summary for a chosen footprint (which could be Europe but also a country)
+def seasonal_drought_duration_summary_europe_2(var, var_process, start, end, pctile):
+
+    print('Calculating seasonal heatwave duration summary for loaded data')
+
+    # information for how to create the seasonal array
+    month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    month_end_inds = np.cumsum(month_days)
+    month_start_end_inds = np.zeros(13)
+    month_start_end_inds[0] = 0
+    month_start_end_inds[1:] = month_end_inds
+    month_start_end_inds = month_start_end_inds.astype(int)
+
+    # load data to process, number of years
+    data, no_years, no_sites = seasonal_data_2(var_process, start, end)
+
+    # no_years = var_process.shape[1]
+
+    # calculate where the pctile desired is for europe from a source dataset
+    pctile_data = seasonal_percentile_calculator_europe(var, start, end, pctile)
+
+    # take average for entire footprint for each day for the entire period
+    days = (month_start_end_inds[end] - month_start_end_inds[start-1])
+    num_days = days * no_years
+    avg_data = np.zeros(num_days)
+    for j in range(0, no_years):
+        for i in range(0, days):
+            k = j*days+i
+            avg_data[k] = np.mean(np.ndarray.flatten(data[:, j, i]))
+
+    # for each year, calculate maximum number of consecutive days above XXth percentile from pctile_data
+    no_days = (month_start_end_inds[end] - month_start_end_inds[start - 1])
+    consecutive_data = np.zeros(no_years)
+
+    # iteratively go through years to figure out number of days over a threshold selected
+    for i in range(0, no_years):
+            # assign seasonal data to the year
+            year_data = np.ndarray.flatten(avg_data[(i*no_days):((i+1)*no_days)])
+            # recover percentile data for comparison
+            pctile_threshold = pctile_data
+            # test on entire year for above or below threshold
+            threshold_data = [0 if a < pctile_threshold else 1 for a in year_data]
+            # figure out longest consecutive over threshold (equivalent of rle in R and outputting longest 'streak')
+            consecutive_data[i] = consecutive_one(threshold_data)
+
+    print('Processed heat wave duration summary for loaded data')
 
     return consecutive_data

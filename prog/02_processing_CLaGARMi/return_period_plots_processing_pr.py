@@ -90,15 +90,15 @@ print('simulation years combined')
 print('calculating ' + country + ' return periods')
 
 #################################
-# HEAT WAVE DURATION CHOSEN COUNTRY
+# DROUGHT DURATION CHOSEN COUNTRY
 #################################
 
-obs_data_processed_site = seasonal_hw_duration_summary_europe(obs_data_footprint, obs_data_footprint, season_start, season_end, percentile)
-sim_data_processed_site = seasonal_hw_duration_summary_europe(obs_data_footprint, sim_data_footprint, season_start, season_end, percentile)
+obs_data_processed_site = seasonal_drought_duration_summary_europe_2(obs_data_footprint, obs_data_footprint, season_start, season_end, percentile)
+sim_data_processed_site = seasonal_drought_duration_summary_europe_2(obs_data_footprint, sim_data_footprint, season_start, season_end, percentile)
 
 # create duration characteristics for each site
-data_obs = hw_duration_return_periods_europe(obs_data_processed_site)
-data_sim = hw_duration_return_periods_europe(sim_data_processed_site)
+data_obs = hw_duration_return_periods_europe(obs_data_processed_site) # TO CHANGE
+data_sim = hw_duration_return_periods_europe(sim_data_processed_site) # TO CHANGE
 
 print('Heatwave return periods calculated for entire period for '+country +' for ' + scen + ' ' + str(year_start) + ' - ' + str(year_end))
 
