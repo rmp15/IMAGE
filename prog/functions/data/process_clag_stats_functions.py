@@ -285,7 +285,7 @@ def seasonal_percentile_calculator_europe(var, start, end, pctile):
 
 
 # this function will cycle through each site for selected season and sum the variable
-def seasonal_sum_calculator(var, start, end):
+def seasonal_sum_calculator(var,  start, end):
 
     # information for how to create the seasonal array
     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
