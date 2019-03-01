@@ -347,8 +347,10 @@ def seasonal_hw_duration_summary_europe(var, var_process, start, end, pctile):
     for i in range(0, no_years):
             # assign seasonal data to the year
             year_data = np.ndarray.flatten(avg_data[(i*no_days):((i+1)*no_days)])
+            print(year_data)
             # recover percentile data for comparison
             pctile_threshold = pctile_data
+            print(pctile_threshold)
             # test on entire year for above or below threshold
             threshold_data = [0 if a < pctile_threshold else 1 for a in year_data]
             # figure out longest consecutive over threshold (equivalent of rle in R and outputting longest 'streak')

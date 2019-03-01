@@ -96,17 +96,17 @@ print('calculating ' + country + ' return periods')
 # HEAT WAVE DURATION CHOSEN COUNTRY
 #################################
 
-obs_data_processed_site = seasonal_hw_duration_summary_europe(obs_data_footprint, obs_data_footprint, season_start, season_end, percentile)
+# obs_data_processed_site = seasonal_hw_duration_summary_europe(obs_data_footprint, obs_data_footprint, season_start, season_end, percentile)
 sim_data_processed_site = seasonal_hw_duration_summary_europe(obs_data_footprint, sim_data_footprint, season_start, season_end, percentile)
 
 # create duration characteristics for each site
-data_obs = hw_duration_return_periods_europe(obs_data_processed_site)
+# data_obs = hw_duration_return_periods_europe(obs_data_processed_site)
 data_sim = hw_duration_return_periods_europe(sim_data_processed_site)
 
 print('Heatwave return periods calculated for entire period for '+country +' for ' + scen + ' ' + str(year_start) + ' - ' + str(year_end))
 
 # save to csv
-data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods_'+country+'.csv')
+# data_obs.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_obs_intensity_return_periods_'+country+'.csv')
 data_sim.to_csv('~/git/IMAGE/output/CLaGARMi/' + continent + '_cordex/figures_processing/' + metric + '_' + continent + '_' + scen + '_' + str(year_start) + '_' + str(year_end) + '_' + str(years_sim) + 'yrs_sim_intensity_return_periods_'+country+'.csv')
 
 #################################
