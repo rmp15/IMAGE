@@ -21,8 +21,8 @@
       <file leaf-file-name="04_process_euro.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+            <state relative-caret-position="961">
+              <caret line="79" column="129" lean-forward="false" selection-start-line="79" selection-start-column="129" selection-end-line="79" selection-end-column="129" />
               <folding />
             </state>
           </provider>
@@ -540,13 +540,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00344" summary="extracting values from clagarmi script">
-      <created>1550159732137</created>
-      <option name="number" value="00344" />
-      <option name="presentableId" value="LOCAL-00344" />
-      <option name="project" value="LOCAL" />
-      <updated>1550159732138</updated>
-    </task>
     <task id="LOCAL-00345" summary="extracting values from clagarmi script">
       <created>1550159773484</created>
       <option name="number" value="00345" />
@@ -883,7 +876,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551431895971</updated>
     </task>
-    <option name="localTasksCounter" value="393" />
+    <task id="LOCAL-00393" summary="fixing up drought return periods">
+      <created>1551432005205</created>
+      <option name="number" value="00393" />
+      <option name="presentableId" value="LOCAL-00393" />
+      <option name="project" value="LOCAL" />
+      <updated>1551432005205</updated>
+    </task>
+    <option name="localTasksCounter" value="394" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1424,8 +1424,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        <state relative-caret-position="961">
+          <caret line="79" column="129" lean-forward="false" selection-start-line="79" selection-start-column="129" selection-end-line="79" selection-end-column="129" />
           <folding />
         </state>
       </provider>
