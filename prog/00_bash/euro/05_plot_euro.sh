@@ -11,7 +11,7 @@ clear
 declare slice='01'
 declare -i years_sim1=6000
 declare -i years_sim2=4000
-declare -a metrics=('pr') # 'appt' 'sfcWindmax')
+declare -a metrics=('tasmax') # 'appt' 'sfcWindmax')
 declare -a continents=('euro')
 declare -a scens=('hist')
 declare -i start=1971
