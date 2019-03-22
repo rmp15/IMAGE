@@ -15,7 +15,7 @@ scen <- as.character(args[6])
 start <- as.numeric(args[7])
 end <- as.numeric(args[8])
 
-# slice = '01' ; years_sim1 = 4000 ; years_sim2 = 6000 ; metric = 'appt' ; continent = 'euro' ; scen = 'hist' ; start = 1971 ;end = 2000
+# slice = '01' ; years_sim1 = 4000 ; years_sim2 = 6000 ; metric = 'tasmax' ; continent = 'euro' ; scen = 'hist' ; start = 1971 ;end = 2000
 
 print(args)
 
@@ -102,7 +102,7 @@ for (i in countries){
 # one line per scenario
 pdf(paste0(output.dir,metric,'_',continent,'_',scen,'_',start,'_',end,'_',years_sim_tot,'yrs_obs_sim_intensity_return_periods_countries_scenarios.pdf'),paper='a4r',height=0,width=0)
 p = ggplot() +
-    geom_line(data=dat.sim.country.all,aes(x=return_period,y=days_over,group=scen,color=scen)) +
+    geom_line(data=subset(dat.sim.country.all),aes(x=return_period,y=days_over,group=scen,color=scen)) +
     xlab('Return period (years)') +
     facet_wrap(~country) +
     scale_color_manual(values=colors.scen) +
