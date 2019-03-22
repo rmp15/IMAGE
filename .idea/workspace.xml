@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="fixing up drought return periods">
+    <list default="true" id="a9a2724f-46c2-4a79-a8c2-298fe03fe280" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" afterPath="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R" afterPath="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" afterPath="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="471" column="37" lean-forward="false" selection-start-line="471" selection-start-column="4" selection-end-line="471" selection-end-column="37" />
+            <state relative-caret-position="687">
+              <caret line="492" column="23" lean-forward="false" selection-start-line="492" selection-start-column="23" selection-end-line="492" selection-end-column="23" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <element signature="e#1873#2032#0" expanded="false" />
@@ -68,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="return_periods_country.R" pinned="false" current-in-tab="true">
+      <file leaf-file-name="return_periods_country.R" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="668">
-              <caret line="104" column="45" lean-forward="false" selection-start-line="104" selection-start-column="45" selection-end-line="104" selection-end-column="45" />
+              <caret line="104" column="41" lean-forward="true" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -172,12 +171,12 @@
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/figures_2_3_4.R" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/30_year_averages_processing.py" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/30_year_averages_plot.R" />
-        <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing_pr.py" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/05_plot_euro.sh" />
         <option value="$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing.py" />
         <option value="$PROJECT_DIR$/prog/00_bash/euro/04_process_euro.sh" />
         <option value="$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R" />
+        <option value="$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py" />
       </list>
     </option>
   </component>
@@ -472,13 +471,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
-    </task>
-    <task id="LOCAL-00352" summary="extracting values from clagarmi script">
-      <created>1550230868541</created>
-      <option name="number" value="00352" />
-      <option name="presentableId" value="LOCAL-00352" />
-      <option name="project" value="LOCAL" />
-      <updated>1550230868542</updated>
     </task>
     <task id="LOCAL-00353" summary="extracting values from clagarmi script">
       <created>1550230968156</created>
@@ -816,7 +808,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553248416934</updated>
     </task>
-    <option name="localTasksCounter" value="401" />
+    <task id="LOCAL-00401" summary="fixing up drought return periods">
+      <created>1553249911528</created>
+      <option name="number" value="00401" />
+      <option name="presentableId" value="LOCAL-00401" />
+      <option name="project" value="LOCAL" />
+      <updated>1553249911528</updated>
+    </task>
+    <option name="localTasksCounter" value="402" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1306,23 +1305,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="471" column="37" lean-forward="false" selection-start-line="471" selection-start-column="4" selection-end-line="471" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#1873#2032#0" expanded="false" />
-            <element signature="e#2096#2743#0" expanded="false" />
-            <element signature="e#2806#3493#0" expanded="false" />
-            <element signature="e#3602#4553#0" expanded="false" />
-            <element signature="e#6687#9398#0" expanded="false" />
-            <element signature="e#10466#11524#0" expanded="false" />
-            <element signature="e#11665#12405#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prog/00_bash/euro/05_plot_euro.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1350,8 +1332,25 @@
     <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="668">
-          <caret line="104" column="45" lean-forward="false" selection-start-line="104" selection-start-column="45" selection-end-line="104" selection-end-column="45" />
+          <caret line="104" column="41" lean-forward="true" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="492" column="23" lean-forward="false" selection-start-line="492" selection-start-column="23" selection-end-line="492" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#1873#2032#0" expanded="false" />
+            <element signature="e#2096#2743#0" expanded="false" />
+            <element signature="e#2806#3493#0" expanded="false" />
+            <element signature="e#3602#4553#0" expanded="false" />
+            <element signature="e#6687#9398#0" expanded="false" />
+            <element signature="e#10466#11524#0" expanded="false" />
+            <element signature="e#11665#12405#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
