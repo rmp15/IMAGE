@@ -477,6 +477,7 @@ def hw_duration_return_periods_europe(data):
 
     data_master = pd.DataFrame()
     # for entire country/region, generate a probability rank, where lowest number is lowest ranked
+    print(np.unique(rankdata(data, method='min'))) # delete in a bit
     rank_data = len(data) + 1 - rankdata(data, method='min')
 
     # print(rank_data)
