@@ -479,7 +479,7 @@ def hw_duration_return_periods_europe(data):
     # for entire country/region, generate a probability rank, where lowest number is lowest ranked
     print(len(data))
     print(np.unique(rankdata(data, method='min'))) # delete in a bit
-    rank_data = len(data) + 1 - rankdata(data, method='min')
+    rank_data = len(data) - rankdata(data, method='min') # is this wrong?
 
     # print(rank_data)
     print(np.unique(rank_data))

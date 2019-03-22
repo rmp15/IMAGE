@@ -41,8 +41,8 @@
       <file leaf-file-name="process_clag_stats_functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="479" column="19" lean-forward="false" selection-start-line="479" selection-start-column="19" selection-end-line="479" selection-end-column="19" />
+            <state relative-caret-position="522">
+              <caret line="481" column="26" lean-forward="false" selection-start-line="481" selection-start-column="26" selection-end-line="481" selection-end-column="26" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <element signature="e#1873#2032#0" expanded="false" />
@@ -472,13 +472,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00358" summary="extracting values from clagarmi script">
-      <created>1550754358299</created>
-      <option name="number" value="00358" />
-      <option name="presentableId" value="LOCAL-00358" />
-      <option name="project" value="LOCAL" />
-      <updated>1550754358299</updated>
-    </task>
     <task id="LOCAL-00359" summary="extracting values from clagarmi script">
       <created>1550754370207</created>
       <option name="number" value="00359" />
@@ -815,7 +808,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553251108476</updated>
     </task>
-    <option name="localTasksCounter" value="407" />
+    <task id="LOCAL-00407" summary="fixing up drought return periods">
+      <created>1553251836218</created>
+      <option name="number" value="00407" />
+      <option name="presentableId" value="LOCAL-00407" />
+      <option name="project" value="LOCAL" />
+      <updated>1553251836218</updated>
+    </task>
+    <option name="localTasksCounter" value="408" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1313,10 +1313,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing_pr.py">
+    <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        <state relative-caret-position="668">
+          <caret line="104" column="41" lean-forward="true" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1329,18 +1329,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prog/03_plotting_CLaGARMi/return_periods_country.R">
+    <entry file="file://$PROJECT_DIR$/prog/02_processing_CLaGARMi/return_period_plots_processing_pr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="104" column="41" lean-forward="true" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="45" />
+        <state relative-caret-position="694">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="479" column="19" lean-forward="false" selection-start-line="479" selection-start-column="19" selection-end-line="479" selection-end-column="19" />
+        <state relative-caret-position="522">
+          <caret line="481" column="26" lean-forward="false" selection-start-line="481" selection-start-column="26" selection-end-line="481" selection-end-column="26" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <element signature="e#1873#2032#0" expanded="false" />
