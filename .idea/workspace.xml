@@ -42,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="492">
-              <caret line="479" column="68" lean-forward="false" selection-start-line="479" selection-start-column="68" selection-end-line="479" selection-end-column="68" />
+              <caret line="479" column="19" lean-forward="false" selection-start-line="479" selection-start-column="19" selection-end-line="479" selection-end-column="19" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <element signature="e#1873#2032#0" expanded="false" />
@@ -472,13 +472,6 @@
       <option name="presentableId" value="Default" />
       <updated>1514421784039</updated>
     </task>
-    <task id="LOCAL-00357" summary="extracting values from clagarmi script">
-      <created>1550754342813</created>
-      <option name="number" value="00357" />
-      <option name="presentableId" value="LOCAL-00357" />
-      <option name="project" value="LOCAL" />
-      <updated>1550754342813</updated>
-    </task>
     <task id="LOCAL-00358" summary="extracting values from clagarmi script">
       <created>1550754358299</created>
       <option name="number" value="00358" />
@@ -815,7 +808,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553250868706</updated>
     </task>
-    <option name="localTasksCounter" value="406" />
+    <task id="LOCAL-00406" summary="fixing up drought return periods">
+      <created>1553251108476</created>
+      <option name="number" value="00406" />
+      <option name="presentableId" value="LOCAL-00406" />
+      <option name="project" value="LOCAL" />
+      <updated>1553251108476</updated>
+    </task>
+    <option name="localTasksCounter" value="407" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1340,7 +1340,7 @@
     <entry file="file://$PROJECT_DIR$/prog/functions/data/process_clag_stats_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
-          <caret line="479" column="68" lean-forward="false" selection-start-line="479" selection-start-column="68" selection-end-line="479" selection-end-column="68" />
+          <caret line="479" column="19" lean-forward="false" selection-start-line="479" selection-start-column="19" selection-end-line="479" selection-end-column="19" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <element signature="e#1873#2032#0" expanded="false" />
