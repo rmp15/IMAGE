@@ -473,7 +473,7 @@ def hw_duration_return_periods_europe(data):
 
     print('loading data to calculate return periods')
 
-    print(data)
+    # print(data)
 
     data_master = pd.DataFrame()
     # for entire country/region, generate a probability rank, where lowest number is lowest ranked
