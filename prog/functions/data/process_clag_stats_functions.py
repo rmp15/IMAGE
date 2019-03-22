@@ -479,13 +479,13 @@ def hw_duration_return_periods_europe(data):
     # for entire country/region, generate a probability rank, where lowest number is lowest ranked
     rank_data = len(data) + 1 - rankdata(data, method='min')
 
-    print(rank_data)
+    # print(rank_data)
     print(np.unique(rank_data))
 
     # calculate return periods
     return_period = (len(data) + 1) / rank_data
 
-    print(np.unique(data))
+    # print(np.unique(data))
     print(np.unique(return_period))
 
     # collect values of heat wave intensity and return period for each location
